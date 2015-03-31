@@ -3,4 +3,8 @@ Projektarbete med programvaruteknik
 nu provar jag lite
 
 
-testest
+public class test {
+
+System.out.print("Hello World!");
+
+}
