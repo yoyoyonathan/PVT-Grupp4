@@ -1,0 +1,10 @@
+public class JavaTest {
+
+int i = 5
+
+  while (i<15){
+   i++;
+   System.out.print(i);
+  }
+
+}
