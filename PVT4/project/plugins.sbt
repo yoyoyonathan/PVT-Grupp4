@@ -1,8 +1,6 @@
 resolvers += "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/"
 
-resolvers	+=	Resolver.url("heroku-sbt-plugin-releases",	
-url("hZp://dl.bintray.com/heroku/sbt-plugins/"))
-(Resolver.ivyStylePaZerns)
+resolvers	+=	Resolver.url("heroku-sbt-plugin-releases", url("hZp://dl.bintray.com/heroku/sbt-plugins/"))(Resolver.ivyStylePaZerns)
 
 addSbtPlugin("com.heroku"	%	"sbt-heroku"	%	"0.3.0")	
 
