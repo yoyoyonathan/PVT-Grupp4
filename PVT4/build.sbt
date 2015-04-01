@@ -1,6 +1,6 @@
 import NativePackagerKeys._
 
-herokuAppName in Compile := "blueberry-surprise-6049”
+herokuAppName in Compile :="blueberry-surprise-6049”
 
 name := """PVT4"""
 
