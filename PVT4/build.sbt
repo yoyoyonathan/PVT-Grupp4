@@ -1,4 +1,4 @@
-import	NaNvePackagerKeys._	
+import	NativePackagerKeys._	
 
 herokuAppName	in	Compile	:=	"blueberry-surprise-6049”
 
