@@ -1,3 +1,7 @@
+import	NaNvePackagerKeys._	
+
+herokuAppName	in	Compile	:=	"blueberry-surprise-6049”	
+
 name := """PVT4"""
 
 version := "1.0-SNAPSHOT"
