@@ -1,6 +1,8 @@
 import	NaNvePackagerKeys._	
 
-herokuAppName	in	Compile	:=	"blueberry-surprise-6049”	
+herokuAppName	in	Compile	:=	"blueberry-surprise-6049”
+
+libraryDependencies	+=	"mysql"	%	"mysql-connector-java"	%	"5.1.27"	
 
 name := """PVT4"""
 
