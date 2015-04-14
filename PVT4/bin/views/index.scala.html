@@ -2,15 +2,34 @@
     
   <h1>Summerburst login</h1>
   
-  <form action="demo_form.asp">
-  Mail: <input type="text" name="mail"><br>
-  Password: <input type="text" name="password"><br>
-  <input type="submit" value="Submit">
+ 	 <form action="demo_form.asp">
+ 		 Mail: <input type="text" name="mail"><br>
+ 		 Password: <input type="text" name="password"><br>
+  		<input type="submit" value="Submit">
 	</form>
    
- 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    
+	<script>
+	$(document).ready(function(){
+	    $("p").click(function(){
+	        $(this).hide();
+	    });
+	});
+	</script>
+	
+	<p>If you click on me, I will disappear.</p>
+	<p>Click me away!</p>
+	<p>Click me too!</p>
  
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  
+  <p id="demo">JavaScript can change HTML content.</p>
+  
+  <button type="button"
+	onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
+	Click Me!</button>
   
   <span id="signinButton">
   <span
@@ -24,5 +43,18 @@
   </span>
    
   <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
+  
+  <form>
+    <label for="textinput-s">Text Input:</label>
+    <input type="text" name="textinput-s" id="textinput-s" placeholder="Text input" value="" data-clear-btn="true">
+    <label for="select-native-s">Select:</label>
+    <select name="select-native-s" id="select-native-s">
+        <option value="small">One</option>
+        <option value="medium">Two</option>
+        <option value="large">Three</option>
+    </select>
+    <label for="slider-s">Input slider:</label>
+    <input type="range" name="slider-s" id="slider-s" value="25" min="0" max="100" data-highlight="true">
+</form>
   
 }
