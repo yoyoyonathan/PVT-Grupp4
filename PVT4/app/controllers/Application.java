@@ -13,6 +13,10 @@ public class Application extends Controller {
     public static Result artister() {
         return ok(artister.render());
     }
+    
+    public static Result profil() {
+		return ok(profil.render());
+    }
 }
 
 
