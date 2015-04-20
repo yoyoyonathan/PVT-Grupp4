@@ -16,46 +16,8 @@
 	jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/ jquery-ui.min.js"></script>
     
-    <p> här lägger vi till en profil </p>
     
     <script>
-
-	$('#effect1').click(function(){
-	    $('#effect1').effect('explode', {'pieces':25});
-	});
-	
-	$('#effect2').click(function(){
-	    $('#effect2').effect('puff', {}, 5);
-	});
-	
-	$('#effect3').click(function(){
-	    $('#effect3').effect('pulsate');
-	});
-
-</script>
-    
-    <div id="effect1" class="ui-widget-content ui-corner-all">
-        <h3 class="ui-widget-header ui-corner-all">Effect 1</h3>
-        <p>
-            This one will Explode
-        </p>
-</div>
-<div id="effect2" class="ui-widget-content ui-corner-all">
-        <h3 class="ui-widget-header ui-corner-all">Effect 2</h3>
-        <p>
-            Can you make this one do something more interesting?
-        </p>
-</div>
-<div id="effect3" class="ui-widget-content ui-corner-all">
-        <h3 class="ui-widget-header ui-corner-all">Effect 3</h3>
-        <p>
-            This one will pulsate
-        </p>
-</div>
-
-
-    
-    	<script>
 	$(document).ready(function(){
 	    $("p").click(function(){
 	        $(this).hide();
@@ -63,15 +25,9 @@
 	});
 	</script>
     
-
-	
 	<p>If you click on me, I will disappear.</p>
 	<p>Click me away!</p>
 	<p>Click me too!</p>
-	<ul>
-	<li>listpunkt 1</li>
-	<li>listpunkt 2</li>
-	<li>listpunkt 3</li>
  
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
   
@@ -95,19 +51,5 @@
   <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
   
   <a href='@routes.Application.profil()'> Länk till din profil</a>
-  
-  
-  <form>
-    <label for="textinput-s">Text Input:</label>
-    <input type="text" name="textinput-s" id="textinput-s" placeholder="Text input" value="" data-clear-btn="true">
-    <label for="select-native-s">Select:</label>
-    <select name="select-native-s" id="select-native-s">
-        <option value="small">One</option>
-        <option value="medium">Two</option>
-        <option value="large">Three</option>
-    </select>
-    <label for="slider-s">Input slider:</label>
-    <input type="range" name="slider-s" id="slider-s" value="25" min="0" max="100" data-highlight="true">
-</form>
   
 }
