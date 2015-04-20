@@ -1,5 +1,5 @@
-New log file opened at Mon Apr 20 14:23:01 CEST 2015 by 3220@Dator-Filip
-jvm 3220@Dator-Filip
+New log file opened at Mon Apr 20 14:37:03 CEST 2015 by 3484@Dator-Filip
+jvm 3484@Dator-Filip
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.31-b07
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Filip\Documents\2.Studier\GITHub\PVT-Grupp4\PVT4\project, returning: (pvt4-build)
 Loading project definition from C:\Users\Filip\Documents\2.Studier\GITHub\PVT-Grupp4\PVT4\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@2dd22186, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@15756db6, check cycles: false
 
 Initial source changes: 
 	removed:Set()
