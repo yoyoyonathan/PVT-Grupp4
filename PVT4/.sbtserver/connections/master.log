@@ -11,3 +11,9 @@ Taking next connection to: 58687
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
 Taking next connection to: 58687
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 3220@Dator-Filip logs at Mon Apr 20 14:32:02 CEST 2015, goodbye.
