@@ -1,19 +1,7 @@
-New log file opened at Mon Apr 20 14:23:01 CEST 2015 by 3220@Dator-Filip
-Taking next connection to: 58687
-New client attempting to connect on port: 58688-58687
-  Address = /130.237.241.11:58687
-This client on port 58688 has uuid 1023613d-1817-4531-bafb-1d9b46e6bc85 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-1023613d-1817-4531-bafb-1d9b46e6bc85
-Taking next connection to: 58687
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 58687
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 58687
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 3220@Dator-Filip logs at Mon Apr 20 14:32:02 CEST 2015, goodbye.
+New log file opened at Mon Apr 20 14:33:52 CEST 2015 by 7124@Dator-Filip
+Taking next connection to: 58783
+New client attempting to connect on port: 58784-58783
+  Address = /130.237.241.11:58783
+This client on port 58784 has uuid 4a2d1fb9-c347-4d2f-ac5d-026694ce9ed1 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-4a2d1fb9-c347-4d2f-ac5d-026694ce9ed1
+Taking next connection to: 58783
