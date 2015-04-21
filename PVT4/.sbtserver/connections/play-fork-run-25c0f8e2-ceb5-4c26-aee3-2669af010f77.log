@@ -1,0 +1,8 @@
+New log file opened at Mon Apr 20 17:06:17 CEST 2015 by 37004@DåligFantasi
+Sending msg to client play-fork-run-25c0f8e2-ceb5-4c26-aee3-2669af010f77: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Lisa\Documents\GitHub\PVT-Grupp4\PVT4\.sbtserver\connections\master.log))
+Sending msg to client play-fork-run-25c0f8e2-ceb5-4c26-aee3-2669af010f77: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Lisa\Documents\GitHub\PVT-Grupp4\PVT4\.sbtserver\connections\play-fork-run-25c0f8e2-ceb5-4c26-aee3-2669af010f77.log))
+Sending msg to client play-fork-run-25c0f8e2-ceb5-4c26-aee3-2669af010f77: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Lisa\Documents\GitHub\PVT-Grupp4\PVT4\.sbtserver\master.log))
+Reading next message from client.
+Got request: ListenToEvents()
+Reading next message from client.
+Sending msg to client play-fork-run-25c0f8e2-ceb5-4c26-aee3-2669af010f77: (3,ReceivedResponse())
