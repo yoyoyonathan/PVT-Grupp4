@@ -1,18 +1,16 @@
 
-@main("Login"){
+@main(title = "Login"){
     
   <h1>Summerburst login</h1>
   
- 	 <form action="demo_form.asp">
- 		 Username: <input type="text" name="username"><br>
- 		 Password: <input type="text" name="password"><br>
-  		<input type="submit" value="Submit">
+	<form action="@routes.Application.addUser()" methods="post">
+	<input type="text' name="name" />
+	<button>Add Person</button>
 	</form>
 	
 	<br>
-	<br>
    
-   <p> Har du inget konto? SKAFFA ETT DÅÅÅÅÅÅÅÅ </p>   <a href='@routes.Application.artister()'>Klicka här!</a>
+   <p> Har du inget konto? </p>   <a href='@routes.Application.artister()'>Klicka här!</a>
    
   
   <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
