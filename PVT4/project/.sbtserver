@@ -1,3 +1,9 @@
-#Server Startup at 2015-04-20T12:46+0000
-#Mon Apr 20 14:46:31 CEST 2015
-server.uri=http\://0.0.0.0\:58966
+<<<<<<< HEAD
+#Server Startup at 2015-04-20T13:13+0000
+#Mon Apr 20 15:13:56 CEST 2015
+server.uri=http\://0.0.0.0\:56215
+=======
+#Server Startup at 2015-04-20T12:52+0000
+#Mon Apr 20 14:52:35 CEST 2015
+server.uri=http\://0.0.0.0\:59064
+>>>>>>> 099498a428935a194a9889cba33da0d5e137299c
