@@ -1,7 +1,13 @@
-New log file opened at Tue Apr 21 21:48:25 CEST 2015 by 8016@Dator-Filip
-Taking next connection to: 62997
-New client attempting to connect on port: 62998-62997
-  Address = /192.168.1.100:62997
-This client on port 62998 has uuid 46f14adc-ab95-4af9-97fc-a09b26ae4657 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-46f14adc-ab95-4af9-97fc-a09b26ae4657
-Taking next connection to: 62997
+New log file opened at Tue Apr 21 21:51:37 CEST 2015 by 6236@Dator-Filip
+Taking next connection to: 63045
+New client attempting to connect on port: 63046-63045
+  Address = /192.168.1.100:63045
+This client on port 63046 has uuid fa3cf4c0-9b86-4b96-9004-771bbc6817b8 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-fa3cf4c0-9b86-4b96-9004-771bbc6817b8
+Taking next connection to: 63045
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63045
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63045
