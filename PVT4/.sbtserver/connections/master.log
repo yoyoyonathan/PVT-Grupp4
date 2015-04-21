@@ -1,47 +1,7 @@
-New log file opened at Tue Apr 21 14:23:57 CEST 2015 by 81587@eduroam-241-103.public.su.se
-Taking next connection to: 51683
-New client attempting to connect on port: 51684-51683
-  Address = /130.237.241.103:51683
-This client on port 51684 has uuid d27ca9e6-582e-447b-b91c-b3c70e31a4b3 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
-Connected Clients: activator-d27ca9e6-582e-447b-b91c-b3c70e31a4b3
-Taking next connection to: 51683
-New client attempting to connect on port: 51685-51683
-  Address = /130.237.241.103:51683
-Handshake exception on socket: 51685
-sbt.impl.ipc.HandshakeException: Unable to perform handshake
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
-	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
-	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(SocketInputStream.java:196)
-	at java.net.SocketInputStream.read(SocketInputStream.java:122)
-	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)
-	at java.io.BufferedInputStream.read(BufferedInputStream.java:254)
-	at java.io.DataInputStream.readInt(DataInputStream.java:387)
-	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
-	... 2 more
-Taking next connection to: 51683
-New client attempting to connect on port: 51686-51683
-  Address = /130.237.241.103:51683
-This client on port 51686 has uuid c8201092-cd74-4d81-9ab9-ddff1cdc3174 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
-Connected Clients: activator-c8201092-cd74-4d81-9ab9-ddff1cdc3174
-Taking next connection to: 51683
-New client attempting to connect on port: 51753-51683
-  Address = /130.237.241.103:51683
-Handshake exception on socket: 51753
-sbt.impl.ipc.HandshakeException: Unable to perform handshake
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
-	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
-	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
-	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
-	... 2 more
-Taking next connection to: 51683
-New client attempting to connect on port: 51754-51683
-  Address = /130.237.241.103:51683
-This client on port 51754 has uuid 8041cf1d-838e-4a55-9f3b-d28c4be1d684 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-c8201092-cd74-4d81-9ab9-ddff1cdc3174, play-fork-run-8041cf1d-838e-4a55-9f3b-d28c4be1d684
-Taking next connection to: 51683
+New log file opened at Mon Apr 20 14:46:30 CEST 2015 by 2464@Dator-Filip
+Taking next connection to: 58966
+New client attempting to connect on port: 58967-58966
+  Address = /130.237.241.11:58966
+This client on port 58967 has uuid df8f6e0e-0026-46b2-adc9-84c9ed62a0fe configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-df8f6e0e-0026-46b2-adc9-84c9ed62a0fe
+Taking next connection to: 58966
