@@ -8,17 +8,13 @@ import play.data.*;
 
 public class User {
 	//Tydligen skyddar Play attributen automatiskt
-<<<<<<< Updated upstream
  // @Constraint.Required
-=======
 	
 	@Id
->>>>>>> Stashed changes
 	public String email;
 	public String name;
 	public String password;
 	
-<<<<<<< Updated upstream
 	
 //	public List<ValidationError> validate() {			
 //	    List<ValidationError> errors = new ArrayList<ValidationError>();
@@ -29,8 +25,6 @@ public class User {
 //	}
 
 	
-=======
->>>>>>> Stashed changes
 	public User(String email, String name, String password){
 		this.email = email;
 		this.name = name;
