@@ -1,12 +1,16 @@
 package models;
 
 import java.util.*;
+
 import javax.persistence.*;
 import javax.validation.*;
+
 import play.api.data.validation.*;
 import play.data.*;
+import play.db.ebean.*;
 
-public class User {
+@Entity
+public class User extends Model{
 	//Tydligen skyddar Play attributen automatiskt
 	
 	@Id

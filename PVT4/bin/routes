@@ -12,4 +12,6 @@ GET		/profil						controllers.Application.profil()
 
 GET		/artister					controllers.Application.artister()
 
+GET		/login						controllers.Application.login()
 
+POST	/user						controllers.Application.addUser()
