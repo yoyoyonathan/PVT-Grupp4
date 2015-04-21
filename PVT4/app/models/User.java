@@ -13,8 +13,8 @@ import play.db.ebean.*;
 public class User extends Model{
 	//Tydligen skyddar Play attributen automatiskt
 	
-	@Id
 	public String email;
+	@Id
 	public String name;
 	public String password;
 	public int points;
