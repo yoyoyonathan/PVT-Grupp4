@@ -1,11 +1,11 @@
-body	{font-weight:bold; color:red}
-body	{background-color: teal;}
+body	{font-weight:bold; color:yellow}
+body	{background-color: yellow;}
 
 p {font-size:16;color:green}
 p {
-    color: navy;
+    color: yellow;
     margin-left: 0px;
 }
 h1{
-	color: green;
+	color: yellow;
 	}
