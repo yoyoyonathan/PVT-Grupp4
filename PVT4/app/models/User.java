@@ -13,6 +13,7 @@ public class User {
 	public String email;
 	public String name;
 	public String password;
+	public int points;
 	
 	public User(String email, String name, String password){
 		this.email = email;
