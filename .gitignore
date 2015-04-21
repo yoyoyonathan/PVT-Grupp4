@@ -1,3 +1,6 @@
 *.css
 PVT4/.sbtserver/connections/master.log
 *.log
+*.01
+PVT4/.sbtserver/master.log
+*.sbtserver
