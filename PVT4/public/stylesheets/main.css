@@ -1,10 +1,10 @@
 body	{font-weight:bold; color:red}
-body	{background-color: teal;}
+body	{background-color: red;}
 
 p {font-size:16;color:green}
 p {
     color: navy;
-    margin-left: 0px;
+    margin-left: 200px;
 }
 h1{
 	color: green;

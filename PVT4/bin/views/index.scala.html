@@ -1,19 +1,30 @@
-
-@main("Login"){
+@main(title = "Home") {
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
     
   <h1>Summerburst login</h1>
   
  	 <form action="demo_form.asp">
- 		 Username: <input type="text" name="username"><br>
+ 		 Mail: <input type="text" name="mail"><br>
  		 Password: <input type="text" name="password"><br>
   		<input type="submit" value="Submit">
 	</form>
-	
-	<br>
-	<br>
    
-   <p> Har du inget konto? SKAFFA ETT DÅÅÅÅÅÅÅÅ </p>   <a href='@routes.Application.artister()'>Klicka här!</a>
    
+    <script>
+	$(document).ready(function(){
+	    $("p").click(function(){
+	        $(this).hide();
+	    });
+	});
+	</script>
+    
+	<p>If you click on me, I will disappear.</p>
+ 
+  <p id="demo">JavaScript can change HTML content.</p>
+  
+  <button type="button"
+	onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
+	Click Me!</button>
   
   <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
   
