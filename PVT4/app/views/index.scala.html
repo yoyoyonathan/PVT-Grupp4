@@ -3,6 +3,13 @@
     
   <h1>Summerburst login</h1>
   
+ 	 <form action="demo_form.asp">
+ 		 Mail: <input type="text" name="mail"><br>
+ 		 Password: <input type="text" name="password"><br>
+  		<input type="submit" value="Submit">
+	</form>
+   
+   
     <script>
 	$(document).ready(function(){
 	    $("p").click(function(){
@@ -20,8 +27,6 @@
 	Click Me!</button>
   
   <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
-  
-  <a href='@routes.Application.login'>Länk till login!</a>
   
   <a href='@routes.Application.profil()'> Länk till din profil</a>
   
