@@ -7,14 +7,14 @@ import play.api.data.validation.*;
 import play.data.*;
 
 public class User {
-	//Tydligen skyddar Play attributen automatiskt!!!!!!!
+	//Tydligen skyddar Play attributen automatiskt
  // @Constraint.Required
 	public String email;
 	public String name;
 	public String password;
 	
 	
-//	public List<ValidationError> validate() {			Skit som inte funkar
+//	public List<ValidationError> validate() {			
 //	    List<ValidationError> errors = new ArrayList<ValidationError>();
 //	    if ((email) != null) {
 //	        errors.add(new ValidationError(email, "This e-mail is already registered."));
