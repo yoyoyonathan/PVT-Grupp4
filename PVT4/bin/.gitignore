@@ -1,5 +1,10 @@
+/.DS_Store
 /ApplicationTest.class
 /IntegrationTest$1.class
 /IntegrationTest.class
+/application.conf
+/assets/
 /controllers/
+/models/
+/routes
 /views/
