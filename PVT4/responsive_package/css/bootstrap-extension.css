@@ -1,0 +1,391 @@
+/**
+ * Here are some extension utilities and hack to extend bootstrp
+ */
+
+/* Vertical Spaces */
+.vspace0 {
+	padding: 0px 0px;
+}
+
+.vspace10 {
+	padding: 10px 0px;
+}
+
+.vspace20 {
+	padding: 20px 0px;
+}
+
+.vspace30 {
+	padding: 30px 0px;
+}
+
+.vspace40 {
+	padding: 40px 0px;
+}
+
+.vspace50 {
+	padding: 50px 0px;
+}
+
+.vspace60 {
+	padding: 60px 0px;
+}
+
+.vspace70 {
+	padding: 70px 0px;
+}
+
+.vspace80 {
+	padding: 80px 0px;
+}
+
+.vspace90 {
+	padding: 90px 0px;
+}
+
+.vspace100 {
+	padding: 100px 0px;
+}
+
+
+
+
+
+/* Bottom Spaces */
+.mbottom0 {
+	margin-bottom: 0px !important;
+}
+
+.mbottom10 {
+	margin-bottom: 10px !important;
+}
+
+.mbottom20 {
+	margin-bottom: 20px !important;
+}
+
+.mbottom30 {
+	margin-bottom: 30px !important;
+}
+
+.mbottom40 {
+	margin-bottom: 40px !important;
+}
+
+.mbottom50 {
+	margin-bottom: 50px !important;
+}
+
+.mbottom60 {
+	margin-bottom: 60px !important;
+}
+
+.mbottom70 {
+	margin-bottom: 70px !important;
+}
+
+.mbottom80 {
+	margin-bottom: 80px !important;
+}
+
+.mbottom90 {
+	margin-bottom: 90px !important;
+}
+
+.mbottom100 {
+	margin-bottom: 100px !important;
+}
+
+
+
+
+/* Top Spaces */
+.mtop0 {
+	margin-top: 0px !important;
+}
+
+.mtop10 {
+	margin-top: 10px !important;
+}
+
+.mtop20 {
+	margin-top: 20px !important;
+}
+
+.mtop30 {
+	margin-top: 30px !important;
+}
+
+.mtop40 {
+	margin-top: 40px !important;
+}
+
+.mtop50 {
+	margin-top: 50px !important;
+}
+
+.mtop60 {
+	margin-top: 60px !important;
+}
+
+.mtop70 {
+	margin-top: 70px !important;
+}
+
+.mtop80 {
+	margin-top: 80px !important;
+}
+
+.mtop90 {
+	margin-top: 90px !important;
+}
+
+.mtop100 {
+	margin-top: 100px !important;
+}
+
+
+
+/* Alignment */
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+
+/* Marketing Area*/
+.marketing {
+  color:#5A5A5A;
+}
+
+.marketing h1 {
+  font-size:50px;
+  font-weight:200;
+  letter-spacing:-1px;
+  line-height:1;
+  margin:10px 0 10px;
+}
+
+.marketing h2 {
+  font-weight:200;
+  margin-bottom:5px;
+}
+
+.marketing .marketing-byline {
+  color:#999999;
+  font-size:20px;
+  font-weight:300;
+  line-height:1.25;
+  margin-bottom:40px;
+}
+
+.marketing p {
+  font-size:16px;
+  line-height:1.5;
+}
+
+.marketing img {
+	margin: 5px auto;
+}
+
+/* Divider */
+hr.soften {
+  background-image:-webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0980392), rgba(0, 0, 0, 0));
+  background-color: #DDDDDD;
+  border:0;
+  height:1px;
+  margin:70px 0;
+  clear: both;
+}
+
+
+
+/* Cloud Tags */
+ul.tagcloud {
+	line-height:1.8;
+	list-style:none;
+	margin:0;
+	padding:0.5em;
+	text-align:justify;
+}
+
+ul.tagcloud li {
+	display:inline;
+}
+
+ul.tagcloud a {
+  color:#787870;
+  margin-right:0.2em;
+  text-decoration:none;
+  line-height: 1.3em;
+}
+
+.tag1 {
+	font-size: 80%;
+}
+
+.tag2 {
+	font-size: 100%;	
+}
+
+.tag3 {
+	font-size: 125%;
+}
+
+.tag4 {
+	font-size: 150%;
+}
+
+.tag5 {
+	font-size: 175%;
+}
+
+.tag6 {
+	font-size: 200%;
+}
+
+.tag7 {
+	font-size: 225%;
+}
+
+.tag8 {
+	font-size: 250%;
+}
+
+.tag9 {
+	font-size: 275%;
+}
+
+.tag10 {
+	font-size: 200%;
+}
+
+
+/* Scroll to top */
+.scrolltotop {
+	background-color: #F1F1F1;
+	border: 1px solid darkGray;
+	border-radius: 100px 100px 100px 100px;
+	display: none;
+	height: 36px;
+	opacity: 0.6;
+	position: fixed;
+	right: 2%;
+	top: 50%;
+	width: 36px;
+	z-index: 33;
+}
+
+.scrolltotop span {
+	left: 10px;
+	position: relative;
+	top: 7px;
+}
+
+
+/* touchTouch Description */
+.placeholder span {
+	color: #FFFFFF;
+	display: block;
+	margin: 15px 0 0;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+
+/* Overlay and Zoom icon */
+.zoom:hover .zoom-overlay {
+	display: block;
+}
+
+.zoom:hover .zoom-overlay {
+	opacity: 0.8;
+}
+
+.zoom .zoom-overlay {
+	display: block;
+	opacity: 0;
+}
+
+.zoom a:hover {
+	opacity: 0.6;
+}
+
+.zoom {
+	position: relative;
+}
+
+.zoom-overlay {
+	position: absolute;
+}
+
+.zoom .zoom-overlay {
+	background: url("../img/icon-zoom.png") no-repeat scroll center center transparent;
+	cursor: pointer;
+	display: none;
+	height: 42px;
+	left: 0px;
+	top: -5px;
+	margin-left: -24px;
+	margin-top: -16px;
+	width: 42px;
+	text-align: center;
+	z-index: 0;
+}
+
+
+/* Social Bar */
+.socialbar {
+  background-color:#F5F5F5;
+  border-bottom-color:#DDDDDD;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding:10px 0;
+  text-align:center;
+}
+
+
+
+/* RESPONSIVE CSS HACKS
+ -------------------------------------------------- */
+ @media (max-width: 979px) {
+	.navbar {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	body {
+		padding: 0;
+	}
+
+	.marketing h1 {
+		font-size: 30px;
+	}
+	
+	.container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.navbar {
+		margin-bottom: 0;
+		margin-right: 0;
+		padding-left: 20px;
+		padding-right: 0;
+	}
+	
+}
+
+
