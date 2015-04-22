@@ -1,0 +1,77 @@
+Skelett
+
+* = knapp/tryckbart
+- = övrigt innehåll
+
+[Startsida]
+	-Rubrik~Välkommen // TAGGA TÄVLING!!!
+		-Textfält för användare & lösenord
+		*Logga in: -> [Profil]
+		*Skapa konto -> [Skapa konto]
+		*Glömt lösenord(?) ->
+		*Info -> [Info]
+
+[Skapa konto]
+	-Rubrik~Skapa konto
+		-Textfält för användarnamn, lösenord, bekräfta lösenord. (email?)
+		*Skapa konto->[Redigera]
+
+[Info]
+	-Rubrik~Information
+		-Text och bilder som ger information men framförallt taggar till!
+
+[Profil]
+	-Rubrik~Namn?
+		-Poängställning 
+			*Knapp för att dela?
+		-Profilbild
+		-Kort information
+		*Redigera profil -> [Redigera]
+	*Vänner(?)-> [Vänner]
+	*Inkorg(?)-> [Meddelanden]
+	*TÄVLA->[Tävla]
+
+[Redigera]
+	-Rubrik~Redigera profil
+		-Textfält för information
+		*Spara information->[Profil]
+
+[Vänner]
+	-Lista över vänner
+	*Som är klickbara för att se deras profil?->[Annans profil]
+	-Textfält för att söka användare
+	*Sök användare
+
+[Annans profil]
+	-Rubrik~<Profilnamn>s profil
+		-Poängställning
+		-Profilbild
+		-Kort information
+		*Skicka meddelande? ->[Meddelande]
+		if (!vän){
+		*Lägg till vän
+		} else {
+		*Ta bort vän
+		}
+
+[Meddelanden]
+		*Skicka meddelande->[Meddelande]
+		*Lista med meddelanden - lästa/olästa, inkl. vänförfrågningar
+
+[Meddelande]
+		-Textfält för mottagare (ifyllt om klickat från [Annans profil])
+		-Textfält för meddelande (tillåta bilder?)
+		*Skicka
+
+[Tävla]
+		-Poängställning
+		*Quests - (0/5 dagliga avklarade, osv)
+		*
+		*Topplistor-> [Topplistor]
+		*Priser
+
+[Topplistor]
+		-Top 10? personer som går att filtrera
+			*Totalt
+			*Veckovis
+			*Vänner
