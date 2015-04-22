@@ -1,0 +1,15 @@
+@main(title = "Signup") {
+
+	<h1>Hej här signar du upp din jävlel</h1>
+
+	<form action="@routes.Application.addUser()" method="post">
+	Email: <input type="text" name="email" /><br></br>
+	Username: <input type="text" name="userName" /><br></br>
+	Password: <input type="text" name="password" /><br></br>
+	Birth date: <input type="text" name="birthDate" />
+	<button>Signup!</button>
+	</form>
+
+
+
+}

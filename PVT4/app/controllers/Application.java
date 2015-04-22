@@ -36,6 +36,10 @@ public class Application extends Controller {
     	return ok(login.render());
     }
     
+    public static Result signup() {
+    	return ok(signup.render());
+    }
+    
     public static Result addUser() {
 //    	User user = Form.form(User.class).bindFromRequest().get();
 //    	user.save();

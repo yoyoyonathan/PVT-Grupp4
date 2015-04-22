@@ -7,7 +7,7 @@ create table user (
   email                     varchar(255) not null,
   user_name                 varchar(255),
   password                  varchar(255),
-  birth_year                integer,
+  birth_date                integer,
   constraint pk_user primary key (email))
 ;
 
