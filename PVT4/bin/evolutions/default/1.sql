@@ -5,24 +5,20 @@
 
 create table user (
   email                     varchar(255) not null,
-  name                      varchar(255),
+  user_name                 varchar(255),
   password                  varchar(255),
-  points                    integer,
+  birth_year                integer,
   constraint pk_user primary key (email))
 ;
-
-create sequence user_seq;
 
 
 
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists user;
+drop table user;
 
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists user_seq;
+SET FOREIGN_KEY_CHECKS=1;
 
