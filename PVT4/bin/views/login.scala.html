@@ -1,0 +1,10 @@
+@main(title = "Login") {
+
+	<h1> Login </h1>
+
+	<form action="@routes.Application.addUser()" method="post">
+	Email: <input type="text" name="email" /><br></br>
+	Password: <input type="text" name="password" />
+	<button>Add user</button>
+	</form>
+}

@@ -14,7 +14,7 @@ public class User extends Model{
 	//Tydligen skyddar Play attributen automatiskt
 	
 	@Id
-	@Constraints.Min(10)
+	@Constraints.Required
 	public String email;
 	public String userName;
 	@Constraints.Required

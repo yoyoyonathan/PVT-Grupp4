@@ -21,7 +21,7 @@ import play.libs.Json;
 public class Application extends Controller {
 	
     public static Result index() {
-        return ok(index.render());
+        return ok(index.render("Hejsan"));
     }
     
     public static Result artister() {
@@ -39,16 +39,16 @@ public class Application extends Controller {
     public static Result signup() {
 	    String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render());
+             return ok(index.render("You are already logged in as " + currentUser + "!!!!!"));
         } 
-		return ok(signup.render());
+		return ok(signup.render(""));
 	}
 
     
     public static Result addUser() {
 			
     	if (Form.form(User.class).bindFromRequest().hasErrors()){
- 		    return badRequest(signup.render());
+ 		    return badRequest(signup.render("???"));
  		}
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
@@ -56,20 +56,29 @@ public class Application extends Controller {
  		Connection conn = null;
  		Statement stmt = null;
  		String userEmail = user.email;
+ 		String userUserName = user.userName;
  		String userPassword = user.password;
+ 		int userBirthDate = user.birthDate;
  		
-// 		if (userUsername.matches("^.*[^a-zA-Z0-9].*$")){
+// 		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){
 // 		    return badRequest(signup.render("Please only use letters and numbers for the username"));
 // 		}
 
  		try {
  			conn = DB.getConnection();
  			stmt = conn.createStatement();
-
- 			String insertIntoDatabase = "INSERT INTO user" 
- 			+ "(EMAIL, PASSWORD) " + "VALUES" + "(" + "'" +userEmail + "'" + "," + "'" + userPassword + "'" +")";
  			
- 			// execute insert SQL stetement
+ 			//PreparedStatement statement = conn.prepareStatement("INSERT INTO user(email,userName,password,birthDate) VALUES(?,?,?,?)");
+ 			//statement.setString(1, userEmail);
+ 			//statement.setString(2, userName);
+ 			//statement.setString(3, userPassword);
+ 			//statement.setInt(4, userBirthDate);
+ 			
+ 			String insertIntoDatabase = "INSERT INTO user" 
+ 			+ "(email, userName, password, birthDate) " + "VALUES" + "(" + "'" +userEmail + "'" + "," + "'" + userUserName + "'" 
+ 					+ "," + "'" + userPassword + "'" + "," + "'" + userBirthDate + "'" + ")";
+ 			
+ 			// execute insert SQL statement
  			stmt.executeUpdate(insertIntoDatabase);
 
  			// user.save();
@@ -97,7 +106,6 @@ public class Application extends Controller {
  			}// end finally try
  		}// end try
     }
-//	    	return redirect(routes.Application.login());
 	    	
     public static Result getUsers() {
 //    	List<User> users = new Model.Finder(String.class, User.class).all();
@@ -111,7 +119,6 @@ public class Application extends Controller {
     		
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
-		
 		
 			String sql = "SELECT * FROM user";
 			

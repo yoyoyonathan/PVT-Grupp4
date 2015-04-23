@@ -1,4 +1,4 @@
-@main(title = "Home") {
+@(message: String) 
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
     
   <h1>Summerburst login</h1>
@@ -27,4 +27,5 @@
   <br></br>
   <a href='@routes.Application.signup()'> Are you not a member? Sign up here!</a>
   
-}
+  @message
+ 
