@@ -12,7 +12,7 @@ GET		/profil						controllers.Application.profil()
 
 GET		/artister					controllers.Application.artister()
 
-GET		/login						controllers.Application.login()
+GET		/loginPage					controllers.Application.loginPage()
 
 POST	/user						controllers.Application.addUser()
 
@@ -21,3 +21,5 @@ GET		/users						controllers.Application.getUsers()
 GET		/signup						controllers.Application.signup()
 
 GET		/logout						controllers.Application.logout()
+
+GET		/login						controllers.Application.login()

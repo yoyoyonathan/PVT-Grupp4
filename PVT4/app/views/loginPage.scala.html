@@ -1,0 +1,10 @@
+@main(title = "Login") {
+
+	<h1> Summergin eller Logummer? </h1>
+
+	<form action="@routes.Application.login()" method="post">
+	Email: <input type="email" name="email" /><br></br>
+	Paswd: <input type="password" name="password" /><br></br>
+	<button>Login!</button>
+	</form>
+}

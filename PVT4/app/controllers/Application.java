@@ -32,8 +32,65 @@ public class Application extends Controller {
 		return ok(profil.render());
     }
     
+    public static Result loginPage() {
+    	String currentUser = session("connected");
+        if(currentUser != null) {
+             return ok(index.render("You are already logged in as " + currentUser + "!!!!!"));
+        } 
+    	return ok(loginPage.render());
+    }
+    
     public static Result login() {
-    	return ok(login.render());
+    	
+//    	ObjectNode result = Json.newObject();
+//		Connection conn = null;
+//		Statement stmt = null;
+//    	
+//    	try{
+//    		
+//			conn = DB.getConnection();
+//			stmt = conn.createStatement();
+//		
+//			String sql = "SELECT * FROM user";
+//			
+//			ResultSet rs = stmt.executeQuery(sql);
+//		
+//		    while(rs.next()){
+//				//Retrieve by column name
+//
+//				String email  = rs.getString("email");
+//				String password = rs.getString("password");
+//				ObjectNode user = Json.newObject();
+//				user.put("Email", email);
+//				user.put("Password", password);
+//				
+//				result.put(email, password);
+//		   	}
+//		    rs.close();
+//
+//			return ok(result);
+//		}catch(SQLException se){
+//			//Handle errors for JDBC
+//	        return internalServerError(se.toString());
+//		}catch(Exception e){
+//	    	//Handle errors for Class.forName
+//	        return internalServerError(e.toString());
+//	 	}finally{
+//			 //finally block used to close resources
+//			 try{
+//			    if(stmt!=null)
+//			       conn.close();
+//			 }catch(SQLException se){
+//			 }// do nothing
+//			 try{
+//			    if(conn!=null)
+//			       conn.close();
+//			 }catch(SQLException se){
+//			    return internalServerError(se.toString());
+//			 }//end finally try
+//	   	}//end try
+    	
+		return redirect(routes.Application.index());
     }
     
     public static Result logout() {
@@ -113,8 +170,6 @@ public class Application extends Controller {
     }
 	    	
     public static Result getUsers() {
-//    	List<User> users = new Model.Finder(String.class, User.class).all();
-//    	return ok(toJson(users));
     	
     	ObjectNode result = Json.newObject();
 		Connection conn = null;
