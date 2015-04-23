@@ -37,60 +37,68 @@ public class Application extends Controller {
     }
     
     public static Result signup() {
-    	return ok(signup.render());
-    }
+	    String currentUser = session("connected");
+        if(currentUser != null) {
+             return ok(index.render());
+        } 
+		return ok(signup.render());
+	}
+
     
     public static Result addUser() {
-//    	User user = Form.form(User.class).bindFromRequest().get();
-//    	user.save();
-//    	
-//    	ObjectNode result = Json.newObject();
-//		Connection conn = null;
-//		Statement stmt = null;
-//		
-//		try{
-//    		
-//			conn = DB.getConnection();
-//			stmt = conn.createStatement();
-//			
-//			String sql = "SELECT * FROM user";
-//			
-//			ResultSet rs = stmt.executeQuery(sql);
-//			
-//			
-//			
-//			
-//			
-//			
-//			
-//			
-//			
-//			
-	    	return redirect(routes.Application.login());
-//
-//			
-//		} catch(SQLException se){
-//			//Handle errors for JDBC
-//	        return internalServerError(se.toString());
-//		}catch(Exception e){
-//	    	//Handle errors for Class.forName
-//	        return internalServerError(e.toString());
-//	 	}finally{
-//			 //finally block used to close resources
-//			 try{
-//			    if(stmt!=null)
-//			       conn.close();
-//			 }catch(SQLException se){
-//			 }// do nothing
-//			 try{
-//			    if(conn!=null)
-//			       conn.close();
-//			 }catch(SQLException se){
-//			    return internalServerError(se.toString());
-//			 }//end finally try
-//	   	}//end try
+			
+    	if (Form.form(User.class).bindFromRequest().hasErrors()){
+ 		    return badRequest(signup.render());
+ 		}
+ 	    
+ 		User user = Form.form(User.class).bindFromRequest().get();
+ 		ObjectNode result = Json.newObject();
+ 		Connection conn = null;
+ 		Statement stmt = null;
+ 		String userEmail = user.email;
+ 		String userPassword = user.password;
+ 		
+// 		if (userUsername.matches("^.*[^a-zA-Z0-9].*$")){
+// 		    return badRequest(signup.render("Please only use letters and numbers for the username"));
+// 		}
+
+ 		try {
+ 			conn = DB.getConnection();
+ 			stmt = conn.createStatement();
+
+ 			String insertIntoDatabase = "INSERT INTO user" 
+ 			+ "(EMAIL, PASSWORD) " + "VALUES" + "(" + "'" +userEmail + "'" + "," + "'" + userPassword + "'" +")";
+ 			
+ 			// execute insert SQL stetement
+ 			stmt.executeUpdate(insertIntoDatabase);
+
+ 			// user.save();
+ 			session("connected", userEmail);
+ 			return redirect(routes.Application.index());
+ 			
+ 		} catch (SQLException se) {
+ 			// Handle errors for JDBC
+ 			return internalServerError(se.toString());
+ 		} catch (Exception e) {
+ 			// Handle errors for Class.forName
+ 			return internalServerError(e.toString());
+ 		} finally {
+ 			// finally block used to close resources
+ 			try {
+ 				if (stmt != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 			}// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 				return internalServerError(se.toString());
+ 			}// end finally try
+ 		}// end try
     }
-    
+//	    	return redirect(routes.Application.login());
+	    	
     public static Result getUsers() {
 //    	List<User> users = new Model.Finder(String.class, User.class).all();
 //    	return ok(toJson(users));
