@@ -1,13 +1,19 @@
-New log file opened at Tue Apr 21 13:18:24 CEST 2015 by 3300@Sheriffen
-Taking next connection to: 50839
-New client attempting to connect on port: 50840-50839
-  Address = /130.237.156.217:50839
-This client on port 50840 has uuid b1319f5c-4d78-4b38-b902-50c6c1bd34e3 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-b1319f5c-4d78-4b38-b902-50c6c1bd34e3
-Taking next connection to: 50839
+New log file opened at Tue Apr 21 14:45:20 CEST 2015 by 2924@Sheriffen
+Taking next connection to: 51505
+New client attempting to connect on port: 51506-51505
+  Address = /130.237.156.217:51505
+This client on port 51506 has uuid 4942c752-581e-4673-b9b4-79810ca3a903 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-4942c752-581e-4673-b9b4-79810ca3a903
+Taking next connection to: 51505
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 51505
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 51505
 Checking to see if clients are empty...
 No non-daemon clients connected after 3 min. Shutting down.
 Server socket thread exiting.
 0 clients open, will close them...
 All client sockets have been closed.
-Closing the 3300@Sheriffen logs at Tue Apr 21 13:21:28 CEST 2015, goodbye.
+Closing the 2924@Sheriffen logs at Tue Apr 21 14:54:20 CEST 2015, goodbye.
