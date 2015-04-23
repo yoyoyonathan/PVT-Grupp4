@@ -21,7 +21,7 @@ import play.libs.Json;
 public class Application extends Controller {
 	
     public static Result index() {
-        return ok(index.render("Hejsan"));
+        return ok(index.render(""));
     }
     
     public static Result artister() {
@@ -34,6 +34,11 @@ public class Application extends Controller {
     
     public static Result login() {
     	return ok(login.render());
+    }
+    
+    public static Result logout() {
+	    session().clear();
+    	return ok(index.render("You are now logged out!"));
     }
     
     public static Result signup() {

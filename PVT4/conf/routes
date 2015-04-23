@@ -19,3 +19,5 @@ POST	/user						controllers.Application.addUser()
 GET		/users						controllers.Application.getUsers()
 
 GET		/signup						controllers.Application.signup()
+
+GET		/logout						controllers.Application.logout()
