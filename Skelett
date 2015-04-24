@@ -1,4 +1,4 @@
-Skelett
+﻿Skelett
 
 * = knapp/tryckbart
 - = övrigt innehåll
@@ -10,7 +10,8 @@ Skelett
 		*Skapa konto -> [Skapa konto]
 		*Glömt lösenord(?) ->
 		*Info -> [Info]
-
+		* Sökfunktion
+			- Söka efter andra användare på alias, stad
 [Skapa konto]
 	-Rubrik~Skapa konto
 		-Textfält för användarnamn, lösenord, bekräfta lösenord. (email?)
@@ -27,6 +28,7 @@ Skelett
 		-Profilbild
 		-Kort information
 		*Redigera profil -> [Redigera]
+	*Vinster --> [Vinstlista]
 	*Vänner(?)-> [Vänner]
 	*Inkorg(?)-> [Meddelanden]
 	*TÄVLA->[Tävla]
@@ -35,6 +37,9 @@ Skelett
 	-Rubrik~Redigera profil
 		-Textfält för information
 		*Spara information->[Profil]
+
+[Vinstlista] 
+	- Visar lista med vinster 
 
 [Vänner]
 	-Lista över vänner
@@ -49,6 +54,7 @@ Skelett
 		-Kort information
 		*Skicka meddelande? ->[Meddelande]
 		if (!vän){
+		*Vinster
 		*Lägg till vän
 		} else {
 		*Ta bort vän
