@@ -28,69 +28,78 @@ public class Application extends Controller {
         return ok(artister.render());
     }
     
-    public static Result profil() {
-		return ok(profil.render());
+    public static Result profilePage() {
+    	String currentUser = session("connected");
+    	if(currentUser == null) {
+            return ok(index.render("Du måste logga in först."));
+    	}
+		return ok(profilePage.render("You are " + currentUser + "."));
     }
     
     public static Result loginPage() {
     	String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("You are already logged in as " + currentUser + "!!!!!"));
+             return ok(index.render("You are already logged in as " + currentUser + "!"));
         } 
-    	return ok(loginPage.render());
+    	return ok(loginPage.render(""));
     }
     
     public static Result login() {
     	
-//    	ObjectNode result = Json.newObject();
-//		Connection conn = null;
-//		Statement stmt = null;
-//    	
-//    	try{
-//    		
-//			conn = DB.getConnection();
-//			stmt = conn.createStatement();
-//		
-//			String sql = "SELECT * FROM user";
-//			
-//			ResultSet rs = stmt.executeQuery(sql);
-//		
-//		    while(rs.next()){
-//				//Retrieve by column name
-//
-//				String email  = rs.getString("email");
-//				String password = rs.getString("password");
-//				ObjectNode user = Json.newObject();
-//				user.put("Email", email);
-//				user.put("Password", password);
-//				
-//				result.put(email, password);
-//		   	}
-//		    rs.close();
-//
-//			return ok(result);
-//		}catch(SQLException se){
-//			//Handle errors for JDBC
-//	        return internalServerError(se.toString());
-//		}catch(Exception e){
-//	    	//Handle errors for Class.forName
-//	        return internalServerError(e.toString());
-//	 	}finally{
-//			 //finally block used to close resources
-//			 try{
-//			    if(stmt!=null)
-//			       conn.close();
-//			 }catch(SQLException se){
-//			 }// do nothing
-//			 try{
-//			    if(conn!=null)
-//			       conn.close();
-//			 }catch(SQLException se){
-//			    return internalServerError(se.toString());
-//			 }//end finally try
-//	   	}//end try
+		Connection conn = null;
+		Statement stmt = null;
     	
-		return redirect(routes.Application.index());
+    	try{
+    		
+     		User user = Form.form(User.class).bindFromRequest().get();
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+			String userEmail = user.email;
+	 		String userPassword = user.password;
+		
+	 		String sql = "SELECT * FROM `user` WHERE `email` = " + "'" + userEmail + "'";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			if(rs.isBeforeFirst()){
+				rs.next();
+				
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				String userName = rs.getString("userName");
+					
+					if (userEmail.equals(email) && userPassword.equals(password)){
+					    rs.close();
+					    session("connected", userName);
+			 			return redirect(routes.Application.index());
+					}
+				} 
+				
+				rs.close();
+				return ok(loginPage.render("Wrong user/pass"));
+				
+		}catch(SQLException se){
+			//Handle errors for JDBC
+	        return internalServerError(se.toString());
+		}catch(Exception e){
+	    	//Handle errors for Class.forName
+	        return internalServerError(e.toString());
+	 	}finally{
+			 //finally block used to close resources
+			 try{
+			    if(stmt!=null)
+			       conn.close();
+			 }catch(SQLException se){
+			 }// do nothing
+			 try{
+			    if(conn!=null)
+			       conn.close();
+			 }catch(SQLException se){
+			    return internalServerError(se.toString());
+			 }//end finally try
+	   	}//end try
+    	
     }
     
     public static Result logout() {
@@ -110,7 +119,7 @@ public class Application extends Controller {
     public static Result addUser() {
 			
     	if (Form.form(User.class).bindFromRequest().hasErrors()){
- 		    return badRequest(signup.render("???"));
+ 		    return badRequest(signup.render("Nu har något skrivits in fel"));
  		}
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
@@ -122,9 +131,9 @@ public class Application extends Controller {
  		String userPassword = user.password;
  		int userBirthDate = user.birthDate;
  		
-// 		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){
-// 		    return badRequest(signup.render("Please only use letters and numbers for the username"));
-// 		}
+ 		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){
+ 		    return badRequest(signup.render("Please only use letters and numbers for the username"));
+ 		}
 
  		try {
  			conn = DB.getConnection();
@@ -144,7 +153,7 @@ public class Application extends Controller {
  			stmt.executeUpdate(insertIntoDatabase);
 
  			// user.save();
- 			session("connected", userEmail);
+ 			session("connected", userUserName);
  			return redirect(routes.Application.index());
  			
  		} catch (SQLException se) {

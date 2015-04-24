@@ -1,4 +1,5 @@
-@main(title = "Login") {
+@(message: String) 
+
 
 	<h1> Summergin eller Logummer? </h1>
 
@@ -7,4 +8,4 @@
 	Paswd: <input type="password" name="password" /><br></br>
 	<button>Login!</button>
 	</form>
-}
+	@message

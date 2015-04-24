@@ -3,28 +3,12 @@
     
   <h1>Summerburst login</h1>
   
-    <script>
-	$(document).ready(function(){
-	    $("p").click(function(){
-	        $(this).hide();
-	    });
-	});
-	</script>
-    
-	<p>If you click on me, I will disappear.</p>
- 
-  <p id="demo">JavaScript can change HTML content.</p>
-  
-  <button type="button"
-	onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
-	Click Me!</button>
-  
   <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
   
   <a href='@routes.Application.loginPage'>Länk till login!</a>
   
-  <a href='@routes.Application.profil()'> Länk till din profil</a>
-  <br></br>
+  <a href='@routes.Application.profilePage()'> Länk till din profil</a>
+  <br>
   <a href='@routes.Application.signup()'> Are you not a member? Sign up here!</a>
   
   <a href='@routes.Application.logout()'> Logout !</a>
