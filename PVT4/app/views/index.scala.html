@@ -1,0 +1,17 @@
+@(message: String) 
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+    
+  <h1>Summerburst login</h1>
+  
+  <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
+  
+  <a href='@routes.Application.loginPage'>Länk till login!</a>
+  
+  <a href='@routes.Application.profilePage()'> Länk till din profil</a>
+  <br>
+  <a href='@routes.Application.signup()'> Are you not a member? Sign up here!</a>
+  
+  <a href='@routes.Application.logout()'> Logout !</a>
+  
+  @message
+ 
