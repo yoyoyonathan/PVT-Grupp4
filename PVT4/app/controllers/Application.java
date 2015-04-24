@@ -107,6 +107,10 @@ public class Application extends Controller {
     }
     
     public static Result logout() {
+    	String currentUser = session("connected");
+    	if(currentUser == null) {
+            return ok(index.render("Du måste logga in först."));
+    	}
 	    session().clear();
     	return ok(index.render("You are now logged out!"));
     }
