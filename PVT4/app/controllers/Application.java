@@ -25,7 +25,11 @@ public class Application extends Controller {
     }
     
     public static Result artister() {
-        return ok(artister.render());
+    	String currentUser = session("connected");
+    	if(currentUser == null) {
+            return ok(index.render("Du måste logga in först."));
+    	}
+        return ok(artister.render("DJ " + currentUser));
     }
     
     public static Result profilePage() {
@@ -110,11 +114,10 @@ public class Application extends Controller {
     public static Result signup() {
 	    String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("You are already logged in as " + currentUser + "!!!!!"));
+             return ok(index.render("You are already logged in as " + currentUser + "!"));
         } 
 		return ok(signup.render(""));
 	}
-
     
     public static Result addUser() {
 			
