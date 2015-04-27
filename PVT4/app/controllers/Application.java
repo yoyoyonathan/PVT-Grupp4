@@ -43,7 +43,7 @@ public class Application extends Controller {
     public static Result loginPage() {
     	String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("You are already logged in as " + currentUser + "!"));
+             return ok(index.render("You are already logged in as " + currentUser + "."));
         } 
     	return ok(loginPage.render(""));
     }
@@ -81,7 +81,7 @@ public class Application extends Controller {
 				} 
 				
 				rs.close();
-				return ok(loginPage.render("Wrong user/pass"));
+				return ok(loginPage.render("Fel email/lösenord."));
 				
 		}catch(SQLException se){
 			//Handle errors for JDBC
@@ -112,13 +112,13 @@ public class Application extends Controller {
             return ok(index.render("Du måste logga in först."));
     	}
 	    session().clear();
-    	return ok(index.render("You are now logged out!"));
+    	return ok(index.render("Du är nu utloggad."));
     }
     
     public static Result signup() {
 	    String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("You are already logged in as " + currentUser + "!"));
+             return ok(index.render("Du är redan inloggad som " + currentUser + "!"));
         } 
 		return ok(signup.render(""));
 	}
@@ -139,7 +139,7 @@ public class Application extends Controller {
  		int userBirthDate = user.birthDate;
  		
  		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){
- 		    return badRequest(signup.render("Please only use letters and numbers for the username"));
+ 		    return badRequest(signup.render("Använd endast bokstäver och siffror till ditt användarnamn."));
  		}
 
  		try {
