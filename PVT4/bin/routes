@@ -20,6 +20,8 @@ POST	/team						controllers.Application.addTeam()
 
 GET		/users						controllers.Application.getUsers()
 
+GET		/user						controllers.Application.getUser()
+
 GET		/signup						controllers.Application.signup()
 
 GET		/logout						controllers.Application.logout()

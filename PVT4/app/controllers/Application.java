@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.List;
 import java.sql.*;
-
 import models.Team;
 import models.User;
 import play.*;
@@ -13,10 +12,8 @@ import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
 import static play.libs.Json.toJson;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import play.libs.Json;
 
 public class Application extends Controller {
@@ -30,7 +27,7 @@ public class Application extends Controller {
     	if(currentUser == null) {
             return ok(index.render("Du måste logga in först."));
     	}
-        return ok(team.render("DJ " + currentUser));
+        return ok(team.render("DJ " + currentUser + " mafia"));
     }
     
     public static Result profilePage() {
@@ -73,6 +70,7 @@ public class Application extends Controller {
 				String email = rs.getString("email");
 				String password = rs.getString("password");
 				String userName = rs.getString("userName");
+				int birthDate = rs.getInt("birthDate");
 					
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
@@ -82,7 +80,7 @@ public class Application extends Controller {
 				} 
 				
 				rs.close();
-				return ok(loginPage.render("Fel email/lösenord."));
+				return ok(index.render("Fel email/lösenord."));
 				
 		}catch(SQLException se){
 			//Handle errors for JDBC
@@ -289,6 +287,64 @@ public class Application extends Controller {
 	   	}//end try
     	
     }
+    
+	public static Result getUser() {
+	    	
+		Connection conn = null;
+		Statement stmt = null;
+    	
+    	try{
+    		
+     		User user = Form.form(User.class).bindFromRequest().get();
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+			String userEmail = user.email;
+	 		String userPassword = user.password;
+		
+	 		String sql = "SELECT * FROM `user` WHERE `email` = " + "'" + userEmail + "'";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			if(rs.isBeforeFirst()){
+				rs.next();
+				
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				String userName = rs.getString("userName");
+					
+					if (userEmail.equals(email) && userPassword.equals(password)){
+					    rs.close();
+					    session("connected", userName);
+			 			return redirect(routes.Application.index());
+					}
+				} 
+				
+				rs.close();
+				return ok(index.render("Fel email/lösenord."));
+				
+			}catch(SQLException se){
+				//Handle errors for JDBC
+		        return internalServerError(se.toString());
+			}catch(Exception e){
+		    	//Handle errors for Class.forName
+		        return internalServerError(e.toString());
+		 	}finally{
+				 //finally block used to close resources
+				 try{
+				    if(stmt!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }// do nothing
+				 try{
+				    if(conn!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				    return internalServerError(se.toString());
+				 }//end finally try
+		   	}//end try
+	    	
+	    }
 }    
 
 

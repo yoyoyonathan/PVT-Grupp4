@@ -1,10 +1,8 @@
 package models;
 
 import java.util.*;
-
 import javax.persistence.*;
 import javax.validation.*;
-
 import play.data.validation.*;
 import play.data.*;
 import play.db.ebean.*;
