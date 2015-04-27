@@ -21,19 +21,21 @@
     <title>SBScorehunt</title>
 	
   	<ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="@routes.Application.index()">Home</a></li>
-      <li role="presentation"><a href="@routes.Application.profilePage()">Profile</a></li>
-      <li role="presentation"><a href="#">Messages</a></li>
+      <li role="presentation" class="active"><a href="@routes.Application.profilePage()">Profile</a></li>
+      <li role="presentation"><a href="#">Team</a></li>
+	  <li role="presentation"><a href="#">Settings</a></li>
+	  <li role="presentation"><a href="@routes.Application.index()">Sign out</a></li>
     </ul>
-  
-	<button onClick="window.location.href='../'">Tillbaka till start</button>
-    
+      
 	<div class="container">
 
-      	<ul>
+      	<ul class="profile-elenemts">
 			<li>BILD:</li>
 			<li>USER: @message</li>
 			<li>AGE:</li>
+			<li>SCORE:</li>
+			<li>CITY:</li>
+			<li>DESCRIPTION</li>
 		</ul>
 
     </div>
