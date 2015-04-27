@@ -1,7 +1,43 @@
 @(message: String)
-    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="index.js" type="text/css" media="screen" /> 
+    <!--Länk till vår css-->
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <title>SBScorehunt</title>
+	
+  	<ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="@routes.Application.index()">Home</a></li>
+      <li role="presentation"><a href="@routes.Application.profilePage()">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  
 	<button onClick="window.location.href='../'">Tillbaka till start</button>
     
+	<div class="container">
+
+      	<ul>
+			<li>BILD:</li>
+			<li>USER: @message</li>
+			<li>AGE:</li>
+		</ul>
+
+    </div>
+	
 	<ul>
 		<li>Bild: 
 			<form action="demo_form.asp">

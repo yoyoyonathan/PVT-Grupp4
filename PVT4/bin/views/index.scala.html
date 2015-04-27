@@ -21,19 +21,19 @@
 
   	<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
-      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="@routes.Application.profilePage()">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
 
 
 	<div class="container">
 
-      	<form class="form-signin">
+      	<form class="form-signin" action="@routes.Application.login()" method="post">
         <h2 class="form-signin-heading">Logga in här för att tävla!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required autofocus>
         <label for="inputPassword" class="sr-only">Lösenord</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Lösenord" required>
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Kom ihåg mig
@@ -47,7 +47,7 @@
       </form>
 
     </div> <!-- /container -->
-
+	
 
     
 
@@ -61,7 +61,7 @@
     
   <h1>Summerburst login</h1>
 <ul>
-	<button onClick="window.location.href='../artister'"> Artister </button>
+	<button onClick="window.location.href='../teamPage'"> Team </button>
 </ul>
 <ul>
 	<button onClick="window.location.href='../loginPage'"> Login!  </button>

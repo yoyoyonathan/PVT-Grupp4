@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 import java.sql.*;
 
+import models.Team;
 import models.User;
 import play.*;
 import play.api.libs.json.*;
@@ -24,12 +25,12 @@ public class Application extends Controller {
         return ok(index.render(""));
     }
     
-    public static Result artister() {
+    public static Result team() {
     	String currentUser = session("connected");
     	if(currentUser == null) {
             return ok(index.render("Du måste logga in först."));
     	}
-        return ok(artister.render("DJ " + currentUser));
+        return ok(team.render("DJ " + currentUser));
     }
     
     public static Result profilePage() {
@@ -123,6 +124,53 @@ public class Application extends Controller {
 		return ok(signup.render(""));
 	}
     
+    public static Result addTeam() {
+    	if (Form.form(Team.class).bindFromRequest().hasErrors()){
+ 		    return badRequest(team.render("Nu har något skrivits in fel"));
+ 		}
+    	
+    	Team team = Form.form(Team.class).bindFromRequest().get();
+ 		Connection conn = null;
+ 		Statement stmt = null;
+ 		String teamName = team.name;
+ 		
+ 		try {
+ 			conn = DB.getConnection();
+ 			stmt = conn.createStatement();
+ 			
+ 			String insertIntoDatabase = "INSERT INTO team" 
+ 			+ "(name) " + "VALUES" + "(" + "'" + teamName + "'" + ")";
+ 			
+ 			// execute insert SQL statement
+ 			stmt.executeUpdate(insertIntoDatabase);
+
+ 			// user.save();
+ 			session("connected", teamName);
+ 			return redirect(routes.Application.index());
+ 			
+ 		} catch (SQLException se) {
+ 			// Handle errors for JDBC
+// 			return internalServerError(se.toString());
+ 			return badRequest(index.render("Namn är redan taget."));
+ 		} catch (Exception e) {
+ 			// Handle errors for Class.forName
+ 			return internalServerError(e.toString());
+ 		} finally {
+ 			// finally block used to close resources
+ 			try {
+ 				if (stmt != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 			}// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 				return internalServerError(se.toString());
+ 			}// end finally try
+ 		}// end try
+    }
+    
     public static Result addUser() {
 			
     	if (Form.form(User.class).bindFromRequest().hasErrors()){
@@ -130,7 +178,6 @@ public class Application extends Controller {
  		}
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
- 		ObjectNode result = Json.newObject();
  		Connection conn = null;
  		Statement stmt = null;
  		String userEmail = user.email;

@@ -1,0 +1,9 @@
+@(message: String)
+	
+	Team
+	
+	<form action="@routes.Application.addTeam()" method="post">
+	Name: <input type="text" name="name" /><br></br>
+	<button>Create!</button>
+	</form>
+	@message
