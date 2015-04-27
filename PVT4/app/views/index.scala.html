@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
+@(message: String) 
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +20,6 @@
 
     <title>SBScorehunt</title>
 
-  </head>
-  <body>
   	<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
@@ -62,5 +59,22 @@
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-  </body>
-</html>
+    
+  <h1>Summerburst login</h1>
+<ul>
+	<button onClick="window.location.href='../artister'"> Artister </button>
+</ul>
+<ul>
+	<button onClick="window.location.href='../loginPage'"> Login!  </button>
+</ul>
+<ul>
+	<button onClick="window.location.href='../profile'"> Din profil </button>
+</ul>
+<ul>
+	<button onClick="window.location.href='../signup'"> Sign up! </button>
+</ul>
+<ul>
+	<button onClick="window.location.href='../logout'"> Logga ut!</button>
+</ul>
+  @message
+ 

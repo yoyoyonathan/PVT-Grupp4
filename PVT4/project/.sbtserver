@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 #Server Startup at 2015-04-21T20:14+0000
 #Tue Apr 21 22:14:53 CEST 2015
 server.uri=http\://0.0.0.0\:63347
+=======
+#Server Startup at 2015-04-21T12:42+0000
+#Tue Apr 21 14:42:05 CEST 2015
+server.uri=http\://0.0.0.0\:49308
+>>>>>>> Login
