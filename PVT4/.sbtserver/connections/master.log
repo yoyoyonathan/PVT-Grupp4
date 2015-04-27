@@ -1,13 +1,17 @@
-New log file opened at Wed Apr 08 11:26:46 CEST 2015 by 56487@eduroam-242-84.public.su.se
-Taking next connection to: 58059
-New client attempting to connect on port: 58060-58059
-  Address = /130.237.242.84:58059
-This client on port 58060 has uuid bf4d2c15-36dc-4762-9f8f-a674ef680b56 configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
-Connected Clients: activator-bf4d2c15-36dc-4762-9f8f-a674ef680b56
-Taking next connection to: 58059
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 56487@eduroam-242-84.public.su.se logs at Wed Apr 08 11:29:46 CEST 2015, goodbye.
+<<<<<<< HEAD
+New log file opened at Tue Apr 21 14:42:05 CEST 2015 by 516@eduroam-241-103.public.su.se
+Taking next connection to: 49308
+New client attempting to connect on port: 49310-49308
+  Address = /130.237.241.103:49308
+This client on port 49310 has uuid 848787f6-f900-49f2-8aa5-582b7ac9a0f0 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-848787f6-f900-49f2-8aa5-582b7ac9a0f0
+Taking next connection to: 49308
+=======
+New log file opened at Mon Apr 20 14:37:03 CEST 2015 by 3484@Dator-Filip
+Taking next connection to: 58852
+New client attempting to connect on port: 58853-58852
+  Address = /130.237.241.11:58852
+This client on port 58853 has uuid 6d86e414-18cc-413b-ac63-5032a034530a configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-6d86e414-18cc-413b-ac63-5032a034530a
+Taking next connection to: 58852
+>>>>>>> origin/Login
