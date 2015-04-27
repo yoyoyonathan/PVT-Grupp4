@@ -1,33 +1,146 @@
 @main(title = "Home") {
-<link rel="stylesheet" type="text/css" href="css/main.css"/>
-    
-  <h1>Summerburst login</h1>
-  
- 	 <form action="demo_form.asp">
- 		 Mail: <input type="text" name="mail"><br>
- 		 Password: <input type="text" name="password"><br>
-  		<input type="submit" value="Submit">
-	</form>
-   
-   
-    <script>
-	$(document).ready(function(){
-	    $("p").click(function(){
-	        $(this).hide();
-	    });
-	});
-	</script>
-    
-	<p>If you click on me, I will disappear.</p>
  
-  <p id="demo">JavaScript can change HTML content.</p>
-  
-  <button type="button"
-	onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">
-	Click Me!</button>
-  
-  <a href='@routes.Application.artister()'>Kolla in artisterna!</a>
-  
-  <a href='@routes.Application.profil()'> Länk till din profil</a>
-  
+<div class="navbar navbar-inverse navbar-static-top">
+	<div class="navbar-inner">
+		
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" href="#">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="../index.html">RWM</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Homepages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid1a.html">homepage A</a></li>
+							<li><a href="grid1b.html">homepage B</a></li>
+							<li><a href="grid1c.html">homepage C</a></li>
+							<li><a href="grid1d.html">homepage D</a></li>
+							<li><a href="grid1e.html">homepage E</a></li>
+							<li><a href="grid1f.html">homepage F</a></li>
+							<li><a href="grid1g.html">homepage G</a></li>
+							<li><a href="grid1h.html">homepage H</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid2a.html">Blog A</a></li>
+							<li><a href="grid2b.html">Blog B</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid5a.html">Shop A</a></li>
+							<li><a href="grid5b.html">Shop B</a></li>
+							<li><a href="grid5c.html">Shop C</a></li>
+							<li><a href="grid5d.html">Shop D</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid9a.html">Portfolio Isotope A</a></li>
+							<li><a href="grid9b.html">Portfolio Pinterest Isotope B</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pricing <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid10a.html">Pricing A</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Various <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid4a.html">Various A</a></li>
+							<li><a href="grid4b.html">Various B</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid6a.html">Login A</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Register <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid7a.html">Register A</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="grid8a.html">Contact A</a></li>
+							<li><a href="grid8b.html">Contact B</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="carousel" class="">		
+	<div id="myCarousel" class="carousel slide mbottom0">
+	  <div class="carousel-inner">
+	    <div class="active item">
+	    	<img src="@routes.Assets.at("images/slide-01.jpg")" />
+			<div class="container">
+				<div class="carousel-caption">
+					<h1>Summerburst competition time!!</h1>
+					<p class="lead">wow such awesome hemsida very wow</p>
+				</div>
+			</div>
+	    </div>
+			
+	    <div class="item">
+	    	<img src="@routes.Assets.at("images/slide-02.jpg")" />
+			<div class="container">
+				<div class="carousel-caption">
+					<h1>Another example of Responsive Web Template.</h1>
+					<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+				</div>
+			</div>
+	    </div>
+	
+	    <div class="item">
+	    	<img src="@routes.Assets.at("images/slide-03.jpg")" />
+			<div class="container">
+				<div class="carousel-caption">
+					<h1>Another example of Responsive Web Template.</h1>
+					<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+				</div>
+			</div>
+	    </div>
+	  </div>
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	</div>
+</div>
+
+
+ <p> Nu skapar jag en konflikt </p>
+
+
+	<p> hej jag heter lisa </p>
+	
+	<p> utfyllnadsrad</p>
+
+
+  <script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>
+
+  <script src="@routes.Assets.at("javascripts/jquery-validate/assets/js/jquery.validate.min.js")"></script>
+  <script src="@routes.Assets.at("javascripts/jquery-validate/assets/js/messages_it.js")"></script>
+  <script src="@routes.Assets.at("javascripts/jquery.isotope.min.js")"></script>
+  <script src="@routes.Assets.at("javascripts/touchTouch/assets/touchTouch/touchTouch.jquery.js")"></script>
+
+  <script src="@routes.Assets.at("javascripts/holder.js")"></script>
+  <script src="@routes.Assets.at("javascripts/script.js")"></script>
+
 }
