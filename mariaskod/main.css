@@ -4,7 +4,7 @@ body {
   background-color: #eee;
 }
 
-h1, h3, p{
+h1, h3, p,{
   text-align: center;
 }
 
@@ -14,7 +14,7 @@ h1, h3, p{
     margin-right: auto;
 }
 
-.form-signin, .twitter-timeline {
+.form-signin, .form-signup, .twitter-timeline {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
