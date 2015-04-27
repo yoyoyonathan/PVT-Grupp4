@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 # --- Created by Ebean DDL
 # To stop Ebean DDL generation, remove this comment and start using Evolutions
 
 # --- !Ups
 
-=======
-# --- Created by Ebean DDL
-# To stop Ebean DDL generation, remove this comment and start using Evolutions
-
-# --- !Ups
-
->>>>>>> origin/Login
 create table user (
   email                     varchar(255) not null,
   user_name                 varchar(255),
@@ -21,15 +13,9 @@ create table user (
 
 
 
-<<<<<<< HEAD
 
 # --- !Downs
 
-=======
-
-# --- !Downs
-
->>>>>>> origin/Login
 SET FOREIGN_KEY_CHECKS=0;
 
 drop table user;
