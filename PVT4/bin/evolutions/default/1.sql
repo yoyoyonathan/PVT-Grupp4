@@ -11,14 +11,18 @@ create table user (
   constraint pk_user primary key (email))
 ;
 
+create sequence user_seq;
+
 
 
 
 # --- !Downs
 
-SET FOREIGN_KEY_CHECKS=0;
+SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table user;
+drop table if exists user;
 
-SET FOREIGN_KEY_CHECKS=1;
+SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists user_seq;
 

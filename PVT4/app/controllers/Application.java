@@ -43,7 +43,7 @@ public class Application extends Controller {
     public static Result loginPage() {
     	String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("You are already logged in as " + currentUser + "."));
+             return ok(index.render("Du är redan inloggad som " + currentUser + "."));
         } 
     	return ok(loginPage.render(""));
     }
@@ -165,7 +165,8 @@ public class Application extends Controller {
  			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
- 			return internalServerError(se.toString());
+// 			return internalServerError(se.toString());
+ 			return badRequest(signup.render("Email/användarnamn är redan taget."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
