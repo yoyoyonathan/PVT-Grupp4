@@ -1,4 +1,11 @@
+html {
+  Height: 100%;
+
+}
+
+
 body {
+  min-height: 100%
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
@@ -53,4 +60,12 @@ h1, h3, p,{
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.top {
+ background: url(summerBurstBackground.jpg) no-repeat center center fixed; 
+ background-size:cover;
+ padding-top: 6em;
+ padding-bottom: 6em;
+
 }
