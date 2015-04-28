@@ -20,7 +20,7 @@ POST	/team						controllers.Application.addTeam()
 
 GET		/users						controllers.Application.getUsers()
 
-GET		/user						controllers.Application.getUser()
+GET		/user/birthDate				controllers.Application.getUserBirthDate()
 
 GET		/signup						controllers.Application.signup()
 

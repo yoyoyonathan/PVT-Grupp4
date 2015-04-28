@@ -288,40 +288,32 @@ public class Application extends Controller {
     	
     }
     
-	public static Result getUser() {
+	public static Result getUserBirthDate() {
 	    	
+		String resultS = "";
 		Connection conn = null;
 		Statement stmt = null;
+		
+		String userName = session("connected");
     	
     	try{
     		
-     		User user = Form.form(User.class).bindFromRequest().get();
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
 			
-			String userEmail = user.email;
-	 		String userPassword = user.password;
-		
-	 		String sql = "SELECT * FROM `user` WHERE `email` = " + "'" + userEmail + "'";
+			String sql = "SELECT * FROM `user` WHERE `username` = " + "'" + userName + "'";
 			
 			ResultSet rs = stmt.executeQuery(sql);
-			
-			if(rs.isBeforeFirst()){
-				rs.next();
-				
-				String email = rs.getString("email");
-				String password = rs.getString("password");
-				String userName = rs.getString("userName");
-					
-					if (userEmail.equals(email) && userPassword.equals(password)){
-					    rs.close();
-					    session("connected", userName);
-			 			return redirect(routes.Application.index());
-					}
-				} 
-				
-				rs.close();
-				return ok(index.render("Fel email/lösenord."));
+		
+		    while(rs.next()){
+		    	
+				int birthDate = rs.getInt("birthDate");
+				resultS = Integer.toString(birthDate);
+		    }
+		    
+		    rs.close();
+		    
+			return ok(resultS);
 				
 			}catch(SQLException se){
 				//Handle errors for JDBC
