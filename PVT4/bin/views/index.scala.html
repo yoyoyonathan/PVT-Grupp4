@@ -3,7 +3,7 @@
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
+    
    <!-- Included Bootstrap CSS Files -->
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap-responsive.min.css")" />
@@ -18,9 +18,8 @@
 
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/touchTouch/assets/touchTouch/touchTouch.css")" />
   
-  <!--<link rel="stylesheet" href="@routes.Assets.at("stylesheets/stylesheet.css")" />-->
-  
   <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
+  
    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
@@ -32,6 +31,15 @@
 
 
     <title>SBScorehunt</title>
+
+
+  	<ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
+      <li role="presentation"><a href="@routes.Application.profilePage()">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+	 <li role="presentation"><a href="@routes.Application.teamPage()">Team</a></li>
+      
+    </ul>
 
 <div class = "container" >
     <div class="top">
@@ -60,6 +68,7 @@
 
 
 
+
 <div class="container">
   <div class="middle">
       	<form class="form-signin">
@@ -79,6 +88,8 @@
     </div>
 
 
+    </div> <!-- /container -->
+
 <div class="container">
   <div class="bottom">
         <form class="form-signup">
@@ -93,6 +104,7 @@
         <input type="number" id="inputEmail" class="form-control" placeholder="Date of birth (YYMMDD)" required autofocus>
         
         <div class="link">
+
 
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>

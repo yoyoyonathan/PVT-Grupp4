@@ -48,6 +48,11 @@ public class Application extends Controller {
     	return ok(loginPage.render(""));
     }
     
+    public static Result teamPage() {
+    	return ok(teamPage.render(""));
+    }
+    
+    
     public static Result login() {
     	
 		Connection conn = null;
