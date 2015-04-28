@@ -1,12 +1,13 @@
 html {
-  Height: 100%;
-
+  height: 100%;
+  width: 100%;
 }
 
 
 body {
-  min-height: 100%
-  padding-top: 40px;
+  min-height: 100%;
+  width: 100%; 
+  padding-top: 0px;
   padding-bottom: 40px;
   background-color: #eee;
 }
@@ -21,7 +22,7 @@ h1, h3, p,{
     margin-right: auto;
 }
 
-.form-signin, .form-signup, .twitter-timeline {
+.form-signin, .form-signup, .panel {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
@@ -67,5 +68,22 @@ h1, h3, p,{
  background-size:cover;
  padding-top: 6em;
  padding-bottom: 6em;
+ height: 100vh;  
 
+}
+
+div.container {
+  display:table;
+
+}
+div.middle {
+display: table-cell;
+vertical-align: middle;
+height: 100vh;
+}
+
+.bottom {
+ height: 100vh;
+ display: table-cell;
+vertical-align: middle;
 }
