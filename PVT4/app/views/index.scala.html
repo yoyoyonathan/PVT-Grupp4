@@ -1,64 +1,129 @@
-@(message: String) 
+@(message: String)
 
- <meta charset="utf-8">
+  	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="main.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="index.js" type="text/css" media="screen" /> 
-    <!--Länk till vår css-->
-	<!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
+   <!-- Included Bootstrap CSS Files -->
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap-responsive.min.css")" />
+  
+  <!-- Includes FontAwesome -->
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/fontawesome/css/font-awesome.css")" />
+  
+  <!-- Included Bootstrap Customization CSS Files --> 
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap-extension.css")" />
+  
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/carousel-custom-01.css")" />
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/touchTouch/assets/touchTouch/touchTouch.css")" />
+  
+  <!--<link rel="stylesheet" href="@routes.Assets.at("stylesheets/stylesheet.css")" />-->
+  
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
     <title>SBScorehunt</title>
 
+<<<<<<< HEAD
   	<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
       <li role="presentation"><a href="@routes.Application.profilePage()">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
+=======
+<div class = "container" >
+    <div class="top">
+      <div class="row">
+       <div class="col-xs-12 col-md-12" > 
+        <h1 class="text-center">Summerburst <br> Scorehunt </br> 2015</h1>
+        <h3 class="text-center"> Det här är tävlingen för summerburst </h3>
+          <br> </br>
+          <section class="center-button text-center"> 
+          <label for="btn btn-lg btn-default">New user?</label>
+          <br></br>
+          <a class="btn btn-lg btn-default" href=#signUp>Sign up
+          </a>
+          <br></br>
+          <br></br>
+          <label for="btn btn-lg btn-primary">Already have an account? </label>
+          <br></br>
+          <a class="btn btn-lg btn-primary" href=#logIn>Log in</a>
+            </section> 
+       </div> 
+      </div>  
+    </div>
+</div>
+
+>>>>>>> origin/MariaLisa-login
 
 
-	<div class="container">
 
+
+<div class="container">
+  <div class="middle">
       	<form class="form-signin">
-        <h2 class="form-signin-heading">Logga in här för att tävla!</h2>
+        <h2 class="form-signin-heading">Log in!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
-        <label for="inputPassword" class="sr-only">Lösenord</label>
+        <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Lösenord" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Kom ihåg mig
-          </label>
-        </div>
+        
         <div class="link">
 
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <button class="btn btn-lg btn-default btn-block"type="newUser">New user</button>
-      </form>
+        <a class="forgot" href=#forgotPassword>Forgot password?</a>
+        </form>
+     </div>
+    </div>
 
+<<<<<<< HEAD
     </div> <!-- /container -->
 	
+=======
 
+<div class="container">
+  <div class="bottom">
+        <form class="form-signup">
+        <h2 class="form-signup-heading">Sign up!</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputEmail" class="sr-only">E-mail</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="inputbirthyear" class="sr-only">Date of birth</label>
+        <input type="number" id="inputEmail" class="form-control" placeholder="Date of birth (YYMMDD)" required autofocus>
+        
+        <div class="link">
+>>>>>>> origin/MariaLisa-login
+
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+     </div>
+    </div>
     
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    
+   <script src ="main.js" ></script> 
+
+  
   <h1>Summerburst login</h1>
 <ul>
 	<button onClick="window.location.href='../artister'"> Artister </button>
@@ -76,4 +141,4 @@
 	<button onClick="window.location.href='../logout'"> Logga ut!</button>
 </ul>
   @message
- 
+

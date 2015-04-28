@@ -1,13 +1,5 @@
-html {
-  height: 100%;
-  width: 100%;
-}
-
-
 body {
-  min-height: 100%;
-  width: 100%; 
-  padding-top: 0px;
+  padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
 }
@@ -22,11 +14,7 @@ h1, h3, p,{
     margin-right: auto;
 }
 
-<<<<<<< HEAD
 .form-signin, .form-signup, .twitter-timeline {
-=======
-.form-signin, .form-signup, .panel {
->>>>>>> origin/MariaLisa-login
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
@@ -65,29 +53,4 @@ h1, h3, p,{
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-.top {
- background: url(summerBurstBackground.jpg) no-repeat center center fixed; 
- background-size:cover;
- padding-top: 6em;
- padding-bottom: 6em;
- height: 100vh;  
-
-}
-
-div.container {
-  display:table;
-
-}
-div.middle {
-display: table-cell;
-vertical-align: middle;
-height: 100vh;
-}
-
-.bottom {
- height: 100vh;
- display: table-cell;
-vertical-align: middle;
 }
