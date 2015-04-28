@@ -143,13 +143,67 @@ public class Application extends Controller {
  			stmt.executeUpdate(insertIntoDatabase);
 
  			// user.save();
- 			session("connected", teamName);
  			return redirect(routes.Application.index());
  			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
  			return badRequest(index.render("Namn är redan taget."));
+ 		} catch (Exception e) {
+ 			// Handle errors for Class.forName
+ 			return internalServerError(e.toString());
+ 		} finally {
+ 			// finally block used to close resources
+ 			try {
+ 				if (stmt != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 			}// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 				return internalServerError(se.toString());
+ 			}// end finally try
+ 		}// end try
+    }
+    
+    public static Result addPoints() {			//Den här funkar inte, körd SQL kod. 
+    	Team team = Form.form(Team.class).bindFromRequest().get();
+ 		Connection conn = null;
+ 		Statement stmt = null;
+ 		String teamName = team.name;
+ 		int teamPoints = team.points;
+ 		
+ 		try {
+ 			conn = DB.getConnection();
+ 			stmt = conn.createStatement();
+ 			
+			String sql = "SELECT * FROM `team` WHERE `name` = " + "'" + teamName + "'";
+
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			if(rs.isBeforeFirst()){
+				rs.next();
+				
+				String name = rs.getString("name");
+				
+				if (teamName.equals(name)){
+				    rs.close();
+//				    String insertIntoDatabase = "UPDATE `team` WHERE `name` = " + "'" + teamName + "'" "SET `points` = " + "'" + teamPoints + ""
+					String insertIntoDatabase = "UPDATE `team` WHERE `name` = " + "'" + teamName + "'" + "(name) " + "VALUES" + "(" + "'" + teamPoints + "'" + ")" ;
+		 			stmt.executeUpdate(insertIntoDatabase);
+		 			return redirect(routes.Application.index());
+				}
+			}
+			
+			rs.close();
+ 			return redirect(routes.Application.index());
+ 			
+ 		} catch (SQLException se) {
+ 			// Handle errors for JDBC
+ 			return internalServerError(se.toString());
+// 			return badRequest(index.render("Namn är redan taget."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
@@ -288,7 +342,7 @@ public class Application extends Controller {
     	
     }
     
-	public static Result getUserBirthDate() {
+	public static Result getUserBirthDate() {			//Så här ska man inte göra :/
 	    	
 		String resultS = "";
 		Connection conn = null;

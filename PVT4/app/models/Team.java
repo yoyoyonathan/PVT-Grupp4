@@ -15,10 +15,17 @@ public class Team extends Model {
 	@Id
 	@Constraints.Required
 	public String name;
-//	public ArrayList<User> members;
+	public ArrayList<User> members;
+	public int points;
+	public ArrayList<String> wall;
 	
-	public Team(String name) {
+	public Team(String name) {			
 		this.name = name;
+	}
+	
+	public void addMember(User user) {
+		if (members.size() < 5)
+			members.add(user);
 	}
 	
 	public static Finder<String,Team> find = new Finder<String,Team>(

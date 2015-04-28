@@ -27,3 +27,5 @@ GET		/signup						controllers.Application.signup()
 GET		/logout						controllers.Application.logout()
 
 POST	/login						controllers.Application.login()
+
+POST	/team/addPoints				controllers.Application.addPoints()
