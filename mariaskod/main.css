@@ -16,26 +16,11 @@ h1, h3, p,{
   text-align: center;
 }
 
-<<<<<<< Updated upstream
-.form-signin, .form-signup, .panel {
-
-=======
-.twitter-timeline {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.navbar {
+  margin-bottom: 20px;
 }
 
-.form-signin, .form-signup, .twitter-timeline {
->>>>>>> Stashed changes
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-
-
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
+.form-signin .form-control {
   margin-bottom: 10px;
 }
 .form-signin .checkbox {

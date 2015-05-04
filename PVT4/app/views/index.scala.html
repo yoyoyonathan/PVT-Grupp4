@@ -75,28 +75,42 @@ $(document).ready(function (){
 
 <div class="container">
     <div class="top text-center">
-      <div class="col-xs-12">
+      <div class="col-lg-6">
       <label class="border">
-        <button type="button" class="btn btn-default navbar-btn">Connect me with a random team!</button>
+        <button type="button" class="btn btn-default">Connect me with a random team!</button>
         <br></br>
       </label>
       </div>
-    </div>
-    <div class="row text-center">
-  <div class="col-xs-12">
-    <div class="input-group">
+    <div class="col-lg-6">
+      <form class ="form-search">
+      <div class="input-group text-center">
+        <input type="text" class="form-control" id="searchbox" placeholder="Search for...">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
       </span>
-      <input type="text" class="form-control" placeholder="Search for team...">
     </div><!-- /input-group -->
+  </form>
   </div><!-- /.col-lg-6 -->
   </div>
+</div>
+  <!--<div class="col-xs-12">
+    <div class="input-group">
+      <span class="input-group-addon">
+      <form  class="form-search" action="@routes.Application.login()" method="post">
+        <input type="text" class="form-control" id="searchteam" placeholder="Search for team..." aria-describedby="sizing-addon2">
+      </form>
+      
+        <button id="go" class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+  </div>
+</div>
 
     </div><!-- /.navbar-collapse -->
   
 
-	<div class = "container" >
+	<div id="top" class = "container" >
 	    <div class="top">
 	      <div class="row">
 	       <div class="col-xs-12 col-md-12" > 
