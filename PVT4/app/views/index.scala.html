@@ -42,7 +42,7 @@ $(document).ready(function (){
             $("#topsign").click(function (){
                 //$(this).animate(function(){
                     $('html, body').animate({
-                        scrollTop: $("#conmid").offset().top
+                        scrollTop: $("#conbottom").offset().top
                     }, "fast");
                 //});
             });
@@ -105,8 +105,8 @@ $(document).ready(function (){
 	          <section class="center-button text-center"> 
 	          <label for="btn btn-lg btn-default">New user?</label>
 	          <br></br>
-	          <a id="signbut" class="btn btn-lg btn-default">Sign up
-	          </a>
+	          <button id="topsign" class="btn btn-lg btn-default">Sign up
+	          </button>
 	          <br></br>
 	          <br></br>
 	          <label for="btn btn-lg btn-primary">Already have an account? </label>
