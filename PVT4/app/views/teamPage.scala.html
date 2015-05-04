@@ -41,35 +41,76 @@
 	 
 	 <li role="Team"><a href="@routes.Application.teamPage()">Team</a></li>  
     </ul>
-    
 
-<div class = "container"  style="float: left">
-    <div class="top">
+
+
+<div class = "container" >
+    <div class="baraEnMellanRad1">
       <div class="row text-bottom">
+<p></p>
+	  </div> 
+    </div>  
+</div>
+<div class = "container" >
+    <div class="baraEnMellanRad2">
+      <div class="row">
+<p></p>
+	  </div> 
+    </div>  
+</div>
+
+
+
+<div class = "Strul"  style="float: left">
+    <div class="toppenbra">
+      <div class="row">
        <div class="col-xs-12 col-md-12" > 
-       <form method="post" action="">
-       <textarea name="comments" cols="150" rows="5" style="width:300px";>Chat with you teammates...
+       <a class="thumbnail" href="@routes.Assets.at("/images/profbild.jpg")" title=""><img src="@routes.Assets.at("/images/profbild.jpg")" data-gallery="" title="" alt="" /></a>
 		</textarea>
+		<h1>TeamNamE</h1>
        </div> 
       </div>  
     </div>
 </div>
 
 
-<div class = "container"  style="float: right">
+
+<!--
+<div class = "container" >
     <div class="top text-center">
       <div class="row text-bottom">
        <div class="col-xs-12 col-md-12" > 
        <form method="post" action="">
        <textarea name="comments" cols="150" rows="5" style="width:300px";>Chat with you teammates...
 		</textarea>
+		<input type="submit"><br></br>
        </div> 
       </div>  
     </div>
 </div>
+-->
 
 
+<div class = "container" >
+    <div class="baraEnMellanRad text-center">
+      <div class="row text-bottom">
 
+	  </div> 
+    </div>  
+</div>
+
+
+<div class = "container" style="float: left" >
+	<div class="topp">
+		<div class="col-xs-12 col-md-12" >
+	<!-- begin htmlcommentbox.com -->
+ 		<div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
+ 		<link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
+ 		<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+	<!-- end htmlcommentbox.com -->
+		</div> 
+    </div>  
+</div>
 <!--
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
