@@ -60,6 +60,12 @@ h1, h3, p,{
   border-top-right-radius: 0;
 }
 
+.form-search input[type="text"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 
 .top {
  background: url "(@routes.public("images/summerBurstBackground.jpg")" no-repeat center center fixed; 
