@@ -30,12 +30,12 @@ public class Application extends Controller {
         return ok(team.render("DJ " + currentUser + " mafia"));
     }
     
-    public static Result profilePage() {
+    public static Result profilePage(String email) {
     	String currentUser = session("connected");
     	if(currentUser == null) {
             return ok(index.render("Du måste logga in först."));
     	}
-		return ok(profilePage.render("You are " + currentUser + "."));
+		return ok(profilePage.render(getUser(email)));
     }
     
     public static Result loginPage() {
@@ -128,6 +128,7 @@ public class Application extends Controller {
  		}
     	
     	Team team = Form.form(Team.class).bindFromRequest().get();
+		PreparedStatement preparedStatement;
  		Connection conn = null;
  		Statement stmt = null;
  		String teamName = team.name;
@@ -136,12 +137,11 @@ public class Application extends Controller {
  			conn = DB.getConnection();
  			stmt = conn.createStatement();
  			
- 			String insertIntoDatabase = "INSERT INTO team" 
- 			+ "(name) " + "VALUES" + "(" + "'" + teamName + "'" + ")";
+ 			String insertIntoDatabase = "INSERT INTO team (name) VALUES(?)";
+ 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
+			preparedStatement.setString(1, teamName);
+			preparedStatement.executeUpdate();
  			
- 			// execute insert SQL statement
- 			stmt.executeUpdate(insertIntoDatabase);
-
  			// user.save();
  			return redirect(routes.Application.index());
  			
@@ -154,11 +154,11 @@ public class Application extends Controller {
  			return internalServerError(e.toString());
  		} finally {
  			// finally block used to close resources
- 			try {
- 				if (stmt != null)
- 					conn.close();
- 			} catch (SQLException se) {
- 			}// do nothing
+// 			try {
+// 				if (stmt != null)
+// 					conn.close();
+// 			} catch (SQLException se) {
+// 			}// do nothing
  			try {
  				if (conn != null)
  					conn.close();
@@ -168,10 +168,12 @@ public class Application extends Controller {
  		}// end try
     }
     
-    public static Result addPoints() {			//Den här funkar inte, körd SQL kod. 
+    public static Result addPoints() {			//Den här funkar 
     	Team team = Form.form(Team.class).bindFromRequest().get();
  		Connection conn = null;
  		Statement stmt = null;
+		PreparedStatement preparedStatement = null;
+ 		
  		String teamName = team.name;
  		int teamPoints = team.points;
  		
@@ -182,24 +184,25 @@ public class Application extends Controller {
 			String sql = "SELECT * FROM `team` WHERE `name` = " + "'" + teamName + "'";
 
 			ResultSet rs = stmt.executeQuery(sql);
+			rs.next();
+			String name = rs.getString("name");
+			int points = rs.getInt("points");
+			teamPoints += points;
+			rs.close();
 			
-			if(rs.isBeforeFirst()){
-				rs.next();
-				
-				String name = rs.getString("name");
-				
-				if (teamName.equals(name)){
-				    rs.close();
-//				    String insertIntoDatabase = "UPDATE `team` WHERE `name` = " + "'" + teamName + "'" "SET `points` = " + "'" + teamPoints + ""
-					String insertIntoDatabase = "UPDATE `team` WHERE `name` = " + "'" + teamName + "'" + "(name) " + "VALUES" + "(" + "'" + teamPoints + "'" + ")" ;
-		 			stmt.executeUpdate(insertIntoDatabase);
-		 			return redirect(routes.Application.index());
-				}
+			if (name == null || name.isEmpty() || !name.equals(teamName)) {
+				throw new SQLException();
 			}
 			
-			rs.close();
- 			return redirect(routes.Application.index());
- 			
+			String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
+				    
+			preparedStatement = conn.prepareStatement(insertIntoDatabase);
+			preparedStatement.setInt(1, teamPoints);
+			preparedStatement.setString(2, teamName);
+			preparedStatement.executeUpdate();
+				    
+		 	return redirect(routes.Application.index());
+			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
  			return internalServerError(se.toString());
@@ -231,7 +234,7 @@ public class Application extends Controller {
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
  		Connection conn = null;
- 		Statement stmt = null;
+		PreparedStatement preparedStatement;
  		String userEmail = user.email;
  		String userUserName = user.userName;
  		String userPassword = user.password;
@@ -243,39 +246,34 @@ public class Application extends Controller {
 
  		try {
  			conn = DB.getConnection();
- 			stmt = conn.createStatement();
  			
- 			//PreparedStatement statement = conn.prepareStatement("INSERT INTO user(email,userName,password,birthDate) VALUES(?,?,?,?)");
- 			//statement.setString(1, userEmail);
- 			//statement.setString(2, userName);
- 			//statement.setString(3, userPassword);
- 			//statement.setInt(4, userBirthDate);
- 			
- 			String insertIntoDatabase = "INSERT INTO user" 
- 			+ "(email, userName, password, birthDate) " + "VALUES" + "(" + "'" +userEmail + "'" + "," + "'" + userUserName + "'" 
- 					+ "," + "'" + userPassword + "'" + "," + "'" + userBirthDate + "'" + ")";
- 			
+ 			String insertIntoDatabase = "INSERT INTO user (email, username, password, birthdate) VALUES(?,?,?,?)";
+ 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
+			preparedStatement.setString(1, userEmail);
+			preparedStatement.setString(2, userUserName);
+			preparedStatement.setString(3, userPassword);
+			preparedStatement.setInt(4, userBirthDate);
+			preparedStatement.executeUpdate();
  			// execute insert SQL statement
- 			stmt.executeUpdate(insertIntoDatabase);
 
  			// user.save();
  			session("connected", userUserName);
  			return redirect(routes.Application.index());
  			
  		} catch (SQLException se) {
- 			// Handle errors for JDBC
-// 			return internalServerError(se.toString());
- 			return badRequest(signup.render("Email/användarnamn är redan taget."));
+// 			 Handle errors for JDBC
+ 			return internalServerError(se.toString());
+// 			return badRequest(signup.render("Email/användarnamn är redan taget."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
  		} finally {
  			// finally block used to close resources
- 			try {
- 				if (stmt != null)
- 					conn.close();
- 			} catch (SQLException se) {
- 			}// do nothing
+// 			try {
+// 				if (stmt != null)
+// 					conn.close();
+// 			} catch (SQLException se) {
+ 			// do nothing
  			try {
  				if (conn != null)
  					conn.close();
@@ -295,7 +293,7 @@ public class Application extends Controller {
     		
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
-		
+			
 			String sql = "SELECT * FROM user";
 			
 			ResultSet rs = stmt.executeQuery(sql);
@@ -342,53 +340,51 @@ public class Application extends Controller {
     	
     }
     
-	public static Result getUserBirthDate() {			//Så här ska man inte göra :/
+	public static User getUser(String email) {			
 	    	
-		String resultS = "";
 		Connection conn = null;
 		Statement stmt = null;
 		
-		String userName = session("connected");
+		User u = new User();
     	
     	try{
     		
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
-			
-			String sql = "SELECT * FROM `user` WHERE `username` = " + "'" + userName + "'";
+		
+			String sql = "SELECT * FROM `user` WHERE `email` = " + "'" + email + "'";
 			
 			ResultSet rs = stmt.executeQuery(sql);
-		
-		    while(rs.next()){
-		    	
-				int birthDate = rs.getInt("birthDate");
-				resultS = Integer.toString(birthDate);
-		    }
-		    
-		    rs.close();
-		    
-			return ok(resultS);
-				
+			rs.next();
+			u.email = rs.getString("email");
+			u.userName = rs.getString("username");
+			u.password = rs.getString("password");
+			u.birthDate = rs.getInt("birthdate");
+			rs.close();
+			
+			return u;
+			
 			}catch(SQLException se){
 				//Handle errors for JDBC
-		        return internalServerError(se.toString());
-			}catch(Exception e){
-		    	//Handle errors for Class.forName
-		        return internalServerError(e.toString());
-		 	}finally{
-				 //finally block used to close resources
-				 try{
-				    if(stmt!=null)
-				       conn.close();
-				 }catch(SQLException se){
-				 }// do nothing
-				 try{
-				    if(conn!=null)
-				       conn.close();
-				 }catch(SQLException se){
-				    return internalServerError(se.toString());
-				 }//end finally try
-		   	}//end try
+		        return null;
+			}
+//    	catch(Exception e){
+//		    	//Handle errors for Class.forName
+//		        return internalServerError(e.toString());
+//		 	}finally{
+//				 //finally block used to close resources
+//				 try{
+//				    if(stmt!=null)
+//				       conn.close();}
+//				 catch(SQLException se){
+//				 }// do nothing
+//				 try{
+//				    if(conn!=null)
+//				       conn.close();
+//				 }catch(SQLException se){
+//				    return internalServerError(se.toString());
+//				 }//end finally try
+//		   	}//end try
 	    	
 	    }
 }    

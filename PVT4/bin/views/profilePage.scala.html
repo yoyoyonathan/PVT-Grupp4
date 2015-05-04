@@ -1,4 +1,4 @@
-@(message: String)
+@(user: User)
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,18 +29,17 @@
 	
   	<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="@routes.Application.index()">Home</a></li>
-      <li role="presentation"><a href="@routes.Application.profilePage()">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
-  
+    
 	<button onClick="window.location.href='../'">Tillbaka till start</button>
     
 	<div class="container">
 
       	<ul>
 			<li>BILD:</li>
-			<li>USER: @message</li>
-			<li>AGE: <p id="age"> </p> </li>
+			<li>USER: @user.userName </li>
+			<li>AGE: @user.birthDate </li>
 		</ul>
 
     </div>
@@ -52,7 +51,7 @@
 				<input value="Ladda upp!" type="submit">
 			</form>
 		</li>
-		<li>User: @message</li>
+		<li>User: </li>
 		<li>age: </li>
 	</ul>
 

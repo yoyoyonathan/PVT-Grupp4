@@ -19,12 +19,12 @@ public class User extends Model{
 	public String password;
 	public int birthDate;		//Tänkt att vara 6 siffror så kan man kolla ålder med krokodilmunnar
 	
-	public User(String email, String userName, String password, int birthDate){
-		this.email = email;
-		this.userName = userName;
-		this.password = password;
-		this.birthDate = birthDate;
-	}
+//	public User(String email, String userName, String password, int birthDate){
+//		this.email = email;
+//		this.userName = userName;
+//		this.password = password;
+//		this.birthDate = birthDate;
+//	}
 	
 	public static Finder<String,User> find = new Finder<String,User>(
 	        String.class, User.class
