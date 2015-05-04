@@ -16,12 +16,6 @@ h1, h3, p,{
   text-align: center;
 }
 
-<<<<<<< HEAD
-.form-signin, .form-signup, .panel {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-=======
 .navbar {
   margin-bottom: 20px;
 }
@@ -40,7 +34,6 @@ h1, h3, p,{
           box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
->>>>>>> urmastermaria
 }
 
 .form-signin .form-control:focus{
@@ -82,10 +75,6 @@ h1, h3, p,{
  height: 100vh;  
  display:table-cell;
 vertical-align: middle;
-<<<<<<< HEAD
-
-=======
->>>>>>> urmastermaria
 }
 
 div.container {
