@@ -80,9 +80,3 @@ height: 100vh;
  display: table-cell;
 vertical-align: middle;
 }
-
-.bottom2 {
-  background: url(bottom2background.jpg) no-repeat center center fixed; 
- padding-top: 6em;
- padding-bottom: 6em;
-}
