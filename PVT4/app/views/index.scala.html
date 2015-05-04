@@ -47,6 +47,14 @@ $(document).ready(function (){
                     }, "fast");
                 //});
             });
+            var par = $('#navbar');
+              $(par).hide();
+  
+          $('p').click(function(e) {
+            $(par).slideToggle('slow');
+              $("p").hide();
+            e.preventDefault();
+  });
         });
 
 </script>
@@ -60,7 +68,7 @@ $(document).ready(function (){
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>-->
     
-<div class="container">
+<div id="navbar" class="container">
     <div class="navbartop text-center">
       <div class="col-xs-12">
         <ul class="nav nav-pills">
@@ -72,7 +80,7 @@ $(document).ready(function (){
     </div>
   </div>
   
-
+<p>Hallåå</p>
 <div class="container">
     <div class="top text-center">
       <div class="col-xs-12">
