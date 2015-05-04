@@ -62,11 +62,6 @@ h1, h3, p,{
  padding-top: 6em;
  padding-bottom: 6em;
  height: 100vh;  
-<<<<<<< HEAD
- display:table-cell;
-vertical-align: middle;
-=======
->>>>>>> Maria-2
 
 }
 
@@ -74,10 +69,6 @@ div.container {
   display:table;
 
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> Maria-2
 div.middle {
 display: table-cell;
 vertical-align: middle;
@@ -89,12 +80,3 @@ height: 100vh;
  display: table-cell;
 vertical-align: middle;
 }
-<<<<<<< HEAD
-=======
-
-.bottom2 {
-  background: url(bottom2background.jpg) no-repeat center center fixed; 
- padding-top: 6em;
- padding-bottom: 6em;
-}
->>>>>>> Maria-2
