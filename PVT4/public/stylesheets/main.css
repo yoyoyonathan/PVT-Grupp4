@@ -16,11 +16,22 @@ h1, h3, p,{
   text-align: center;
 }
 
+<<<<<<< HEAD
 .form-signin, .form-signup, .panel {
 
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+=======
+.navbar {
+  margin-bottom: 20px;
+}
+
+.top {
+	position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
 }
 
 

@@ -34,15 +34,47 @@
 
     <title>SBScorehunt</title>
 
-
-	<!--
-  	<ul class="nav nav-tabs">
+  	<!--<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
       <li role="presentation"><a href="../profile#personligt">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
-    </ul>
-	-->
+    </ul>-->
+    
+<div class="container">
+    <div class="navbartop text-center">
+      <div class="col-xs-12">
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">My team</a></li>
+          <li role="presentation"><a href="#">Enter Code</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
 
+<div class="container">
+    <div class="top text-center">
+      <div class="col-xs-12">
+      <label class="border">
+        <button type="button" class="btn btn-default navbar-btn">Connect me with a random team!</button>
+        <br></br>
+      </label>
+      </div>
+    </div>
+    <div class="row text-center">
+  <div class="col-xs-12">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for team...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  </div>
+
+    </div><!-- /.navbar-collapse -->
+  
 <div class = "container" >
     <div class="top">
       <div class="row">
@@ -66,8 +98,6 @@
     </div>
 </div>
 
-
-<!--
 	<div class = "container" >
 	    <div class="top">
 	      <div class="row">
@@ -91,7 +121,6 @@
 	    </div>
 	</div>
 
--->
 
 <div class="container">
   <div class="middle">
@@ -112,8 +141,6 @@
     </div>
 
 
-    </div> <!-- /container -->
-	
 <div class="container">
   <div class="bottom">
         <form class="form-signup" action="@routes.Application.addUser()" method ="post">
