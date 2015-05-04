@@ -16,22 +16,21 @@ h1, h3, p,{
   text-align: center;
 }
 
-<<<<<<< HEAD
+<<<<<<< Updated upstream
 .form-signin, .form-signup, .panel {
 
 =======
-.navbar {
-  margin-bottom: 20px;
+.twitter-timeline {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.top {
-	position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+.form-signin, .form-signup, .twitter-timeline {
+>>>>>>> Stashed changes
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
 }
 
 
@@ -73,6 +72,8 @@ h1, h3, p,{
  padding-top: 6em;
  padding-bottom: 6em;
  height: 100vh;  
+ display:table-cell;
+vertical-align: middle;
 
 }
 
@@ -80,6 +81,7 @@ div.container {
   display:table;
 
 }
+
 div.middle {
 display: table-cell;
 vertical-align: middle;
@@ -91,3 +93,11 @@ height: 100vh;
  display: table-cell;
 vertical-align: middle;
 }
+
+
+.bottom2 {
+  background: url(bottom2background.jpg) no-repeat center center fixed; 
+ padding-top: 6em;
+ padding-bottom: 6em;
+}
+
