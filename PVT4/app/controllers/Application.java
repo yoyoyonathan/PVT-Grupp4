@@ -125,8 +125,8 @@ public class Application extends Controller {
 		return ok(signup.render(""));
 	}
     
-    public static Result addTeam() {
-    	if (Form.form(Team.class).bindFromRequest().hasErrors()){
+    public static Result addTeam() {					//Som det är nu, om man är med i ett lag och försöker skapa ett nytt så 
+    	if (Form.form(Team.class).bindFromRequest().hasErrors()){ 	//skapas laget fortfarande, men användaren kommer inte med i laget
  		    return badRequest(index.render("Nu har något skrivits in fel"));
  		}
     	
@@ -160,22 +160,16 @@ public class Application extends Controller {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
  		} finally {
- 			// finally block used to close resources
-// 			try {
-// 				if (stmt != null)
-// 					conn.close();
-// 			} catch (SQLException se) {
-// 			}// do nothing
  			try {
  				if (conn != null)
  					conn.close();
  			} catch (SQLException se) {
  				return internalServerError(se.toString());
- 			}// end finally try
- 		}// end try
+ 			}
+ 		}
     }
     
-    public static Result addTeamMember() {		//Max 4 per team. 
+    public static Result addTeamMember() {			//Går att gå med i ett Team som inte finns.  
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){
  		    return badRequest(index.render("Fel i formulär"));
  		}
@@ -196,7 +190,7 @@ public class Application extends Controller {
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			ArrayList<String> users = new ArrayList<String>();
-			String user;
+			String user = "empty";
 			
 		    while(rs.next()){
 				user = rs.getString("user");
@@ -204,7 +198,7 @@ public class Application extends Controller {
 		   	}
 		    rs.close();
  			
- 			if (users.size() < 4){
+ 			if (users.size() < 4 && !user.equals("empty")){
  				
 	 			String insertIntoDatabase = "INSERT INTO teammember (user, team) VALUES(?,?)";
 	 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
@@ -217,28 +211,21 @@ public class Application extends Controller {
  			
  			return badRequest(index.render("Teamet är redan fullt!"));
 	 			
- 		} catch (SQLException se) {
+    	} catch (SQLException se) {
  			// Handle errors for JDBC
-// 			return internalServerError(se.toString());
- 			return badRequest(index.render("Namn är redan taget."));
+ 			return internalServerError(se.toString());
+// 			return badRequest(index.render("Namn är redan taget."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
  		} finally {
- 			// finally block used to close resources
-// 			try {
-// 				if (stmt != null)
-// 					conn.close();
-// 			} catch (SQLException se) {
-// 			}// do nothing
  			try {
  				if (conn != null)
  					conn.close();
  			} catch (SQLException se) {
  				return internalServerError(se.toString());
- 			}// end finally try
- 		}// end try
-    	
+ 			}
+ 		}
     }
     
     public static Result randomizeTeam(){			//Typ klar, blir knas om två nya har samma namn
@@ -272,7 +259,6 @@ public class Application extends Controller {
 		    	int low = 0;
 		    	int high = teams.size();
 		    	int R = r.nextInt(high-low) + low;
-
 		    	String teamName = teams.get(R);
 		    	
 				String sql2 = "SELECT * FROM `teammember` WHERE `team` = " + "'" + teamName + "'";
