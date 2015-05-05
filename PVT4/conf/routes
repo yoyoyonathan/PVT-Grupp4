@@ -25,3 +25,5 @@ GET		/logout						controllers.Application.logout()
 POST	/login						controllers.Application.login()
 
 GET		/teamPage					controllers.Application.teamPage()
+
+GET		/codeSubmit					controllers.Application.codeSubmit()

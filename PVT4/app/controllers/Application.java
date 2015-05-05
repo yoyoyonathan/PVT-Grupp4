@@ -52,6 +52,9 @@ public class Application extends Controller {
     	return ok(teamPage.render(""));
     }
     
+    public static Result codeSubmit() {
+    	return ok(codeSubmit.render(""));
+    }
     
     public static Result login() {
     	
