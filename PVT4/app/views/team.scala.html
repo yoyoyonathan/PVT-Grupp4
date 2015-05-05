@@ -9,9 +9,8 @@
 	</form>
 	
 	<h3>Add Member</h3>
-	<form action="@routes.Application.addTeam()" method="post">
+	<form action="@routes.Application.addTeamMember()" method="post">
 	Team name: <input type="text" name="name" />
-	User name: <input type="text" name="user" /><br></br>
 	<button>Addera!</button>
 	</form>
 	
@@ -20,4 +19,9 @@
 	Team name: <input type="text" name="name" />
 	Number of points: <input type="number" name="points" /><br></br>
 	<button>Kör!</button>
+	</form>
+	
+	<h3> Slumpa lag </h3>
+	<form action="@routes.Application.randomizeTeam()" method="post">
+	<input type="submit" value="Slumpmaskin">
 	</form>

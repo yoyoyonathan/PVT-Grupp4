@@ -18,6 +18,8 @@ POST	/user						controllers.Application.addUser()
 
 POST	/teamadd					controllers.Application.addTeam()
 
+POST	/addMember					controllers.Application.addTeamMember()
+
 GET		/users						controllers.Application.getUsers()
 
 GET		/signup						controllers.Application.signup()
@@ -26,6 +28,8 @@ GET		/logout						controllers.Application.logout()
 
 POST	/login						controllers.Application.login()
 
-POST	/team/addPoints				controllers.Application.addPoints()
+POST	/addPoints					controllers.Application.addPoints()
+
+POST	/randomize					controllers.Application.randomizeTeam()
 
 
