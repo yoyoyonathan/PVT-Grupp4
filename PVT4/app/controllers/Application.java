@@ -25,26 +25,17 @@ public class Application extends Controller {
     }
     
     public static Result artister() {
-    	String currentUser = session("connected");
-    	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
-    	}
-        return ok(artister.render("DJ " + currentUser));
+    	
+        return ok(artister.render("DJ "));
     }
     
     public static Result profilePage() {
-    	String currentUser = session("connected");
-    	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
-    	}
-		return ok(profilePage.render("You are " + currentUser + "."));
+    	
+		return ok(profilePage.render(""));
     }
     
     public static Result loginPage() {
-    	String currentUser = session("connected");
-        if(currentUser != null) {
-             return ok(index.render("Du är redan inloggad som " + currentUser + "."));
-        } 
+    	
     	return ok(loginPage.render(""));
     }
     
