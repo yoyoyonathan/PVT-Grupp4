@@ -47,15 +47,6 @@ $(document).ready(function (){
                     }, "fast");
                 //});
             });
-
-            $("#uptotop").click(function (){
-                //$(this).animate(function(){
-              $('html, body').animate({
-                scrollTop: $("#top").offset().top
-              }, "fast");
-               //});
-            });
-
             var par = $('#navbar');
               $(par).hide();
   
@@ -64,7 +55,7 @@ $(document).ready(function (){
               $("p").hide();
             e.preventDefault();
   });
-});      
+        });
 
 </script>
 
@@ -185,23 +176,18 @@ $(document).ready(function (){
     </div>
     
  <div class ="container">
-   <div class="bottom2 text-center">
+   <div class="bottom2">
       <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</hr>
       <h5 class="text-center"> här står själv lilla informationen</h5>
-      <br></br>
-      <button type="button" id="uptotop" class="btn btn-default btn-xs">
-      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>Up to top</button>
    </div>
   </div>
-<br></br>
- 
-  <div class="container">
-   <div class="twitter text-center">
-   <!-- <div class="w-widget w-widget-twitter twitter">
-    <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
-  </div> -->
- </div>
-</div>
+
+
+  
+  <div class="w-widget w-widget-twitter twitter">
+  <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
+  </div>
+
     
 <!--
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -214,6 +200,7 @@ $(document).ready(function (){
    <script src ="main.js" ></script>
     <!--<script src="@routes.Assets.at("jquerys.js")"></script>-->
 
+  
  <!-- <h1>Summerburst login</h1>
 <ul>
 	<button onClick="window.location.href='../artister'"> Artister </button>
