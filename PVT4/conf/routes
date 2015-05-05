@@ -10,13 +10,13 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 GET		/profile/:email				controllers.Application.profilePage(email: String)
 
-GET		/teamPage					controllers.Application.team()
+GET		/team/:name					controllers.Application.team(name: String)
 
 GET		/loginPage					controllers.Application.loginPage()
 
 POST	/user						controllers.Application.addUser()
 
-POST	/team						controllers.Application.addTeam()
+POST	/teamadd					controllers.Application.addTeam()
 
 GET		/users						controllers.Application.getUsers()
 

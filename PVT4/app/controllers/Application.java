@@ -22,12 +22,8 @@ public class Application extends Controller {
         return ok(index.render(""));
     }
     
-    public static Result team() {
-    	String currentUser = session("connected");
-    	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
-    	}
-        return ok(team.render("DJ " + currentUser + " mafia"));
+    public static Result team(String name) {
+        return ok(team.render(getTeam(name)));
     }
     
     public static Result profilePage(String email) {
@@ -124,18 +120,16 @@ public class Application extends Controller {
     
     public static Result addTeam() {
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){
- 		    return badRequest(team.render("Nu har något skrivits in fel"));
+ 		    return badRequest(index.render("Nu har något skrivits in fel"));
  		}
     	
     	Team team = Form.form(Team.class).bindFromRequest().get();
 		PreparedStatement preparedStatement;
  		Connection conn = null;
- 		Statement stmt = null;
  		String teamName = team.name;
  		
  		try {
  			conn = DB.getConnection();
- 			stmt = conn.createStatement();
  			
  			String insertIntoDatabase = "INSERT INTO team (name) VALUES(?)";
  			preparedStatement = conn.prepareStatement(insertIntoDatabase);
@@ -168,7 +162,53 @@ public class Application extends Controller {
  		}// end try
     }
     
-    public static Result addPoints() {			//Den här funkar 
+    public static Team getTeam(String name) {			
+    	
+		Connection conn = null;
+		Statement stmt = null;
+		
+		Team t = new Team();
+    	
+    	try{
+    		
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+		
+			String sql = "SELECT * FROM `team` WHERE `name` = " + "'" + name + "'";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			rs.next();
+			t.name = rs.getString("name");
+			t.points = rs.getInt("points");
+			rs.close();
+			
+			return t;
+			
+			}catch(SQLException se){
+				//Handle errors for JDBC
+		        return null;
+			}
+//    	catch(Exception e){
+//		    	//Handle errors for Class.forName
+//		        return internalServerError(e.toString());
+//		 	}finally{
+//				 //finally block used to close resources
+//				 try{
+//				    if(stmt!=null)
+//				       conn.close();}
+//				 catch(SQLException se){
+//				 }// do nothing
+//				 try{
+//				    if(conn!=null)
+//				       conn.close();
+//				 }catch(SQLException se){
+//				    return internalServerError(se.toString());
+//				 }//end finally try
+//		   	}//end try
+	    	
+	    }
+    
+    public static Result addPoints() {			//Kommer inte fungera såhör i praktiken, får anpassa efter frontend senare
     	Team team = Form.form(Team.class).bindFromRequest().get();
  		Connection conn = null;
  		Statement stmt = null;
@@ -240,9 +280,9 @@ public class Application extends Controller {
  		String userPassword = user.password;
  		int userBirthDate = user.birthDate;
  		
- 		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){
- 		    return badRequest(signup.render("Använd endast bokstäver och siffror till ditt användarnamn."));
- 		}
+// 		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){		//Vi har ju inte riktigt bestämt oss hur vi ska göra med felhanteringen ännu
+// 		    return badRequest(signup.render("Använd endast bokstäver och siffror till ditt användarnamn."));
+// 		}
 
  		try {
  			conn = DB.getConnection();
@@ -283,7 +323,7 @@ public class Application extends Controller {
  		}// end try
     }
 	    	
-    public static Result getUsers() {
+    public static Result getUsers() {			//Används inte i nuläget för något
     	
     	ObjectNode result = Json.newObject();
 		Connection conn = null;
@@ -299,7 +339,6 @@ public class Application extends Controller {
 			ResultSet rs = stmt.executeQuery(sql);
 		
 		    while(rs.next()){
-				//Retrieve by column name
 
 				String email  = rs.getString("email");
 				String password = rs.getString("password");
