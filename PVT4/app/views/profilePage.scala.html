@@ -1,5 +1,6 @@
 @(message: String)
 
+
    <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
@@ -9,37 +10,24 @@
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-  <title>Profil</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-  <!-- Included Bootstrap CSS Files -->
-	<link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
-	<link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap-responsive.min.css")" />
-	
-	<!-- Includes FontAwesome -->
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/fontawesome/css/font-awesome.css")" />	
+  <title>Scorehunt</title>
 
-	<!-- Included Bootstrap Customization CSS Files -->	
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/bootstrap-extension.css")" />
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/css/carousel-custom-01.css")" />
-
-	<!-- Included Isotope CSS  basic file -->	
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/isotope.css")" />
-
-<<<<<<< HEAD
 	<link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
 	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/fontawesome/css/font-awesome.css")" />	
 	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/bootstrap-extension.css")" />
 	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/carousel-custom-01.css")" />
 	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/isotope.css")" />
-=======
->>>>>>> origin/master
 	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/stylesheet.css")" />
 
 </head>
+
 <body>
 
 
-<<<<<<< HEAD
 <!-- Start of first page -->
 <div data-role="page" id="första">
           <ul id="portfolio-filter" class="nav nav-tabs">
@@ -107,9 +95,20 @@
   </div><!-- /header -->
 
   <div role="main" class="ui-content">
-    <p>Tredje sidan</p>
-    <p><a href="#första">Back to första</a></p>
-    <p>Go to <a href="#andra">andra</a></p>
+ <div class="col-sm-4">
+        <a class="twitter-timeline"  href="https://twitter.com/scorehunt" data-widget-id="591542182772924416"><p>JAGA KODER</p></a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+
+  </div>
+
+
+<div class="w-widget w-widget-twitter twitter">
+    <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
+  </div>
+
+
+
   </div><!-- /content -->
 
 </div>
@@ -133,66 +132,6 @@
   </div><!-- /content -->
 
 </div>
-=======
-	<div class="container marketing">
-		<div class="row">
-			<div class="span9">
-				<h1>@message and this is your profile.</h1>
-					<p>Du har 1500 poäng</p>
-			</div>
-
-		</div>
-	</div>
-
-		<div class="container vspace40">
-		<div class="row">
-			<div class="span10">
-				<div id="portfolio">
-					<ul id="portfolio-filter" class="nav nav-tabs">
-						<li class="active"><a href="#" class="filter" data-filter=".personligt">Om mig</a></li>
-						<li class=""><a href="#" class="filter" data-filter=".lag">Mitt laggga</a></li>
-						<li class="" style="margin-left:55%"><a href="#" class="filter" data-filter=".edit">Edit</a></li>
-					</ul>
-
-					<div class="row" id="portfolio-items">
-						
-						<div class="span6 project" data-tags="personligt">
-							<a class="thumbnail" href="@routes.Assets.at("/images/profil.jpg")" title=""><img src="@routes.Assets.at("/images/profil.jpg")" data-gallery="" title="" alt="" /></a>
-							<a href="#" class="btn btn-primary" type="button" onclick="document.getElementById('fileID').click(); return false;">Browse</a> <input id="fileID" type="file" style="visibility: hidden; display: none;" />
-						</div>		
-						<div class="span4 project" data-tags="personligt">
-							<p>This is my age:</p>
-							<p>This is my hometown:</p>
-						</div>
-						<div class="span6 project" data-tags="personligt">
-							<p>Min beskrivning!</p>
-						</div>	
-
-
-						<div class="span4 project" data-tags="lag">
-							<a class="thumbnail" href="@routes.Assets.at("/images/team.jpg")" title=""><img src="@routes.Assets.at("/images/team.jpg")" data-gallery="" title="" alt="" /></a>
-						</div>		
-					
-						<div class="span4 project" data-tags="lag">
-							<p>Jag är med i laget "Sökarna". Vi är grymma!</p>
-						</div>	
-						
-						<div class="span4 project" data-tags="edit">
-							<a href="../">Ta mig härifrån!</a>
-						</div>	
-						<div class="span4 project" data-tags="edit">
-							<a href="../profile#edit"> nu ska man kanske kunna editera profilen....</a>
-						</div>	
-					</div>
-				</div>
-				<a href="#" class="btn btn-primary" type="button" onclick="href='../profile#edit">Edit profile</a>
-			</div>
-		</div>
-	</div>
-
-</footer>
-	<a class="scrolltotop" href="#"><span>up</span></a>
->>>>>>> origin/master
 
 	<script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
 	<script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>
