@@ -1,15 +1,133 @@
 @(message: String)
-    
-	<button onClick="window.location.href='../'">Tillbaka till start</button>
-    
-	<ul>
-		<li>Bild: 
-			<form action="demo_form.asp">
-				<input type="file" name="pic" accept="image/*">
-				<input value="Ladda upp!" type="submit">
-			</form>
-		</li>
-		<li>User: @message</li>
-		<li>age: </li>
-	</ul>
 
+
+   <!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <title>Profil</title>
+
+	<link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
+	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/fontawesome/css/font-awesome.css")" />	
+	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/bootstrap-extension.css")" />
+	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/carousel-custom-01.css")" />
+	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/isotope.css")" />
+	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/stylesheet.css")" />
+
+</head>
+<body>
+
+
+<!-- Start of first page -->
+<div data-role="page" id="första">
+          <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class="active"><a href="#första">Första</a></li>
+            <li class=""><a href="#andra">Andra</a></li>
+            <li class=""><a href="#tredje">Tredje</a></li>
+            <li class=""><a href="#fjärde">Fjärde</a></li>
+          </ul>
+  <div data-role="header">
+    <h1>Första</h1>
+  </div><!-- /header -->
+
+  <div role="main" class="ui-content">
+    <p>Första sidan.</p>
+    <p>Klicka för att gå till <a href="#andra">andra</a></p>
+  </div><!-- /content -->
+
+</div>
+<!-- Start of second page -->
+<div data-role="page" id="andra">
+          <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class=""><a href="#första">Första</a></li>
+            <li class="active"><a href="#andra">Andra</a></li>
+            <li class=""><a href="#tredje">Tredje</a></li>
+            <li class=""><a href="#fjärde">Fjärde</a></li>
+          </ul>
+  <div data-role="header">
+    <h1>Andra</h1>
+  </div><!-- /header -->
+
+  <div role="main" class="ui-content">
+   <h1>It's funnier together!</h1>
+<h1>Join a team to submit codes!</h1>
+
+<div>
+<input id="createteam" type="string">
+
+<button type="button" onclick="myFunction()">Create this team</button>
+</div>
+
+<div>
+<input id="createteam" type="string">
+
+<button type="button" onclick="myFunction()">Join this team</button>
+</div>
+
+<div>
+
+<button type="button" onclick="myFunction()">Join a random team</button>
+</div>
+
+  </div><!-- /content -->
+
+
+</div>
+<!-- Start of second page -->
+<div data-role="page" id="tredje">
+          <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class=""><a href="#första">Första</a></li>
+            <li class=""><a href="#andra">Andra</a></li>
+            <li class="active"><a href="#tredje">Tredje</a></li>
+            <li class=""><a href="#fjärde">Fjärde</a></li>
+          </ul>
+  <div data-role="header">
+    <h1>Tredje</h1>
+  </div><!-- /header -->
+
+  <div role="main" class="ui-content">
+    <p>Tredje sidan</p>
+    <p><a href="#första">Back to första</a></p>
+    <p>Go to <a href="#andra">andra</a></p>
+  </div><!-- /content -->
+
+</div>
+
+<!-- Start of second page -->
+<div data-role="page" id="fjärde">
+          <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class=""><a href="#första">Första</a></li>
+            <li class=""><a href="#andra">Andra</a></li>
+            <li class=""><a href="#tredje">Tredje</a></li>
+              <li class="active"><a href="#fjärde">Fjärde</a></li>
+          </ul>
+  <div data-role="header">
+    <h1>Tredje</h1>
+  </div><!-- /header -->
+
+  <div role="main" class="ui-content">
+    <p>Tredje sidan</p>
+    <p><a href="#första">Back to första</a></p>
+    <p>Go to <a href="#andra">andra</a></p>
+  </div><!-- /content -->
+
+</div>
+
+	<script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
+	<script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>
+	<script src="@routes.Assets.at("javascripts/jquery.isotope.min.js")"></script>
+	<script src="@routes.Assets.at("javascripts/init-isotope-portfolio.js")"></script>
+
+	<script src="@routes.Assets.at("javascripts/holder.js")"></script>
+	<script src="@routes.Assets.at("javascripts/script.js")"></script>
+</body>
+</html>
