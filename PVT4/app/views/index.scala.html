@@ -146,7 +146,7 @@ $(document).ready(function (){
         <div class="link">
 
         </div>
-        <button class="btn btn-lg btn-primary btn-block" onClick="window.location.href='../profile'" type="submit">Login</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
       <!--  <a class="forgot" href=#forgotPassword>Forgot password?</a> -->
         </form>
@@ -176,15 +176,39 @@ $(document).ready(function (){
     
  <div class ="container">
    <div class="bottom2">
-      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</hr>
+    <div class="col-xs-12 col-md-12">
+      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</h3>
       <h5 class="text-center"> här står själv lilla informationen</h5>
-   </div>
-  
-
-  <div class="w-widget w-widget-twitter twitter">
-  <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 400px; height: 200px;"></iframe>
-  </div>
+      </div>
+        <div class="w-widget w-widget-twitter twitter">
+         <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
+         </div>
+      
+    </div>
 </div>
+
+<div id="top" class = "container" >
+      <div class="top">
+        <div class="row">
+         <div class="col-xs-12 col-md-12" > 
+          <h1 class="text-center">Summerburst <br> Scorehunt </br> 2015</h1>
+          <h3 class="text-center"> Det här är tävlingen för summerburst </h3>
+            <br> </br>
+            <section class="center-button text-center"> 
+            <label for="btn btn-lg btn-default">New user?</label>
+            <br></br>
+            <button id="topsign" class="btn btn-lg btn-default">Sign up
+            </button>
+            <br></br>
+            <br></br>
+            <label for="btn btn-lg btn-primary">Already have an account? </label>
+            <br></br>
+            <button id="toplog" class="btn btn-lg btn-primary" href=#logIn>Log in</button>
+              </section> 
+         </div> 
+        </div>  
+      </div>
+  </div>
     
 <!--
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -198,7 +222,7 @@ $(document).ready(function (){
     <!--<script src="@routes.Assets.at("jquerys.js")"></script>-->
 
   
-  <!--<h1>Summerburst login</h1>
+  <h1>Summerburst login</h1>
 <ul>
 	<button onClick="window.location.href='../artister'"> Artister </button>
 </ul>
@@ -214,5 +238,5 @@ $(document).ready(function (){
 <ul>
 	<button onClick="window.location.href='../logout'"> Logga ut!</button>
 </ul>
-  @message-->
+  @message
 
