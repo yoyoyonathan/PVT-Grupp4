@@ -16,28 +16,18 @@ h1, h3, p,{
   text-align: center;
 }
 
-.form-signin, .form-signup, .panel {
+.navbar {
+  margin-bottom: 20px;
+}
 
-<<<<<<< HEAD
 .form-signin, .form-signup, {
-=======
->>>>>>> origin/master
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 
-
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
-}
-.form-signin .checkbox {
-  font-weight: normal;
-}
-
 .form-signin .form-control{
-  position: relative;
+	position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -45,6 +35,16 @@ h1, h3, p,{
   padding: 10px;
   font-size: 16px;
 }
+
+.form-signin .form-control:focus{
+  z-index: 2;
+}
+
+.form-signin .form-signin-heading,
+.form-signin  {
+  margin-bottom: 10px;
+}
+
 .form-signin .form-control:focus{
   z-index: 2;
 }
@@ -60,19 +60,28 @@ h1, h3, p,{
   border-top-right-radius: 0;
 }
 
+.form-search input[type="text"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
 .top {
- background: url(stylesheets/summerBurstBackground.jpg) no-repeat center center fixed; 
+ background: url "(@routes.public("images/summerBurstBackground.jpg")" no-repeat center center fixed; 
  background-size:cover;
  padding-top: 6em;
  padding-bottom: 6em;
  height: 100vh;  
-
+ display:table-cell;
+vertical-align: middle;
 }
 
 div.container {
   display:table;
 
 }
+
 div.middle {
 display: table-cell;
 vertical-align: middle;
@@ -84,7 +93,6 @@ div.bottom {
  display: table-cell;
 vertical-align: middle;
 }
-<<<<<<< HEAD
 
 div.bottom2 {
    height: 100vh;
@@ -99,5 +107,3 @@ vertical-align: middle;
  padding-top: 6em;
  padding-bottom: 6em;
 }
-=======
->>>>>>> origin/master
