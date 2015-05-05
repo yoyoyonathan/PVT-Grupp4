@@ -1,4 +1,6 @@
-@(message: String)
+<! DOCTYPE html>
+<html>
+  <head>
 
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +41,9 @@
       <li role="presentation"><a href="../profile#personligt">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>-->
-    
+
+  </head>
+ <body>   
 <div class="container">
     <div class="navbartop text-center">
       <div class="col-xs-12">
@@ -103,7 +107,7 @@
 <div class="container">
   <div class="middle">
       	<form class="form-signin" action="@routes.Application.login()" method="post">
-        <h2 class="form-signin-heading">Log in!</h2>
+        <h2 class="text-center form-signin-heading">Log in!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
         <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -178,5 +182,6 @@
 <ul>
 	<button onClick="window.location.href='../logout'"> Logga ut!</button>
 </ul>
-  @message
-
+  
+  </body>
+</html>
