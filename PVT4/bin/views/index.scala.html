@@ -30,6 +30,34 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function (){
+  
+            $("#toplog").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#conmid").offset().top
+                    }, "fast");
+                //});
+            });
+            $("#topsign").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#conbottom").offset().top
+                    }, "fast");
+                //});
+            });
+            var par = $('#navbar');
+              $(par).hide();
+  
+          $('p').click(function(e) {
+            $(par).slideToggle('slow');
+              $("p").hide();
+            e.preventDefault();
+  });
+        });
+
+</script>
 
 
     <title>SBScorehunt</title>
@@ -40,43 +68,49 @@
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>-->
     
-<div class="container">
+<div id="navbar" class="container">
     <div class="navbartop text-center">
       <div class="col-xs-12">
         <ul class="nav nav-pills">
           <li role="presentation" class="active"><a href="#">Profile</a></li>
-          <li role="presentation"><a href="#">My team</a></li>
+          <li id="team" role="presentation"><a href="#team">My team</a></li>
           <li role="presentation"><a href="#">Enter Code</a></li>
         </ul>
       </div>
     </div>
   </div>
   
-
+<p>Hallåå</p>
 <div class="container">
     <div class="top text-center">
       <div class="col-xs-12">
       <label class="border">
-        <button type="button" class="btn btn-default navbar-btn">Connect me with a random team!</button>
+        <button type="button" class="btn btn-default">Connect me with a random team!</button>
         <br></br>
       </label>
       </div>
-    </div>
-    <div class="row text-center">
-  <div class="col-xs-12">
-    <div class="input-group">
-      <span class="input-group-btn">
+        <input type="text" class="form-control" id="searchbox" placeholder="Search for...">
         <button class="btn btn-default" type="button">Go!</button>
-      </span>
-      <input type="text" class="form-control" placeholder="Search for team...">
     </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+</div>
+  <!--<div class="col-xs-12">
+    <div class="input-group">
+      <span class="input-group-addon">
+      <form  class="form-search" action="@routes.Application.login()" method="post">
+        <input type="text" class="form-control" id="searchteam" placeholder="Search for team..." aria-describedby="sizing-addon2">
+      </form>
+      
+        <button id="go" class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
   </div>
+  </div>
+</div>
 
     </div><!-- /.navbar-collapse -->
   
 
-	<div class = "container" >
+	<div id="top" class = "container" >
 	    <div class="top">
 	      <div class="row">
 	       <div class="col-xs-12 col-md-12" > 
@@ -86,13 +120,13 @@
 	          <section class="center-button text-center"> 
 	          <label for="btn btn-lg btn-default">New user?</label>
 	          <br></br>
-	          <a class="btn btn-lg btn-default" href=#signUp>Sign up
-	          </a>
+	          <button id="topsign" class="btn btn-lg btn-default">Sign up
+	          </button>
 	          <br></br>
 	          <br></br>
 	          <label for="btn btn-lg btn-primary">Already have an account? </label>
 	          <br></br>
-	          <a class="btn btn-lg btn-primary" href=#logIn>Log in</a>
+	          <button id="toplog" class="btn btn-lg btn-primary" href=#logIn>Log in</button>
 	            </section> 
 	       </div> 
 	      </div>  
@@ -100,10 +134,11 @@
 	</div>
 
 
-<div class="container">
+<div id="conmid" class="container">
+  
   <div class="middle">
-      	<form class="form-signin" action="@routes.Application.login()" method="post">
-        <h2 class="form-signin-heading">Log in!</h2>
+      	<form  class="form-signin" action="@routes.Application.login()" method="post">
+        <h2 class="text-center form-signin-heading">Log in!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
         <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -113,16 +148,17 @@
 
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
       <!--  <a class="forgot" href=#forgotPassword>Forgot password?</a> -->
         </form>
      </div>
     </div>
 
 
-<div class="container">
+<div id="conbottom" class="container">
   <div class="bottom">
         <form class="form-signup" action="@routes.Application.addUser()" method ="post">
-        <h2 class="form-signup-heading">Sign up!</h2>
+        <h2 class="text-center form-signup-heading">Sign up!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
         <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
         <label for="inputUsername" class="sr-only">Username</label>
@@ -146,8 +182,10 @@
    </div>
   </div>
 
+
+  
   <div class="w-widget w-widget-twitter twitter">
-  <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 400px; height: 200px;"></iframe>
+  <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
   </div>
 
     
@@ -159,10 +197,11 @@
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-   <script src ="main.js" ></script> 
+   <script src ="main.js" ></script>
+    <!--<script src="@routes.Assets.at("jquerys.js")"></script>-->
 
   
-  <h1>Summerburst login</h1>
+ <!-- <h1>Summerburst login</h1>
 <ul>
 	<button onClick="window.location.href='../artister'"> Artister </button>
 </ul>
@@ -179,4 +218,4 @@
 	<button onClick="window.location.href='../logout'"> Logga ut!</button>
 </ul>
   @message
-
+-->
