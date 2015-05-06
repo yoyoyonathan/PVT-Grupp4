@@ -28,5 +28,7 @@ POST	/login						controllers.Application.login()
 
 POST	/team/addPoints				controllers.Application.addPoints()
 
-POSt	/codeRegisterTry			controllers.Application.registerCode()
+POST	/registerCode				controllers.Application.registerCode()
+
+GET		/codeRegisterForm			controllers.Application.codeRegisterForm()
 

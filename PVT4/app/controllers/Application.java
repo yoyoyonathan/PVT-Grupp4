@@ -38,6 +38,10 @@ public class Application extends Controller {
 		return ok(profilePage.render(getUser(email)));
     }
     
+    public static Result codeRegisterForm(){
+    	return ok(codeRegisterForm.render());
+    }
+    
     public static Result loginPage() {
     	String currentUser = session("connected");
         if(currentUser != null) {
