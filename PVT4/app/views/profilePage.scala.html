@@ -34,11 +34,8 @@
             <li class="active"><a href="#redeem">Lös in kod</a></li>
             <li class=""><a href="#hunt">Ledtrådar</a></li>
             <li class=""><a href="#team">Ditt lag</a></li>
-            <li class=""><a href="#leader">Topplistor</a></li>
+            <li class=""><a href="#leader">Topplista</a></li>
           </ul>
-            <div data-role="header">
-    <h1>Lös in koder</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
     
@@ -77,11 +74,8 @@
             <li class=""><a href="#redeem">Lös in kod</a></li>
             <li class="active"><a href="#hunt">Ledtrådar</a></li>
             <li class=""><a href="#team">Ditt lag</a></li>
-            <li class=""><a href="#leader">Topplistor</a></li>
+            <li class=""><a href="#leader">Topplista</a></li>
           </ul>
-  <div data-role="header">
-    <h1>Ledtrådar</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
  <div class="col-sm-4">
@@ -106,11 +100,8 @@
             <li class=""><a href="#redeem">Lös in kod</a></li>
             <li class=""><a href="#hunt">Ledtrådar</a></li>
             <li class="active"><a href="#team">Ditt lag</a></li>
-            <li class=""><a href="#leader">Topplistor</a></li>
+            <li class=""><a href="#leader">Topplista</a></li>
 	</ul>
-	  <div data-role="header">
-    <h1>Ditt lag</h1>
-  </div><!-- /header -->
 
 
 	<div role="main" class="ui-content">
@@ -118,7 +109,7 @@
 			<div class = "Strul text-center" >
     			<div class="toppenbra">
        				<div class="col-xs-12 col-md-12" > 
-       					<img src="@routes.Assets.at("/images/profbild.jpg")" data-gallery="" title="" alt="" />
+       					<img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
 			
 						<h1>TeamName</h1>
       		 
@@ -143,7 +134,14 @@
 			<!-- begin htmlcommentbox.com -->
  			<div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
  			<link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
- 			<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ 			<script type="text/javascript" language="javascript" id="hcb"> 
+      if(!window.hcb_user){
+        hcb_user={ };}
+        (function(){
+          s=document.createElement("script");s.setAttribute("type","text/javascript");
+          s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");
+          if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})();
+      </script>
 	<!-- end htmlcommentbox.com -->
 			</div> 
     	</div>  
@@ -158,11 +156,8 @@
             <li class=""><a href="#redeem">Lös in kod</a></li>
             <li class=""><a href="#hunt">Ledtrådar</a></li>
             <li class=""><a href="#team">Ditt lag</a></li>
-            <li class="active"><a href="#leader">Topplistor</a></li>
+            <li class="active"><a href="#leader">Topplista</a></li>
           </ul>
-  <div data-role="header">
-    <h1>Topplistor</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
     <p>Topplistor här</p>
