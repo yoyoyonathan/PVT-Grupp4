@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
+    <link rel="bakgrundsbild" type="image/png" href="@routes.Assets.at("images/summerburstBackground.jpg")">
    <!-- Included Bootstrap CSS Files -->
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap-responsive.min.css")" />
@@ -33,11 +34,48 @@
 
     <title>SBScorehunt</title>
 
-  	<ul class="nav nav-tabs">
+  	<!--<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
       <li role="presentation"><a href="../profile#personligt">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
-    </ul>
+    </ul>-->
+    
+<div class="container">
+    <div class="navbartop text-center">
+      <div class="col-xs-12">
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">My team</a></li>
+          <li role="presentation"><a href="#">Enter Code</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+<div class="container">
+    <div class="top text-center">
+      <div class="col-xs-12">
+      <label class="border">
+        <button type="button" class="btn btn-default navbar-btn">Connect me with a random team!</button>
+        <br></br>
+      </label>
+      </div>
+    </div>
+    <div class="row text-center">
+  <div class="col-xs-12">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for team...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  </div>
+
+    </div><!-- /.navbar-collapse -->
+  
+
 	<div class = "container" >
 	    <div class="top">
 	      <div class="row">
@@ -60,6 +98,7 @@
 	      </div>  
 	    </div>
 	</div>
+
 
 <div class="container">
   <div class="middle">
@@ -99,6 +138,18 @@
         </form>
      </div>
     </div>
+    
+ <div class ="container">
+   <div class="bottom2">
+      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</hr>
+      <h5 class="text-center"> här står själv lilla informationen</h5>
+   </div>
+  </div>
+
+  <div class="w-widget w-widget-twitter twitter">
+  <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 400px; height: 200px;"></iframe>
+  </div>
+
     
 <!--
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
