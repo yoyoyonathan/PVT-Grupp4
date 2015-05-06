@@ -1,0 +1,28 @@
+@(team: Team)
+	
+	<h1>Team</h1>
+	
+	<h3>Create Team</h3>
+	<form action="@routes.Application.addTeam()" method="post">
+	Team name: <input type="text" name="name" /><br></br>
+	<button>Create!</button>
+	</form>
+	
+	<h3>Add Member</h3>
+	<form action="@routes.Application.addTeamMember()" method="post">
+	Team name: <input type="text" name="name" />
+	<button>Addera!</button>
+	</form>
+	
+	<h3>Add Points</h3>
+	<form action="@routes.Application.addPoints()" method="post">
+	Team name: <input type="text" name="name" />
+	Number of points: <input type="number" name="points" /><br></br>
+	<button>Kör!</button>
+	</form>
+	
+	<h3> Slumpa lag </h3>
+	<form action="@routes.Application.randomizeTeam()" method="post">
+	<input type="submit" value="Slumpmaskin">
+	</form>
+	
