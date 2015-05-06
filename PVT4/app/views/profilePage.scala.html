@@ -31,21 +31,44 @@
 <!-- Start of first page -->
 <div data-role="page" id="första">
           <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class="active"><a href="#första">Första</a></li>
-            <li class=""><a href="#andra">Andra</a></li>
+            <li class="active"><a href="#första">Submit Code</a></li>
+            <li class=""><a href="#andra">TeamPage</a></li>
             <li class=""><a href="#tredje">Tredje</a></li>
             <li class=""><a href="#fjärde">Fjärde</a></li>
           </ul>
-  <div data-role="header">
-    <h1>Första</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
-    <p>Första sidan.</p>
-    <p>Klicka för att gå till <a href="#andra">andra</a></p>
+    
+    <div class = "container" >
+    <div class="Textfält text-center">
+     <div class="col-xs-12 col-md-12" >
+		
+		<form action="/html/tags/html_form_tag_action.cfm" method="post">
+			<textarea placeholder="Write and submit your code..."name="test" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></textarea>
+		<div>
+    <style scoped>
+
+        .button-submit {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        .button-submit {
+            background: rgb(85, 107, 47); 
+        }
+
+   		 </style>
+    	<button class="button-submit pure-button">Submit</button>
+			</div>
+		</form>
+	  </div> 
+    </div>  
+</div>
+    <p>Klicka för att gå till <a href="#andra">TeamPage</a></p>
   </div><!-- /content -->
 
 </div>
+
 <!-- Start of second page -->
 <div data-role="page" id="andra">
           <ul id="portfolio-filter" class="nav nav-tabs">
