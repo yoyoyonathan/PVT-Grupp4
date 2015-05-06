@@ -1,4 +1,4 @@
-@(message: String) 
+@(message: String)(user: User)
 
  	
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -58,13 +58,13 @@
     
   <h1>Fuskknappar</h1>
 <ul>
-	<button onClick="window.location.href='../team/PLACEHOLDER'"> Team </button>
+	<button onClick="window.location.href='../team/@message'"> Team </button>
 </ul>
 <ul>
 	<button onClick="window.location.href='../loginPage'"> Login!  </button>
 </ul>
 <ul>
-	<button onClick="window.location.href='../profile/PLACEHOLDER'"> Din profil </button>
+	<button onClick="window.location.href='../profile/'@user.userName''"> Din profil </button>
 </ul>
 <ul>
 	<button onClick="window.location.href='../signup'"> Sign up! </button>

@@ -21,14 +21,14 @@ import play.libs.Json;
 
 public class Application extends Controller {
 	
-    public static Result index() {
-        return ok(index.render(""));
+    public static Result index(String email) {
+        return ok(index.render("", getUser(email)));
     }
     
     public static Result team(String name) {
     	String currentUser = session("connected");
     	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
+            return ok(index.render("Du måste logga in först.", null));
     	}
         return ok(team.render(getTeam(name)));
     }
@@ -36,7 +36,7 @@ public class Application extends Controller {
     public static Result profilePage(String email) {
     	String currentUser = session("connected");
     	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
+            return ok(index.render("Du måste logga in först.", null));
     	}
 		return ok(profilePage.render(getUser(email)));
     }
@@ -44,7 +44,7 @@ public class Application extends Controller {
     public static Result loginPage() {
     	String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("Du är redan inloggad som " + currentUser + "."));
+             return ok(index.render("Du är redan inloggad som " + currentUser + ".", null));
         } 
     	return ok(loginPage.render(""));
     }
@@ -78,12 +78,12 @@ public class Application extends Controller {
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
 					    session("connected", userName);
-			 			return redirect(routes.Application.index());
+			 			return ok(index.render("", getUser(email)));
 					}
 				} 
 				
 				rs.close();
-				return ok(index.render("Fel email/lösenord."));
+				return ok(index.render("Fel email/lösenord.", null));
 				
 		}catch(SQLException se){
 			//Handle errors for JDBC
@@ -111,23 +111,23 @@ public class Application extends Controller {
     public static Result logout() {
     	String currentUser = session("connected");
     	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
+            return ok(index.render("Du måste logga in först.", null));
     	}
 	    session().clear();
-    	return ok(index.render("Du är nu utloggad."));
+    	return ok(index.render("Du är nu utloggad.", null));
     }
     
     public static Result signup() {
 	    String currentUser = session("connected");
         if(currentUser != null) {
-             return ok(index.render("Du är redan inloggad som " + currentUser + "!"));
+             return ok(index.render("Du är redan inloggad som " + currentUser + "!", null));
         } 
 		return ok(signup.render(""));
 	}
     
     public static Result addTeam() {					//Som det är nu, om man är med i ett lag och försöker skapa ett nytt så 
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){ 	//skapas laget fortfarande, men användaren kommer inte med i laget
- 		    return badRequest(index.render("Nu har något skrivits in fel"));
+ 		    return badRequest(index.render("Nu har något skrivits in fel", null));
  		}
     	
     	Team team = Form.form(Team.class).bindFromRequest().get();
@@ -150,12 +150,12 @@ public class Application extends Controller {
 			preparedStatement.setString(2, teamName);
 			preparedStatement.executeUpdate();
  			
- 			return redirect(routes.Application.index());
+ 			return ok(index.render("", null));
  			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
- 			return badRequest(index.render("Namn är redan taget."));
+ 			return badRequest(index.render("Namn är redan taget.", null));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
@@ -171,7 +171,7 @@ public class Application extends Controller {
     
     public static Result addTeamMember() {			//Går att gå med i ett Team som inte finns.  
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){
- 		    return badRequest(index.render("Fel i formulär"));
+ 		    return badRequest(index.render("Fel i formulär", null));
  		}
     	
     	PreparedStatement preparedStatement;
@@ -206,10 +206,10 @@ public class Application extends Controller {
 				preparedStatement.setString(2, teamName);
 				preparedStatement.executeUpdate();
 	 			
-	 			return redirect(routes.Application.index());
+	 			return ok(index.render("", null));
  			}
  			
- 			return badRequest(index.render("Teamet är redan fullt!"));
+ 			return badRequest(index.render("Teamet är redan fullt!", null));
 	 			
     	} catch (SQLException se) {
  			// Handle errors for JDBC
@@ -281,7 +281,7 @@ public class Application extends Controller {
 					preparedStatement.setString(2, teamName);
 					preparedStatement.executeUpdate();
 		 			
-		 			return redirect(routes.Application.index());
+		 			return ok(index.render("", null));
 			    }
 		    }
 		    
@@ -334,7 +334,7 @@ public class Application extends Controller {
 		preparedStatement.setString(2, teamName);
 		preparedStatement.executeUpdate();
 			
-		return redirect(routes.Application.index());
+		return ok(index.render("", null));
 		    
     	} catch (SQLException se) {
 			// Handle errors for JDBC
@@ -438,7 +438,7 @@ public class Application extends Controller {
 			preparedStatement.setString(2, teamName);
 			preparedStatement.executeUpdate();
 				    
-		 	return redirect(routes.Application.index());
+		 	return ok(index.render("", null));
 			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
@@ -495,7 +495,7 @@ public class Application extends Controller {
 
  			// user.save();
  			session("connected", userUserName);
- 			return redirect(routes.Application.index());
+ 			return ok(index.render("", null));
  			
  		} catch (SQLException se) {
 // 			 Handle errors for JDBC
