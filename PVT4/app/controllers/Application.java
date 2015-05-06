@@ -209,12 +209,12 @@ public class Application extends Controller {
 	 			return redirect(routes.Application.index());
  			}
  			
- 			return badRequest(index.render("Teamet är redan fullt!"));
+ 			return badRequest(index.render("Teamet är redan fullt/extisterar ej."));
 	 			
     	} catch (SQLException se) {
  			// Handle errors for JDBC
- 			return internalServerError(se.toString());
-// 			return badRequest(index.render("Namn är redan taget."));
+// 			return internalServerError(se.toString());
+ 			return badRequest(index.render("Det laget du har valt är fullt/extisterar inte."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
@@ -338,25 +338,19 @@ public class Application extends Controller {
 		    
     	} catch (SQLException se) {
 			// Handle errors for JDBC
-			return internalServerError(se.toString());
-//			return badRequest(index.render("Namn är redan taget."));
-		} catch (Exception e) {
-			// Handle errors for Class.forName
-			return internalServerError(e.toString());
-		} finally {
-			// finally block used to close resources
-//			try {
-//				if (stmt != null)
-//					conn.close();
-//			} catch (SQLException se) {
-//			}// do nothing
-			try {
-				if (conn != null)
-					conn.close();
-			} catch (SQLException se) {
-				return internalServerError(se.toString());
-			}// end finally try
-		}// end try
+//			return internalServerError(se.toString());
+			return badRequest(index.render("Du är redan med i ett team."));
+    	} catch (Exception e) {
+ 			// Handle errors for Class.forName
+ 			return internalServerError(e.toString());
+ 		} finally {
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+ 				return internalServerError(se.toString());
+ 			}
+ 		}
     }
     
     public static Team getTeam(String name) {			
