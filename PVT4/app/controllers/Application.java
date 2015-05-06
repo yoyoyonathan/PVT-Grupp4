@@ -79,7 +79,7 @@ public class Application extends Controller {
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
 					    session("connected", userName);
-			 			return redirect(routes.Application.profilePage());
+			 			return redirect(routes.Application.profilePage(email));
 					}
 				} 
 				
