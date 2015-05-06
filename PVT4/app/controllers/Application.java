@@ -13,6 +13,7 @@ import play.db.DB;
 import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
+import views.*;
 import static play.libs.Json.toJson;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -38,9 +39,9 @@ public class Application extends Controller {
 		return ok(profilePage.render(getUser(email)));
     }
     
-    public static Result codeRegisterForm(){
-    	return ok(codeRegisterForm.render());
-    }
+//    public static Result codeRegisterForm(){
+//    	return ok(codeRegisterForm.render());
+//    }
     
     public static Result loginPage() {
     	String currentUser = session("connected");
