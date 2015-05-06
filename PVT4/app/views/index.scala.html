@@ -1,6 +1,6 @@
 @(message: String)
 
-  	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
@@ -31,8 +31,8 @@
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script>
-$(document).ready(function (){
-  
+
+$(document).ready(function (){ 
             $("#toplog").click(function (){
                 //$(this).animate(function(){
                     $('html, body').animate({
@@ -40,6 +40,7 @@ $(document).ready(function (){
                     }, "fast");
                 //});
             });
+
             $("#topsign").click(function (){
                 //$(this).animate(function(){
                     $('html, body').animate({
@@ -49,26 +50,35 @@ $(document).ready(function (){
             });
             var par = $('#navbar');
               $(par).hide();
-  
-          $('p').click(function(e) {
+
+              $("#submit").event(function(){
+                if ( this.checkValidity && !this.checkValidity() ) {
+                $( this ).find( ":invalid" ).first().focus();
+                event.preventDefault();
+            }
+            });
+
+          /*$('p').click(function(e) {
             $(par).slideToggle('slow');
               $("p").hide();
             e.preventDefault();
-  });
+  });*/
+
         });
+
 
 </script>
 
 
     <title>SBScorehunt</title>
 
-  	<!--<ul class="nav nav-tabs">
+    <!--<ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="form-signin-heading">Home</a></li>
       <li role="presentation"><a href="../profile#personligt">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>-->
     
-<div id="navbar" class="container">
+<!--<div id="navbar" class="container">
     <div class="navbartop text-center">
       <div class="col-xs-12">
         <ul class="nav nav-pills">
@@ -78,10 +88,9 @@ $(document).ready(function (){
         </ul>
       </div>
     </div>
-  </div>
+  </div>-->
   
-<p>Hallåå</p>
-<div class="container">
+<!--<div class="container">
     <div class="top text-center">
       <div class="col-xs-12">
       <label class="border">
@@ -91,8 +100,8 @@ $(document).ready(function (){
       </div>
         <input type="text" class="form-control" id="searchbox" placeholder="Search for...">
         <button class="btn btn-default" type="button">Go!</button>
-    </div><!-- /input-group -->
-</div>
+    </div> /input-group
+</div>/Sök efter team-->
   <!--<div class="col-xs-12">
     <div class="input-group">
       <span class="input-group-addon">
@@ -107,38 +116,38 @@ $(document).ready(function (){
   </div>
 </div>
 
-    </div><!-- /.navbar-collapse -->
+    </div> /.navbar-collapse -->
   
 
-	<div id="top" class = "container" >
-	    <div class="top">
-	      <div class="row">
-	       <div class="col-xs-12 col-md-12" > 
-	        <h1 class="text-center">Summerburst <br> Scorehunt </br> 2015</h1>
-	        <h3 class="text-center"> Det här är tävlingen för summerburst </h3>
-	          <br> </br>
-	          <section class="center-button text-center"> 
-	          <label for="btn btn-lg btn-default">New user?</label>
-	          <br></br>
-	          <button id="topsign" class="btn btn-lg btn-default">Sign up
-	          </button>
-	          <br></br>
-	          <br></br>
-	          <label for="btn btn-lg btn-primary">Already have an account? </label>
-	          <br></br>
-	          <button id="toplog" class="btn btn-lg btn-primary" href=#logIn>Log in</button>
-	            </section> 
-	       </div> 
-	      </div>  
-	    </div>
-	</div>
+  <div id="top" class = "container" >
+      <div class="top">
+        <div class="row">
+         <div class="col-xs-12 col-md-12" > 
+          <h1 class="text-center">Summerburst <br> Scorehunt </br> 2015</h1>
+          <h3 class="text-center"> Det här är tävlingen för summerburst </h3>
+            <br> </br>
+            <section class="center-button text-center"> 
+            <label for="btn btn-lg btn-default">New user?</label>
+            <br></br>
+            <button id="topsign" class="btn btn-lg btn-default">Sign up
+            </button>
+            <br></br>
+            <br></br>
+            <label for="btn btn-lg btn-primary">Already have an account? </label>
+            <br></br>
+            <button id="toplog" class="btn btn-lg btn-primary" href=#logIn>Log in</button>
+              </section> 
+         </div> 
+        </div>  
+      </div>
+  </div>
 
 
 <div id="conmid" class="container">
   
   <div class="middle">
-      	<form  class="form-signin" action="@routes.Application.login()" method="post">
-        <h2 class="text-center form-signin-heading">Log in!</h2>
+        <form  class="form-signin" action="@routes.Application.login()" method="post">
+        <h2 class="form-signin-heading">Log in!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
         <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -147,7 +156,9 @@ $(document).ready(function (){
         <div class="link">
 
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <button id="loginbut" class="btn btn-lg btn-primary btn-block"   type="submit">Login</button>
+        <br></br>
+        <h4><span style="color:red">@message</span></h4>
 
       <!--  <a class="forgot" href=#forgotPassword>Forgot password?</a> -->
         </form>
@@ -158,35 +169,38 @@ $(document).ready(function (){
 <div id="conbottom" class="container">
   <div class="bottom">
         <form class="form-signup" action="@routes.Application.addUser()" method ="post">
-        <h2 class="text-center form-signup-heading">Sign up!</h2>
+        <h2 class="form-signup-heading">Sign up!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
+
         <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
+
         <label for="inputUsername" class="sr-only">Username</label>
         <input type="text" id="inputUsername" class="form-control" minlength="3" name="userName" placeholder="Username" required>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" minlength="6" maxlength="20" name="password" placeholder="Password" required>
         <label for="inputBirthyear" class="sr-only">Date of birth</label>
-        <input type="number" id="inputBirthyear" class="form-control" minlength="6" maxlength="6" max="970613" min="000000" name="birthDate" placeholder="Date of birth (YYMMDD)" required>
+        <input type="number" id="inputBirthyear" class="form-control" minlength="6" maxlength="6" max="970613" min="200000" name="birthDate" placeholder="Date of birth (YYMMDD)" required>
         
         <div class="link">
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <h4><span style="color:red">@message</span></h4>
         </form>
      </div>
     </div>
     
  <div class ="container">
    <div class="bottom2">
-      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</hr>
+    <div class="col-xs-12 col-md-12">
+      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</h3>
       <h5 class="text-center"> här står själv lilla informationen</h5>
-   </div>
-  </div>
-
-
-  
-  <div class="w-widget w-widget-twitter twitter">
-  <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
-  </div>
+      </div>
+        <div class="w-widget w-widget-twitter twitter">
+         <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
+         </div>
+      
+    </div>
+</div>
 
     
 <!--
@@ -195,27 +209,27 @@ $(document).ready(function (){
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
    <script src ="main.js" ></script>
     <!--<script src="@routes.Assets.at("jquerys.js")"></script>-->
 
   
- <!-- <h1>Summerburst login</h1>
+ <h1>Summerburst login</h1>
 <ul>
-	<button onClick="window.location.href='../artister'"> Artister </button>
+  <button onClick="window.location.href='../artister'"> Artister </button>
 </ul>
 <ul>
-	<button onClick="window.location.href='../loginPage'"> Login!  </button>
+  <button onClick="window.location.href='../loginPage'"> Login!  </button>
 </ul>
 <ul>
-	<button onClick="window.location.href='../profile'"> Din profil </button>
+  <button onClick="window.location.href='../profile'"> Din profil </button>
 </ul>
 <ul>
-	<button onClick="window.location.href='../signup'"> Sign up! </button>
+  <button onClick="window.location.href='../signup'"> Sign up! </button>
 </ul>
 <ul>
-	<button onClick="window.location.href='../logout'"> Logga ut!</button>
+  <button onClick="window.location.href='../logout'"> Logga ut!</button>
 </ul>
   @message
--->
+

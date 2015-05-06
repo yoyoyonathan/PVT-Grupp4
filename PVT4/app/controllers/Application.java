@@ -12,6 +12,7 @@ import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
 import static play.libs.Json.toJson;
+import javax.swing.*;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -76,12 +77,12 @@ public class Application extends Controller {
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
 					    session("connected", userName);
-			 			return redirect(routes.Application.index());
+			 			return redirect(routes.Application.profilePage());
 					}
 				} 
 				
 				rs.close();
-				return ok(loginPage.render("Fel email/lösenord."));
+				return ok(index.render("Fel email/lösenord."));
 				
 		}catch(SQLException se){
 			//Handle errors for JDBC
@@ -166,7 +167,7 @@ public class Application extends Controller {
  		} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
- 			return badRequest(signup.render("Email/användarnamn är redan taget."));
+ 			return badRequest(index.render("Email/användarnamn är redan taget."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
