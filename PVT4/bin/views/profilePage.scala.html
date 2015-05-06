@@ -48,13 +48,14 @@
 					<ul id="portfolio-filter" class="nav nav-tabs">
 						<li class="active"><a href="#" class="filter" data-filter=".personligt">Om mig</a></li>
 						<li class=""><a href="#" class="filter" data-filter=".lag">Mitt laggga</a></li>
-						<li class="" style="margin-left:55%"><a href="#" class="filter" data-filter=".signout">Sign out</a></li>
+						<li class="" style="margin-left:55%"><a href="#" class="filter" data-filter=".edit">Edit</a></li>
 					</ul>
 
 					<div class="row" id="portfolio-items">
 						
 						<div class="span6 project" data-tags="personligt">
 							<a class="thumbnail" href="@routes.Assets.at("/images/profil.jpg")" title=""><img src="@routes.Assets.at("/images/profil.jpg")" data-gallery="" title="" alt="" /></a>
+							<a href="#" class="btn btn-primary" type="button" onclick="document.getElementById('fileID').click(); return false;">Browse</a> <input id="fileID" type="file" style="visibility: hidden; display: none;" />
 						</div>		
 						<div class="span4 project" data-tags="personligt">
 							<p>This is my age:</p>
@@ -73,11 +74,15 @@
 							<p>Jag är med i laget "Sökarna". Vi är grymma!</p>
 						</div>	
 						
-						<div class="span4 project" data-tags="signout">
+						<div class="span4 project" data-tags="edit">
 							<a href="../">Ta mig härifrån!</a>
+						</div>	
+						<div class="span4 project" data-tags="edit">
+							<a href="../profile#edit"> nu ska man kanske kunna editera profilen....</a>
 						</div>	
 					</div>
 				</div>
+				<a href="#" class="btn btn-primary" type="button" onclick="href='../profile#edit">Edit profile</a>
 			</div>
 		</div>
 	</div>

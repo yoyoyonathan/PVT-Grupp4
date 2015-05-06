@@ -1,5 +1,13 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
 body {
-  padding-top: 40px;
+  min-height: 100%;
+  width: 100%; 
+  padding-top: 0px;
   padding-bottom: 40px;
   background-color: #eee;
 }
@@ -8,23 +16,16 @@ h1, h3, p,{
   text-align: center;
 }
 
-.twitter-timeline {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+.form-signin, .form-signup, .panel {
 
-.form-signin, .form-signup, .twitter-timeline {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 
-.twitter-timeline {
-  position: center;
-}
+
 .form-signin .form-signin-heading,
-.form-signin .checkbox, .twitter-timeline {
+.form-signin .checkbox {
   margin-bottom: 10px;
 }
 .form-signin .checkbox {
@@ -53,4 +54,29 @@ h1, h3, p,{
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.top {
+ background: url(stylesheets/summerBurstBackground.jpg) no-repeat center center fixed; 
+ background-size:cover;
+ padding-top: 6em;
+ padding-bottom: 6em;
+ height: 100vh;  
+
+}
+
+div.container {
+  display:table;
+
+}
+div.middle {
+display: table-cell;
+vertical-align: middle;
+height: 100vh;
+}
+
+.bottom {
+ height: 100vh;
+ display: table-cell;
+vertical-align: middle;
 }
