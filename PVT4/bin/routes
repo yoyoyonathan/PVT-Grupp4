@@ -8,13 +8,19 @@ GET     /                           controllers.Application.index()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
-GET		/profile					controllers.Application.profilePage()
+GET		/profile/:userName			controllers.Application.profilePage(userName: String)
 
-GET		/artister					controllers.Application.artister()
+GET		/team/:name					controllers.Application.team(name: String)
 
 GET		/loginPage					controllers.Application.loginPage()
 
+GET		/joinTeam					controllers.Application.joinTeam()
+
 POST	/user						controllers.Application.addUser()
+
+POST	/addTeam					controllers.Application.addTeam()
+
+POST	/addMember					controllers.Application.addTeamMember()
 
 GET		/users						controllers.Application.getUsers()
 
@@ -23,3 +29,9 @@ GET		/signup						controllers.Application.signup()
 GET		/logout						controllers.Application.logout()
 
 POST	/login						controllers.Application.login()
+
+POST	/addPoints					controllers.Application.addPoints()
+
+POST	/randomize					controllers.Application.randomizeTeam()
+
+
