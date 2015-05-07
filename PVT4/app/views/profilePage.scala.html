@@ -1,4 +1,4 @@
-@(user: User)
+@(team: Team)(user: User)
 
 
    <!DOCTYPE html>
@@ -111,7 +111,8 @@
        				<div class="col-xs-12 col-md-12" > 
        					<img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
 			
-						<h1>lagets namn här</h1>
+						<h1>@team.name</h1>
+						<p>Du heter @user.userName</p>
       		 
       	 			</div> 
       			</div> 
