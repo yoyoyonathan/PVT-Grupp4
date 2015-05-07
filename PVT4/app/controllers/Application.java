@@ -486,7 +486,7 @@ public class Application extends Controller {
  		String userEmail = user.email;
  		String userUserName = user.userName;
  		String userPassword = user.password;
- 		int userBirthDate = user.birthDate;
+ 		String userBirthDate = user.birthDate;
  		
 // 		if (userUserName.matches("^.*[^a-zA-Z0-9].*$")){		//Vi har ju inte riktigt bestämt oss hur vi ska göra med felhanteringen ännu
 // 		    return badRequest(signup.render("Använd endast bokstäver och siffror till ditt användarnamn."));
@@ -500,7 +500,7 @@ public class Application extends Controller {
 			preparedStatement.setString(1, userEmail);
 			preparedStatement.setString(2, userUserName);
 			preparedStatement.setString(3, userPassword);
-			preparedStatement.setInt(4, userBirthDate);
+			preparedStatement.setString(4, userBirthDate);
 			preparedStatement.executeUpdate();
  			// execute insert SQL statement
 
@@ -607,7 +607,7 @@ public class Application extends Controller {
 			u.email = rs.getString("email");
 			u.userName = rs.getString("username");
 			u.password = rs.getString("password");
-			u.birthDate = rs.getInt("birthdate");
+			u.birthDate = rs.getString("birthdate");
 			rs.close();
 			
 			return u;

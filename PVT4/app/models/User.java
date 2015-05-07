@@ -17,7 +17,7 @@ public class User extends Model{
 	public String userName;
 	@Constraints.Required
 	public String password;
-	public int birthDate;		//Tänkt att vara 6 siffror så kan man kolla ålder med krokodilmunnar
+	public String birthDate;		//Tänkt att vara 6 siffror så kan man kolla ålder med krokodilmunnar
 	
 //	public User(String email, String userName, String password, int birthDate){
 //		this.email = email;
