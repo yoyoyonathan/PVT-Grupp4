@@ -27,7 +27,6 @@ import static org.fest.assertions.Assertions.*;
 *
 */
 public class ApplicationTest {
-	
 
     @Test
     public void simpleCheck() {
@@ -37,9 +36,10 @@ public class ApplicationTest {
 
     @Test
     public void renderTemplate() {
-        Content html = views.html.index.render("hej"); //Ändrade och tog bort text från parantesen "Your new application is ready."
+        Content html = views.html.index.render(""); //Ändrade och tog bort text från parantesen "Your new application is ready."
         assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("");//Ändrade och tog bort text från parantesen "Your new application is ready."
-	}
-	
+        assertThat(contentAsString(html)).contains("Your new application is ready.");
+    }
+
+
 }
