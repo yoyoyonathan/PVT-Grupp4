@@ -439,7 +439,9 @@ public class Application extends Controller {
 		Statement stmtCode = null;
 		Statement stmtTeam = null;
 		conn = DB.getConnection();
+		
 		DynamicForm formData = Form.form().bindFromRequest();
+		
 		String teamName = formData.get("team");
 		String codeID = formData.get("codeID");
 		Code codeFromDB = new Code();
@@ -465,9 +467,9 @@ public class Application extends Controller {
 //			teamFromDB.name = rsForTeam.getString("name");
 //			teamFromDB.points = rsForTeam.getInt("points");
 //			rsForTeam.close();
-			if( teamFromDB.name != null){
-				return ok(index.render("codefromDB value;" + teamFromDB.points +"to team:" + teamFromDB.name));	
-			}
+//			if( teamFromDB.name != null){
+				return ok(index.render(teamFromDB.name));	
+//			}
 			
 //				if(0 < codeFromDB.amount ){
 //				
@@ -479,7 +481,7 @@ public class Application extends Controller {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}¨
-			return ok("blargh!!!");	
+//			return ok("blargh!!!");	
 	}	
 }    
 
