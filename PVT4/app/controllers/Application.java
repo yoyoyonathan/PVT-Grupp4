@@ -343,6 +343,7 @@ public class Application extends Controller {
     			ord1.add("Cool ");
     			ord1.add("Discots");
     			ord1.add("Festens");
+    			ord1.add("Livets");
 
     			ArrayList<String> ord2 = new ArrayList<String>();
     			ord2.add("Doom");
@@ -366,12 +367,12 @@ public class Application extends Controller {
     			
     			Random r1 = new Random();
     	    	int low1 = 0;
-    	    	int high1 = 9;
+    	    	int high1 = 17;
     	    	int R1 = r1.nextInt(high1-low1) + low1;
     	    	
     	    	Random r2 = new Random();
     	    	int low2 = 0;
-    	    	int high2 = 9;
+    	    	int high2 = 17;
     	    	int R2 = r2.nextInt(high2-low2) + low2;
     	    	
     			String teamName = ord1.get(R1) + ord2.get(R2);
