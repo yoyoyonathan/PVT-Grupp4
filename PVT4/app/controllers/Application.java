@@ -13,7 +13,6 @@ import play.db.DB;
 import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
-import views.*;
 import static play.libs.Json.toJson;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -39,9 +38,9 @@ public class Application extends Controller {
 		return ok(profilePage.render(getUser(email)));
     }
     
-//    public static Result codeRegisterForm(){
-//    	return ok(codeRegisterForm.render());
-//    }
+    public static Result codeRegisterForm(){
+    	return ok(codeRegisterForm.render(""));
+    }
     
     public static Result loginPage() {
     	String currentUser = session("connected");
@@ -437,31 +436,50 @@ public class Application extends Controller {
 	    }
 	public static Result registerCode(){
 		Connection conn = null;
-		Statement stmt = null;
+		Statement stmtCode = null;
+		Statement stmtTeam = null;
 		conn = DB.getConnection();
 		DynamicForm formData = Form.form().bindFromRequest();
 		String teamName = formData.get("team");
 		String codeID = formData.get("codeID");
 		Code codeFromDB = new Code();
-		try {
-			stmt = conn.createStatement();
-			String sql = "SELECT * FROM `Code` WHERE `codeID` = " + "'" + codeID + "'";
-			ResultSet rs = stmt.executeQuery(sql);
-			rs.next();
-			codeFromDB.value = rs.getInt("value");
-			codeFromDB.amount = rs.getInt("amount");
-			codeFromDB.codeID = rs.getString("codeID");
-			rs.close();
-		//	if(0 < codeFromDB.amount ){
-				
-		//	}else{
-		//		return ok(index.render("Inga användningar kvar"));
-		//	}
+		Team teamFromDB = new Team();
+		String nameNpoints = "";
 		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}return ok(index.render("codefromDB value;" + codeFromDB.value));		
+
+//		try {
+			teamFromDB = getTeam(teamName);
+//			stmtCode = conn.createStatement();
+//			String sqlForCode = "SELECT * FROM `Code` WHERE `codeID` = " + "'" + codeID + "'";
+//			ResultSet rs = stmtCode.executeQuery(sqlForCode);
+//			rs.next();
+//			codeFromDB.value = rs.getInt("value");
+//			codeFromDB.amount = rs.getInt("amount");
+//			codeFromDB.codeID = rs.getString("codeID");
+//			rs.close();
+//			
+//			String sqlForTeam = "SELECT * FROM 'team' WHERE 'team'  = " + "'" + teamName +"'";
+//			stmtTeam  = conn.createStatement();
+//			ResultSet rsForTeam = stmtTeam.executeQuery(sqlForTeam); 
+//			rsForTeam.next();
+//			teamFromDB.name = rsForTeam.getString("name");
+//			teamFromDB.points = rsForTeam.getInt("points");
+//			rsForTeam.close();
+			if( teamFromDB.name != null){
+				return ok(index.render("codefromDB value;" + teamFromDB.points +"to team:" + teamFromDB.name));	
+			}
+			
+//				if(0 < codeFromDB.amount ){
+//				
+//			}else{
+//				return ok(index.render("Inga användningar kvar"));
+//			}
+//		
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}¨
+			return ok("blargh!!!");	
 	}	
 }    
 

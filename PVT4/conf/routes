@@ -28,6 +28,6 @@ POST	/login						controllers.Application.login()
 
 POST	/team/addPoints				controllers.Application.addPoints()
 
-POST	/registerCode				controllers.Application.registerCode()
+GET		/registerCode				controllers.Application.registerCode()
 
-
+GET 	/codeRegisterForm			controllers.Application.codeRegisterForm()
