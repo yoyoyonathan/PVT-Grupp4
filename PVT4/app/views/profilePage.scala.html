@@ -127,6 +127,55 @@
 	<div class = "container" >
 		<div class="topp1 text-center">
 			<div class="col-xs-12 col-md-12" >
+			<script>
+// This code goes ABOVE the main HTML Comment Box code!
+// replace the text in the single quotes below to customize labels.
+hcb_user = {
+    // L10N
+    comments_header : 'kommentarer',
+    name_label : 'Namn',
+    content_label: 'Skriv vad du tänker...',
+    submit : 'Kommentera',
+    add:'Lägg till din kommentar',
+    again: 'Gör en ny kommentar?',
+    rss:' ',
+    said:'sa:',
+    prev_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_left.png" class="hcb-icon" title="previous page" alt="[prev]"/>',
+    next_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_right.png" class="hcb-icon" title="next page" alt="[next]"/>',
+    showing:'Showing',
+    to:'to',
+    website_label:'website (optional)',
+    email_label:'email',
+    anonymous:'Anonymous',
+    mod_label:'(mod)',
+    subscribe:'email me replies',
+    are_you_sure:'Vill du anmäla kommentaren?',
+    
+    reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> reply',
+    like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> like',
+    
+    //dates
+    days_ago:'dagar sedan',
+    hours_ago:'timmar sedan',
+    minutes_ago:'minuter sedan',
+    within_the_last_minute:'sa precis',
+
+    msg_thankyou:'Tack för ingenting...',
+    msg_approval:'(Den här kommentaren väntar på granskning)',
+    msg_approval_required:'Tack för kommentaren...',
+    
+    err_bad_html:'Your comment contained bad html.',
+    err_bad_email:'Please enter a valid email address.',
+    err_too_frequent:'Du måste vänta lite mellan meddelanden!',
+    err_comment_empty:'Din kommentar skickades inte för att den var för kort',
+    err_denied:'Your comment was not accepted.',
+
+    //SETTINGS
+    MAX_CHARS: 2048,
+    PAGE:'', // ID of the webpage to show comments for. defaults to the webpage the user is currently visiting.
+    RELATIVE_DATES:true // show dates in the form "X hours ago." etc.
+};
+</script>
 			<!-- begin htmlcommentbox.com -->
  			<div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
  			<link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
