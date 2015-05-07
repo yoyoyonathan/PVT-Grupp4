@@ -3,6 +3,11 @@
 
 # --- !Ups
 
+create table team (
+  name                      varchar(255) not null,
+  constraint pk_team primary key (name))
+;
+
 create table user (
   email                     varchar(255) not null,
   user_name                 varchar(255),
@@ -17,6 +22,8 @@ create table user (
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
+
+drop table team;
 
 drop table user;
 

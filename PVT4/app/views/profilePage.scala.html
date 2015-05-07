@@ -1,4 +1,4 @@
-@(message: String)
+@(team: Team)(user: User)
 
 
    <!DOCTYPE html>
@@ -31,23 +31,21 @@
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
           <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class="active"><a href="#redeem">Lös in kod</a></li>
-            <li class=""><a href="#hunt">Ledtrådar</a></li>
-            <li class=""><a href="#team">Ditt lag</a></li>
-            <li class=""><a href="#leader">Topplistor</a></li>
+            <li class="active"><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
           </ul>
-            <div data-role="header">
-    <h1>Lös in koder</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
+
     
     <div class = "container" >
     <div class="Textfält text-center">
      <div class="col-xs-12 col-md-12" >
 		
-		<form action="/html/tags/html_form_tag_action.cfm" method="post">
-			<textarea placeholder="Lös in kod..."name="test" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></textarea>
+		<form action="@routes.Application.registerCode()" method="post">
+		Code: <input type="text" name="code" /><br></br>
 		<div>
     <style scoped>
 
@@ -70,18 +68,14 @@
     </div>
 </div>
 
-
 <!-- Start of second page, hunt codes -->
 <div data-role="page" id="hunt">
 	 <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class=""><a href="#redeem">Lös in kod</a></li>
-            <li class="active"><a href="#hunt">Ledtrådar</a></li>
-            <li class=""><a href="#team">Ditt lag</a></li>
-            <li class=""><a href="#leader">Topplistor</a></li>
+            <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
           </ul>
-  <div data-role="header">
-    <h1>Ledtrådar</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
  <div class="col-sm-4">
@@ -93,7 +87,7 @@
 
 
 <div class="w-widget w-widget-twitter twitter">
-    <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
+    <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScore<img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/> Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
   </div>
 
 
@@ -103,14 +97,11 @@
 </div><!-- Start of third page, team -->
 <div data-role="page" id="team">
 	<ul id="portfolio-filter" class="nav nav-tabs">
-            <li class=""><a href="#redeem">Lös in kod</a></li>
-            <li class=""><a href="#hunt">Ledtrådar</a></li>
-            <li class="active"><a href="#team">Ditt lag</a></li>
-            <li class=""><a href="#leader">Topplistor</a></li>
+            <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
 	</ul>
-	  <div data-role="header">
-    <h1>Ditt lag</h1>
-  </div><!-- /header -->
 
 
 	<div role="main" class="ui-content">
@@ -118,9 +109,10 @@
 			<div class = "Strul text-center" >
     			<div class="toppenbra">
        				<div class="col-xs-12 col-md-12" > 
-       					<img src="@routes.Assets.at("/images/profbild.jpg")" data-gallery="" title="" alt="" />
+       					<img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
 			
-						<h1>TeamName</h1>
+						<h1>@team.name</h1>
+						<p>Du heter @user.userName</p>
       		 
       	 			</div> 
       			</div> 
@@ -143,7 +135,14 @@
 			<!-- begin htmlcommentbox.com -->
  			<div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
  			<link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
- 			<script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ 			<script type="text/javascript" language="javascript" id="hcb"> 
+      if(!window.hcb_user){
+        hcb_user={ };}
+        (function(){
+          s=document.createElement("script");s.setAttribute("type","text/javascript");
+          s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");
+          if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})();
+      </script>
 	<!-- end htmlcommentbox.com -->
 			</div> 
     	</div>  
@@ -155,19 +154,49 @@
 <!-- Start of fourth page, topplistor -->
 <div data-role="page" id="leader">
           <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class=""><a href="#redeem">Lös in kod</a></li>
-            <li class=""><a href="#hunt">Ledtrådar</a></li>
-            <li class=""><a href="#team">Ditt lag</a></li>
-            <li class="active"><a href="#leader">Topplistor</a></li>
+            <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
           </ul>
-  <div data-role="header">
-    <h1>Topplistor</h1>
-  </div><!-- /header -->
 
   <div role="main" class="ui-content">
-    <p>Topplistor här</p>
-    <p><a href="#redeem">Gå till lös in koder</a></p>
-    <p>Go to <a href="#hunt">twitterflödet</a></p>
+  
+    
+    <table style="width:50%">
+	  <tr>
+	    <td> @controllers.Application.topTeam(1) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(2) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(3) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(4) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(5) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(6) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(7) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(8) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(9) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(10) </td>
+	  </tr>
+	</table>
+    
+
   </div><!-- /content -->
 
 </div>
