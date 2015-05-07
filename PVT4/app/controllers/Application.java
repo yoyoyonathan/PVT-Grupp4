@@ -434,53 +434,69 @@ public class Application extends Controller {
 //		   	}//end try
 	    	
 	    }
-	public static Result registerCode(){
+	public static Result registerCode() throws SQLException{
 		Connection conn = null;
-		Statement stmtCode = null;
-		Statement stmtTeam = null;
+		
 		conn = DB.getConnection();
 		DynamicForm formData = Form.form().bindFromRequest();
 		String teamName = formData.get("team");
 		String codeID = formData.get("codeID");
 		Code codeFromDB = new Code();
-		Team teamFromDB = new Team();
-		String nameNpoints = "";
+		Team teamFromDB = new Team();		
+		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatementCode = null;
+		
+		teamFromDB = getTeam(teamName);
+		codeFromDB = getCode(codeID);
+
+		codeFromDB.amount -= 1;
+		teamFromDB.points += codeFromDB.value;
 		
 
-//		try {
-			teamFromDB = getTeam(teamName);
-//			stmtCode = conn.createStatement();
-//			String sqlForCode = "SELECT * FROM `Code` WHERE `codeID` = " + "'" + codeID + "'";
-//			ResultSet rs = stmtCode.executeQuery(sqlForCode);
-//			rs.next();
-//			codeFromDB.value = rs.getInt("value");
-//			codeFromDB.amount = rs.getInt("amount");
-//			codeFromDB.codeID = rs.getString("codeID");
-//			rs.close();
-//			
-//			String sqlForTeam = "SELECT * FROM 'team' WHERE 'team'  = " + "'" + teamName +"'";
-//			stmtTeam  = conn.createStatement();
-//			ResultSet rsForTeam = stmtTeam.executeQuery(sqlForTeam); 
-//			rsForTeam.next();
-//			teamFromDB.name = rsForTeam.getString("name");
-//			teamFromDB.points = rsForTeam.getInt("points");
-//			rsForTeam.close();
-			if( teamFromDB.name != null){
-				return ok(index.render("codefromDB value;" + teamFromDB.points +"to team:" + teamFromDB.name));	
-			}
-			
-//				if(0 < codeFromDB.amount ){
-//				
-//			}else{
-//				return ok(index.render("Inga användningar kvar"));
-//			}
-//		
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}¨
-			return ok("blargh!!!");	
-	}	
+		
+
+		String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
+			    
+		preparedStatement = conn.prepareStatement(insertIntoDatabase);
+		preparedStatement.setInt(1, teamFromDB.points);
+		preparedStatement.setString(2, teamFromDB.name);
+		preparedStatement.executeUpdate();
+		
+		String insertIntoDatabaseCode = "UPDATE code SET amount=? WHERE codeID=?";
+		
+		preparedStatementCode = conn.prepareStatement(insertIntoDatabaseCode);
+		preparedStatementCode.setInt(1, codeFromDB.amount);
+		preparedStatementCode.setString(2, codeFromDB.codeID);
+		preparedStatementCode.executeUpdate();
+		
+		return ok(index.render("teamName: "+ teamFromDB.name + "teamnypoints:"
+				+ teamFromDB.points));	
+		}
+
+	public static Code getCode(String codeID) {
+		Statement stmtCode = null;
+		Connection conn = null;
+		Code codeFromDB = new Code();
+		conn = DB.getConnection();
+		
+		try {
+			stmtCode = conn.createStatement();
+
+			String sqlForCode = "SELECT * FROM `code` WHERE `codeID` = " + "'"
+					+ codeID + "'";
+			ResultSet rs = stmtCode.executeQuery(sqlForCode);
+			rs.next();
+			codeFromDB.value = rs.getInt("value");
+			codeFromDB.amount = rs.getInt("amount");
+			codeFromDB.codeID = rs.getString("codeID");
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return codeFromDB;
+	}
+		
 }    
 
 
