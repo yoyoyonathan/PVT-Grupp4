@@ -14,7 +14,6 @@ import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
 import static play.libs.Json.toJson;
-import javax.swing.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
@@ -32,6 +31,10 @@ public class Application extends Controller {
             return ok(index.render("Du måste logga in först."));
     	}
         return ok(team.render(getTeam(name)));
+    }
+    
+    public static Result searchTeam() {
+    	return ok(searchTeam.render(""));
     }
     
     public static Result profilePage(String email) {
@@ -151,8 +154,9 @@ public class Application extends Controller {
 			preparedStatement.setString(2, teamName);
 			preparedStatement.executeUpdate();
  			
- 			return redirect(routes.Application.index());
- 			
+//			return ok(profilePage.render(null));
+			return redirect("/profile/" + userName);
+			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
@@ -207,7 +211,7 @@ public class Application extends Controller {
 				preparedStatement.setString(2, teamName);
 				preparedStatement.executeUpdate();
 	 			
-	 			return redirect(routes.Application.index());
+				return redirect("/profile/" + userName);
  			}
  			
  			return badRequest(index.render("Teamet är redan fullt/extisterar ej."));
@@ -282,7 +286,7 @@ public class Application extends Controller {
 					preparedStatement.setString(2, teamName);
 					preparedStatement.executeUpdate();
 		 			
-		 			return redirect(routes.Application.index());
+		 			return redirect(routes.Application.profilePage(userName));
 			    }
 		    }
 		    
@@ -490,7 +494,8 @@ public class Application extends Controller {
 
  			// user.save();
  			session("connected", userUserName);
- 			return redirect(routes.Application.index());
+ 			return redirect(routes.Application.searchTeam());
+
  			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
