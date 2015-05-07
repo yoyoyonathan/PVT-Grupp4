@@ -341,9 +341,9 @@ public class Application extends Controller {
     			ord1.add("Axwells ");
     			ord1.add("Guettas ");
     			ord1.add("Cool ");
-    			ord1.add("Discots");
-    			ord1.add("Festens");
-    			ord1.add("Livets");
+    			ord1.add("Discots ");
+    			ord1.add("Festens ");
+    			ord1.add("Livets ");
 
 
     			ArrayList<String> ord2 = new ArrayList<String>();
