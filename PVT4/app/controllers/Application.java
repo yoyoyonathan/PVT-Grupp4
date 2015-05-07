@@ -14,7 +14,6 @@ import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
 import static play.libs.Json.toJson;
-import javax.swing.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
@@ -31,15 +30,19 @@ public class Application extends Controller {
     	if(currentUser == null) {
             return ok(index.render("Du måste logga in först."));
     	}
-        return ok(team.render(getTeam(name)));
+    	return ok(team.render(getTeam(name)));
     }
     
-    public static Result profilePage(String email) {
+    public static Result searchTeam() {
+    	return ok(searchTeam.render(""));
+    }
+    
+    public static Result profilePage(String userName) {
     	String currentUser = session("connected");
     	if(currentUser == null) {
             return ok(index.render("Du måste logga in först."));
     	}
-		return ok(profilePage.render(getUser(email)));
+		return ok(profilePage.render(getTeam(userName), getUser(userName)));
     }
     
     public static Result loginPage() {
@@ -79,7 +82,7 @@ public class Application extends Controller {
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
 					    session("connected", userName);
-			 			return redirect(routes.Application.profilePage(email));
+			 			return redirect(routes.Application.profilePage(userName));
 					}
 				} 
 				
@@ -106,7 +109,6 @@ public class Application extends Controller {
 			    return internalServerError(se.toString());
 			 }//end finally try
 	   	}//end try
-    	
     }
     
     public static Result logout() {
@@ -151,8 +153,9 @@ public class Application extends Controller {
 			preparedStatement.setString(2, teamName);
 			preparedStatement.executeUpdate();
  			
- 			return redirect(routes.Application.index());
- 			
+//			return ok(profilePage.render(null));
+			return redirect("/profile/" + userName);
+			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
@@ -207,7 +210,7 @@ public class Application extends Controller {
 				preparedStatement.setString(2, teamName);
 				preparedStatement.executeUpdate();
 	 			
-	 			return redirect(routes.Application.index());
+				return redirect("/profile/" + userName);
  			}
  			
  			return badRequest(index.render("Teamet är redan fullt/extisterar ej."));
@@ -282,46 +285,12 @@ public class Application extends Controller {
 					preparedStatement.setString(2, teamName);
 					preparedStatement.executeUpdate();
 		 			
-		 			return redirect(routes.Application.index());
+		 			return redirect(routes.Application.profilePage(userName));
 			    }
 		    }
 		    
-		//Skapa nytt team som slumpar fram ett namn och gör hen till medlem
-		ArrayList<String> ord1 = new ArrayList<String>();
-		ord1.add("DJs of ");
-		ord1.add("Lucifers ");
-		ord1.add("Flaskhals ");
-		ord1.add("House ");
-		ord1.add("Party ");
-		ord1.add("Swag ");
-		ord1.add("YOLO ");
-		ord1.add("Summer ");
-		ord1.add("Bursting ");
-		ord1.add("Pille ");
-
-		ArrayList<String> ord2 = new ArrayList<String>();
-		ord2.add("Doom");
-		ord2.add("Satan");
-		ord2.add("Småjävlar");
-		ord2.add("Klubbor");
-		ord2.add("Party");
-		ord2.add("Laddare");
-		ord2.add("Laptop");
-		ord2.add("Hungriga");
-		ord2.add("Kamera");
-		ord2.add("Strawberry");
 		
-		Random r1 = new Random();
-    	int low1 = 0;
-    	int high1 = 9;
-    	int R1 = r1.nextInt(high1-low1) + low1;
-    	
-    	Random r2 = new Random();
-    	int low2 = 0;
-    	int high2 = 9;
-    	int R2 = r2.nextInt(high2-low2) + low2;
-		
-		String teamName = ord1.get(R1) + ord2.get(R2);
+		String teamName = randomizeTeamName();
 		//Skapa nytt team med namnet och lägg till skit
 		
 		String insertIntoDatabase = "INSERT INTO team (name) VALUES(?)";
@@ -335,7 +304,7 @@ public class Application extends Controller {
 		preparedStatement.setString(2, teamName);
 		preparedStatement.executeUpdate();
 			
-		return redirect(routes.Application.index());
+		return redirect(routes.Application.profilePage(userName));
 		    
     	} catch (SQLException se) {
 			// Handle errors for JDBC
@@ -354,7 +323,47 @@ public class Application extends Controller {
  		}
     }
     
-    public static Team getTeam(String name) {			
+    public static String randomizeTeamName(){
+    	//Skapa nytt team som slumpar fram ett namn och gör hen till medlem
+    			ArrayList<String> ord1 = new ArrayList<String>();
+    			ord1.add("DJs of ");
+    			ord1.add("Lucifers ");
+    			ord1.add("Flaskhals ");
+    			ord1.add("House ");
+    			ord1.add("Party ");
+    			ord1.add("Swag ");
+    			ord1.add("YOLO ");
+    			ord1.add("Summer ");
+    			ord1.add("Bursting ");
+    			ord1.add("Pille ");
+
+    			ArrayList<String> ord2 = new ArrayList<String>();
+    			ord2.add("Doom");
+    			ord2.add("Satan");
+    			ord2.add("Småjävlar");
+    			ord2.add("Klubbor");
+    			ord2.add("Party");
+    			ord2.add("Laddare");
+    			ord2.add("Laptop");
+    			ord2.add("Hungriga");
+    			ord2.add("Kamera");
+    			ord2.add("Strawberry");
+    			
+    			Random r1 = new Random();
+    	    	int low1 = 0;
+    	    	int high1 = 9;
+    	    	int R1 = r1.nextInt(high1-low1) + low1;
+    	    	
+    	    	Random r2 = new Random();
+    	    	int low2 = 0;
+    	    	int high2 = 9;
+    	    	int R2 = r2.nextInt(high2-low2) + low2;
+    	    	
+    			String teamName = ord1.get(R1) + ord2.get(R2);
+    			return teamName;
+    }
+    
+    public static Team getTeam(String userName) {			
     	
 		Connection conn = null;
 		Statement stmt = null;
@@ -365,14 +374,21 @@ public class Application extends Controller {
     		
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
-		
-			String sql = "SELECT * FROM `team` WHERE `name` = " + "'" + name + "'";
 			
-			ResultSet rs = stmt.executeQuery(sql);
-			rs.next();
-			t.name = rs.getString("name");
-			t.points = rs.getInt("points");
-			rs.close();
+			String sql1 = "SELECT * FROM `teammember` WHERE `user` = " + "'" + userName + "'";
+			
+			ResultSet rs1 = stmt.executeQuery(sql1);
+			rs1.next();
+			String name = rs1.getString("team");
+			rs1.close();
+		
+			String sql2 = "SELECT * FROM `team` WHERE `name` = " + "'" + name + "'";
+			
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			rs2.next();
+			t.name = rs2.getString("name");
+			t.points = rs2.getInt("points");
+			rs2.close();
 			
 			return t;
 			
@@ -490,7 +506,8 @@ public class Application extends Controller {
 
  			// user.save();
  			session("connected", userUserName);
- 			return redirect(routes.Application.index());
+ 			return redirect(routes.Application.searchTeam());
+
  			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
@@ -571,7 +588,7 @@ public class Application extends Controller {
     	
     }
     
-	public static User getUser(String email) {			
+	public static User getUser(String userName) {			
 	    	
 		Connection conn = null;
 		Statement stmt = null;
@@ -583,7 +600,7 @@ public class Application extends Controller {
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
 		
-			String sql = "SELECT * FROM `user` WHERE `email` = " + "'" + email + "'";
+			String sql = "SELECT * FROM `user` WHERE `username` = " + "'" + userName + "'";
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			rs.next();
