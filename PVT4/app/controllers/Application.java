@@ -438,7 +438,9 @@ public class Application extends Controller {
 		Connection conn = null;
 		
 		conn = DB.getConnection();
+		
 		DynamicForm formData = Form.form().bindFromRequest();
+		
 		String teamName = formData.get("team");
 		String codeID = formData.get("codeID");
 		Code codeFromDB = new Code();
