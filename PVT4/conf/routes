@@ -16,6 +16,12 @@ GET		/loginPage					controllers.Application.loginPage()
 
 POST	/user						controllers.Application.addUser()
 
+POST	/addTeam					controllers.Application.addTeam()
+
+POST	/addMember					controllers.Application.addTeamMember()
+
+POST	/regCode					controllers.Application.registerCode()
+
 GET		/users						controllers.Application.getUsers()
 
 GET		/signup						controllers.Application.signup()

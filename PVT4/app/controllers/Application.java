@@ -2,8 +2,7 @@ package controllers;
 
 import java.util.List;
 import java.sql.*;
-
-import models.User;
+import models.*;
 import play.*;
 import play.api.libs.json.*;
 import play.data.*;
@@ -243,6 +242,117 @@ public class Application extends Controller {
 	   	}//end try
     	
     }
+    
+	public static User getUser(String userName) {			
+	    	
+		Connection conn = null;
+		Statement stmt = null;
+		
+		User u = new User();
+    	
+    	try{
+    		
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+		
+			String sql = "SELECT * FROM `user` WHERE `username` = " + "'" + userName + "'";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			rs.next();
+			u.email = rs.getString("email");
+			u.userName = rs.getString("username");
+			u.password = rs.getString("password");
+			u.birthDate = rs.getString("birthdate");
+			rs.close();
+			
+			return u;
+			
+			}catch(SQLException se){
+				//Handle errors for JDBC
+		        return null;
+			}
+//    	catch(Exception e){
+//		    	//Handle errors for Class.forName
+//		        return internalServerError(e.toString());
+//		 	}finally{
+//				 //finally block used to close resources
+//				 try{
+//				    if(stmt!=null)
+//				       conn.close();}
+//				 catch(SQLException se){
+//				 }// do nothing
+//				 try{
+//				    if(conn!=null)
+//				       conn.close();
+//				 }catch(SQLException se){
+//				    return internalServerError(se.toString());
+//				 }//end finally try
+//		   	}//end try
+	    	
+	    }
+	
+	public static Result registerCode() throws SQLException{
+		Connection conn = null;
+		
+		conn = DB.getConnection();
+		
+		DynamicForm formData = Form.form().bindFromRequest();
+		
+		String teamName = formData.get("team");
+		String codeID = formData.get("codeID");
+		Code codeFromDB = new Code();
+		Team teamFromDB = new Team();		
+		PreparedStatement preparedStatement = null;
+		PreparedStatement preparedStatementCode = null;
+		
+		teamFromDB = getTeam(teamName);
+		codeFromDB = getCode(codeID);
+
+		codeFromDB.amount -= 1;
+		teamFromDB.points += codeFromDB.value;
+
+		String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
+			    
+		preparedStatement = conn.prepareStatement(insertIntoDatabase);
+		preparedStatement.setInt(1, teamFromDB.points);
+		preparedStatement.setString(2, teamFromDB.name);
+		preparedStatement.executeUpdate();
+		
+		String insertIntoDatabaseCode = "UPDATE code SET amount=? WHERE codeID=?";
+		
+		preparedStatementCode = conn.prepareStatement(insertIntoDatabaseCode);
+		preparedStatementCode.setInt(1, codeFromDB.amount);
+		preparedStatementCode.setString(2, codeFromDB.codeID);
+		preparedStatementCode.executeUpdate();
+		
+		return ok(index.render("teamName: "+ teamFromDB.name + "teamnypoints:"
+				+ teamFromDB.points));	
+		}
+
+	public static Code getCode(String codeID) {
+		Statement stmtCode = null;
+		Connection conn = null;
+		Code codeFromDB = new Code();
+		conn = DB.getConnection();
+		
+		try {
+			stmtCode = conn.createStatement();
+
+			String sqlForCode = "SELECT * FROM `code` WHERE `codeID` = " + "'"
+					+ codeID + "'";
+			ResultSet rs = stmtCode.executeQuery(sqlForCode);
+			rs.next();
+			codeFromDB.value = rs.getInt("value");
+			codeFromDB.amount = rs.getInt("amount");
+			codeFromDB.codeID = rs.getString("codeID");
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return codeFromDB;
+	}
+>>>>>>> Backend-3
 }    
 
 
