@@ -9,14 +9,23 @@ body {
   width: 100%; 
   padding-top: 0px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #880000;
 }
 
 h1, h3, p,{
   text-align: center;
 }
 
-.form-signin, .form-signup, .panel {
+
+
+.form-signin, .panel {
+
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signup, .panel {
 
   max-width: 330px;
   padding: 15px;
@@ -24,15 +33,15 @@ h1, h3, p,{
 }
 
 
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
+.form-signin, .form-signin-heading,
+.form-signin, .checkbox {
   margin-bottom: 10px;
 }
-.form-signin .checkbox {
+.form-signin, .checkbox {
   font-weight: normal;
 }
 
-.form-signin .form-control{
+.form-signin .form-control{ /*Bestämmer hur stora fälten blir*/
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
@@ -41,6 +50,7 @@ h1, h3, p,{
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus{
   z-index: 2;
 }
@@ -50,15 +60,51 @@ h1, h3, p,{
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
+.form-signup .form-control{ /*Bestämmer hur stora fälten blir*/
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signup .form-control:focus{
+  z-index: 2;
+}
+
+.form-signup input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signup input[type="text"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signup input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
 .top {
- background: url(stylesheets/summerBurstBackground.jpg) no-repeat center center fixed; 
- background-size:cover;
+ /*background-image: url("../images/summerburstBackground.jpg"); 
+ background-color: #770000;
+ background-size:cover;*/
  padding-top: 6em;
  padding-bottom: 6em;
  height: 100vh;  
@@ -66,17 +112,44 @@ h1, h3, p,{
 }
 
 div.container {
+  background-image: url("../images/Wallpaper4.jpg");
+  background-size: cover;
   display:table;
-
 }
+
 div.middle {
+/*background-image: url("../images/summerburstBackground.jpg");
+background-color: #887766;
+background-size:cover;*/
 display: table-cell;
 vertical-align: middle;
 height: 100vh;
 }
 
 .bottom {
- height: 100vh;
- display: table-cell;
-vertical-align: middle;
+  /*background-image: url("../images/summerburstBackground.jpg");
+  background-size:cover;*/
+  display: table-cell;
+  vertical-align: middle;
+  height: 100vh;
+}
+
+.bottom2 {
+  /*background-image: url("../images/summerburstBackground.jpg");
+  background-size:cover;*/
+  display: table-cell;
+  vertical-align: middle;
+  height: 100vh;
+  padding-bottom: 20px;
+}
+
+
+
+div.panel, .transparent{
+  background:rgba(255,255,255,0.4);
+}
+
+div.panel {
+  border-style: solid;
+  border-color: black;
 }

@@ -130,6 +130,8 @@ $(document).ready(function (){
 
   <div id="top" class = "container" >
       <div class="top">
+        <div class="panel panel-default">
+    <div class="panel-body">
         <div class="row">
          <div class="col-xs-12 col-md-12" > 
           <h1 class="text-center">Summerburst <br> Scorehunt </br> 2015</h1>
@@ -141,7 +143,6 @@ $(document).ready(function (){
             <button id="topsign" class="btn btn-lg btn-default">Sign up
             </button>
             <br></br>
-            <br></br>
             <label for="btn btn-lg btn-primary">Already have an account? </label>
             <br></br>
             <button id="toplog" class="btn btn-lg btn-primary" href=#logIn>Log in</button>
@@ -150,11 +151,14 @@ $(document).ready(function (){
         </div>  
       </div>
   </div>
+  </div>  
+      </div>
 
 
 <div id="conmid" class="container">
-  
   <div class="middle">
+    <div class="panel panel-default">
+    <div class="panel-body">
         <form  class="form-signin" action="@routes.Application.login()" method="post">
         <h2 class="text-center form-signin-heading">Log in!</h2>
         <label for="inputEmail" class="sr-only">E-mail</label>
@@ -173,20 +177,26 @@ $(document).ready(function (){
         </form>
      </div>
     </div>
+  </div>
+</div>
 
 
 <div id="conbottom" class="container">
   <div class="bottom">
+    <div class="panel panel-default">
+      <div class="panel-body">
         <form class="form-signup" action="@routes.Application.addUser()" method ="post">
         <h2 class="text-center form-signup-heading">Sign up!</h2>
-        <label for="inputEmail" class="sr-only">E-mail</label>
 
+        <label for="inputEmail" class="sr-only">E-mail</label>
         <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
 
         <label for="inputUsername" class="sr-only">Username</label>
         <input type="text" id="inputUsername" class="form-control" minlength="3" name="userName" placeholder="Username" required>
+
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" minlength="6" maxlength="20" name="password" placeholder="Password" required>
+
         <label for="inputBirthyear" class="sr-only">Date of birth</label>
         <input type="number" id="inputBirthyear" class="form-control" minlength="6" maxlength="6" max="970613" min="200000" name="birthDate" placeholder="Date of birth (YYMMDD)" required>
         
@@ -197,6 +207,8 @@ $(document).ready(function (){
         </form>
      </div>
     </div>
+  </div>
+</div>
     
  <!--<div class ="container">
    <div class="bottom2">
@@ -206,6 +218,7 @@ $(document).ready(function (){
       </div> -->
  <div class ="container">
    <div class="bottom2 text-center">
+    
       <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</hr>
       <h5 class="text-center"> här står själv lilla informationen</h5>
       <br></br>
@@ -213,6 +226,7 @@ $(document).ready(function (){
       <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>Up to top</button>
    </div>
   </div>
+
 <br></br>
 
         <!--<div class="w-widget w-widget-twitter twitter">
