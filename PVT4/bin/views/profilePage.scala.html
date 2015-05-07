@@ -17,11 +17,10 @@
   <title>Scorehunt</title>
 
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" /> -->
-  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main2.css")" />
 </head>
 
 <body>
-
 
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
@@ -60,6 +59,33 @@
 	  </div> 
     </div>  
 	  </div> 
+
+    <section id="footer">
+     <div class="container">
+      <div class="row">
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#redeem"><h6>Lös in kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#hunt"><h6>Jaga kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+             <div class="footer-list">
+               <a href="#team"><h6>Ditt lag</h6></a>
+             </div>
+        </div>
+         <div class="span2">
+             <div class="footer-list">
+               <a href="#leader"><h6>Topplista</h6></a>
+             </div>
+         </div>
+        </div>
+     </div>
+    </section>
     </div>
 </div>
 
@@ -85,7 +111,32 @@
     <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScore<img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/> Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
   </div>
 
-
+    <section id="footer">
+     <div class="container">
+      <div class="row">
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#redeem"><h6>Lös in kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#hunt"><h6>Jaga kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+             <div class="footer-list">
+               <a href="#team"><h6>Ditt lag</h6></a>
+             </div>
+        </div>
+         <div class="span2">
+             <div class="footer-list">
+               <a href="#leader"><h6>Topplista</h6></a>
+             </div>
+         </div>
+        </div>
+     </div>
+    </section>
 
   </div><!-- /content -->
 
@@ -191,6 +242,32 @@ hcb_user = {
 			</div> 
     	</div>  
 		</div>
+        <section id="footer">
+     <div class="container">
+      <div class="row">
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#redeem"><h6>Lös in kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#hunt"><h6>Jaga kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+             <div class="footer-list">
+               <a href="#team"><h6>Ditt lag</h6></a>
+             </div>
+        </div>
+         <div class="span2">
+             <div class="footer-list">
+               <a href="#leader"><h6>Topplista</h6></a>
+             </div>
+         </div>
+        </div>
+     </div>
+    </section>
 	</div><!-- /content -->
 </div>
 
@@ -205,17 +282,68 @@ hcb_user = {
           </ul>
 
   <div role="main" class="ui-content">
-    <p>1.  Sökarna 7600</p>
-    <p>2.  Letarna 7400</p>
-    <p>3.  Hittarna 7100</p>
-    <p>4.  Jägarna 6900</p>
-    <p>5.  Tittarna 6800</p>
-    <p>6.  Springarna 6300</p>
-    <p>7.  Spanarna 6000</p>
-    <p>8.  Finnarna 5900</p>
-    <p>9.  Grävarna 5500</p>
-    <p>10. Löparna 4900</p>
+  
+    
+    <table style="width:50%">
+	  <tr>
+	    <td> @controllers.Application.topTeam(1) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(2) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(3) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(4) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(5) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(6) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(7) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(8) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(9) </td>
+	  </tr>
+	  <tr>
+	    <td> @controllers.Application.topTeam(10) </td>
+	  </tr>
+	</table>
+    
 
+    <section id="footer">
+     <div class="container">
+      <div class="row">
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#redeem"><h6>Lös in kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+            <div class="footer-list">
+              <a href="#hunt"><h6>Jaga kod</h6></a>
+            </div>
+        </div>
+        <div class="span2">
+             <div class="footer-list">
+               <a href="#team"><h6>Ditt lag</h6></a>
+             </div>
+        </div>
+         <div class="span2">
+             <div class="footer-list">
+               <a href="#leader"><h6>Topplista</h6></a>
+             </div>
+         </div>
+        </div>
+     </div>
+    </section>
   </div><!-- /content -->
 
 </div>
