@@ -14,7 +14,7 @@ GET		/team/:name					controllers.Application.team(name: String)
 
 GET		/loginPage					controllers.Application.loginPage()
 
-GET		/joinTeam					controllers.Application.searchTeam()
+GET		/joinTeam					controllers.Application.joinTeam()
 
 POST	/user						controllers.Application.addUser()
 

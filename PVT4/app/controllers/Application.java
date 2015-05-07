@@ -1,8 +1,8 @@
 package controllers;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.TreeMap;
 import java.sql.*;
 import models.Team;
 import models.User;
@@ -14,6 +14,7 @@ import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
 import static play.libs.Json.toJson;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
@@ -33,8 +34,8 @@ public class Application extends Controller {
     	return ok(team.render(getTeam(name)));
     }
     
-    public static Result searchTeam() {
-    	return ok(searchTeam.render(""));
+    public static Result joinTeam() {
+    	return ok(joinTeam.render(""));
     }
     
     public static Result profilePage(String userName) {
@@ -515,7 +516,7 @@ public class Application extends Controller {
 
  			// user.save();
  			session("connected", userUserName);
- 			return redirect(routes.Application.searchTeam());
+ 			return redirect(routes.Application.profilePage(userUserName));
 
  			
  		} catch (SQLException se) {
@@ -539,6 +540,61 @@ public class Application extends Controller {
  				return internalServerError(se.toString());
  			}// end finally try
  		}// end try
+    }
+    
+    public static String topTeam(int i) {
+    	
+    	Connection conn = null;
+		Statement stmt = null;
+		
+    	try{
+    		
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+			String sql = "SELECT * FROM team";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			TreeMap<Integer, String> tree = new TreeMap<Integer, String>();
+			
+			while(rs.next()){
+			String name = rs.getString("name");
+			int points = rs.getInt("points");
+			tree.put(points, name);
+			}
+			rs.close();
+			
+			//If detta lag är på plats i sorterat efter poäng
+			
+			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
+			
+			return n;
+			
+			
+			}catch(SQLException se){
+				//Handle errors for JDBC
+		        return se.toString();
+			} catch (ArrayIndexOutOfBoundsException e){
+				return null;
+			}
+//    	catch(Exception e){
+//		    	//Handle errors for Class.forName
+//		        return internalServerError(e.toString());
+//		 	}finally{
+//				 //finally block used to close resources
+//				 try{
+//				    if(stmt!=null)
+//				       conn.close();}
+//				 catch(SQLException se){
+//				 }// do nothing
+//				 try{
+//				    if(conn!=null)
+//				       conn.close();
+//				 }catch(SQLException se){
+//				    return internalServerError(se.toString());
+//				 }//end finally try
+//		   	}//end try
     }
 	    	
     public static Result getUsers() {			//Används inte i nuläget för något
