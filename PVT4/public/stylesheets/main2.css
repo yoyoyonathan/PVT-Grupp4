@@ -1,0 +1,95 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
+body {
+  min-height: 100%;
+  width: 100%; 
+  padding-top: 0px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+h1, h3, p,{
+  text-align: center;
+}
+
+.form-signin, .form-signup, .panel {
+
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control{
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus{
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.top {
+ background: url(stylesheets/summerBurstBackground.jpg) no-repeat center center fixed; 
+ background-size:cover;
+ padding-top: 6em;
+ padding-bottom: 6em;
+ height: 100vh;  
+
+}
+
+div.container {
+  display:table;
+
+}
+div.middle {
+display: table-cell;
+vertical-align: middle;
+height: 100vh;
+}
+
+.bottom {
+ height: 100vh;
+ display: table-cell;
+vertical-align: middle;
+}
+
+#footer{
+    position:fixed;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
+
+body{
+    margin-bottom:50px;
+}
