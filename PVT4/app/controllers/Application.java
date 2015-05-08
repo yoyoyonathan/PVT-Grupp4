@@ -515,7 +515,7 @@ public class Application extends Controller {
 
  			// user.save();
  			session("connected", userUserName);
- 			return redirect(routes.Application.profilePage(userUserName));
+ 			return redirect(routes.Application.joinTeam());
 
  			
  		} catch (SQLException se) {
