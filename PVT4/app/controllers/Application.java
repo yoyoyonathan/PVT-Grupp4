@@ -341,7 +341,6 @@ public class Application extends Controller {
     			ord1.add("Festens ");
     			ord1.add("Livets ");
 
-
     			ArrayList<String> ord2 = new ArrayList<String>();
     			ord2.add("Von Doom");
     			ord2.add("Satan");
