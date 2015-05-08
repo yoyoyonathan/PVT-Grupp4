@@ -571,29 +571,27 @@ public class Application extends Controller {
 			return n;
 			
 			
-			}catch(SQLException se){
-				//Handle errors for JDBC
-		        return se.toString();
-			} catch (ArrayIndexOutOfBoundsException e){
-				return null;
-			}
-//    	catch(Exception e){
-//		    	//Handle errors for Class.forName
-//		        return internalServerError(e.toString());
-//		 	}finally{
-//				 //finally block used to close resources
-//				 try{
-//				    if(stmt!=null)
-//				       conn.close();}
-//				 catch(SQLException se){
-//				 }// do nothing
-//				 try{
-//				    if(conn!=null)
-//				       conn.close();
-//				 }catch(SQLException se){
-//				    return internalServerError(se.toString());
-//				 }//end finally try
-//		   	}//end try
+    	} catch (SQLException se) {
+ 			// Handle errors for JDBC
+// 			return internalServerError(se.toString());
+// 			return badRequest(index.render("Email/användarnamn är redan taget."));
+ 		} catch (Exception e) {
+ 			// Handle errors for Class.forName
+// 			return internalServerError(e.toString());
+ 		} finally {
+ 			// finally block used to close resources
+// 			try {
+// 				if (stmt != null)
+// 					conn.close();
+// 			} catch (SQLException se) {
+ 			// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+// 				return internalServerError(se.toString());
+ 			}// end finally try
+ 		}// end try
     }
 	    	
     public static Result getUsers() {			//Används inte i nuläget för något
