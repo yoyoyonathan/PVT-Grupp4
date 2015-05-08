@@ -343,16 +343,21 @@ public class Application extends Controller {
 
 
     			ArrayList<String> ord2 = new ArrayList<String>();
-    			ord2.add("Doom");
+    			ord2.add("Von Doom");
     			ord2.add("Satan");
     			ord2.add("Småjävlar");
     			ord2.add("Klubbor");
     			ord2.add("Party");
     			ord2.add("Laddare");
-    			ord2.add("Laptop");
-    			ord2.add("Hungriga");
-    			ord2.add("Kamera");
-    			ord2.add("Strawberry");
+    			ord2.add("Energy");
+    			ord2.add("Style");
+    			ord2.add("Heroes");
+    			ord2.add("People");
+    			ord2.add("Voices");
+    			ord2.add("Shouts");
+    			ord2.add("Rockers");
+    			ord2.add("Knäckers");
+
     			
     			Random r1 = new Random();
     	    	int low1 = 0;
@@ -397,27 +402,22 @@ public class Application extends Controller {
 			
 			return t;
 			
-			}catch(SQLException se){
+	    	}catch(SQLException se){
 				//Handle errors for JDBC
 		        return null;
-			}
-//    	catch(Exception e){
-//		    	//Handle errors for Class.forName
-//		        return internalServerError(e.toString());
-//		 	}finally{
-//				 //finally block used to close resources
-//				 try{
-//				    if(stmt!=null)
-//				       conn.close();}
-//				 catch(SQLException se){
-//				 }// do nothing
-//				 try{
-//				    if(conn!=null)
-//				       conn.close();
-//				 }catch(SQLException se){
-//				    return internalServerError(se.toString());
-//				 }//end finally try
-//		   	}//end try
+			}finally{
+				 //finally block used to close resources
+				 try{
+				    if(stmt!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }// do nothing
+				 try{
+				    if(conn!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }//end finally try
+		   	}//end try
 	    	
 	    }
     
