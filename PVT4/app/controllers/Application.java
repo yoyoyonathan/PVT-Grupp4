@@ -356,12 +356,12 @@ public class Application extends Controller {
     			
     			Random r1 = new Random();
     	    	int low1 = 0;
-    	    	int high1 = 17;
+    	    	int high1 = ord1.size()-1;
     	    	int R1 = r1.nextInt(high1-low1) + low1;
     	    	
     	    	Random r2 = new Random();
     	    	int low2 = 0;
-    	    	int high2 = 17;
+    	    	int high2 = ord2.size()-1;
     	    	int R2 = r2.nextInt(high2-low2) + low2;
     	    	
     			String teamName = ord1.get(R1) + ord2.get(R2);
