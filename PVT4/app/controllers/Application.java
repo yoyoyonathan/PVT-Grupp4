@@ -575,9 +575,11 @@ public class Application extends Controller {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
 // 			return badRequest(index.render("Email/användarnamn är redan taget."));
+    		return null;
  		} catch (Exception e) {
  			// Handle errors for Class.forName
 // 			return internalServerError(e.toString());
+ 			return null;
  		} finally {
  			// finally block used to close resources
 // 			try {
@@ -590,6 +592,7 @@ public class Application extends Controller {
  					conn.close();
  			} catch (SQLException se) {
 // 				return internalServerError(se.toString());
+ 				return null;
  			}// end finally try
  		}// end try
     }
@@ -677,24 +680,19 @@ public class Application extends Controller {
 			}catch(SQLException se){
 				//Handle errors for JDBC
 		        return null;
-			}
-//    	catch(Exception e){
-//		    	//Handle errors for Class.forName
-//		        return internalServerError(e.toString());
-//		 	}finally{
-//				 //finally block used to close resources
-//				 try{
-//				    if(stmt!=null)
-//				       conn.close();}
-//				 catch(SQLException se){
-//				 }// do nothing
-//				 try{
-//				    if(conn!=null)
-//				       conn.close();
-//				 }catch(SQLException se){
-//				    return internalServerError(se.toString());
-//				 }//end finally try
-//		   	}//end try
+			}finally{
+				 //finally block used to close resources
+				 try{
+				    if(stmt!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }// do nothing
+				 try{
+				    if(conn!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }//end finally try
+		   	}//end try
 	    	
 	    }
 	
@@ -732,8 +730,10 @@ public class Application extends Controller {
 		preparedStatementCode.setString(2, codeFromDB.codeID);
 		preparedStatementCode.executeUpdate();
 		
+		conn.close();
+		
 		return ok(index.render("teamName: "+ teamFromDB.name + "teamnypoints:"
-				+ teamFromDB.points));	
+				+ teamFromDB.points));
 		}
 
 	public static Code getCode(String codeID) {
@@ -753,6 +753,7 @@ public class Application extends Controller {
 			codeFromDB.amount = rs.getInt("amount");
 			codeFromDB.codeID = rs.getString("codeID");
 			rs.close();
+			conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
