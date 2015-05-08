@@ -15,22 +15,24 @@ h1, h3, p,{
   text-align: center;
 }
 
-
-
 .form-signin, .panel {
 
-  max-width: 330px;
+  max-width: 300px;
   padding: 15px;
   margin: 0 auto;
 }
 
 .form-signup, .panel {
 
-  max-width: 330px;
+  max-width: 300px;
   padding: 15px;
   margin: 0 auto;
 }
 
+.panel {
+  max-width: 300px; 
+
+}
 
 .form-signin, .form-signin-heading,
 .form-signin, .checkbox {
@@ -106,7 +108,7 @@ h1, h3, p,{
  background-size:cover;*/
  background-image: url("../images/bluebackground.jpg");
  background-size: 100% 100%;
- padding-top: 3em;
+ padding-top: 7em;
  padding-bottom: 6em;
  height: 100vh;  
  width: 100%;
@@ -152,7 +154,7 @@ height: 100vh;
 
 .bottom2 {
   background-image: url("../images/yellow.jpg");
-  background-size:cover;
+  background-size:100% 100%;
   display: table-cell;
   vertical-align: middle;
   height: 30vh;
@@ -165,7 +167,6 @@ height: 100vh;
 div.panel, .transparent{
   background:rgba(255,255,255,0.4);
 }
-
 
 #footer{
     position:fixed;
