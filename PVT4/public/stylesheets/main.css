@@ -8,7 +8,7 @@ body {
   min-height: 100%;
   width: 100%; 
   padding-top: 0px;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
   background-color: #880000;
 }
 
@@ -113,7 +113,7 @@ h1, h3, p,{
 
 div.container {
   background-image: url("../images/Wallpaper4.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
   display:table;
 }
 
