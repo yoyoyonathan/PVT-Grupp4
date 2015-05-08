@@ -9,7 +9,6 @@ body {
   width: 100%; 
   padding-top: 0px;
   padding-bottom: 0px;
-  background-color: #880000;
 }
 
 h1, h3, p,{
@@ -171,6 +170,7 @@ div.panel, .transparent{
 #footer{
     position:fixed;
     height:25px;
+    background: url("../images/bluebackground.jpg"); 
     bottom:0px;
     left:0px;
     right:0px;
