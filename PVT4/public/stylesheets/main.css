@@ -105,15 +105,19 @@ h1, h3, p,{
  /*background-image: url("../images/summerburstBackground.jpg"); 
  background-color: #770000;
  background-size:cover;*/
+ background-image: url("../images/Wallpaper4.jpg");
+ background-size: 100% 100%;
  padding-top: 6em;
  padding-bottom: 6em;
  height: 100vh;  
+  border-style: solid;
+  border-color: white;
 
 }
 
 div.container {
-  background-image: url("../images/Wallpaper4.jpg");
-  background-size: 100% 100%;
+  /*background-image: url("../images/Wallpaper4.jpg");
+  background-size: 100% 100%; */
   display:table;
 }
 
@@ -121,26 +125,38 @@ div.middle {
 /*background-image: url("../images/summerburstBackground.jpg");
 background-color: #887766;
 background-size:cover;*/
+ background-image: url("../images/Wallpaper4.jpg");
+  background-size: 100% 100%;
+
 display: table-cell;
 vertical-align: middle;
 height: 100vh;
+ border-style: solid;
+  border-color: white;
 }
 
 .bottom {
   /*background-image: url("../images/summerburstBackground.jpg");
   background-size:cover;*/
+
+   background-image: url("../images/Wallpaper4.jpg");
+  background-size: 100% 100%;
   display: table-cell;
   vertical-align: middle;
   height: 100vh;
+   border-style: solid;
+  border-color: white;
 }
 
 .bottom2 {
-  /*background-image: url("../images/summerburstBackground.jpg");
-  background-size:cover;*/
+  background-image: url("jetBlack.jpg");
+  background-size:cover;
   display: table-cell;
   vertical-align: middle;
-  height: 100vh;
+  height: 30vh;
   padding-bottom: 20px;
+  border-style: solid;
+  border-color: white;
 }
 
 
@@ -161,11 +177,16 @@ div.panel, .transparent{
 #header{
   top:0px;
   position:fixed;
+
 }
+
+/*
 body{
     margin-bottom:30px;
     margin-top:400px;
-    
+  
+*/
+
 div.panel {
   border-style: solid;
   border-color: black;
