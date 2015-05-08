@@ -175,17 +175,22 @@ div.panel, .transparent{
     margin-bottom:0px;
 }
 #header{
-  top:0px;
   position:fixed;
+  top:0px;
+  background-color: white;
 
 }
 
-/*
-body{
-    margin-bottom:25px;
-    margin-top:400px;
-  
-*/
+#header-wrap {
+    position: fixed;
+    height: 200px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+#container{ 
+    margin-top: 200px;
+}
 
 div.panel {
   border-style: solid;
