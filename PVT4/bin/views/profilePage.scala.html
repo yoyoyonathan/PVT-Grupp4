@@ -24,14 +24,18 @@
 
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
-          <ul id="portfolio-filter" class="nav nav-tabs">
+      <section id="header">
+        <div class="container">
+  <ul id="portfolio-filter" class="nav nav-tabs">
             <li class="active"><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-          </ul>
+  </ul>
+      </div>
+    </section>  
 
-  <div role="main" class="ui-content">
+  <div style="margin-top: 80px;" role="main" class="ui-content">
 
     
     <div class = "container" >
@@ -73,14 +77,18 @@
 
 <!-- Start of second page, hunt codes -->
 <div data-role="page" id="hunt">
-   <ul id="portfolio-filter" class="nav nav-tabs">
+      <section id="header">
+        <div class="container">
+  <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-          </ul>
+  </ul>
+</div>
+    </section>
 
-  <div role="main" class="ui-content">
+  <div style="margin-top: 80px;" role="main" class="ui-content">
  <div class="col-sm-4">
         <a class="twitter-timeline"  href="https://twitter.com/scorehunt" data-widget-id="591542182772924416"></a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -105,15 +113,17 @@
 
 </div><!-- Start of third page, team -->
 <div data-role="page" id="team">
+      <section id="header">
   <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
   </ul>
+    </section>
 
 
-  <div role="main" class="ui-content">
+  <div style="margin-top: 80px;" role="main" class="ui-content">
     <div class = "container" >
       <div class = "Strul text-center" >
           <div class="toppenbra">
@@ -128,6 +138,49 @@
         </div>
     </div>
 
+
+
+  <video id="video" width="640" height="480" autoplay></video>
+  <button id="snap">Snap Photo</button>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      // Grab elements, create settings, etc.
+      var canvas = document.getElementById("canvas"),
+        context = canvas.getContext("2d"),
+        video = document.getElementById("video"),
+        videoObj = { "video": true },
+        errBack = function(error) {
+          console.log("Video capture error: ", error.code); 
+        };
+    
+        // Trigger photo take
+        document.getElementById("snap").addEventListener("click", function() {
+          context.drawImage(video, 0, 0, 640, 480);
+        });
+        
+      // Put video listeners into place
+      if(navigator.getUserMedia) { // Standard
+        navigator.getUserMedia(videoObj, function(stream) {
+          video.src = stream;
+          video.play();
+        }, errBack);
+      } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+        navigator.webkitGetUserMedia(videoObj, function(stream){
+          video.src = window.webkitURL.createObjectURL(stream);
+          video.play();
+        }, errBack);
+      }
+      else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+        navigator.mozGetUserMedia(videoObj, function(stream){
+          video.src = window.URL.createObjectURL(stream);
+          video.play();
+        }, errBack);
+      }
+    }, false);
+  </script>
+  
 
   <div class = "container" >
       <div class="baraEnMellanRad text-center">
@@ -220,14 +273,16 @@ hcb_user = {
 
 <!-- Start of fourth page, topplistor -->
 <div data-role="page" id="leader">
-          <ul id="portfolio-filter" class="nav nav-tabs">
+      <section id="header">
+  <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-          </ul>
+  </ul>
+    </section>
 
-  <div role="main" class="ui-content">
+  <div style="margin-top: 80px;" role="main" class="ui-content">
     
 	<table style="width: 50%">
 	<tr>
@@ -260,6 +315,8 @@ hcb_user = {
 	<tr>
 		<td> @controllers.Application.topTeam(10) </td>
 	</tr>
+  	
+  	
 	
 	</table>    
 

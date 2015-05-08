@@ -167,6 +167,7 @@ height: 100vh;
 div.panel, .transparent{
   background:rgba(255,255,255,0.4);
 }
+
 #footer{
     position:fixed;
     height:25px;
@@ -177,9 +178,21 @@ div.panel, .transparent{
     margin-bottom:0px;
 }
 #header{
-  top:0px;
   position:fixed;
+  top:0px;
+  background-color: white;
 
+}
+
+#header-wrap {
+    position: fixed;
+    height: 200px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+#container{ 
+    margin-top: 200px;
 }
 
 /*
