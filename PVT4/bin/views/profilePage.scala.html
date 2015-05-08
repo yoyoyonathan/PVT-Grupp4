@@ -16,17 +16,11 @@
 
   <title>Scorehunt</title>
 
-	<link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/fontawesome/css/font-awesome.css")" />	
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/bootstrap-extension.css")" />
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/carousel-custom-01.css")" />
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/isotope.css")" />
-	<link rel="stylesheet" href="@routes.Assets.at("sylesheets/stylesheet.css")" />
-
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
 </head>
 
 <body>
-
 
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
@@ -43,10 +37,10 @@
     <div class = "container" >
     <div class="Textfält text-center">
      <div class="col-xs-12 col-md-12" >
-		
-		<form action="@routes.Application.registerCode()" method="post">
-		Code: <input type="text" name="code" /><br></br>
-		<div>
+    
+    <form action="/html/tags/html_form_tag_action.cfm" method="post">
+      <textarea placeholder="Skriv kod..."name="test" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></textarea>
+    <div>
     <style scoped>
 
         .button-submit {
@@ -58,19 +52,28 @@
             background: rgb(85, 107, 47); 
         }
 
-   		 </style>
-    	<button class="button-submit pure-button">Skicka!</button>
-			</div>
-		</form>
-	  </div> 
+       </style>
+      <button class="button-submit pure-button">Skicka!</button>
+      </div>
+    </form>
+    </div> 
     </div>  
-	  </div> 
+    </div> 
+
+    <section id="footer">
+     <div class="container">
+            
+              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+
+     </div>
+    </section>
+
     </div>
 </div>
 
 <!-- Start of second page, hunt codes -->
 <div data-role="page" id="hunt">
-	 <ul id="portfolio-filter" class="nav nav-tabs">
+   <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
@@ -90,52 +93,107 @@
     <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScore<img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/> Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
   </div>
 
+    <section id="footer">
+     <div class="container">
+            
+              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
 
+     </div>
+    </section>
 
   </div><!-- /content -->
 
 </div><!-- Start of third page, team -->
 <div data-role="page" id="team">
-	<ul id="portfolio-filter" class="nav nav-tabs">
+  <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-	</ul>
+  </ul>
 
 
-	<div role="main" class="ui-content">
-		<div class = "container" >
-			<div class = "Strul text-center" >
-    			<div class="toppenbra">
-       				<div class="col-xs-12 col-md-12" > 
-       					<img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
-			
-						<h1>@team.name</h1>
-						<p>Du heter @user.userName</p>
-      		 
-      	 			</div> 
-      			</div> 
-  			</div>
-		</div>
+  <div role="main" class="ui-content">
+    <div class = "container" >
+      <div class = "Strul text-center" >
+          <div class="toppenbra">
+              <div class="col-xs-12 col-md-12" > 
+                <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
+      
+            <h1>@team.name</h1>
+            <p>Du heter @user.userName</p>
+           
+              </div> 
+            </div> 
+        </div>
+    </div>
 
 
-	<div class = "container" >
-    	<div class="baraEnMellanRad text-center">
-      		<div class="row text-bottom">
+  <div class = "container" >
+      <div class="baraEnMellanRad text-center">
+          <div class="row text-bottom">
 
-	  		</div> 
-    	</div>  
-	</div>
+        </div> 
+      </div>  
+  </div>
 
 
-	<div class = "container" >
-		<div class="topp1 text-center">
-			<div class="col-xs-12 col-md-12" >
-			<!-- begin htmlcommentbox.com -->
- 			<div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
- 			<link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
- 			<script type="text/javascript" language="javascript" id="hcb"> 
+  <div class = "container" >
+    <div class="topp1 text-center">
+      <div class="col-xs-12 col-md-12" >
+<script>
+// This code goes ABOVE the main HTML Comment Box code!
+// replace the text in the single quotes below to customize labels.
+hcb_user = {
+    // L10N
+    comments_header : 'kommentarer',
+    name_label : 'Namn',
+    content_label: 'Skriv vad du tänker...',
+    submit : 'Kommentera',
+    add:'Lägg till din kommentar',
+    again: 'Gör en ny kommentar?',
+    rss:' ',
+    said:'sa:',
+    prev_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_left.png" class="hcb-icon" title="previous page" alt="[prev]"/>',
+    next_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_right.png" class="hcb-icon" title="next page" alt="[next]"/>',
+    showing:'Visar',
+    to:'till',
+    website_label:'website (optional)',
+    email_label:'email',
+    anonymous:'Anonym',
+    mod_label:'(mod)',
+    subscribe:'email me replies',
+    are_you_sure:'Vill du anmäla kommentaren?',
+      
+    reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> reply',
+    like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> like',
+    
+    //dates
+    days_ago:'dagar sedan',
+    hours_ago:'timmar sedan',
+    minutes_ago:'minuter sedan',
+    within_the_last_minute:'Sades nyligen',
+
+    msg_thankyou:'',
+    msg_approval:'(Den här kommentaren väntar på granskning)',
+    msg_approval_required:'Tack för kommentaren...',
+    
+    err_bad_html:'Your comment contained bad html.',
+    err_bad_email:'Please enter a valid email address.',
+    err_too_frequent:'Du måste vänta lite mellan meddelanden!',
+    err_comment_empty:'Din kommentar skickades inte för att den var för kort',
+    err_denied:'Your comment was not accepted.',
+
+    //SETTINGS
+    MAX_CHARS: 2048,
+    PAGE:'', // ID of the webpage to show comments for. defaults to the webpage the user is currently visiting.
+    RELATIVE_DATES:true // show dates in the form "X hours ago." etc.
+};
+</script>
+      <!-- begin htmlcommentbox.com -->
+      <div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
+      <link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
+      <script type="text/javascript" language="javascript" id="hcb"> 
       if(!window.hcb_user){
         hcb_user={ };}
         (function(){
@@ -143,11 +201,20 @@
           s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");
           if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})();
       </script>
-	<!-- end htmlcommentbox.com -->
-			</div> 
-    	</div>  
-		</div>
-	</div><!-- /content -->
+  <!-- end htmlcommentbox.com -->
+      </div> 
+      </div>  
+    </div>
+
+    <section id="footer">
+     <div class="container">
+            
+              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+
+     </div>
+    </section>
+
+  </div><!-- /content -->
 </div>
 
 
@@ -161,52 +228,59 @@
           </ul>
 
   <div role="main" class="ui-content">
-  
     
-    <table style="width:50%">
-	  <tr>
-	    <td> @controllers.Application.topTeam(1) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(2) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(3) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(4) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(5) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(6) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(7) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(8) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(9) </td>
-	  </tr>
-	  <tr>
-	    <td> @controllers.Application.topTeam(10) </td>
-	  </tr>
-	</table>
-    
+	<table style="width: 50%">
+	<tr>
+		<td> @controllers.Application.topTeam(1) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(2) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(3) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(4) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(5) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(6) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(7) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(8) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(9) </td>
+	</tr>
+	<tr>
+		<td> @controllers.Application.topTeam(10) </td>
+	</tr>
+	
+	</table>    
+
+    <section id="footer">
+     <div class="container">
+            
+              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+
+     </div>
+    </section>
 
   </div><!-- /content -->
 
 </div>
 
-	<script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
-	<script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>
-	<script src="@routes.Assets.at("javascripts/jquery.isotope.min.js")"></script>
-	<script src="@routes.Assets.at("javascripts/init-isotope-portfolio.js")"></script>
+  <script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
+  <script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>
+  <script src="@routes.Assets.at("javascripts/jquery.isotope.min.js")"></script>
+  <script src="@routes.Assets.at("javascripts/init-isotope-portfolio.js")"></script>
 
-	<script src="@routes.Assets.at("javascripts/holder.js")"></script>
-	<script src="@routes.Assets.at("javascripts/script.js")"></script>
+  <script src="@routes.Assets.at("javascripts/holder.js")"></script>
+  <script src="@routes.Assets.at("javascripts/script.js")"></script>
 </body>
 </html>
