@@ -17,20 +17,20 @@ h1, h3, p,{
 
 .form-signin, .panel {
 
-  max-width: 330px;
+  max-width: 300px;
   padding: 15px;
   margin: 0 auto;
 }
 
 .form-signup, .panel {
 
-  max-width: 330px;
+  max-width: 300px;
   padding: 15px;
   margin: 0 auto;
 }
 
 .panel {
-  width: 300px; 
+  max-width: 300px; 
 
 }
 
@@ -154,7 +154,7 @@ height: 100vh;
 
 .bottom2 {
   background-image: url("../images/yellow.jpg");
-  background-size:cover;
+  background-size:100% 100%;
   display: table-cell;
   vertical-align: middle;
   height: 30vh;
