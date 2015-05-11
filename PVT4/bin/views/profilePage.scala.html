@@ -42,8 +42,8 @@
     <div class="Textfält text-center">
      <div class="col-xs-12 col-md-12" >
     
-    <form action="/html/tags/html_form_tag_action.cfm" method="post">
-      <textarea placeholder="Skriv kod..."name="test" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></textarea>
+    <form action="@routes.Application.registerCode()" method="post">
+      <input type="text"  placeholder="Skriv kod" name="codeID" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></input>
     <div>
     <style scoped>
 
@@ -57,7 +57,7 @@
         }
 
        </style>
-      <button class="button-submit pure-button">Skicka!</button>
+      <button onClick="history.go(0)" class="button-submit pure-button">Skicka!</button>
       </div>
     </form>
     </div> 
@@ -132,6 +132,53 @@
       
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
+           
+<input type="file" capture="camera" accept="image/*" id="takePictureField">
+        
+		<img id="yourimage">
+ 
+		<div id="swatches">
+			<div id="swatch0" class="swatch"></div>
+			<div id="swatch1" class="swatch"></div>
+			<div id="swatch2" class="swatch"></div>
+			<div id="swatch3" class="swatch"></div>
+			<div id="swatch4" class="swatch"></div>
+		</div>           
+           <script>
+	var desiredWidth;
+
+    $(document).ready(function() {
+        console.log('onReady');
+		$("#takePictureField").on("change",gotPic);
+		$("#yourimage").load(getSwatches);
+		desiredWidth = window.innerWidth;
+        
+        if(!("url" in window) && ("webkitURL" in window)) {
+            window.URL = window.webkitURL;   
+        }
+		
+	});
+
+	function getSwatches(){
+		var colorArr = createPalette($("#yourimage"), 5);
+		for (var i = 0; i < Math.min(5, colorArr.length); i++) {
+			$("#swatch"+i).css("background-color","rgb("+colorArr[i][0]+","+colorArr[i][1]+","+colorArr[i][2]+")");
+			console.log($("#swatch"+i).css("background-color"));
+		}
+	}	
+	
+    //Credit: https://www.youtube.com/watch?v=EPYnGFEcis4&feature=youtube_gdata_player
+	function gotPic(event) {
+        if(event.target.files.length == 1 && 
+           event.target.files[0].type.indexOf("image/") == 0) {
+            $("#yourimage").attr("src",URL.createObjectURL(event.target.files[0]));
+        }
+	}
+	
+	
+        
+    </script>    
+           
            
               </div> 
             </div> 
