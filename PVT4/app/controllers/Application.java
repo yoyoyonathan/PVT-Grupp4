@@ -749,11 +749,12 @@ public class Application extends Controller {
 			codeFromDB.codeID = rs.getString("codeID");
 			rs.close();
 			conn.close();
+			return codeFromDB;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		return codeFromDB;
 	}
 }    
 
