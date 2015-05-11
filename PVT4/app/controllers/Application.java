@@ -699,7 +699,6 @@ public class Application extends Controller {
 	
 	public static Result registerCode() throws SQLException{
 		Connection conn = null;
-		String teamName  ="";
 		conn = DB.getConnection();
 		Code codeFromDB = new Code();
 		Team teamFromDB = new Team();
@@ -708,7 +707,6 @@ public class Application extends Controller {
     	String currentUser = session("connected");
 
 		//String teamName = formData.get("team");
-		teamName = getTeam(currentUser).name;
 
 		String codeID = formData.get("codeID");
 		
@@ -737,7 +735,7 @@ public class Application extends Controller {
 		
 		conn.close();
 		
-		return ok(codeID);
+		return redirect(routes.Application.profilePage(currentUser));
         //return redirect(routes.Application.team(teamName));
 
 		}
