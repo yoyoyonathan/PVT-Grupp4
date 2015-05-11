@@ -125,7 +125,15 @@ div.container {
 
 #team {
 background-image: url("../images/bluebackground.jpg");
-width: 100%;
+min-height: 100%;
+min-width: 100%;
+
+width: 100;
+height: auto;
+
+position: fixed;
+top: 0;
+left: 0;
 }
 
 div.middle {

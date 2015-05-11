@@ -29,17 +29,15 @@
 	<div class ="container" style="width: 100%;">
 	<div class team text-center">
 	
-	<h1 style="color: yellow;"></h1>
-	
 	<h3 style="color: yellow;">Skapa lag</h3>
 	<form action="@routes.Application.addTeam()" method="post">
-	Team name: <input type="text" name="name" /><br></br>
+	Lagnamn: <input type="text" name="name" />
 	<button>Skapa!</button>
 	</form>
 	
 	<h3 style="color: yellow;">Lägg till medlem</h3>
 	<form action="@routes.Application.addTeamMember()" method="post">
-	Team name: <input type="text" name="name" />
+	Namn på medlem: <input type="text" name="name" />
 	<button>Addera!</button>
 	</form>
 	
