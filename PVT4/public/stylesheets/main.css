@@ -1,6 +1,7 @@
 html {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 
@@ -11,12 +12,16 @@ body {
   padding-bottom: 0px;
 }
 
-h1, h3, p,{
+/*h1, h3, p,{
   text-align: center;
+}*/
+
+#tavlingsinfo{
+  text-align: center;
+  font-family: arial;
 }
 
 .form-signin, .panel {
-
   max-width: 300px;
   padding: 15px;
   margin: 0 auto;
@@ -29,10 +34,14 @@ h1, h3, p,{
   margin: 0 auto;
 }
 
-.panel {
+.uptotop{
+  position: center;
+}
+
+/*.panel {
   max-width: 300px; 
 
-}
+}*/
 
 .form-signin, .form-signin-heading,
 .form-signin, .checkbox {
@@ -102,18 +111,20 @@ h1, h3, p,{
 
 
 
-.top {
+div.top {
  /*background-image: url("../images/summerburstBackground.jpg"); 
  background-color: #770000;
  background-size:cover;*/
  background-image: url("../images/bluebackground.jpg");
  background-size: 100% 100%;
- padding-top: 7em;
- padding-bottom: 6em;
+ /*padding-top: 7em;
+ padding-bottom: 6em;*/
  height: 100vh;  
  width: 100%;
   border-style: solid;
   border-color: white;
+  display: table-cell;
+vertical-align: middle;
 
 }
 
@@ -163,7 +174,7 @@ height: 100vh;
   background-size:100% 100%;
   display: table-cell;
   vertical-align: middle;
-  height: 30vh;
+  height: 100vh;
   width: 100%;
   padding-bottom: 20px;
   border-style: solid;
@@ -172,6 +183,10 @@ height: 100vh;
 
 div.panel, .transparent{
   background:rgba(255,255,255,0.4);
+}
+
+#tavlingsinformation{
+  text-align: center;
 }
 
 #footer{
@@ -188,7 +203,7 @@ div.panel, .transparent{
   top:0px;
   background-color: white;
   opacity: 0.8;
-  /*background: url("../images/bluebackground.jpg");*/
+  background: url("../images/bluebackground.jpg");
 }
 
 #body{
@@ -201,6 +216,11 @@ div.panel, .transparent{
   opacity: 0.8;
 }
 
+#rubrik{
+  color: #F9ED4D;
+  font-size:30px;
+  font-weight: bold;
+}
 
 #header-wrap {
     position: fixed;
