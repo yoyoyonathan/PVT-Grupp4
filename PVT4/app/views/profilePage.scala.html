@@ -42,8 +42,8 @@
     <div class="Textfält text-center">
      <div class="col-xs-12 col-md-12" >
     
-    <form action="/html/tags/html_form_tag_action.cfm" method="post">
-      <textarea placeholder="Skriv kod..."name="test" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></textarea>
+    <form action="@routes.Application.registerCode()" method="post">
+      <input type="text"  placeholder="Skriv kod" name="codeID" id="code"style="width:290px;height:50px;background-color:#B0C4DE;color:#008080;font:28px/30px cursive;"></input>
     <div>
     <style scoped>
 
@@ -57,7 +57,7 @@
         }
 
        </style>
-      <button class="button-submit pure-button">Skicka!</button>
+      <button onClick="history.go(0)" class="button-submit pure-button">Skicka!</button>
       </div>
     </form>
     </div> 
@@ -289,7 +289,7 @@ hcb_user = {
 		<td> @controllers.Application.topTeam(1) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeam(2) </td>
+		<td> @controllers.Application.topTeam(4) </td>
 	</tr>
 	<tr>
 		<td> @controllers.Application.topTeam(3) </td>

@@ -693,19 +693,21 @@ public class Application extends Controller {
 	
 	public static Result registerCode() throws SQLException{
 		Connection conn = null;
-		
 		conn = DB.getConnection();
+		Code codeFromDB = new Code();
+		Team teamFromDB = new Team();
 		
 		DynamicForm formData = Form.form().bindFromRequest();
-		
-		String teamName = formData.get("team");
+    	String currentUser = session("connected");
+
+		//String teamName = formData.get("team");
+
 		String codeID = formData.get("codeID");
-		Code codeFromDB = new Code();
-		Team teamFromDB = new Team();		
+		
 		PreparedStatement preparedStatement = null;
 		PreparedStatement preparedStatementCode = null;
 		
-		teamFromDB = getTeam(teamName);
+		teamFromDB = getTeam(currentUser);
 		codeFromDB = getCode(codeID);
 
 		codeFromDB.amount -= 1;
@@ -727,8 +729,7 @@ public class Application extends Controller {
 		
 		conn.close();
 		
-		return ok(index.render("teamName: "+ teamFromDB.name + "teamnypoints:"
-				+ teamFromDB.points));
+        return redirect(routes.Application.profilePage(currentUser));
 		}
 
 	public static Code getCode(String codeID) {
