@@ -10,7 +10,7 @@ import play.db.ebean.*;
 import play.db.ebean.Model.Finder;
 
 @Entity
-public class Team extends Model {
+public class Team extends Model implements Comparable<Team> {
 	
 	@Id
 	@Constraints.Required
@@ -27,4 +27,14 @@ public class Team extends Model {
 	public static Finder<String,Team> find = new Finder<String,Team>(
 	        String.class, Team.class
 	); 
+	
+	@Override
+	public int compareTo(Team team2) {
+		int returnInt = team2.points - points;
+		if(returnInt != 0 ){
+			return returnInt;
+		}else{
+			return team2.name.compareTo(name);
+		}
+	}
 }
