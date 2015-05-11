@@ -30,21 +30,21 @@
   <title>Scorehunt</title>
 	<div class team text-center">
 	
-	<h3 style="color: yellow;">Skapa lag</h3>
+	<h3 style="color: yellow;">Skapa lag!</h3>
 	<form action="@routes.Application.addTeam()" method="post">
-	Lagnamn: <input type="text" name="name" />
+	<input type="text" name="name" placeholder="Lagnamn" />
 	<button>Skapa!</button>
 	</form>
 	
-	<h3 style="color: yellow;">Lägg till medlem</h3>
+	<h3 style="color: yellow;">Gå med i lag!</h3>
 	<form action="@routes.Application.addTeamMember()" method="post">
-	Namn på medlem: <input type="text" name="name" />
-	<button>Addera!</button>
+	<input type="text" name="name" placeholder="Lagnamn" />
+	<button>Joina!</button>
 	</form>
 	
-	<h3 style="color: yellow;"> Slumpa lag </h3>
+	<h3 style="color: yellow;"> Slumpa lag!</h3>
 	<form action="@routes.Application.randomizeTeam()" method="post">
-	<input type="submit" value="Slumpmaskin">
+	<input type="submit" value="Slumpa!">
 	</form>
 	
 	</div>
