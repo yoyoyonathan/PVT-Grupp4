@@ -150,7 +150,9 @@ public class Application extends Controller {
 			preparedStatement.executeUpdate();
  			
 //			return ok(profilePage.render(null));
-			return redirect("/profile/" + userName);
+//			return redirect("/profile/" + userName);
+ 			return redirect(routes.Application.profilePage(userName));
+
 			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
