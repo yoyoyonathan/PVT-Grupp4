@@ -123,10 +123,12 @@ div.container {
   display:table;
 }
 
+
 #team {
 background-image: url("../images/bluebackground.jpg");
 min-height: 100%;
 min-width: 100%;
+padding top: 7em;
 
 width: 100;
 height: auto;
