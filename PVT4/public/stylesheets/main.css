@@ -123,9 +123,8 @@ div.container {
   display:table;
 }
 
-div.jointeam {
+#team {
 background-image: url("../images/bluebackground.jpg");
-background-color: red;
 width: 100%;
 }
 
