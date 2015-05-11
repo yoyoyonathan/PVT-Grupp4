@@ -123,6 +123,12 @@ div.container {
   display:table;
 }
 
+div.jointeam {
+background-image: url("../images/bluebackground.jpg");
+background-color: red;
+width: 100%;
+}
+
 div.middle {
 /*background-image: url("../images/summerburstBackground.jpg");
 background-color: #887766;
