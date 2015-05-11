@@ -177,7 +177,7 @@ div.panel, .transparent{
 #footer{
     position:fixed;
     height:25px;
-    background: url("../images/bluebackground.jpg"); 
+    background: url("../images/yellow.jpg"); 
     bottom:0px;
     left:0px;
     right:0px;
@@ -187,8 +187,15 @@ div.panel, .transparent{
   position:fixed;
   top:0px;
   background-color: white;
+  opacity: 0.9;
+  /*background: url("../images/bluebackground.jpg");*/
+}
+
+#body{
+   background: url("../images/bluebackground.jpg");
 
 }
+
 
 #header-wrap {
     position: fixed;
