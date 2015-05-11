@@ -546,25 +546,30 @@ public class Application extends Controller {
     		
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
-			
+			String returnString = "";
 			String sql = "SELECT * FROM team";
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			
-			TreeMap<Integer, String> tree = new TreeMap<Integer, String>();
+			TreeSet<Team> tree = new TreeSet<Team>();
 			
 			while(rs.next()){
 			String name = rs.getString("name");
 			int points = rs.getInt("points");
-			tree.put(points, name);
+			Team team = new Team();
+			team.name = name;
+			team.points = points;
+			tree.add(team);
 			}
 			rs.close();
 			
 			//If detta lag är på plats i sorterat efter poäng
 			
-			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
-			
-			return n;
+//			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
+			for( int i2 = 0; i2 <= i-1;i2++){
+				returnString = tree.first().name + ": " + tree.pollFirst().points;
+			}
+			return returnString;
 			
 			
     	} catch (SQLException se) {
@@ -710,7 +715,7 @@ public class Application extends Controller {
 		PreparedStatement preparedStatement = null;
 		PreparedStatement preparedStatementCode = null;
 		
-		teamFromDB = getTeam(teamName);
+		teamFromDB = getTeam(currentUser);
 		codeFromDB = getCode(codeID);
 
 		codeFromDB.amount -= 1;
@@ -732,7 +737,7 @@ public class Application extends Controller {
 		
 		conn.close();
 		
-		return ok(teamName);
+		return ok(codeID);
         //return redirect(routes.Application.team(teamName));
 
 		}
