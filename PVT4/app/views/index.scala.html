@@ -126,38 +126,52 @@ $(document).ready(function (){
 </div>
 
     </div> /.navbar-collapse -->
-  
-
-  <div id="top" class = "container" style="width: 100%;">
-      <div class="top">
-        <div class="panel panel-default;">
-    <div class="panel-body">
-        <div class="row">
-         <div class="col-xs-12 col-md-12" >
+  <!--<div class="container" style="width: 100%;">
+  <div id="top" class="top">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+    <div class="panel panel-default">
+      <div class="panel-body">
           <span id="loggahär" style="color: #F9ED4D; font-size: 300%; text-align: center;">Summerburst
         </span>
           <h1 style="color: #F9ED4D; font-size: 300%; text-align: center;">Scorehunt </br> 2015</h1>
-          <!--<h3 class="text-center"> Det här är tävlingen för summerburst </h3>
-            <br> </br> -->
             <section class="center-button text-center"> 
                <label for="btn btn-lg btn-primary"> </label>
-            <!--<br></br> -->
             <button id="toplog" class="btn btn-lg btn-primary btn-lg" href=#logIn>Logga in</button>
-         <!-- <label for="btn btn-lg btn-default">Ny användare?</label>
-            <br></br> -->
             <br></br>
             <button id="topsign" class="btn btn-lg btn-default">Skapa konto
             </button>
               </section> 
+            </div>
          </div> 
         </div>  
       </div>
+  </div>-->
+<div id="top" class="container" style="width: 100%;">
+  <div class="top">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+    <div class="panel panel-default">
+    <div class="panel-body">
+        <h3 id="rubrik" class="text-center heading">Summerburst</h3>
+        <h3 id="rubrik" class="text-center headng2">Scorehunt</h3>
+        <h3 id="rubrik" class="text-center heading3">2015</h3>
+        <br><br>
+       <section class="center-button text-center"> 
+               <label for="btn btn-lg btn-primary"> </label>
+            <button id="toplog" class="btn btn-lg btn-primary btn-lg" href=#logIn>Logga in</button>
+            <br></br>
+            <button id="topsign" class="btn btn-lg btn-default">Skapa konto
+            </button>
+              </section> 
+    
+     </div>
+    </div>
   </div>
-  </div>  
-      </div>
+  </div>
+</div>
 
 <div id="conmid" class="container" style="width: 100%;">
   <div class="middle">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
     <div class="panel panel-default">
     <div class="panel-body">
         <form  class="form-signin" action="@routes.Application.login()" method="post">
@@ -173,17 +187,17 @@ $(document).ready(function (){
         <button id="loginbut" class="btn btn-lg btn-primary btn-block"   type="submit">Logga in</button>
         <br></br>
         <h4><span style="color:red">@message</span></h4>
-
-      <!--  <a class="forgot" href=#forgotPassword>Forgot password?</a> -->
         </form>
      </div>
     </div>
+  </div>
   </div>
 </div>
 
 
 <div id="conbottom" class="container" style="width: 100%;">
-  <div class="bottom">
+  <div id="bottom" class="bottom">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
     <div class="panel panel-default">
       <div class="panel-body">
         <form class="form-signup" action="@routes.Application.addUser()" method ="post">
@@ -205,25 +219,55 @@ $(document).ready(function (){
         <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa konto</button>
         <h4><span style="color:red">@message</span></h4>
         </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+  
+
+<div id="conbottom2" class="container" style="width: 100%;">
+  <div id="bottom2" class="bottom2">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+    <div class="panel panel-default">
+        <h3 class="text-center" id="rubrik2"> Tävlingsinformation</h3>
+        <p class="text-center" id="tavlingsinfo">
+
+        Summerburst Scorehunt pågår från 12 maj till 13 juni
+        och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.</p>
+        <br>
+        <br>
+        <a id="tavlingsinformation" href="tavlingsinformation">Läs mer här</a>
+        <br>
+        <br>
+        
+      <button type="button" id="uptotop" class="btn btn-default btn-md">
+      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
      </div>
     </div>
   </div>
 </div>
     
- <!--<div class ="container">
+ <!--<div id="conbottom2" class ="container" style="width: 100%;">
    <div class="bottom2">
-    <div class="col-xs-12 col-md-12">
-      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</h3>
-      <h5 class="text-center"> här står själv lilla informationen</h5>
-      </div> -->
- <div class ="container" style="width: 100%;">
-   <div class="bottom2 text-center">
+      <div class="col-xs-12 col-sm-12 col-md-12" >
     
-      <h3 class="text-center"> Tävlingstext om typ info och användarvillkor</hr>
-      <h5 class="text-center"> här står själv lilla informationen</h5>
-      <br></br>
+      <h3 class="text-center" id="rubrik"> Tävlingsinformation</h3>
+        <p class="text-center" id="tavlingsinfo">
+
+        Summerburst Scorehunt pågår från 12 maj till 13 juni
+        och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.</p>
+        <br>
+        <br>
+        <a id="tavlingsinformation" href="tavlingsinformation"><span text-decoration: underline >Läs mer här!</span></a>
+        <br>
+        <br>
+        
       <button type="button" id="uptotop" class="btn btn-default btn-md">
       <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
+    </div>
    </div>
   </div>
 
@@ -233,12 +277,53 @@ $(document).ready(function (){
          <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
          </div> -->
       
-    </div>
+    <!--</div>
 </div>
+-->
+<!--<div class="tavlingsinformation">
+  <p>
+  Det finns 200 koder att samla och varje kod ger 100 poäng. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
+        <br>
+        <br>
+        Tävlingen består av veckotävlingar och en stor tävling som pågår fram till festivalen börjar. Veckotävlingarna avslutas varje vecka där de fem bästa lagen får pris. Vinnare av första pris under den sista veckan när festivalen inträffar vinner biljetter till nästa års festival.
+        <br>
+        <br>
+        1a pris – Biljetter till festivalen
+        <br>
+        <br>
+        2a pris – Årsmedlemskap på Spotify Premium
+        <br>
+        <br>
+        3-5e pris – Hörlurar från Koss
+        <br>
+        <br>
+        Den stora tävlingen avslutas dagen innan festivalen börjar där de fem bästa lagen får pris.
+        <br>
+        <br>
+        1a pris – Meet and greet med artisterna
+        <br>
+        <br>
+        2-5e pris – VIP-biljetter
+        <br>
+        <br>
+        Vinnarna kontaktas via e-post, därför är det extra viktigt att fylla i rätt epostadress vid skapande av tävlingskonto så att vi kan komma i kontakt med er.
+        <br>
+        <br>
 
+        <h4> Allmänna tävlingsvillkor</h4>
+        Genom att delta i tävlingen accepterar du följande tävlingsvillkor och att din epost-adress sparas i Summerburst Scorehunts databas.
+        <br>
+        <br>
+      Tävlingen är gratis att delta i och för att tävla behöver du vara 18 år. Anställda på TechNovaZion Sweden AB får ej delta.
+      Vinnarna blir kontaktade via e-post. Du behöver därför fylla i rätt epostadress för att vi ska kunna komma i kontakt med dig. Din epostadress kommer inte visas för andra användare i tävlingen utan används endast för detta ändamål. Svarar du inte på e-post från oss inom 7 dagar kan vi ej garantera att du får ditt pris.
+      <br>
+      <br>
+      Det går ej att byta in priser mot kontanter.</p>
+      <br></br>
+</div>
+-->
     
-<!--
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
