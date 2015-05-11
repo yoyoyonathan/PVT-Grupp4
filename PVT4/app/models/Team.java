@@ -19,11 +19,6 @@ public class Team extends Model implements Comparable<Team> {
 	public String user;
 	public ArrayList<String> wall;
 	
-//	public void addMember(User user) {
-//		if (members.size() < 5)
-//			members.add(user);
-//	}
-	
 	public static Finder<String,Team> find = new Finder<String,Team>(
 	        String.class, Team.class
 	); 

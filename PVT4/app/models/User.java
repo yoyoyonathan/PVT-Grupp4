@@ -9,7 +9,6 @@ import play.db.ebean.*;
 
 @Entity
 public class User extends Model{
-	//Tydligen skyddar Play attributen automatiskt
 	
 	@Id
 	@Constraints.Required
@@ -17,7 +16,7 @@ public class User extends Model{
 	public String userName;
 	@Constraints.Required
 	public String password;
-	public String birthDate;		//Tänkt att vara 6 siffror så kan man kolla ålder med krokodilmunnar
+	public String birthDate;		
 	
 //	public User(String email, String userName, String password, int birthDate){
 //		this.email = email;
