@@ -135,6 +135,13 @@ position: fixed;
 top: 0;
 left: 0;
 
+display: table-cell; 
+vertical-align: middle;
+height: 100vh;
+ border-style: solid;
+  border-color: white;
+  width: 100%;
+
 }
 
 
