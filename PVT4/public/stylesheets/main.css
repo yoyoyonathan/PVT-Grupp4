@@ -187,13 +187,18 @@ div.panel, .transparent{
   position:fixed;
   top:0px;
   background-color: white;
-  opacity: 0.9;
+  opacity: 0.8;
   /*background: url("../images/bluebackground.jpg");*/
 }
 
 #body{
    background: url("../images/bluebackground.jpg");
 
+}
+
+#twitter{
+  width: 300px;
+  opacity: 0.8;
 }
 
 
