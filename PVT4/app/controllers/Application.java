@@ -539,7 +539,7 @@ public class Application extends Controller {
  		}// end try
     }
     
-    public static String topTeam(int i) {
+    public static String topTeamName(int i) {
     	
     	Connection conn = null;
 		Statement stmt = null;
@@ -569,7 +569,68 @@ public class Application extends Controller {
 			
 //			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
 			for( int i2 = 0; i2 <= i-1;i2++){
-				returnString = tree.first().name + ": " + tree.pollFirst().points;
+				returnString = tree.first().name + ": ";
+			}
+			return returnString;
+			
+			
+    	} catch (SQLException se) {
+ 			// Handle errors for JDBC
+// 			return internalServerError(se.toString());
+// 			return badRequest(index.render("Email/användarnamn är redan taget."));
+    		return null;
+ 		} catch (Exception e) {
+ 			// Handle errors for Class.forName
+// 			return internalServerError(e.toString());
+ 			return null;
+ 		} finally {
+ 			// finally block used to close resources
+// 			try {
+// 				if (stmt != null)
+// 					conn.close();
+// 			} catch (SQLException se) {
+ 			// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+// 				return internalServerError(se.toString());
+ 				return null;
+ 			}// end finally try
+ 		}// end try
+    }
+    
+ public static String topTeamPoints(int i) {
+    	
+    	Connection conn = null;
+		Statement stmt = null;
+		
+    	try{
+    		
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			String returnString = "";
+			String sql = "SELECT * FROM team";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			TreeSet<Team> tree = new TreeSet<Team>();
+			
+			while(rs.next()){
+			String name = rs.getString("name");
+			int points = rs.getInt("points");
+			Team team = new Team();
+			team.name = name;
+			team.points = points;
+			tree.add(team);
+			}
+			rs.close();
+			
+			//If detta lag är på plats i sorterat efter poäng
+			
+//			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
+			for( int i2 = 0; i2 <= i-1;i2++){
+				returnString = "" + tree.pollFirst().points;
 			}
 			return returnString;
 			
