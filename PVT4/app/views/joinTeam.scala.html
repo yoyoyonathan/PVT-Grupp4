@@ -64,6 +64,38 @@
 	</div>
 	</section>
 	
+	<div id="conbottom" class="container" style="width: 100%;">
+  <div id="bottom" class="bottom">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form class="form-signup" action="@routes.Application.addTeam()" method ="post">
+        <h2 class="text-center form-signup-heading">Skapa lag!</h2>
+        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required>
+        <div class="link">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa!</button>
+        </form>
+        <form class="form-signup" action="@routes.Application.addTeamMember()" method ="post">
+        <h2 class="text-center form-signup-heading">Gå med i lag!</h2>
+        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required>
+        <div class="link">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Joina!</button>
+        </form>
+        <form class="form-signup" action="@routes.Application.randomizeTeam()" method ="post">
+        <h2 class="text-center form-signup-heading">Slumpa lag!</h2>
+        <div class="link">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Slumpa!</button>
+        </form>
+        <h4><span style="color:red">@message</span></h4>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+	
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
