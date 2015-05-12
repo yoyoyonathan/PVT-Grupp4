@@ -83,6 +83,7 @@ public class Application extends Controller {
 				} 
 				
 				rs.close();
+//				return redirect("/profile/" + userName);
 				return ok(index.render("Fel email/lösenord."));
 				
 		}catch(SQLException se){
@@ -126,7 +127,7 @@ public class Application extends Controller {
     
     public static Result addTeam() {					//Som det är nu, om man är med i ett lag och försöker skapa ett nytt så 
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){ 	//skapas laget fortfarande, men användaren kommer inte med i laget
- 		    return badRequest(index.render("Nu har något skrivits in fel"));
+ 		    return badRequest(joinTeam.render("Nu har något skrivits in fel"));
  		}
     	
     	Team team = Form.form(Team.class).bindFromRequest().get();
@@ -157,7 +158,7 @@ public class Application extends Controller {
  		} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
- 			return badRequest(index.render("Namn är redan taget."));
+ 			return badRequest(joinTeam.render("Namn är redan taget."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
@@ -211,12 +212,12 @@ public class Application extends Controller {
 				return redirect("/profile/" + userName);
  			}
  			
- 			return badRequest(index.render("Teamet är redan fullt/extisterar ej."));
+ 			return badRequest(joinTeam.render("Teamet är redan fullt/extisterar ej."));
 	 			
     	} catch (SQLException se) {
  			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
- 			return badRequest(index.render("Det laget du har valt är fullt/extisterar inte."));
+ 			return badRequest(joinTeam.render("Det laget du har valt är fullt/extisterar inte."));
  		} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
@@ -307,7 +308,7 @@ public class Application extends Controller {
     	} catch (SQLException se) {
 			// Handle errors for JDBC
 //			return internalServerError(se.toString());
-			return badRequest(index.render("Du är redan med i ett team."));
+			return badRequest(joinTeam.render("Du är redan med i ett team."));
     	} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
