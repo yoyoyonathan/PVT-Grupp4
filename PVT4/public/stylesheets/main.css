@@ -153,7 +153,7 @@ div.middle {
 /*background-image: url("../images/summerburstBackground.jpg");
 background-color: #887766;
 background-size:cover;*/
- background-image: url("../images/yellow.png");
+ background-image: url("../images/yellow4.jpg");
   background-size: 100% 100%;
 
 display: table-cell;
@@ -179,7 +179,7 @@ height: 100vh;
 }
 
 .bottom2 {
-  background-image: url("../images/yellow.png");
+  background-image: url("../images/yellow4.jpg");
   background-size:100% 100%;
   display: table-cell;
   vertical-align: middle;
