@@ -1,64 +1,109 @@
 @(message: String)
 
-   <!DOCTYPE html>
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-  <title>Scorehunt</title>
-
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
+    <link rel="bakgrundsbild" type="image/png" href="@routes.Assets.at("images/summerburstBackground.jpg")">
+   <!-- Included Bootstrap CSS Files -->
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
-  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
-</head>
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap-responsive.min.css")" />
+  
+  <!-- Includes FontAwesome -->
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/fontawesome/css/font-awesome.css")" />
+  
+  <!-- Included Bootstrap Customization CSS Files --> 
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap-extension.css")" />
+  
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/carousel-custom-01.css")" />
 
-<body>
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/touchTouch/assets/touchTouch/touchTouch.css")" />
+  
+  <!--<link rel="stylesheet" href="@routes.Assets.at("stylesheets/stylesheet.css")" />-->
+  
+  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+
+	<section id="team">
+	<div class="container" style="width: 100%;">
+	<div class="col-xs-12 col-sm-12 col-md-12">
+	<div class="panel panel-default>
+	<div class="panel-body">
 	
   <title>Scorehunt</title>
-	<div class ="container" style="width: 100%;">
 	<div class team text-center">
 	
-	<h1 style="color: yellow;">Team</h1>
-	
-	<h3 style="color: yellow;">Create Team</h3>
+	<h3 style="color: yellow;">Skapa lag!</h3>
 	<form action="@routes.Application.addTeam()" method="post">
-	Team name: <input type="text" name="name" /><br></br>
-	<button>Create!</button>
+	<input type="text" name="name" placeholder="Lagnamn" />
+	<button>Skapa!</button>
 	</form>
 	
-	<h3 style="color: yellow;">Add Member</h3>
+	<h3 style="color: yellow;">Gå med i lag!</h3>
 	<form action="@routes.Application.addTeamMember()" method="post">
-	Team name: <input type="text" name="name" />
-	<button>Addera!</button>
+	<input type="text" name="name" placeholder="Lagnamn" />
+	<button>Joina!</button>
 	</form>
 	
-	<h3 style="color: yellow;">Add Points</h3>
-	<form action="@routes.Application.addPoints()" method="post">
-	Team name: <input type="text" name="name" />
-	Number of points: <input type="number" name="points" /><br></br>
-	<button>Kör!</button>
-	</form>
-	
-	<h3 style="color: yellow;"> Slumpa lag </h3>
+	<h3 style="color: yellow;"> Slumpa lag!</h3>
 	<form action="@routes.Application.randomizeTeam()" method="post">
-	<input type="submit" value="Slumpmaskin">
+	<button>Joina!</button>
 	</form>
-
-	</div>
-	</div>
 	
-  <script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")" type="text/javascript"></script>
-  <script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>
-  <script src="@routes.Assets.at("javascripts/jquery.isotope.min.js")"></script>
-  <script src="@routes.Assets.at("javascripts/init-isotope-portfolio.js")"></script>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section>
+	
+	<div id="conbottom" class="container" style="width: 100%;">
+  <div id="bottom" class="bottom">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form class="form-signup" action="@routes.Application.addTeam()" method ="post">
+        <h2 class="text-center form-signup-heading">Skapa lag!</h2>
+        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required>
+        <div class="link">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa!</button>
+        </form>
+        <form class="form-signup" action="@routes.Application.addTeamMember()" method ="post">
+        <h2 class="text-center form-signup-heading">Gå med i lag!</h2>
+        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required>
+        <div class="link">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Joina!</button>
+        </form>
+        <form class="form-signup" action="@routes.Application.randomizeTeam()" method ="post">
+        <h2 class="text-center form-signup-heading">Slumpa lag!</h2>
+        <div class="link">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Slumpa!</button>
+        </form>
+        <h4><span style="color:red">@message</span></h4>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+	
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-  <script src="@routes.Assets.at("javascripts/holder.js")"></script>
-  <script src="@routes.Assets.at("javascripts/script.js")"></script>
-</body>
+   <script src ="main.js" ></script>
+    <!--<script src="@routes.Assets.at("jquerys.js")"></script>-->
+  
+  

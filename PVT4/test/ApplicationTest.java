@@ -2,9 +2,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.*;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.*;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import play.mvc.*;
 import play.test.*;
@@ -26,10 +29,13 @@ import static org.fest.assertions.Assertions.*;
 * If you are interested in mocking a whole application, see the wiki for more details.
 *
 */
-public class ApplicationTest {
-	
+public class ApplicationTest extends WithApplication {
+	FakeApplication fakeApp = Helpers.fakeApplication();
 
-    @Test
+
+	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+	
+	@Test
     public void simpleCheck() {
         int a = 1 + 1;
         assertThat(a).isEqualTo(2);
@@ -41,5 +47,36 @@ public class ApplicationTest {
         assertThat(contentType(html)).isEqualTo("text/html");
         assertThat(contentAsString(html)).contains("");//Ändrade och tog bort text från parantesen "Your new application is ready."
 	}
+	@Test
+	public void indexTest()	{
+		Result result = controllers.Application.index();
+		  
+		assertThat(status(result)).isEqualTo(OK);
+		assertThat(contentType(result)).contains("text/html");
+		assertThat(charset(result)).isEqualTo("utf-8");
+		assertThat(contentAsString(result)).contains("");
+	}
+	@Test
+	public void teamTest()	{
+		Result result = callAction(controllers.routes.ref.Application.team(""),
+		new FakeRequest(GET, "/"));
+		
+		assertThat(status(result)).isEqualTo(OK);
+	}
+	@Test
+	public void testCallProfilePage()	{
+		Result result = callAction(controllers.routes.ref.Application.profilePage(""),
+		new FakeRequest(GET, "/"));
+		
+		assertThat(status(result)).isEqualTo(OK);
+	}
+	@Test
+	public void testCallLoginPage() {
+		Result result = callAction(controllers.routes.ref.Application.loginPage(),
+		new FakeRequest(GET, "/"));
+		
+		assertThat(status(result)).isEqualTo(OK);
+		assertThat(contentType(result)).contains("text/html");
+	}	
 	
 }
