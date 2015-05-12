@@ -31,10 +31,15 @@ import static org.fest.assertions.Assertions.*;
 */
 public class ApplicationTest extends WithApplication {
 	FakeApplication fakeApp = Helpers.fakeApplication();
-
-
-	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+	// FakeApplication fakeAppWithGlobal = fakeApplication(new GlobalSettings() {
+	  // @Override
+	  // public void onStart(Application app) {
+		// System.out.println("Starting FakeApplication");
+	  // }
+	// });
 	
+	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+
 	@Test
     public void simpleCheck() {
         int a = 1 + 1;
@@ -77,6 +82,17 @@ public class ApplicationTest extends WithApplication {
 		
 		assertThat(status(result)).isEqualTo(OK);
 		assertThat(contentType(result)).contains("text/html");
-	}	
+	}
+	@Test
+	public void testLogin()	{
+			fakeApp = running(fakeApplication(), new Runnable() {
+				public void run(){
+					System.out.println("hej");
+				}
+			});{
+			Result result = callAction(controllers.routes.ref.Application.login(),
+			new FakeRequest(GET, "/"));
+		}
+	}
 	
 }
