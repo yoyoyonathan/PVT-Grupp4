@@ -9,7 +9,7 @@ body {
   /*width: 100%;*/ 
   padding-top: 0px;
   padding-bottom: 0px;
-  /*background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
+  background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -113,6 +113,13 @@ body {
   border-top-right-radius: 0;
 }
 
+.form-kod input[type="text"]{
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+}
+
 
 
 .top {
@@ -201,7 +208,9 @@ div.panel, .transparent{
 #footer{
     position:fixed;
     height:25px;
-    background: url("../images/yellow.jpg"); 
+    /*background: url("../images/yellow4.jpg"); */
+    background-color: white;
+    opacity: 0.7;
     bottom:0px;
     left:0px;
     right:0px;
@@ -216,9 +225,12 @@ div.panel, .transparent{
   border-bottom-color: white;
 }
 
-#body{
-   background: url("../images/bluebackground.jpg");
-
+#bodypage{
+   background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
 }
 
 #twitter{
@@ -241,6 +253,26 @@ div.panel, .transparent{
 }
 #container{ 
     margin-top: 200px;
+}
+
+#button-submit {
+    color: black;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #D3D3D3;
+
+}
+#codeID{
+  width:290px;
+  height:50px;
+  background-color:white;
+  color:#008080;
+  font-style: cursive;
+  font-family: Arial;
+}
+
+#redeem{
+  background: url("../images/bluebackground.jpg");
 }
 
 /*
