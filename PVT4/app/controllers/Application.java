@@ -150,7 +150,9 @@ public class Application extends Controller {
 			preparedStatement.executeUpdate();
  			
 //			return ok(profilePage.render(null));
-			return redirect("/profile/" + userName);
+//			return redirect("/profile/" + userName);
+ 			return redirect(routes.Application.profilePage(userName));
+
 			
  		} catch (SQLException se) {
  			// Handle errors for JDBC
@@ -545,25 +547,30 @@ public class Application extends Controller {
     		
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
-			
+			String returnString = "";
 			String sql = "SELECT * FROM team";
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			
-			TreeMap<Integer, String> tree = new TreeMap<Integer, String>();
+			TreeSet<Team> tree = new TreeSet<Team>();
 			
 			while(rs.next()){
 			String name = rs.getString("name");
 			int points = rs.getInt("points");
-			tree.put(points, name);
+			Team team = new Team();
+			team.name = name;
+			team.points = points;
+			tree.add(team);
 			}
 			rs.close();
 			
 			//If detta lag är på plats i sorterat efter poäng
 			
-			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
-			
-			return n;
+//			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
+			for( int i2 = 0; i2 <= i-1;i2++){
+				returnString = tree.first().name + ": " + tree.pollFirst().points;
+			}
+			return returnString;
 			
 			
     	} catch (SQLException se) {
@@ -693,19 +700,21 @@ public class Application extends Controller {
 	
 	public static Result registerCode() throws SQLException{
 		Connection conn = null;
-		
 		conn = DB.getConnection();
+		Code codeFromDB = new Code();
+		Team teamFromDB = new Team();
 		
 		DynamicForm formData = Form.form().bindFromRequest();
-		
-		String teamName = formData.get("team");
+    	String currentUser = session("connected");
+
+		//String teamName = formData.get("team");
+
 		String codeID = formData.get("codeID");
-		Code codeFromDB = new Code();
-		Team teamFromDB = new Team();		
+		
 		PreparedStatement preparedStatement = null;
 		PreparedStatement preparedStatementCode = null;
 		
-		teamFromDB = getTeam(teamName);
+		teamFromDB = getTeam(currentUser);
 		codeFromDB = getCode(codeID);
 
 		codeFromDB.amount -= 1;
@@ -727,8 +736,7 @@ public class Application extends Controller {
 		
 		conn.close();
 		
-		return ok(index.render("teamName: "+ teamFromDB.name + "teamnypoints:"
-				+ teamFromDB.points));
+        return redirect(routes.Application.profilePage(currentUser));
 		}
 
 	public static Code getCode(String codeID) {
@@ -749,11 +757,12 @@ public class Application extends Controller {
 			codeFromDB.codeID = rs.getString("codeID");
 			rs.close();
 			conn.close();
+			return codeFromDB;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		return codeFromDB;
 	}
 }    
 
