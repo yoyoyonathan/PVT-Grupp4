@@ -1,26 +1,23 @@
 @(team: Team)(user: User)
 
 
-   <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
+<!--[if gt IE 8]><!--><!--  <html class="no-js" lang="en"> <!--<![endif]-->
+
+   <meta charset="utf-8">
 
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
   <title>Scorehunt</title>
 
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
   <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
-</head>
 
-<body>
 
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
@@ -34,6 +31,9 @@
   </ul>
       </div>
     </section>  
+    
+    <script>    $.mobile.pageLoadErrorMessage = "Ogiltig kod!";
+	</script>
 
   <div style="margin-top: 80px;" role="main" class="ui-content">
 
@@ -57,7 +57,8 @@
         }
 
        </style>
-      <button onClick="history.go(0)" class="button-submit pure-button">Skicka!</button>
+      <button class="button-submit pure-button">Skicka!</button>
+      <!--onClick="history.go(0)"   -->
       </div>
     </form>
     </div> 
@@ -131,15 +132,13 @@
       <div class = "Strul text-center" >
           <div class="toppenbra">
               <div class="col-xs-12 col-md-12" > 
-                <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
+                <img id="yourimage" src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
       
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
            
 		<input type="file" capture="camera" accept="image/*" id="takePictureField">
         
-		<img id="yourimage">
- 
 		<div id="swatches">
 			<div id="swatch0" class="swatch"></div>
 			<div id="swatch1" class="swatch"></div>
@@ -346,6 +345,5 @@ hcb_user = {
   <!--<script src="@routes.Assets.at("javascripts/init-isotope-portfolio.js")"></script>
 
   <script src="@routes.Assets.at("javascripts/holder.js")"></script>
-  <script src="@routes.Assets.at("javascripts/script.js")"></script>
-</body>
-</html>
+  <script src="@routes.Assets.at("javascripts/script.js")"></script>-->
+
