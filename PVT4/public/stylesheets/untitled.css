@@ -1,0 +1,253 @@
+html {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  min-height: 100%;
+  /*width: 100%;*/ 
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*h1, h3, p,{
+  text-align: center;
+}*/
+
+#tavlingsinfo{
+  text-align: center;
+  font-family: arial;
+}
+
+.form-signin, .panel {
+  max-width: 300px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signup, .panel {
+
+  max-width: 300px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.uptotop{
+  position: center;
+}
+
+/*.panel {
+  max-width: 300px; 
+
+}*/
+
+.form-signin, .form-signin-heading,
+.form-signin, .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin, .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control{ /*Best��mmer hur stora f��lten blir*/
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus{
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signup .form-control{ /*Best��mmer hur stora f��lten blir*/
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signup .form-control:focus{
+  z-index: 2;
+}
+
+.form-signup input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signup input[type="text"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signup input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+.top {
+  background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
+ /*background-size: 100% 100%;
+ /*padding-top: 7em;
+ padding-bottom: 6em;*/
+ height: 100vh;  
+ width: 100%;
+ border-style: solid;
+  border-color: white;
+  display: table-cell;
+  vertical-align: middle;
+  
+
+
+
+}
+
+div.container {
+  /*background-image: url("../images/Wallpaper4.jpg");
+  background-size: 100% 100%; */
+  display:table;
+}
+
+div.jointeam {
+background-image: url("../images/bluebackground.jpg");
+background-color: red;
+width: 100%;
+}
+
+div.middle {
+/*background-image: url("../images/summerburstBackground.jpg");
+background-color: #887766;
+background-size:cover;*/
+ background-image: url("../images/yellow.jpg");
+  background-size: 100% 100%;
+
+display: table-cell;
+vertical-align: middle;
+height: 100vh;
+ border-style: solid;
+  border-color: white;
+  width: 100%;
+}
+
+.bottom {
+  /*background-image: url("../images/summerburstBackground.jpg");
+  background-size:cover;*/
+
+   background-image: url("../images/bluebackground.jpg");
+  background-size: 100% 100%;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100vh;
+   border-style: solid;
+  border-color: white;
+  width: 100%;
+}
+
+.bottom2 {
+  background-image: url("../images/yellow.jpg");
+  background-size:100% 100%;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100vh;
+  width: 100%;
+  padding-bottom: 20px;
+  border-style: solid;
+  border-color: white;
+}
+
+div.panel, .transparent{
+  background:rgba(255,255,255,0.4);
+}
+
+#tavlingsinformation{
+  text-align: center;
+}
+
+#footer{
+    position:fixed;
+    height:25px;
+    background: url("../images/yellow.jpg"); 
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
+#header{
+  position:center;
+  top:0px;
+  background-color: white;
+  background: url("../images/bluebackground.jpg");
+}
+
+#body{
+   background: url("../images/bluebackground.jpg");
+
+}
+
+#twitter{
+  width: 300px;
+  opacity: 0.8;
+}
+
+#rubrik{
+  color: #F9ED4D;
+  font-size:30px;
+  font-weight: bold;
+}
+
+#header-wrap {
+    position: fixed;
+    height: 200px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+#container{ 
+    margin-top: 200px;
+}
+
+/*
+body{
+    margin-bottom:25px;
+    margin-top:400px;
+  
+*/
+div.panel {
+  border-style: solid;
+  border-color: white;
+}
