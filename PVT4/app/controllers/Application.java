@@ -48,7 +48,7 @@ public class Application extends Controller {
     	String currentUser = session("connected");
         if(currentUser != null) {
              return ok(index.render("Du är redan inloggad som " + currentUser + "."));
-        } 
+        }
     	return ok(loginPage.render(""));
     }
     
@@ -87,7 +87,9 @@ public class Application extends Controller {
 				
 				rs.close();
 //				return redirect("/profile/" + userName);
-				return ok(index.render("Fel email/lösenord."));
+//	 			return redirect(routes.Application.index());
+//				return ok(index.render("Fel email/lösenord."));
+				return null;
 				
 		}catch(SQLException se){
 			//Handle errors for JDBC

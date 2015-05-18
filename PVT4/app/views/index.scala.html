@@ -1,35 +1,26 @@
 @(message: String)
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
-    <link rel="bakgrundsbild" type="image/png" href="@routes.Assets.at("images/summerburstBackground.jpg")">
-   <!-- Included Bootstrap CSS Files -->
-  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
-  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap-responsive.min.css")" />
+     <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
   
-  <!-- Includes FontAwesome -->
-  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/fontawesome/css/font-awesome.css")" />
-  
-  <!-- Included Bootstrap Customization CSS Files --> 
-  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap-extension.css")" />
-  
-  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/carousel-custom-01.css")" />
-
-  <link rel="stylesheet" href="@routes.Assets.at("javascripts/touchTouch/assets/touchTouch/touchTouch.css")" />
-  
-  <!--<link rel="stylesheet" href="@routes.Assets.at("stylesheets/stylesheet.css")" />-->
+  <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
   
   <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
-   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  <script> $(document).bind('mobileinit',function(){
+	    $.mobile.pageLoadErrorMessage = 'Fel lösenord!';
+	}) </script>
+  
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <title>Scorehunt</title>
 
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
+  
 <script>
 
 $(document).ready(function (){ 
@@ -186,7 +177,7 @@ $(document).ready(function (){
             <label for="inputPassword" class="sr-only">Lösenord</label>
             <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
             <div class="link"></div>
-            <button id="loginbut" class="btn btn-lg btn-primary btn-block"   type="submit">Logga in</button>
+            <button id="loginbut" class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
             <br>
             <h4><span style="color:red">@message</span></h4>
           </form>
@@ -244,7 +235,40 @@ $(document).ready(function (){
     </div>
   </div>
 </div>
+
+
+<form  class="form-signin" action="@routes.Application.login()" method="post">
+            <h2 class="text-center form-signin-heading">Logga in!</h2>
+            <label for="inputEmail" class="sr-only">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>
+            <label for="inputPassword" class="sr-only">Lösenord</label>
+            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
+            <div class="link"></div>
+            <button id="loginbut" class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
+            <br>
+            <h4><span style="color:red">@message</span></h4>
+          </form>
       
+	
+  <div id="conbottom" class="container" style="width: 100%;">
+  <div id="bottom" class="bottom">
+    <div class="col-xs-12 col-sm-12 col-md-12" >
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form class="form-signup" action="@routes.Application.login()" method ="post">
+        <h2 class="text-center form-signup-heading">Logga in!</h2>
+        <input type="email" id="inputEmail" class="form-control" minlength="3" name="email" placeholder="E-mail" required>
+        <input type="text" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
+        <div class="link">
+        </div>
+        <button data-role="none" class="btn btn-lg btn-primary btn-block" type="submit">Joina! </button>
+        </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>      
+
     
  <!--<div id="conbottom2" class ="container" style="width: 100%;">
    <div class="bottom2">
@@ -320,15 +344,6 @@ $(document).ready(function (){
 </div>
 -->
     
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-   <script src ="main.js" ></script>
-    <!--<script src="@routes.Assets.at("jquerys.js")"></script>-->
 
   <!--
  <h1>Summerburst login</h1>
