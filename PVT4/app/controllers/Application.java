@@ -569,7 +569,7 @@ public class Application extends Controller {
 			
 //			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
 			for( int i2 = 0; i2 <= i-1;i2++){
-				returnString = tree.first().name + ": ";
+				returnString = "" + tree.pollFirst().name + ": ";
 			}
 			return returnString;
 			
