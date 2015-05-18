@@ -52,7 +52,7 @@ $(document).ready(function (){
             $("#uptotop").click(function (){
                 //$(this).animate(function(){
               $('html, body').animate({
-                scrollTop: $("#top").offset().top
+                scrollTop: $("#contop").offset().top
               }, "fast");
                //});
             });
@@ -151,13 +151,17 @@ $(document).ready(function (){
     <div class="col-xs-12 col-sm-12 col-md-12" >
       <div class="panel panel-default">
         <div class="panel-body">
-          <h3 id="rubrik" class="text-center heading">Summerburst</h3>
-          <h3 id="rubrik" class="text-center headng2">Scorehunt</h3>
-          <h3 id="rubrik" class="text-center heading3">2015</h3>
+      
+         <!-- <h3 id="rubrik" class="text-center heading">Summerburst</h3>
+          <h3 id="rubrik" class="text-center heading2">Scorehunt</h3>
+          <h3 id="rubrik" class="text-center heading3">2015</h3> -->
+          <h2 id="rubrik" class="text-center">Summerburst<br> Scorehunt <br> 2015</h2>
+     
           <br>
           <section class="center-button text-center"> 
             <label for="btn btn-lg btn-primary"> </label>
             <button id="toplog" class="btn btn-lg btn-primary btn-lg" href=#logIn>Logga in</button>
+            <br>
             <br>
             <button id="topsign" class="btn btn-lg btn-default">Skapa konto
             </button>
@@ -228,17 +232,19 @@ $(document).ready(function (){
         Summerburst Scorehunt pågår från 12 maj till 13 juni
         och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
         Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.</p>
-        <br>
-        <br>
         <a id="tavlingsinformation" href="tavlingsinformation">Läs mer här</a>
         <br>
         <br>
-        <button type="button" id="uptotop" class="btn btn-default btn-md">
-        <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
       </div>
+      <section class="center-button text-center">
+      <button type="button text-center" id="uptotop" class="btn btn-default btn-md">
+        <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
+      </section>
+
     </div>
   </div>
 </div>
+      
     
  <!--<div id="conbottom2" class ="container" style="width: 100%;">
    <div class="bottom2">
