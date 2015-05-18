@@ -2,7 +2,7 @@
 
 
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--><!--  <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--><!--  <html class="no-js" lang="en"> <![endif]-->
 
    <meta charset="utf-8">
 
@@ -12,6 +12,7 @@
   <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
 
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -106,14 +107,17 @@
   </div><!-- /content -->
 
 </div><!-- Start of third page, team -->
+ 
 <div data-role="page" id="team">
   <section id="header">
+    <div class="container" id="bodypage">
     <ul id="portfolio-filter" class="nav nav-tabs">
       <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
       <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
       <li class="active"><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
       <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
     </ul>
+  </div>
   </section>
 
     <section id="bodypage">
@@ -267,13 +271,14 @@ hcb_user = {
 <!-- Start of fourth page, topplistor -->
 <div data-role="page" id="leader">
       <section id="header">
-  <ul id="portfolio-filter" class="nav nav-tabs">
-
+        <div class="container">
+          <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-  </ul>
+          </ul>
+        </div>
     </section>
 
   <div style="margin-top: 80px;" role="main" class="ui-content">
