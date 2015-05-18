@@ -21,6 +21,7 @@ import play.twirl.api.Content;
 
 import static play.test.Helpers.*;
 import static org.fest.assertions.Assertions.*;
+import static org.mockito.Mockito.*;
 
 
 /**
@@ -31,15 +32,38 @@ import static org.fest.assertions.Assertions.*;
 */
 public class ApplicationTest extends WithApplication {
 	FakeApplication fakeApp = Helpers.fakeApplication();
-
-
-	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+	// FakeApplication fakeAppWithGlobal = fakeApplication(new GlobalSettings() {
+	  // @Override
+	  // public void onStart(Application app) {
+		// System.out.println("Starting FakeApplication");
+	  // }
+	// });
 	
+	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+
 	@Test
     public void simpleCheck() {
         int a = 1 + 1;
         assertThat(a).isEqualTo(2);
     }
+	@Test
+	public void testMock(){
+		
+		// Create and train mock		
+		List<String> mockedList = mock(List.class);
+		when(mockedList.get(0)).thenReturn("first");
+
+		// check value
+		assertEquals("first", mockedList.get(0));
+
+		// verify interaction
+		verify(mockedList).get(0);
+		
+		//nytt test
+		controllers.Application test = mock(controllers.Application.class);
+		verify(test, never()).getCode("hej");
+		
+	}
 
     @Test
     public void renderTemplate() {
@@ -77,6 +101,21 @@ public class ApplicationTest extends WithApplication {
 		
 		assertThat(status(result)).isEqualTo(OK);
 		assertThat(contentType(result)).contains("text/html");
-	}	
+	}
+	// @Ignore
+	// public void testLogin()	{
+			// fakeApp = running(fakeApplication(), new Runnable() {
+				// public void run(){
+					// System.out.println("hej");
+				// }
+			// });{
+			// Result result = callAction(controllers.routes.ref.Application.login(),
+			// new FakeRequest(GET, "/"));
+		// }
+	// }
+	@Test
+	public void testAddNewMember(){
+		
+	}
 	
 }

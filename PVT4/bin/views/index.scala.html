@@ -146,81 +146,73 @@ $(document).ready(function (){
         </div>  
       </div>
   </div>-->
-<div id="top" class="container" style="width: 100%;">
+<div id="contop" class="container" style="width: 100%;">
   <div class="top">
     <div class="col-xs-12 col-sm-12 col-md-12" >
-    <div class="panel panel-default">
-    <div class="panel-body">
-        <h3 id="rubrik" class="text-center heading">Summerburst</h3>
-        <h3 id="rubrik" class="text-center headng2">Scorehunt</h3>
-        <h3 id="rubrik" class="text-center heading3">2015</h3>
-        <br>
-       <section class="center-button text-center"> 
-               <label for="btn btn-lg btn-primary"> </label>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3 id="rubrik" class="text-center heading">Summerburst</h3>
+          <h3 id="rubrik" class="text-center headng2">Scorehunt</h3>
+          <h3 id="rubrik" class="text-center heading3">2015</h3>
+          <br>
+          <section class="center-button text-center"> 
+            <label for="btn btn-lg btn-primary"> </label>
             <button id="toplog" class="btn btn-lg btn-primary btn-lg" href=#logIn>Logga in</button>
-            <br></br>
+            <br>
             <button id="topsign" class="btn btn-lg btn-default">Skapa konto
             </button>
-              </section> 
-    
-     </div>
+          </section> 
+        </div>
+      </div>
     </div>
   </div>
-  </div>
 </div>
+
+
 
 <div id="conmid" class="container" style="width: 100%;">
   <div class="middle">
     <div class="col-xs-12 col-sm-12 col-md-12" >
-    <div class="panel panel-default">
-    <div class="panel-body">
-        <form  class="form-signin" action="@routes.Application.login()" method="post">
-        <h2 class="text-center form-signin-heading">Logga in!</h2>
-        <label for="inputEmail" class="sr-only">E-mail</label>
-        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>
-        <label for="inputPassword" class="sr-only">Lösenord</label>
-        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
-        
-        <div class="link">
-
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form  class="form-signin" action="@routes.Application.login()" method="post">
+            <h2 class="text-center form-signin-heading">Logga in!</h2>
+            <label for="inputEmail" class="sr-only">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>
+            <label for="inputPassword" class="sr-only">Lösenord</label>
+            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
+            <div class="link"></div>
+            <button id="loginbut" class="btn btn-lg btn-primary btn-block"   type="submit">Logga in</button>
+            <br>
+            <h4><span style="color:red">@message</span></h4>
+          </form>
         </div>
-        <button id="loginbut" class="btn btn-lg btn-primary btn-block"   type="submit">Logga in</button>
-        <br></br>
-        <h4><span style="color:red">@message</span></h4>
-        </form>
-     </div>
+      </div>
     </div>
   </div>
-  </div>
 </div>
-
 
 <div id="conbottom" class="container" style="width: 100%;">
   <div id="bottom" class="bottom">
     <div class="col-xs-12 col-sm-12 col-md-12" >
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <form class="form-signup" action="@routes.Application.addUser()" method ="post">
-        <h2 class="text-center form-signup-heading">Bli medlem!</h2>
-
-        <label for="inputEmail" class="sr-only">E-mail</label>
-        <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
-
-        <label for="inputUsername" class="sr-only">Användarnamn</label>
-        <input type="text" id="inputUsername" class="form-control" minlength="3" name="userName" placeholder="Username" required>
-
-        <label for="inputPassword" class="sr-only">Lösenord</label>
-        <input type="password" id="inputPassword" class="form-control" minlength="6" maxlength="20" name="password" placeholder="Password" required>
-
-        <label for="inputBirthyear" class="sr-only">Födelsedatum</label>
-        <input type="date" id="inputBirthyear" class="form-control" max="1997-06-13" placeholder="åååå-mm-dd" name="birthDate" required>
-        <div class="link">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-signup" action="@routes.Application.addUser()" method ="post">
+            <h2 class="text-center form-signup-heading">Bli medlem!</h2>
+            <label for="inputEmail" class="sr-only">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
+            <label for="inputUsername" class="sr-only">Användarnamn</label>
+            <input type="text" id="inputUsername" class="form-control" minlength="3" name="userName" placeholder="Username" required>
+            <label for="inputPassword" class="sr-only">Lösenord</label>
+            <input type="password" id="inputPassword" class="form-control" minlength="6" maxlength="20" name="password" placeholder="Password" required>
+            <label for="inputBirthyear" class="sr-only">Födelsedatum</label>
+            <input type="date" id="inputBirthyear" class="form-control" max="1997-06-13" placeholder="åååå-mm-dd" name="birthDate" required>
+            <div class="link"></div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa konto</button>
+            <h4><span style="color:red">@message</span></h4>
+          </form>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa konto</button>
-        <h4><span style="color:red">@message</span></h4>
-        </form>
       </div>
-     </div>
     </div>
   </div>
 </div>
@@ -229,7 +221,7 @@ $(document).ready(function (){
 <div id="conbottom2" class="container" style="width: 100%;">
   <div id="bottom2" class="bottom2">
     <div class="col-xs-12 col-sm-12 col-md-12" >
-    <div class="panel panel-default">
+      <div class="panel panel-default">
         <h3 class="text-center" id="rubrik2"> Tävlingsinformation</h3>
         <p class="text-center" id="tavlingsinfo">
 
@@ -241,10 +233,9 @@ $(document).ready(function (){
         <a id="tavlingsinformation" href="tavlingsinformation">Läs mer här</a>
         <br>
         <br>
-        
-      <button type="button" id="uptotop" class="btn btn-default btn-md">
-      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
-     </div>
+        <button type="button" id="uptotop" class="btn btn-default btn-md">
+        <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
+      </div>
     </div>
   </div>
 </div>
@@ -273,7 +264,7 @@ $(document).ready(function (){
 
 <br></br>
 
-        <!--<div class="w-widget w-widget-twitter twitter">
+        <div class="w-widget w-widget-twitter twitter">
          <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScorehunt! Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe>
          </div> -->
       
