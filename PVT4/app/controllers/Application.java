@@ -1,5 +1,6 @@
 package controllers;
 import java.util.*;
+import java.io.*;
 import java.sql.*;
 import models.*;
 import play.*;
@@ -10,8 +11,10 @@ import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
 import static play.libs.Json.toJson;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+
 
 import play.libs.Json;
 
@@ -124,6 +127,48 @@ public class Application extends Controller {
         } 
 		return ok(signup.render(""));
 	}
+    
+    public static void InsertPictureToMySql(String s){
+    	
+//    	Class.forName("org.gjt.mm.mysql.Driver");
+    	Connection conn = null;
+//      Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/databaseName", "root", "root");
+        String INSERT_PICTURE = "insert into MyPictures(id, name, photo) values (?, ?, ?)";
+
+        FileInputStream fis = null;
+        PreparedStatement ps = null;
+        try {
+//          conn.setAutoCommit(false);
+          conn = DB.getConnection();
+          
+          File file = new File("myPhoto.png");
+          fis = new FileInputStream(file);
+          ps = conn.prepareStatement(INSERT_PICTURE);
+          ps.setString(1, "001");
+          ps.setString(2, "name");
+          ps.setBinaryStream(3, fis, (int) file.length());
+          ps.executeUpdate();
+          conn.commit();
+//        } finally {
+//            ps.close();
+//            fis.close();
+//          }        
+    } catch (SQLException se) {
+			// Handle errors for JDBC
+//			return internalServerError(se.toString());
+//			return badRequest(joinTeam.render("Det laget du har valt är fullt/extisterar inte."));
+		} catch (Exception e) {
+			// Handle errors for Class.forName
+//			return internalServerError(e.toString());
+		} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+//				return internalServerError(se.toString());
+			}
+		}
+    }
     
     public static Result addTeam() {					//Som det är nu, om man är med i ett lag och försöker skapa ett nytt så 
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){ 	//skapas laget fortfarande, men användaren kommer inte med i laget
@@ -569,7 +614,7 @@ public class Application extends Controller {
 			
 //			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
 			for( int i2 = 0; i2 <= i-1;i2++){
-				returnString = tree.first().name + ": ";
+				returnString = "" + tree.pollFirst().name + ": ";
 			}
 			return returnString;
 			
