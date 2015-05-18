@@ -282,3 +282,10 @@ div.panel {
   border-style: solid;
   border-color: white;
 }
+
+#uptotop {
+  /*display: table-cell;
+  vertical-align: center;
+  vertical-align: middle; */
+  left: 50px;
+}
