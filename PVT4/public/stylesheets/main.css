@@ -369,6 +369,8 @@ body{
 div.panel {
   border-style: solid;
   border-color: white;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #uptotop {
