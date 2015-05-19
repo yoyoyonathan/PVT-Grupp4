@@ -49,19 +49,17 @@ public class ApplicationTest extends WithApplication {
 	@Test
 	public void testMock(){
 		
-		// Create and train mock		
-		List<String> mockedList = mock(List.class);
-		when(mockedList.get(0)).thenReturn("first");
+		// Create and train mock	
+		controllers.Application dbMockTest = mock(controllers.Application.class);
+		List<models.User> userList = new ArrayList<models.User>();
+		userList.add(new models.User(""));
+		when(dbMockTest.profilePage(any(models.User.class))).thenReturn(userList);
 
-		// check value
-		assertEquals("first", mockedList.get(0));
+		// // check value
+		// assertEquals("first", mockedList.get(0));
 
-		// verify interaction
-		verify(mockedList).get(0);
-		
-		//nytt test
-		controllers.Application test = mock(controllers.Application.class);
-		verify(test, never()).getCode("hej");
+		// // verify interaction
+		// verify(mockedList).get(0);
 		
 	}
 
