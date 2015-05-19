@@ -67,14 +67,22 @@ $(document).ready(function (){
             }
             });
 
-          /*$('p').click(function(e) {
-            $(par).slideToggle('slow');
-              $("p").hide();
-            e.preventDefault();
-  });*/
+          var status = "less";
 
-        });
-
+    function toggleText(){
+    var text="Here is some text that I want added to the HTML file";
+    
+    if (status == "less") {
+        document.getElementById("textArea").innerHTML=text;
+        document.getElementById("toggleButton").innerText = "See Less";
+        status = "more";
+    } else if (status == "more") {
+        document.getElementById("textArea").innerHTML = "";
+        document.getElementById("toggleButton").innerText = "See More";
+        status = "less"
+    }
+  }
+  });
 
 </script>
 
@@ -228,19 +236,19 @@ $(document).ready(function (){
       <div class="panel panel-default">
         <h3 class="text-center" id="rubrik2"> Tävlingsinformation</h3>
         <p class="text-center" id="tavlingsinfo">
-
+        <p>
         Summerburst Scorehunt pågår från 12 maj till 13 juni
         och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
-        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.</p>
-        <a id="tavlingsinformation" href="tavlingsinformation">Läs mer här</a>
-        <br>
-        <br>
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.
+    <p id="textArea"><!-- This is where I want to additional text--></p>
+  <a id="toggleButton" onclick="toggleText();" href="javascript:void(0);">Läs mer...</a>
+    <p>         
       </div>
       <section class="center-button text-center">
       <button type="button text-center" id="uptotop" class="btn btn-default btn-md">
         <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
       </section>
-
+</div>
     </div>
   </div>
 </div>
@@ -277,6 +285,7 @@ $(document).ready(function (){
     <!--</div>
 </div>
 -->
+
 <!--<div class="tavlingsinformation">
   <p>
   Det finns 200 koder att samla och varje kod ger 100 poäng. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
