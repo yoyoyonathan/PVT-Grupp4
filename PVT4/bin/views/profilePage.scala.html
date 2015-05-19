@@ -24,7 +24,7 @@
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
   <section id="header">
-    <div class="container" id="bodypage">
+    <div class="container">
       <ul id="portfolio-filter" class="nav nav-tabs">
             <li class="active"><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
@@ -105,15 +105,19 @@
 
   </div><!-- /content -->
 
+
 </div><!-- Start of third page, team -->
+
 <div data-role="page" id="team">
   <section id="header">
+    <div class="container">
     <ul id="portfolio-filter" class="nav nav-tabs">
       <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
       <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
       <li class="active"><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
       <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
     </ul>
+  </div>
   </section>
 
     <section id="bodypage">
@@ -172,7 +176,7 @@
            
               </div> 
             </div> 
-  </section>
+  
 
   <!--<div class = "container" >
       <div class="baraEnMellanRad text-center">
@@ -182,7 +186,7 @@
       </div>  
   </div>-->
 
-  <section id="bodypage">
+  
   <div class = "container" >
     <div class="topp1 text-center">
       <div class="col-xs-12 col-md-12" >
@@ -266,54 +270,74 @@ hcb_user = {
 
 <!-- Start of fourth page, topplistor -->
 <div data-role="page" id="leader">
-      <section id="header">
-  <ul id="portfolio-filter" class="nav nav-tabs">
-
+  <section id="header">
+    <div class="container">
+      <ul id="portfolio-filter" class="nav nav-tabs">
             <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
             <li class="active"><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-  </ul>
-    </section>
+      </ul>
+    </div>
+  </section>
 
-  <div style="margin-top: 80px;" role="main" class="ui-content">
+ <section id="bodypage">
+    <div class="container"> 
+	<div class="Toplist">
+  <div  role="main" class="ui-content">
     
-	<table style="width: 50%">
+	<table>
+	
 	<tr>
-		<td> @controllers.Application.topTeamName(1) @controllers.Application.topTeamPoints(1) </td>
+		<td> Lag </td>
+		<td> Poäng</td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(2) @controllers.Application.topTeamPoints(2) </td>
+		<td> @controllers.Application.topTeamName(1) </td>
+		<td> @controllers.Application.topTeamPoints(1) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(3) @controllers.Application.topTeamPoints(3) </td>
+		<td> @controllers.Application.topTeamName(2) </td>
+		<td> @controllers.Application.topTeamPoints(2) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(4) @controllers.Application.topTeamPoints(4) </td>
+		<td> @controllers.Application.topTeamName(3) </td>
+		<td> @controllers.Application.topTeamPoints(3) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(5) @controllers.Application.topTeamPoints(5) </td>
+		<td> @controllers.Application.topTeamName(4) </td>
+		<td> @controllers.Application.topTeamPoints(4) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(6) @controllers.Application.topTeamPoints(6) </td>
+		<td> @controllers.Application.topTeamName(5) </td>
+		<td> @controllers.Application.topTeamPoints(5) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(7) @controllers.Application.topTeamPoints(7) </td>
+		<td> @controllers.Application.topTeamName(6) </td>
+		<td> @controllers.Application.topTeamPoints(6) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(8) @controllers.Application.topTeamPoints(8) </td>
+		<td> @controllers.Application.topTeamName(7) </td>
+		<td> @controllers.Application.topTeamPoints(7) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(9) @controllers.Application.topTeamPoints(9) </td>
+		<td> @controllers.Application.topTeamName(8) </td>
+		<td> @controllers.Application.topTeamPoints(8) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(10) @controllers.Application.topTeamPoints(10) </td>
+		<td> @controllers.Application.topTeamName(9) </td>
+		<td> @controllers.Application.topTeamPoints(9) </td>
 	</tr>
-  	
+	<tr>
+		<td> @controllers.Application.topTeamName(10) </td>
+		<td> @controllers.Application.topTeamPoints(10) </td>
+	</tr>
   	
 	
 	</table>    
-
+	</div>
+	</div>
+	</section>
     <section id="footer">
      <div class="container">
             
