@@ -559,10 +559,9 @@ public class Application extends Controller {
 			preparedStatement.executeUpdate();
  			// execute insert SQL statement
 
- 			// user.save();
  			session("connected", userUserName);
-// 			return redirect(routes.Application.joinTeam());
-			return redirect("/joinTeam/");
+ 			return redirect(routes.Application.joinTeam());
+//			return redirect("/joinTeam/");
 
 
  			
