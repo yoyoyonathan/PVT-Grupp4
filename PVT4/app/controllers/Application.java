@@ -238,11 +238,20 @@ public class Application extends Controller {
 			rs.next();
 			String teamName = rs.getString("team");
 			rs.close();
+			
+			String sql2 = "SELECT * FROM `teamcomments`";
+			
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			int length = 1;
+			while(rs2.next()){
+				length++;
+		   	}
+		    rs2.close();
 	
 			String insertIntoDatabase = "INSERT INTO teamcomments (ID, team, comment) VALUES(?,?,?)";
 		    
 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
-			preparedStatement.setInt(1, 1);
+			preparedStatement.setInt(1, length);
 			preparedStatement.setString(2, teamName);
 			preparedStatement.setString(3, comment);
 			preparedStatement.executeUpdate();
@@ -250,6 +259,40 @@ public class Application extends Controller {
 			
 		} catch (SQLException se){
  			return internalServerError(se.toString());
+		} 
+    	
+    }
+    
+    public static String getComments(){
+    	
+    	Connection conn = null;
+    	Statement stmt = null;
+    	String currentUser = session("connected");
+
+    	try{
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+			String sql = "SELECT * FROM `teammember` WHERE `user` = " + "'" + currentUser + "'";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			rs.next();
+			String teamName = rs.getString("team");
+			rs.close();
+    		
+			String sql2 = "SELECT * FROM `teamcomments` WHERE `team` = " + "'" + teamName + "'";
+			
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			String s = "";
+			while(rs2.next()){
+				s = s + " " + rs2.getString("comment");
+		   	}
+		    rs2.close();
+		    return s;
+			
+
+    	} catch (SQLException se){
+ 			return se.toString();
 		} 
     	
     }
