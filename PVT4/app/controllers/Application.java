@@ -805,53 +805,61 @@ public class Application extends Controller {
 	    	
 	    }
 	
-	public static Result registerCode() throws SQLException{
+	public static Result registerCode() {
 		Connection conn = null;
 		conn = DB.getConnection();
 		Code codeFromDB = new Code();
 		Team teamFromDB = new Team();
-		
+
 		DynamicForm formData = Form.form().bindFromRequest();
-    	String currentUser = session("connected");
-
-		//String teamName = formData.get("team");
-
+		String currentUser = session("connected");
 		String codeID = formData.get("codeID");
-		
+
 		PreparedStatement preparedStatement = null;
 		PreparedStatement preparedStatementCode = null;
-		
+
 		teamFromDB = getTeam(currentUser);
-		codeFromDB = getCode(codeID);
+		if (!codeRegisteredToTeam(teamFromDB, codeID)) {
 
-		codeFromDB.amount -= 1;
-		teamFromDB.points += codeFromDB.value;
+			codeFromDB = getCode(codeID);
 
-		String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
-			    
-		preparedStatement = conn.prepareStatement(insertIntoDatabase);
-		preparedStatement.setInt(1, teamFromDB.points);
-		preparedStatement.setString(2, teamFromDB.name);
-		preparedStatement.executeUpdate();
-		
-		String insertIntoDatabaseCode = "UPDATE code SET amount=? WHERE codeID=?";
-		
-		preparedStatementCode = conn.prepareStatement(insertIntoDatabaseCode);
-		preparedStatementCode.setInt(1, codeFromDB.amount);
-		preparedStatementCode.setString(2, codeFromDB.codeID);
-		preparedStatementCode.executeUpdate();
-		
-		conn.close();
-		
-        return redirect(routes.Application.profilePage(currentUser));
+			codeFromDB.amount -= 1;
+			teamFromDB.points += codeFromDB.value;
+
+			String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
+
+			try {
+				preparedStatement = conn.prepareStatement(insertIntoDatabase);
+
+				preparedStatement.setInt(1, teamFromDB.points);
+				preparedStatement.setString(2, teamFromDB.name);
+				preparedStatement.executeUpdate();
+
+				String insertIntoDatabaseCode = "UPDATE code SET amount=? WHERE codeID=?";
+
+				preparedStatementCode = conn
+						.prepareStatement(insertIntoDatabaseCode);
+				preparedStatementCode.setInt(1, codeFromDB.amount);
+				preparedStatementCode.setString(2, codeFromDB.codeID);
+				preparedStatementCode.executeUpdate();
+
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			registerCodeToTeam(teamFromDB, codeID);
+			return redirect(routes.Application.profilePage(currentUser));
 		}
+		return redirect(routes.Application.profilePage(currentUser));
+	}
 
 	public static Code getCode(String codeID) {
 		Statement stmtCode = null;
 		Connection conn = null;
 		Code codeFromDB = new Code();
 		conn = DB.getConnection();
-		
+
 		try {
 			stmtCode = conn.createStatement();
 
@@ -871,6 +879,47 @@ public class Application extends Controller {
 			return null;
 		}
 	}
-}    
+
+	public static boolean codeRegisteredToTeam(Team t, String c) {
+		Connection conn = DB.getConnection();
+		Statement stmt;
+		try {
+			stmt = conn.createStatement();
+
+			String sql = "SELECT * FROM registeredcode WHERE team = '" + t.name
+					+ "' AND code = '" + c + "'";
+			ResultSet rs = stmt.executeQuery(sql);
+			String codeInDB = null;
+			rs.next();
+			codeInDB = rs.getString("code");
+			rs.close();
+			conn.close();
+			if (!c.equals(codeInDB) || codeInDB.isEmpty()) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (SQLException e) {
+			return false;
+		}
+
+	}
+
+	public static void registerCodeToTeam(Team team, String codeID) {
+		PreparedStatement stmt = null;
+		Connection conn = DB.getConnection();
+		String insertIntoDB = "INSERT INTO registeredcode (team, code) VALUES(?,?)";
+		try {
+			stmt = conn.prepareStatement(insertIntoDB);
+			stmt.setString(1, team.name);
+			stmt.setString(2, codeID);
+			stmt.executeUpdate();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
 
 
