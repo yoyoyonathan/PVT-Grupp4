@@ -217,6 +217,43 @@ public class Application extends Controller {
  		}
     }
     
+    public static Result addComment(){
+    	
+    	Connection conn = null;
+    	Statement stmt = null;
+		
+		DynamicForm formData = Form.form().bindFromRequest();
+    	String currentUser = session("connected");
+    	
+    	String comment = formData.get("comment");
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+		
+			String sql = "SELECT * FROM `teammember` WHERE `user` = " + "'" + currentUser + "'";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			rs.next();
+			String teamName = rs.getString("team");
+			rs.close();
+	
+			String insertIntoDatabase = "INSERT INTO teamcomments (ID, team, comment) VALUES(?,?,?)";
+		    
+			preparedStatement = conn.prepareStatement(insertIntoDatabase);
+			preparedStatement.setInt(1, 1);
+			preparedStatement.setString(2, teamName);
+			preparedStatement.setString(3, comment);
+			preparedStatement.executeUpdate();
+ 			return redirect(routes.Application.profilePage(currentUser));
+			
+		} catch (SQLException se){
+ 			return internalServerError(se.toString());
+		} 
+    	
+    }
+    
     public static Result addTeamMember() {			//Går att gå med i ett Team som inte finns.  
     	if (Form.form(Team.class).bindFromRequest().hasErrors()){
  		    return badRequest(index.render("Fel i formulär"));
@@ -810,6 +847,7 @@ public class Application extends Controller {
 		conn = DB.getConnection();
 		Code codeFromDB = new Code();
 		Team teamFromDB = new Team();
+		
 		
 		DynamicForm formData = Form.form().bindFromRequest();
     	String currentUser = session("connected");

@@ -34,6 +34,8 @@ POST	/login						controllers.Application.login()
 
 POST	/addPoints					controllers.Application.addPoints()
 
+POST	/addComment					controllers.Application.addComment()
+
 POST	/randomize					controllers.Application.randomizeTeam()
 
 
