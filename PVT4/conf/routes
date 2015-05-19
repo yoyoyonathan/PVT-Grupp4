@@ -30,7 +30,7 @@ GET		/signup						controllers.Application.signup()
 
 GET		/logout						controllers.Application.logout()
 
-POST	/							controllers.Application.login()
+POST	/login						controllers.Application.login()
 
 POST	/addPoints					controllers.Application.addPoints()
 

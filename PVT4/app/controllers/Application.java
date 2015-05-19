@@ -82,15 +82,12 @@ public class Application extends Controller {
 					    rs.close();
 					    session("connected", userName);
 			 			return redirect(routes.Application.profilePage(userName));
-//						return redirect("/profile/" + userName);
-//					    return ok(profilePage.render(userName));
 					}
 				} 
 				
 				rs.close();
 //				return redirect("/profile/" + userName);
-//				return ok(index.render("Fel email/lösenord."));
-				return null;
+				return ok(index.render("Fel email/lösenord."));
 				
 		}catch(SQLException se){
 			//Handle errors for JDBC
@@ -531,9 +528,9 @@ public class Application extends Controller {
     
     public static Result addUser() {
 			
-//    	if (Form.form(User.class).bindFromRequest().hasErrors()){
-// 		    return badRequest(signup.render("Nu har något skrivits in fel"));
-// 		}
+    	if (Form.form(User.class).bindFromRequest().hasErrors()){
+ 		    return badRequest(signup.render("Nu har något skrivits in fel"));
+ 		}
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
  		Connection conn = null;
@@ -559,10 +556,9 @@ public class Application extends Controller {
 			preparedStatement.executeUpdate();
  			// execute insert SQL statement
 
+ 			// user.save();
  			session("connected", userUserName);
  			return redirect(routes.Application.joinTeam());
-//			return redirect("/joinTeam/");
-
 
  			
  		} catch (SQLException se) {
