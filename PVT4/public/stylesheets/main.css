@@ -136,9 +136,6 @@ body {
   display: table-cell;
   vertical-align: middle;
   
-
-
-
 }
 
 div.container {
@@ -212,9 +209,10 @@ div.panel, .transparent{
 }.Toplist table{
     border-collapse: collapse;
         border-spacing: 0;
-	width:100%;
+	width:250px;
 	height:100%;
-	margin:0px;padding:0px;
+	margin:0px;
+  padding:0px;
 	
 }.Toplist tr:last-child td:last-child {
 	-moz-border-radius-bottomright:0px;
@@ -300,6 +298,10 @@ div.panel, .transparent{
     left:0px;
     right:0px;
     margin-bottom:0px;
+    font-weight: bold;
+    padding-top: 5px;
+    margin-top: 5px;
+
 }
 #header{
   position:center;
