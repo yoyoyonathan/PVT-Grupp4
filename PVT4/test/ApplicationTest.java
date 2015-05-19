@@ -20,6 +20,7 @@ import play.libs.F.*;
 import play.twirl.api.Content;
 
 import static play.test.Helpers.*;
+import static play.test.Helpers.GlobalSettings;
 import static org.fest.assertions.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -31,89 +32,25 @@ import static org.mockito.Mockito.*;
 *
 */
 public class ApplicationTest extends WithApplication {
-	FakeApplication fakeApp = Helpers.fakeApplication();
-	// FakeApplication fakeAppWithGlobal = fakeApplication(new GlobalSettings() {
-	  // @Override
-	  // public void onStart(Application app) {
-		// System.out.println("Starting FakeApplication");
-	  // }
-	// });
 	
-	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+	FakeApplication fakeApp = Helpers.fakeApplication();
 
+	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
+	
+	@Before
+	public void beforeEachTest(){
+	FakeApplication fakeAppWithGlobal = Helpers.fakeApplication(new Helpers.GlobalSettings() {
+		@Override
+		public void onStart(Application app) {
+			System.out.println("Starting FakeApplication");
+			}
+		});
+	}
+	
 	@Test
     public void simpleCheck() {
         int a = 1 + 1;
         assertThat(a).isEqualTo(2);
     }
-	@Test
-	public void testMock(){
-		
-		// Create and train mock	
-		controllers.Application dbMockTest = mock(controllers.Application.class);
-		List<models.User> userList = new ArrayList<models.User>();
-		userList.add(new models.User(""));
-		when(dbMockTest.profilePage(any(models.User.class))).thenReturn(userList);
-
-		// // check value
-		// assertEquals("first", mockedList.get(0));
-
-		// // verify interaction
-		// verify(mockedList).get(0);
-		
-	}
-
-    @Test
-    public void renderTemplate() {
-        Content html = views.html.index.render("hej"); //Ändrade och tog bort text från parantesen "Your new application is ready."
-        assertThat(contentType(html)).isEqualTo("text/html");
-        assertThat(contentAsString(html)).contains("");//Ändrade och tog bort text från parantesen "Your new application is ready."
-	}
-	@Test
-	public void indexTest()	{
-		Result result = controllers.Application.index();
-		  
-		assertThat(status(result)).isEqualTo(OK);
-		assertThat(contentType(result)).contains("text/html");
-		assertThat(charset(result)).isEqualTo("utf-8");
-		assertThat(contentAsString(result)).contains("");
-	}
-	@Test
-	public void teamTest()	{
-		Result result = callAction(controllers.routes.ref.Application.team(""),
-		new FakeRequest(GET, "/"));
-		
-		assertThat(status(result)).isEqualTo(OK);
-	}
-	@Test
-	public void testCallProfilePage()	{
-		Result result = callAction(controllers.routes.ref.Application.profilePage(""),
-		new FakeRequest(GET, "/"));
-		
-		assertThat(status(result)).isEqualTo(OK);
-	}
-	@Test
-	public void testCallLoginPage() {
-		Result result = callAction(controllers.routes.ref.Application.loginPage(),
-		new FakeRequest(GET, "/"));
-		
-		assertThat(status(result)).isEqualTo(OK);
-		assertThat(contentType(result)).contains("text/html");
-	}
-	// @Ignore
-	// public void testLogin()	{
-			// fakeApp = running(fakeApplication(), new Runnable() {
-				// public void run(){
-					// System.out.println("hej");
-				// }
-			// });{
-			// Result result = callAction(controllers.routes.ref.Application.login(),
-			// new FakeRequest(GET, "/"));
-		// }
-	// }
-	@Test
-	public void testAddNewMember(){
-		
-	}
 	
 }
