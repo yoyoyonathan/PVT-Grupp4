@@ -243,8 +243,6 @@ div.panel, .transparent{
 .CSSTableGenerator tr:nth-child(odd){ background-color:#aad4ff; }
 .CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
 	vertical-align:middle;
-	
-	
 	border:1px solid #000000;
 	border-width:0px 1px 1px 0px;
 	text-align:left;
@@ -262,9 +260,11 @@ div.panel, .transparent{
 	border-width:0px 0px 0px 0px;
 }
 .CSSTableGenerator tr:first-child td{
-		background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+		background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
 	background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	
+	background: -o-linear-gradient(top,#005fbf,003f7f);
 
 	background-color:#005fbf;
 	border:0px solid #000000;
@@ -276,10 +276,11 @@ div.panel, .transparent{
 	color:#ffffff;
 }
 .CSSTableGenerator tr:first-child:hover td{
-	background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+	background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
 	background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	background: -o-linear-gradient(top,#005fbf,003f7f);
-
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	
+	background: -o-linear-gradient(top,#005fbf,003f7f);
 	background-color:#005fbf;
 }
 .CSSTableGenerator tr:first-child td:first-child{
