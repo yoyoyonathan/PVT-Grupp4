@@ -16,13 +16,13 @@ GET		/loginPage					controllers.Application.loginPage()
 
 GET		/joinTeam					controllers.Application.joinTeam()
 
-POST	/user						controllers.Application.addUser()
+POST	/user						controllers.UserDatabase.addUser()
 
-POST	/addTeam					controllers.Application.addTeam()
+POST	/addTeam					controllers.TeamDatabase.addTeam()
 
-POST	/addMember					controllers.Application.addTeamMember()
+POST	/addMember					controllers.TeamDatabase.addTeamMember()
 
-POST	/regCode					controllers.Application.registerCode()
+POST	/regCode					controllers.CodeDatabase.registerCode()
 
 GET		/users						controllers.Application.getUsers()
 
@@ -32,8 +32,6 @@ GET		/logout						controllers.Application.logout()
 
 POST	/login						controllers.Application.login()
 
-POST	/addPoints					controllers.Application.addPoints()
-
-POST	/randomize					controllers.Application.randomizeTeam()
+POST	/randomize					controllers.TeamDatabase.randomizeTeam()
 
 

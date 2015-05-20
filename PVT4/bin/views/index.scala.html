@@ -57,23 +57,25 @@ $(document).ready(function (){
                //});
             });
 
-            var par = $('#navbar');
+          /*  var par = $('#textArea');
               $(par).hide();
 
-              $("#submit").event(function(){
+              $("#text").event(function(){
                 if ( this.checkValidity && !this.checkValidity() ) {
                 $( this ).find( ":invalid" ).first().focus();
                 event.preventDefault();
             }
-            });
+            });*/
 
-          /*$('p').click(function(e) {
-            $(par).slideToggle('slow');
-              $("p").hide();
-            e.preventDefault();
-  });*/
-
-        });
+  $(document).ready(function(){
+    $("#textArea").hide(); 
+        $("#toggleButton").click(function(){
+        $("#textArea").show();
+        $("#toggleButton").hide();
+    });
+  
+  });
+});
 
 
 </script>
@@ -202,7 +204,7 @@ $(document).ready(function (){
     <div class="col-xs-12 col-sm-12 col-md-12" >
       <div class="panel panel-default">
         <div class="panel-body">
-          <form class="form-signup" action="@routes.Application.addUser()" method ="post">
+          <form class="form-signup" action="@routes.UserDatabase.addUser()" method ="post">
             <h2 class="text-center form-signup-heading">Bli medlem!</h2>
             <label for="inputEmail" class="sr-only">E-mail</label>
             <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
@@ -229,19 +231,48 @@ $(document).ready(function (){
       <div class="panel panel-default">
         <h3 class="text-center" id="rubrik2"> Tävlingsinformation</h3>
         <p class="text-center" id="tavlingsinfo">
-
-        Summerburst Scorehunt pågår från 12 maj till 13 juni
-        och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
-        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.</p>
-        <a id="tavlingsinformation" href="tavlingsinformation">Läs mer här</a>
+        <p>
+        Summerburst Scorehunt pågår från 24 april till 13 juni och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.
+    <p id="textArea">
+        Det finns 200 koder att samla som ger olika många poäng beroende på svårighetsgrad. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
+        <br>
+        <br>  
+        Tävlingen består av veckotävlingar och en stor tävling som pågår fram till festivalen börjar. Veckotävlingarna avslutas varje vecka där de fem bästa lagen får pris. Vinnare av första pris under den sista veckan när festivalen inträffar vinner biljetter till nästa års festival.
         <br>
         <br>
+        1a pris – Biljetter till festivalen
+        2a pris – Årsmedlemskap på Spotify Premium
+        3-5e pris – Hörlurar från Koss
+        <br>
+        <br>
+        Den stora tävlingen avslutas dagen innan festivalen börjar där de fem bästa lagen får pris.
+        <br>
+        <br>
+        1a pris – Meet and greet med artisterna
+        2-5e pris – VIP-biljetter
+        <br>
+        <br>
+        Vinnarna kontaktas via e-post, därför är det extra viktigt att fylla i rätt epostadress vid skapande av tävlingskonto så att vi kan komma i kontakt med er.
+        <br>
+        <br>
+        Genom att delta i tävlingen accepterar du följande tävlingsvillkor och att din epost-adress sparas i Summerburst Scorehunts databas.
+        Tävlingen är gratis att delta i och för att tävla behöver du vara 18 år. Anställda på TechNovaZion Sweden AB får ej delta.
+        <br>
+        <br>
+        Vinnarna blir kontaktade via e-post. Du behöver därför fylla i rätt epostadress för att vi ska kunna komma i kontakt med dig. Din epostadress kommer inte visas för andra användare i tävlingen utan används endast för detta ändamål. Svarar du inte på e-post från oss inom 7 dagar kan vi ej garantera att du får ditt pris.
+        <br>
+        <br>
+        Det går ej att byta in priser mot kontanter.
+    </p>
+  <a id="toggleButton">Läs mer...</a>
+    </p>         
       </div>
       <section class="center-button text-center">
       <button type="button text-center" id="uptotop" class="btn btn-default btn-md">
         <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></button>
       </section>
-
+</div>
     </div>
   </div>
 </div>
@@ -278,6 +309,7 @@ $(document).ready(function (){
     <!--</div>
 </div>
 -->
+
 <!--<div class="tavlingsinformation">
   <p>
   Det finns 200 koder att samla och varje kod ger 100 poäng. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
