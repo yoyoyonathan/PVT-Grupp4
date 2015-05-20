@@ -1,23 +1,10 @@
 package controllers;
-
-import java.util.*;
-import java.io.*;
 import java.sql.*;
-
 import models.*;
-import play.*;
-import play.api.libs.json.*;
 import play.data.*;
 import play.db.DB;
-import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
-import static play.libs.Json.toJson;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
-import play.libs.Json;
 
 public class UserDatabase extends Controller {
 	
