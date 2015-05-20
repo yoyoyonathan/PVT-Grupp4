@@ -42,6 +42,12 @@ body {
   position: center;
 }
 
+#teambild {
+  max-width: 300px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
 /*.panel {
   max-width: 300px; 
 
@@ -63,6 +69,10 @@ body {
           box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
+}
+
+#takePictureField{
+  max-width: 100%;
 }
 
 .form-signin .form-control:focus{
@@ -135,6 +145,8 @@ body {
   border-color: white;
   display: table-cell;
   vertical-align: middle;
+<<<<<<< HEAD
+=======
   
 }
 
@@ -147,6 +159,7 @@ font {/*Ta bort skuggan på all text*/
 h1, p {/*Ta bort skuggan på all text*/
   text-shadow: none;
   color: black;
+>>>>>>> Backend-4
 }
 
 div.container {
@@ -373,6 +386,7 @@ border-width:0px 0px 0px 0px;
     margin-top: 200px;
 }
 
+
 #button-submit {
     color: black;
     border-radius: 4px;
@@ -380,6 +394,8 @@ border-width:0px 0px 0px 0px;
     background: #D3D3D3;
 
 }
+
+
 #codeID{
   width:290px;
   height:50px;
