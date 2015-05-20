@@ -23,97 +23,19 @@
   <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
 
 	</head>
+	<body>
 
 <!-- Start of first page, redeem codes -->
-<div data-role="page" id="redeem">
-  <section id="header">
-    <div class="container" align="center">
-      <div class="testare">
-      <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class="active"><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-      </ul>
-    </div>
-  </div>
-  </section>  
-  
-  <script>$.mobile.pageLoadErrorMessage = "Ogiltig kod!";</script>
-  
-  <section id="bodypage">
-    <div class = "container">
-      <div style="margin-top: 10px;" role="main" class="ui-content">     
-        <div class="col-xs-12 col-md-12" >
-          <form class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
-            <input type="text"  placeholder="Skriv kod" name="codeID" id="codeID"></input>
-            <button id="button-primary" class="button-submit pure-button">Skicka!</button>
-          </form>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div> 
-      </div>
-    </div> 
-  </section>  
-</div> 
 
-    <section id="footer">
-     <div class="container">
-            
-              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-
-     </div>
-    </section>
-    <!--<script>    $.mobile.pageLoadErrorMessage = "Ogiltig kod!";
-	</script>-->
-
-  
- 
-  <section id="footer">
-    <div class="container">
-      <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-    </div>
-  </section>
-</div>
-
+	@Templates.Redeem()
 
 <!-- Start of second page, hunt codes -->
-<div data-role="page" id="hunt">
-  <section id="header">
-    <div class="container" align="center">
-      <ul id="portfolio-filter" class="nav nav-tabs">
-        <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-        <li class="active"><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-        <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-        <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-      </ul>
-    </div>
-  </section>
-  <section id="bodypage">
-    <div class="container">
-      <div style="margin-top: 10px;" role="main" class="ui-content">
-        <div id="twitter" class="col-sm-12">
-          <a class="twitter-timeline"  href="https://twitter.com/scorehunt" data-widget-id="591542182772924416"></a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-      </div>
-      <div class="w-widget w-widget-twitter twitter">
-        <iframe src="https://platform.twitter.com/widgets/tweet_button.html#url=http%3A%2F%2Fblueberry-surprise-6049.herokuapp.com/&amp;counturl=http://blueberry-surprise-6049.herokuapp.com/&amp;text=Jag hittade precis en kod i %20%23SBScore<img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="100"/> Var med och tävla du med!&amp;count=horizontal&amp;size=m&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: auto; height: auto;"></iframe> 
-      </div>
-  </div>
-</section>
-<br>
-    <section id="footer">
-     <div class="container">    
-              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-     </div>
-    </section>
 
-  </div><!-- /content -->
+	@Templates.Hunt()
 
+<!-- Start of third page, team -->
 
-</div><!-- Start of third page, team -->
-
-<div data-role="page" id="team">
+	<div data-role="page" id="team">
   <section id="header">
     <div class="container" align="center">
     <ul id="portfolio-filter" class="nav nav-tabs">
@@ -183,176 +105,20 @@
             </div> 
   
 
-  <!--<div class = "container" >
-      <div class="baraEnMellanRad text-center">
-          <div class="row text-bottom">
-
-        </div> 
-      </div>  
-  </div>-->
-
-  
-  <div class = "container" >
-    <div class="topp1 text-center">
-      <div class="col-xs-12 col-md-12" >
-<script>
-// This code goes ABOVE the main HTML Comment Box code!
-// replace the text in the single quotes below to customize labels.
-hcb_user = {
-    // L10N
-    comments_header : 'Kommentarer',
-    name_label : 'Namn',
-    content_label: 'Skriv vad du tänker...',
-    submit : 'Kommentera',
-    add:'Lägg till din kommentar',
-    again: 'Gör en ny kommentar',
-    rss:' ',
-    said:'sa:',
-    prev_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_left.png" class="hcb-icon" title="previous page" alt="[prev]"/>',
-    next_page:'<img src="//www.htmlcommentbox.com/static/images/arrow_right.png" class="hcb-icon" title="next page" alt="[next]"/>',
-    showing:'Visar',
-    to:'till',
-    website_label:'website (optional)',
-    email_label:'email',
-    anonymous:'Anonym',
-    mod_label:'(mod)',
-    subscribe:'email me replies',
-    are_you_sure:'Vill du anmäla kommentaren?',
-      
-    reply:'<img src="//www.htmlcommentbox.com/static/images/reply.png"/> reply',
-    like:'<img src="//www.htmlcommentbox.com/static/images/like.png"/> like',
-    
-    //dates
-    days_ago:'dagar sedan',
-    hours_ago:'timmar sedan',
-    minutes_ago:'minuter sedan',
-    within_the_last_minute:'Sades nyligen',
-
-    msg_thankyou:'',
-    msg_approval:'(Den här kommentaren väntar på granskning)',
-    msg_approval_required:'Tack för kommentaren...',
-    
-    err_bad_html:'Your comment contained bad html.',
-    err_bad_email:'Please enter a valid email address.',
-    err_too_frequent:'Du måste vänta lite mellan meddelanden!',
-    err_comment_empty:'Din kommentar skickades inte för att den var för kort',
-    err_denied:'Your comment was not accepted.',
-
-    //SETTINGS
-    MAX_CHARS: 2048,
-    PAGE:'@team.name', // ID of the webpage to show comments for. defaults to the webpage the user is currently visiting.
-    RELATIVE_DATES:true // show dates in the form "X hours ago." etc.
-};
-</script>
-      <!-- begin htmlcommentbox.com -->
-      <div id="HCB_comment_box"><a href="@routes.Assets.at("http://www.htmlcommentbox.com")">HTML Comment Box</a> is loading comments...</div>
-      <link rel="stylesheet" type="text/css" href="@routes.Assets.at("http://www.htmlcommentbox.com/static/skins/default/skin.css")" />
-      <script type="text/javascript" language="javascript" id="hcb"> 
-      if(!window.hcb_user){
-        hcb_user={ };}
-        (function(){
-          s=document.createElement("script");s.setAttribute("type","text/javascript");
-          s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");
-          if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})();
-      </script>
-  <!-- end htmlcommentbox.com -->
-      </div> 
-      </div>  
-    </div>
-
-    <section id="footer">
-     <div class="container">
-            
-              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-
-     </div>
-    </section>
-
-  </div><!-- /content -->
-</div>
-</div>
-
+	    <section id="footer">
+	     <div class="container">
+	            
+	          <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+	     </div>
+	    </section>
+	
+	  </div><!-- /content -->
+	</div>
+	</div>
 
 <!-- Start of fourth page, topplistor -->
-<div data-role="page" id="leader">
-  <section id="header">
-    <div class="container" align="center">
-      <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class="active"><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-      </ul>
-    </div>
-  </section>
-
- <section id="bodypage">
-    <div class="container"> 
-	<div class="Toplist">
-  <div  role="main" class="ui-content">
-    
-	<table>
 	
-	<tr>
-		<td> Lag </td>
-		<td> Poäng</td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(1) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(1) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(2) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(2) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(3) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(3) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(4) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(4) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(5) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(5) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(6) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(6) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(7) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(7) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(8) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(8) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(9) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(9) </td>
-	</tr>
-	<tr>
-		<td> @controllers.TeamDatabase.topTeamName(10) </td>
-		<td> @controllers.TeamDatabase.topTeamPoints(10) </td>
-	</tr>
-  	
-	
-	</table>    
-	</div>
-	</div>
-	</section>
-    <section id="footer">
-     <div class="container">
-            
-              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-
-     </div>
-    </section>
-
-  	</div><!-- /content -->
-	</div>
+	@Templates.Leader()
 
   	</body>
 	</html>
