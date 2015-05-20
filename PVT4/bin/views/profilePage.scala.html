@@ -1,10 +1,12 @@
 @(team: Team)(user: User)
 
 
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--><!--  <html class="no-js" lang="en"> <!--<![endif]-->
-
-   <meta charset="utf-8">
+	<!DOCTYPE html>
+	
+	<html>
+  	<head>
+  
+  	<meta charset="utf-8">
 
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
@@ -20,27 +22,30 @@
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
   <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
 
+	</head>
 
 <!-- Start of first page, redeem codes -->
 <div data-role="page" id="redeem">
   <section id="header">
-    <div class="container">
+    <div class="container" align="center">
+      <div class="testare">
       <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class="active"><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
       </ul>
     </div>
+  </div>
   </section>  
   
   <script>$.mobile.pageLoadErrorMessage = "Ogiltig kod!";</script>
-
+  
   <section id="bodypage">
     <div class = "container">
       <div style="margin-top: 10px;" role="main" class="ui-content">     
         <div class="col-xs-12 col-md-12" >
-          <form class="form-kod" action="@routes.Application.registerCode()" method="post">
+          <form class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
             <input type="text"  placeholder="Skriv kod" name="codeID" id="codeID"></input>
             <button id="button-primary" class="button-submit pure-button">Skicka!</button>
           </form>
@@ -74,12 +79,12 @@
 <!-- Start of second page, hunt codes -->
 <div data-role="page" id="hunt">
   <section id="header">
-    <div class="container">
+    <div class="container" align="center">
       <ul id="portfolio-filter" class="nav nav-tabs">
-        <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-        <li class="active"><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-        <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-        <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+        <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+        <li class="active"><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+        <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+        <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
       </ul>
     </div>
   </section>
@@ -110,12 +115,12 @@
 
 <div data-role="page" id="team">
   <section id="header">
-    <div class="container">
+    <div class="container" align="center">
     <ul id="portfolio-filter" class="nav nav-tabs">
-      <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class="active"><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class=""><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
     </ul>
   </div>
   </section>
@@ -271,12 +276,12 @@ hcb_user = {
 <!-- Start of fourth page, topplistor -->
 <div data-role="page" id="leader">
   <section id="header">
-    <div class="container">
+    <div class="container" align="center">
       <ul id="portfolio-filter" class="nav nav-tabs">
-            <li class=""><a href="#redeem"><font size="1">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#hunt"><font size="1">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class=""><a href="#team"><font size="1">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-            <li class="active"><a href="#leader"><font size="1">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
       </ul>
     </div>
   </section>
@@ -293,44 +298,44 @@ hcb_user = {
 		<td> Poäng</td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(1) </td>
-		<td> @controllers.Application.topTeamPoints(1) </td>
+		<td> @controllers.TeamDatabase.topTeamName(1) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(1) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(2) </td>
-		<td> @controllers.Application.topTeamPoints(2) </td>
+		<td> @controllers.TeamDatabase.topTeamName(2) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(2) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(3) </td>
-		<td> @controllers.Application.topTeamPoints(3) </td>
+		<td> @controllers.TeamDatabase.topTeamName(3) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(3) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(4) </td>
-		<td> @controllers.Application.topTeamPoints(4) </td>
+		<td> @controllers.TeamDatabase.topTeamName(4) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(4) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(5) </td>
-		<td> @controllers.Application.topTeamPoints(5) </td>
+		<td> @controllers.TeamDatabase.topTeamName(5) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(5) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(6) </td>
-		<td> @controllers.Application.topTeamPoints(6) </td>
+		<td> @controllers.TeamDatabase.topTeamName(6) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(6) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(7) </td>
-		<td> @controllers.Application.topTeamPoints(7) </td>
+		<td> @controllers.TeamDatabase.topTeamName(7) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(7) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(8) </td>
-		<td> @controllers.Application.topTeamPoints(8) </td>
+		<td> @controllers.TeamDatabase.topTeamName(8) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(8) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(9) </td>
-		<td> @controllers.Application.topTeamPoints(9) </td>
+		<td> @controllers.TeamDatabase.topTeamName(9) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(9) </td>
 	</tr>
 	<tr>
-		<td> @controllers.Application.topTeamName(10) </td>
-		<td> @controllers.Application.topTeamPoints(10) </td>
+		<td> @controllers.TeamDatabase.topTeamName(10) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(10) </td>
 	</tr>
   	
 	
@@ -346,14 +351,9 @@ hcb_user = {
      </div>
     </section>
 
-  </div><!-- /content -->
-</div>
+  	</div><!-- /content -->
+	</div>
 
-  <!--<script src="@routes.Assets.at("javascripts/jquery-1.8.3.min.js")" type="text/javascript"></script>-->
-  <!--<script src="@routes.Assets.at("javascripts/bootstrap/js/bootstrap.min.js")"></script>-->
-  <!--<script src="@routes.Assets.at("javascripts/jquery.isotope.min.js")"></script>-->
-  <!--<script src="@routes.Assets.at("javascripts/init-isotope-portfolio.js")"></script>
-
-  <script src="@routes.Assets.at("javascripts/holder.js")"></script>
-  <script src="@routes.Assets.at("javascripts/script.js")"></script>-->
+  	</body>
+	</html>
 
