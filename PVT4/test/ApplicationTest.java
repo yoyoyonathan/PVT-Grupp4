@@ -32,11 +32,15 @@ import static org.mockito.Mockito.*;
 */
 public class ApplicationTest {
 	
+	private void println(String string) {
+    System.out.println(string);
+	}
 	
 	@Test
     public void simpleCheck() {
         int a = 1 + 1;
         assertThat(a).isEqualTo(2);
+		this.println("simpleCheck complete");
     }
 	
 	@Test
@@ -46,6 +50,7 @@ public class ApplicationTest {
 		 new FakeRequest(GET, "/")
 		);
 		assertThat(status(result)).isEqualTo(OK);
+		this.println("Rendering index OK");
 	}
 	@Test
 	public void testCallProfilePage() {
@@ -54,5 +59,6 @@ public class ApplicationTest {
 		 new FakeRequest(GET, "/")
 		);
 		assertThat(status(result)).isEqualTo(OK);
+		this.println("Rendering profilePage OK");
 	}
 }

@@ -145,6 +145,21 @@ body {
   border-color: white;
   display: table-cell;
   vertical-align: middle;
+<<<<<<< HEAD
+=======
+  
+}
+
+font {/*Ta bort skuggan på all text*/
+  text-shadow: none;
+  color: black;
+  size: 1;
+}
+
+h1, p {/*Ta bort skuggan på all text*/
+  text-shadow: none;
+  color: black;
+>>>>>>> Backend-4
 }
 
 div.container {
@@ -217,40 +232,49 @@ div.panel, .transparent{
 	
 }.Toplist table{
     border-collapse: collapse;
-        border-spacing: 0;
-	width:100%;
+        border-spacing:0;
+	width:250px;
 	height:100%;
-	margin:0px;padding:0px;
-	
+	margin:0px;
+  padding:0px;
+  border: 3px solid#ffffff;
+  border-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+
 }.Toplist tr:last-child td:last-child {
-	-moz-border-radius-bottomright:0px;
-	-webkit-border-bottom-right-radius:0px;
-	border-bottom-right-radius:0px;
-	
+	-moz-border-radius-bottomright:10px;
+	-webkit-border-bottom-right-radius:10px;
+	border-bottom-right-radius:10px;
+
 }
 .Toplist table tr:first-child td:first-child {
-	-moz-border-radius-topleft:0px;
-	-webkit-border-top-left-radius:0px;
-	border-top-left-radius:0px;
+	-moz-border-radius-topleft:10px;
+	-webkit-border-top-left-radius:10px;
+	border-top-left-radius:10px;
 	
 }
 .Toplist table tr:first-child td:last-child {
-	-moz-border-radius-topright:0px;
-	-webkit-border-top-right-radius:0px;
-	border-top-right-radius:0px;
-	
+	-moz-border-radius-topright:10px;
+	-webkit-border-top-right-radius:10px;
+	border-top-right-radius:10px;
+
+
 }.Toplist tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:0px;
-	-webkit-border-bottom-left-radius:0px;
-	border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:10px;
+	-webkit-border-bottom-left-radius:10px;
+	border-bottom-left-radius:10px;
+
 }.Toplist tr:hover td{
+  
 	
 }
-.Toplist tr:nth-child(odd){ background-color:#aad4ff; }
-.Toplist tr:nth-child(even)    { background-color:#ffffff; }.Toplist td{
+.Toplist tr:nth-child(odd){ 
+ background-color: rgba(255, 255, 255, 0.4); }
+.Toplist tr:nth-child(even)    { 
+ background-color: rgba(255, 255, 255, 0.9); }.Toplist td{
 	vertical-align:middle;
 	border:1px solid #000000;
-	border-width:0px 1px 1px 0px;
+	border-width:0px 0px 0px 0px;
 	text-align:left;
 	padding:7px;
 	font-size:15px;
@@ -259,11 +283,19 @@ div.panel, .transparent{
 	color:#000000;
 	
 }.Toplist tr:last-child td{
-	border-width:0px 1px 0px 0px;
-}.Toplist tr td:last-child{
-	border-width:0px 0px 1px 0px;
-}.Toplist tr:last-child td:last-child{
-	border-width:0px 0px 0px 0px;
+	/*border-width:0px 1px 0px 0px; */
+/*  border-width: 0px 1px 0px 0px; */
+  border-width:0px 0px 0px 0px;
+
+
+}
+.Toplist tr td:last-child{
+/*	border-width:0px 0px 1px 0px; */
+border-width:0px 0px 0px 0px;
+}
+.Toplist tr:last-child td:last-child{
+	/*border-width:0px 0px 0px 0px; */
+border-width:0px 0px 0px 0px;
 }
 .Toplist tr:first-child td{
 		background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	
@@ -273,13 +305,14 @@ div.panel, .transparent{
 	background: -o-linear-gradient(top,#005fbf,003f7f);
 
 	background-color:#005fbf;
-	border:0px solid #000000;
+	border:0px solid: #000000;
 	text-align:left;
 	border-width:0px 0px 1px 1px;
 	font-size:16px;
 	font-family:Verdana;
 	font-weight:bold;
 	color:#ffffff;
+  opacity: 0.8;
 }
 .Toplist tr:first-child:hover td{
 	background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	
@@ -288,12 +321,15 @@ div.panel, .transparent{
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");	
 	background: -o-linear-gradient(top,#005fbf,003f7f);
 	background-color:#005fbf;
+  
 }
 .Toplist tr:first-child td:first-child{
-	border-width:0px 0px 1px 0px;
+	/*border-width:0px 0px 1px 0px; */
+  border-width:0px 0px 0px 0px;
 }
 .Toplist tr:first-child td:last-child{
-	border-width:0px 0px 1px 1px;
+	border-width:0px 0px 0px 0px;
+  /*border-width:0px 0px 1px 1px; */
 }
 
 #footer{
@@ -306,6 +342,10 @@ div.panel, .transparent{
     left:0px;
     right:0px;
     margin-bottom:0px;
+    font-weight: bold;
+    padding-top: 5px;
+    margin-top: 5px;
+
 }
 #header{
   position:center;
