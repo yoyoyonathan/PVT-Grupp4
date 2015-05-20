@@ -10,9 +10,9 @@ public class UserDatabase extends Controller {
 	
 	public static Result addUser() {
 		
-    	if (Form.form(User.class).bindFromRequest().hasErrors()){
- 		    return badRequest(signup.render("Nu har något skrivits in fel"));
- 		}
+//    	if (Form.form(User.class).bindFromRequest().hasErrors()){
+// 		    return badRequest(signup.render("Nu har något skrivits in fel"));
+// 		}
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
  		Connection conn = null;

@@ -120,13 +120,6 @@ public class Application extends Controller {
     	return ok(index.render("Du är nu utloggad."));
     }
     
-    public static Result signup() {
-	    String currentUser = session("connected");
-        if(currentUser != null) {
-             return ok(index.render("Du är redan inloggad som " + currentUser + "!"));
-        } 
-		return ok(signup.render(""));
-	}
     
     
 	    	

@@ -26,8 +26,6 @@ POST	/regCode					controllers.CodeDatabase.registerCode()
 
 GET		/users						controllers.Application.getUsers()
 
-GET		/signup						controllers.Application.signup()
-
 GET		/logout						controllers.Application.logout()
 
 POST	/login						controllers.Application.login()
