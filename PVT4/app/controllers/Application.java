@@ -7,22 +7,12 @@ import play.db.DB;
 import play.mvc.*;
 import views.html.*;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
-
 import play.libs.Json;
 
 public class Application extends Controller {
 	
     public static Result index() {
         return ok(index.render(""));
-    }
-    
-    public static Result team(String name) {
-    	String currentUser = session("connected");
-    	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
-    	}
-    	return ok(team.render(TeamDatabase.getTeam(name)));
     }
     
     public static Result joinTeam() {
@@ -35,14 +25,6 @@ public class Application extends Controller {
             return ok(index.render("Du måste logga in först."));
     	}
 		return ok(profilePage.render(TeamDatabase.getTeam(userName), UserDatabase.getUser(userName)));
-    }
-    
-    public static Result loginPage() {
-    	String currentUser = session("connected");
-        if(currentUser != null) {
-             return ok(index.render("Du är redan inloggad som " + currentUser + "."));
-        } 
-    	return ok(loginPage.render(""));
     }
     
     public static Result login() {
@@ -168,5 +150,3 @@ public class Application extends Controller {
     	
     }
 }
-
-
