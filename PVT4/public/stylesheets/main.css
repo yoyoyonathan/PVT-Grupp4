@@ -141,6 +141,17 @@ body {
 
 }
 
+font {/*Ta bort skuggan på all text*/
+  text-shadow: none;
+  color: black;
+  size: 1;
+}
+
+h1, p {/*Ta bort skuggan på all text*/
+  text-shadow: none;
+  color: black;
+}
+
 div.container {
   /*background-image: url("../images/Wallpaper4.jpg");
   background-size: 100% 100%; */
