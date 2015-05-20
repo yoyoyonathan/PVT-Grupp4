@@ -10,10 +10,6 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 GET		/profile/:userName			controllers.Application.profilePage(userName: String)
 
-GET		/team/:name					controllers.Application.team(name: String)
-
-GET		/loginPage					controllers.Application.loginPage()
-
 GET		/joinTeam					controllers.Application.joinTeam()
 
 POST	/user						controllers.UserDatabase.addUser()

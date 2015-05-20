@@ -1,35 +1,18 @@
 package controllers;
 
-import java.util.*;
-import java.io.*;
 import java.sql.*;
 import models.*;
-import play.*;
-import play.api.libs.json.*;
 import play.data.*;
 import play.db.DB;
-import play.db.ebean.Model;
 import play.mvc.*;
 import views.html.*;
-import static play.libs.Json.toJson;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
-
 import play.libs.Json;
 
 public class Application extends Controller {
 	
     public static Result index() {
         return ok(index.render(""));
-    }
-    
-    public static Result team(String name) {
-    	String currentUser = session("connected");
-    	if(currentUser == null) {
-            return ok(index.render("Du måste logga in först."));
-    	}
-    	return ok(team.render(TeamDatabase.getTeam(name)));
     }
     
     public static Result joinTeam() {
@@ -42,14 +25,6 @@ public class Application extends Controller {
             return ok(index.render("Du måste logga in först."));
     	}
 		return ok(profilePage.render(TeamDatabase.getTeam(userName), UserDatabase.getUser(userName)));
-    }
-    
-    public static Result loginPage() {
-    	String currentUser = session("connected");
-        if(currentUser != null) {
-             return ok(index.render("Du är redan inloggad som " + currentUser + "."));
-        } 
-    	return ok(loginPage.render(""));
     }
     
     public static Result login() {
@@ -76,7 +51,6 @@ public class Application extends Controller {
 				String email = rs.getString("email");
 				String password = rs.getString("password");
 				String userName = rs.getString("userName");
-				int birthDate = rs.getInt("birthDate");
 					
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
@@ -119,9 +93,6 @@ public class Application extends Controller {
 	    session().clear();
     	return ok(index.render("Du är nu utloggad."));
     }
-    
-    
-    
 	    	
     public static Result getUsers() {			//Används inte i nuläget för något
     	
@@ -179,5 +150,3 @@ public class Application extends Controller {
     	
     }
 }
-
-
