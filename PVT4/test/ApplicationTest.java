@@ -20,7 +20,6 @@ import play.libs.F.*;
 import play.twirl.api.Content;
 
 import static play.test.Helpers.*;
-import static play.test.Helpers.GlobalSettings;
 import static org.fest.assertions.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -31,21 +30,8 @@ import static org.mockito.Mockito.*;
 * If you are interested in mocking a whole application, see the wiki for more details.
 *
 */
-public class ApplicationTest extends WithApplication {
+public class ApplicationTest {
 	
-	FakeApplication fakeApp = Helpers.fakeApplication();
-
-	FakeApplication fakeAppWithMemoryDb = fakeApplication(inMemoryDatabase("test"));
-	
-	@Before
-	public void beforeEachTest(){
-	FakeApplication fakeAppWithGlobal = Helpers.fakeApplication(new Helpers.GlobalSettings() {
-		@Override
-		public void onStart(Application app) {
-			System.out.println("Starting FakeApplication");
-			}
-		});
-	}
 	
 	@Test
     public void simpleCheck() {
@@ -53,4 +39,20 @@ public class ApplicationTest extends WithApplication {
         assertThat(a).isEqualTo(2);
     }
 	
+	@Test
+	public void testCallIndex() {
+		Result result = callAction(
+		 controllers.routes.ref.Application.index(),
+		 new FakeRequest(GET, "/")
+		);
+		assertThat(status(result)).isEqualTo(OK);
+	}
+	@Test
+	public void testCallProfilePage() {
+		Result result = callAction(
+		 controllers.routes.ref.Application.profilePage("String"),
+		 new FakeRequest(GET, "/")
+		);
+		assertThat(status(result)).isEqualTo(OK);
+	}
 }
