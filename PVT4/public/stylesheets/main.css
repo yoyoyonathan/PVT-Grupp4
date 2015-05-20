@@ -145,9 +145,6 @@ body {
   border-color: white;
   display: table-cell;
   vertical-align: middle;
-<<<<<<< HEAD
-=======
-  
 }
 
 font {/*Ta bort skuggan på all text*/
@@ -156,10 +153,9 @@ font {/*Ta bort skuggan på all text*/
   size: 1;
 }
 
-h1, p {/*Ta bort skuggan på all text*/
+h1, p, h2, h3, h4, h5 {/*Ta bort skuggan på all text*/
   text-shadow: none;
   color: black;
->>>>>>> Backend-4
 }
 
 div.container {
