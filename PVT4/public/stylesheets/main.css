@@ -42,6 +42,12 @@ body {
   position: center;
 }
 
+#teambild {
+  max-width: 300px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
 /*.panel {
   max-width: 300px; 
 
@@ -63,6 +69,10 @@ body {
           box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
+}
+
+#takePictureField{
+  max-width: 100%;
 }
 
 .form-signin .form-control:focus{
@@ -135,10 +145,6 @@ body {
   border-color: white;
   display: table-cell;
   vertical-align: middle;
-  
-
-
-
 }
 
 div.container {
@@ -340,6 +346,7 @@ div.panel, .transparent{
     margin-top: 200px;
 }
 
+
 #button-submit {
     color: black;
     border-radius: 4px;
@@ -347,6 +354,8 @@ div.panel, .transparent{
     background: #D3D3D3;
 
 }
+
+
 #codeID{
   width:290px;
   height:50px;
