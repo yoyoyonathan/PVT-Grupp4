@@ -58,7 +58,7 @@
            
 		<h1 align="center">New Photo</h1>
                     
-               <form id ="newpicture" action="@routes.Application.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
+               <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
                <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
    							
                <button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>

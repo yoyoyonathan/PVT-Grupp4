@@ -1,34 +1,68 @@
 package controllers;
 
+import java.util.*;
 import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.sql.Blob;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.sql.*;
 
 import javax.imageio.ImageIO;
 
-import java.sql.*;
-
 import models.*;
+import play.*;
+import play.api.libs.json.*;
 import play.data.*;
 import play.db.DB;
+import play.db.ebean.Model;
 import play.mvc.*;
-import views.html.*;
-
-import play.mvc.Result;
 import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
+import views.html.*;
+import static play.libs.Json.toJson;
 
-public class PictureDatabase {
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+import play.libs.Json;
+
+//Picture imports
+
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import views.html.*;
+import play.data.Form;
+import play.db.*;
+import views.*;
+//Imports for picture
+import play.mvc.Http.MultipartFormData;
+import play.mvc.Http.MultipartFormData.FilePart;
+import play.mvc.Http.Response;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+import javax.xml.bind.DatatypeConverter;
+import javax.xml.datatype.DatatypeConstants;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+//import com.sun.xml.internal.ws.api.addressing.WSEndpointReference.Metadata;
+
+public class PictureDatabase extends Controller{
 	
 	// Inner class containing image information
 	public static class ImageInformation {
