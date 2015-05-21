@@ -203,8 +203,8 @@ public class PictureDatabase extends Controller{
 //					inputStream = new ByteArrayInputStream(os.toByteArray());
 
 //				} else {
-					inputStream = new FileInputStream(file);
-				}
+				
+				inputStream = new FileInputStream(file);
 
 				preparedStatement.setString(1, currentuser);
 				preparedStatement.setBlob(2, inputStream);
@@ -212,10 +212,10 @@ public class PictureDatabase extends Controller{
 
 				return redirect(routes.Application.profilePage(currentuser));
 		
-//			} else {
-//
-//				return ok("IMAGE WAS EMPTY");
-//			}
+			} else {
+
+				return ok("IMAGE WAS EMPTY");
+			}
 
 		} catch (Exception e) {
 			// Handle errors for Class.forName
