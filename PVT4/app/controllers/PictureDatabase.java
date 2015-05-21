@@ -27,7 +27,6 @@ import play.libs.Json;
 
 //Picture imports
 
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -50,6 +49,8 @@ import play.mvc.Http.Response;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -60,6 +61,7 @@ import javax.xml.datatype.DatatypeConstants;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+//import com.sun.medialib.mlib.Image;
 //import com.sun.xml.internal.ws.api.addressing.WSEndpointReference.Metadata;
 
 //import com.drew.imaging.ImageMetadataReader;
@@ -230,8 +232,60 @@ public class PictureDatabase extends Controller{
 		}
 
 	}
+	
+	public static Image getPictures() {
+		
+		String currentUser = session("connected");
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+	 		String sql = "SELECT * FROM `userpic` WHERE `user` = " + "'" + currentUser + "'";
 
-	public static Result getPictures() {
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			ArrayList<Blob> list = new ArrayList<Blob>();
+			
+			byte[] image = null;
+			
+
+
+//			if(rs.isBeforeFirst()){
+				rs.next();
+				
+				image = rs.getBytes("picture");
+				String s = rs.getString("user");
+//				Blob b = rs.getBlob("picture");
+//				list.add(b);
+				
+//				} 
+				rs.close();
+				
+				System.out.println(s);
+				
+	            Image img = Toolkit.getDefaultToolkit().createImage(image);
+			
+			return img;
+//			return ok(image).as("image/jpeg");
+			
+			
+		} catch (Exception e) {
+			return null;
+		} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				return null;
+			} // end finally try
+		} // end try
+	}
+
+	public static Result getPicture() {
 		String currentUser = session("connected");
 //		if (currentUser == null) {
 //			return unauthorized(LoginUserPage
