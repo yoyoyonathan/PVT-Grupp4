@@ -191,8 +191,53 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Kommentera</button>
     </form>
  
- 	<textarea rows="" cols="" disabled>@controllers.Application.getComments(1)</textarea>
+ 	<textarea id ="ruta1"rows="" cols="" disabled>@controllers.Application.getComments(1)</textarea>
+ 	<textarea id ="ruta2"rows="" cols="" disabled>@controllers.Application.getComments(2)</textarea>
+ 	<textarea id ="ruta3"rows="" cols="" disabled>@controllers.Application.getComments(3)</textarea>
+ 	<textarea id ="ruta4"rows="" cols="" disabled>@controllers.Application.getComments(4)</textarea>
+ 	<textarea id ="ruta5"rows="" cols="" disabled>@controllers.Application.getComments(5)</textarea>
+ 	<textarea id ="ruta6"rows="" cols="" disabled>@controllers.Application.getComments(6)</textarea>
+ 	<textarea id ="ruta7"rows="" cols="" disabled>@controllers.Application.getComments(7)</textarea>
+ 	<textarea id ="ruta8"rows="" cols="" disabled>@controllers.Application.getComments(8)</textarea>
+ 	<textarea id ="ruta9"rows="" cols="" disabled>@controllers.Application.getComments(9)</textarea>
+ 	<textarea id ="ruta10"rows="" cols="" disabled>@controllers.Application.getComments(10)</textarea>
  
+ <script>
+ $(document).ready(function(){
+ 	
+ 	if($('#ruta1').html()==""){
+		$(ruta1).hide(); 	
+ 	}
+ 	if($('#ruta2').html()==""){
+		$(ruta2).hide(); 	
+ 	}
+ 	if($('#ruta3').html()==""){
+		$(ruta3).hide(); 	
+ 	}
+ 	if($('#ruta4').html()==""){
+		$(ruta4).hide(); 	
+ 	}
+ 	if($('#ruta5').html()==""){
+		$(ruta5).hide(); 	
+ 	}
+ 	if($('#ruta6').html()==""){
+		$(ruta6).hide(); 	
+ 	}
+ 	if($('#ruta7').html()==""){
+		$(ruta7).hide(); 	
+ 	}
+ 	if($('#ruta8').html()==""){
+		$(ruta8).hide(); 	
+ 	}
+ 	if($('#ruta9').html()==""){
+		$(ruta9).hide(); 	
+ 	}
+ 	if($('#ruta10').html()==""){
+		$(ruta10).hide(); 	
+ 	}
+ 	
+ 	});
+ </script>
 
     <section id="footer">
      <div class="container">

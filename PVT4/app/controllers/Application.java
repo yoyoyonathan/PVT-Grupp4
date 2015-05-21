@@ -2,6 +2,8 @@ package controllers;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
+import java.sql.Date;
+
 import models.*;
 import play.*;
 import play.api.libs.json.*;
@@ -14,6 +16,7 @@ import static play.libs.Json.toJson;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+
 
 
 import play.libs.Json;
@@ -242,18 +245,20 @@ public class Application extends Controller {
 			String sql2 = "SELECT * FROM `teamcomments`";
 			
 			ResultSet rs2 = stmt.executeQuery(sql2);
+			
 			int length = 1;
 			while(rs2.next()){
 				length++;
 		   	}
 		    rs2.close();
 	
-			String insertIntoDatabase = "INSERT INTO teamcomments (ID, team, comment) VALUES(?,?,?)";
+		
+	
+			String insertIntoDatabase = "INSERT INTO teamcomments (team, comment) VALUES(?,?)";
 		    
 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
-			preparedStatement.setInt(1, length);
-			preparedStatement.setString(2, teamName);
-			preparedStatement.setString(3, comment);
+			preparedStatement.setString(1, teamName);
+			preparedStatement.setString(2, comment);
 			preparedStatement.executeUpdate();
  			return redirect(routes.Application.profilePage(currentUser));
 			
@@ -279,15 +284,17 @@ public class Application extends Controller {
 			rs.next();
 			String teamName = rs.getString("team");
 			rs.close();
-    		
-			String sql2 = "SELECT * FROM `teamcomments` WHERE `team` = " + "'" + teamName + "'";
+			String sql2 = "SELECT * FROM `teamcomments` WHERE `team` = " + "'" + teamName + "'" + "ORDER BY `ID` ASC";
 			
 			ResultSet rs2 = stmt.executeQuery(sql2);
 			
 			ArrayList<String> list = new ArrayList<String>();
-			
+			ArrayList<String> listdate = new ArrayList<String>();
 			while(rs2.next()){
 			String comment = rs2.getString("comment");
+			Date date = rs2.getDate("time");
+			String datum = ""+date;
+			listdate.add(datum);
 			list.add(comment);
 			}
 			rs2.close();
@@ -295,15 +302,31 @@ public class Application extends Controller {
 			//If detta lag är på plats i sorterat efter poäng
 			
 			String returnString = "";
-			
-//			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
-//			for( int i2 = 0; i2 <= i-1;i2++){
-//				returnString = "" + list.pollFirst().name + ": ";
-//			}
-			
-			returnString = list.get(i);
-			
-			return returnString;
+			String returnStringDate ="";
+			if (i==1)
+				i = list.size()-1;
+			if (i==2)
+				i = list.size()-2;
+			if (i==3)
+				i = list.size()-3;
+			if (i==4)
+				i = list.size()-4;
+			if (i==5)
+				i = list.size()-5;
+			if (i==6)
+				i = list.size()-6;
+			if (i==7)
+				i = list.size()-7;
+			if (i==8)
+				i = list.size()-8;
+			if (i==9)
+				i = list.size()-9;
+			if (i==10)
+				i = list.size()-10;
+				returnString = list.get(i);
+				returnStringDate = listdate.get(i);
+				
+			return currentUser +" skrev "+returnStringDate+":"+returnString;
 			
     	} catch (SQLException se){
  			return se.toString();
