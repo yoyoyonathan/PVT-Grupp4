@@ -147,13 +147,13 @@ body {
   vertical-align: middle;
 }
 
-font {/*Ta bort skuggan på all text*/
+font {/*Ta bort skuggan och färgsätt till svart på all font*/
   text-shadow: none;
   color: black;
   size: 1;
 }
 
-h1, p, h2, h3, h4, h5 {/*Ta bort skuggan på all text*/
+h1, p, h2, h3, h4, h5 {/*Ta bort skuggan och färglägg till svart på alla h och p*/
   text-shadow: none;
   color: black;
 }
