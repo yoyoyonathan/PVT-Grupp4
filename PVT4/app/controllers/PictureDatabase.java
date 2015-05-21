@@ -62,6 +62,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 //import com.sun.xml.internal.ws.api.addressing.WSEndpointReference.Metadata;
 
+//import com.drew.imaging.ImageMetadataReader;
+//import com.drew.imaging.ImageProcessingException;
+//import com.drew.metadata.*;
+//import com.drew.metadata.exif.ExifIFD0Directory;
+//import com.drew.metadata.jpeg.JpegDirectory;
+
 public class PictureDatabase extends Controller{
 	
 	// Inner class containing image information
@@ -166,7 +172,8 @@ public class PictureDatabase extends Controller{
 		String currentuser = session("connected");
 		BufferedImage img = null;
 		BufferedImage finalImg = null;
-		InputStream inputStream;
+		InputStream inputStream = null;
+		
 		try {
 			conn = DB.getConnection();
 
@@ -176,7 +183,6 @@ public class PictureDatabase extends Controller{
 			MultipartFormData body = request().body().asMultipartFormData();
 
 			FilePart picture = body.getFile("picture");
-			inputStream = null;
 
 			if (picture != null) {
 				File file = picture.getFile();
@@ -200,18 +206,11 @@ public class PictureDatabase extends Controller{
 					inputStream = new FileInputStream(file);
 				}
 
-				
-
-			
-
-	
-
 				preparedStatement.setString(1, currentuser);
 				preparedStatement.setBlob(2, inputStream);
 				preparedStatement.executeUpdate();
 
 				return redirect(routes.Application.profilePage(currentuser));
-//				return null;
 		
 //			} else {
 //
