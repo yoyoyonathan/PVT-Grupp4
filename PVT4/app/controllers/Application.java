@@ -263,7 +263,7 @@ public class Application extends Controller {
     	
     }
     
-    public static String getComments(){
+    public static String getComments(int i){
     	
     	Connection conn = null;
     	Statement stmt = null;
@@ -283,18 +283,61 @@ public class Application extends Controller {
 			String sql2 = "SELECT * FROM `teamcomments` WHERE `team` = " + "'" + teamName + "'";
 			
 			ResultSet rs2 = stmt.executeQuery(sql2);
-			String s = "";
-			while(rs2.next()){
-				s = s + " " + rs2.getString("comment");
-		   	}
-		    rs2.close();
-		    return s;
+//			String s = "";
+//			while(rs2.next()){
+//				s = s + " " + rs2.getString("comment");
+//		   	}
+//		    rs2.close();
+//		    return s;
 			
+		    String returnString ="";
+		    TreeSet<Team> tree = new TreeSet<Team>();
+			
+			while(rs2.next()){
+			String comment = rs2.getString("comment");
+			Team team = new Team();
+			team.teamcomments = comment;
+			tree.add(team);
+			}
+			rs2.close();
+			
+			//If detta lag är på plats i sorterat efter poäng
+			
+//			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
+			for( int i2 = 0; i2 <= i-1;i2++){
+				returnString = tree.pollFirst().teamcomments + ": ";
+			}
+			return returnString;
 
     	} catch (SQLException se){
  			return se.toString();
 		} 
-    	
+//    	catch (SQLException se) {
+// 			// Handle errors for JDBC
+//// 			return internalServerError(se.toString());
+//// 			return badRequest(index.render("Email/användarnamn är redan taget."));
+//    		return null;
+// 		}
+    	catch (Exception e) {
+ 			// Handle errors for Class.forName
+// 			return internalServerError(e.toString());
+ 			return null;
+ 		} finally {
+ 			// finally block used to close resources
+// 			try {
+// 				if (stmt != null)
+// 					conn.close();
+// 			} catch (SQLException se) {
+ 			// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+// 				return internalServerError(se.toString());
+ 				return null;
+ 			}// end finally try
+ 		}// end try
+    
     }
     
     public static Result addTeamMember() {			//Går att gå med i ett Team som inte finns.  

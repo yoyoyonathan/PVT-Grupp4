@@ -17,6 +17,7 @@ public class Team extends Model implements Comparable<Team> {
 	public String name;
 	public int points;
 	public String user;
+	public String teamcomments;
 	public ArrayList<String> wall;
 	
 	public static Finder<String,Team> find = new Finder<String,Team>(
