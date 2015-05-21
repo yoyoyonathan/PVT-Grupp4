@@ -128,24 +128,23 @@
 
 <section id="bodypage">
   <div class ="container">
-    <div style="margin-top: 10px;" role="main" class="ui-content">
-      <div class="col-xs-12 col-md-12" >
-        <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/>
-      
-        <h1>@team.name</h1>
-        <p>Du heter @user.userName</p>
-        <input type="file" capture="camera" accept="image/*" id="takePictureField" style="max-width:100%">
+    <div class="ui-content" style="margin-top: 10px" role="main" >
+        <h3 style="text-align: center">Du är med i team: <h3>
+        <h4 style="text-align: center">@team.name</h4>
+        <h5 style="text-align: center">Inloggad som: @user.userName</h5>
+        <!--<input type="file" capture="camera" accept="image/*" id="takePictureField">
     		<div id="swatches">
     			<div id="swatch0" class="swatch"></div>
     			<div id="swatch1" class="swatch"></div>
     			<div id="swatch2" class="swatch"></div>
     			<div id="swatch3" class="swatch"></div>
     			<div id="swatch4" class="swatch"></div>
-    		</div>           
+    		</div>
+        </input> -->          
           <script>
 // This code goes ABOVE the main HTML Comment Box code!
 // replace the text in the single quotes below to customize labels.
-            hcb_user = {
+            /*hcb_user = {
                 // L10N
                 comments_header : 'Kommentarer',
                 name_label : 'Namn',
@@ -190,6 +189,7 @@
                 PAGE:'@team.name', // ID of the webpage to show comments for. defaults to the webpage the user is currently visiting.
                 RELATIVE_DATES:true // show dates in the form "X hours ago." etc.
             };
+
           </script>
           <script>
           	var desiredWidth;
@@ -284,9 +284,9 @@
           </script>
   <!-- end htmlcommentbox.com -->
         </div> 
-      </div>  
     </div>
   </section>
+</div>
 
    <!-- <section id="footer">
      <div class="container">
@@ -296,9 +296,9 @@
      </div>
     </section> -->
 
-  </div><!-- /content -->
+
 </div>
-</div>
+</div>-->
 
 <!-- Start of fourth page, topplistor -->
 <div data-role="page" id="leader">
