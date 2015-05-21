@@ -22,4 +22,7 @@ POST	/login						controllers.UserDatabase.login()
 
 POST	/randomize					controllers.TeamDatabase.randomizeTeam()
 
+POST	/savePic					controllers.Application.savePicture()
+
+
 
