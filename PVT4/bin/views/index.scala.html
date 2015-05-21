@@ -1,6 +1,7 @@
 @(message: String)
 
 	<!DOCTYPE html>
+	<head>
 	
     @Templates.JSCSS()
 
@@ -97,7 +98,7 @@ $(document).ready(function (){
     <div class="col-xs-12 col-sm-12 col-md-12" >
       <div class="panel panel-default">
         <div class="panel-body">
-          <form  class="form-signin" action="@routes.Application.login()" method="post">
+          <form  class="form-signin" action="@routes.UserDatabase.login()" method="post">
             <h2 class="text-center form-signin-heading">Logga in!</h2>
             <label for="inputEmail" class="sr-only">E-mail</label>
             <input type="email" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required>

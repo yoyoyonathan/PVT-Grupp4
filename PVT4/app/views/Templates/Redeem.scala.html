@@ -1,0 +1,49 @@
+<div data-role="page" id="redeem">
+  <section id="header">
+    <div class="container" align="center">
+      <div class="testare">
+      <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class="active"><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+      </ul>
+    </div>
+  </div>
+  </section>  
+  
+  <script>$.mobile.pageLoadErrorMessage = "Ogiltig kod!";</script>
+  
+  <section id="bodypage">
+    <div class = "container">
+      <div style="margin-top: 10px;" role="main" class="ui-content">     
+        <div class="col-xs-12 col-md-12" >
+          <form class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
+            <input type="text"  placeholder="Skriv kod" name="codeID" id="codeID"></input>
+            <button id="button-primary" class="button-submit pure-button">Skicka!</button>
+          </form>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div> 
+      </div>
+    </div> 
+  </section>  
+</div> 
+
+    <section id="footer">
+     <div class="container">
+            
+              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+
+     </div>
+    </section>
+    <!--<script>    $.mobile.pageLoadErrorMessage = "Ogiltig kod!";
+	</script>-->
+
+  
+ 
+  <section id="footer">
+    <div class="container">
+      <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+    </div>
+  </section>
+</div>
