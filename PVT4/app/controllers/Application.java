@@ -283,32 +283,28 @@ public class Application extends Controller {
 			String sql2 = "SELECT * FROM `teamcomments` WHERE `team` = " + "'" + teamName + "'";
 			
 			ResultSet rs2 = stmt.executeQuery(sql2);
-//			String s = "";
-//			while(rs2.next()){
-//				s = s + " " + rs2.getString("comment");
-//		   	}
-//		    rs2.close();
-//		    return s;
 			
-		    String returnString ="";
-		    TreeSet<Team> tree = new TreeSet<Team>();
+			ArrayList<String> list = new ArrayList<String>();
 			
 			while(rs2.next()){
 			String comment = rs2.getString("comment");
-			Team team = new Team();
-			team.teamcomments = comment;
-			tree.add(team);
+			list.add(comment);
 			}
 			rs2.close();
 			
 			//If detta lag är på plats i sorterat efter poäng
 			
+			String returnString = "";
+			
 //			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
-			for( int i2 = 0; i2 <= i-1;i2++){
-				returnString = tree.pollFirst().teamcomments + ": ";
-			}
+//			for( int i2 = 0; i2 <= i-1;i2++){
+//				returnString = "" + list.pollFirst().name + ": ";
+//			}
+			
+			returnString = list.get(i);
+			
 			return returnString;
-
+			
     	} catch (SQLException se){
  			return se.toString();
 		} 
