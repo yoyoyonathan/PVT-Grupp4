@@ -233,7 +233,7 @@ public class PictureDatabase extends Controller{
 
 	}
 	
-	public static Image getPictures() {
+	public static Result getPictures() {
 		
 		String currentUser = session("connected");
 		Connection conn = null;
@@ -250,14 +250,16 @@ public class PictureDatabase extends Controller{
 			
 			ArrayList<Blob> list = new ArrayList<Blob>();
 			
-			byte[] image = null;
+//			byte[] image = null;
+			Blob image = null;
 			
 
 
 //			if(rs.isBeforeFirst()){
 				rs.next();
 				
-				image = rs.getBytes("picture");
+//				image = rs.getBytes("picture");
+				image = rs.getBlob("picture");
 				String s = rs.getString("user");
 //				Blob b = rs.getBlob("picture");
 //				list.add(b);
@@ -265,12 +267,14 @@ public class PictureDatabase extends Controller{
 //				} 
 				rs.close();
 				
-				System.out.println(s);
+				int blobLength = (int) image.length();
+				byte[] bytes = image.getBytes(1, blobLength);
 				
-	            Image img = Toolkit.getDefaultToolkit().createImage(image);
+				
+//	            Image img = Toolkit.getDefaultToolkit().createImage(image);
 			
-			return img;
-//			return ok(image).as("image/jpeg");
+//			return img;
+			return ok(bytes).as("image/jpg");
 			
 			
 		} catch (Exception e) {
