@@ -24,5 +24,7 @@ POST	/randomize					controllers.TeamDatabase.randomizeTeam()
 
 POST	/savePic					controllers.PictureDatabase.savePicture()
 
+POST 	/addComment					controllers.CommentDatabase.addComment()
+
 
 
