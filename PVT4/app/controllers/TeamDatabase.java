@@ -230,7 +230,7 @@ public class TeamDatabase extends Controller {
     			ord1.add("Livets ");
 
     			ArrayList<String> ord2 = new ArrayList<String>();
-    			ord2.add("Von Doom");
+    			ord2.add("Von Anka");
     			ord2.add("Satan");
     			ord2.add("Småjävlar");
     			ord2.add("Klubbor");
@@ -326,6 +326,7 @@ public static String topTeamName(int i) {
 			while(rs.next()){
 			String name = rs.getString("name");
 			int points = rs.getInt("points");
+			
 			Team team = new Team();
 			team.name = name;
 			team.points = points;
