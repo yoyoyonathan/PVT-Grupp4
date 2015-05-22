@@ -337,7 +337,7 @@ public static String topTeamName(int i) {
 			
 //			String n = tree.values().toArray()[tree.size()-i] + ": " + tree.keySet().toArray()[tree.size()-i];
 			for( int i2 = 0; i2 <= i-1;i2++){
-				returnString = "" + tree.pollFirst().name + ": ";
+				returnString = "" + tree.pollFirst().name + " ";
 			}
 			return returnString;
 			

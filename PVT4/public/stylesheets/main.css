@@ -287,10 +287,12 @@ div.panel, .transparent{
 .Toplist tr td:last-child{
 /*	border-width:0px 0px 1px 0px; */
 border-width:0px 0px 0px 0px;
+
 }
 .Toplist tr:last-child td:last-child{
 	/*border-width:0px 0px 0px 0px; */
 border-width:0px 0px 0px 0px;
+
 }
 .Toplist tr:first-child td{
 		background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);	
@@ -321,10 +323,12 @@ border-width:0px 0px 0px 0px;
 .Toplist tr:first-child td:first-child{
 	/*border-width:0px 0px 1px 0px; */
   border-width:0px 0px 0px 0px;
+ 
 }
 .Toplist tr:first-child td:last-child{
 	border-width:0px 0px 0px 0px;
   /*border-width:0px 0px 1px 1px; */
+ 
 }
 
 #footer{
