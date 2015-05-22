@@ -1,4 +1,5 @@
 package controllers;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
@@ -16,6 +17,7 @@ import static play.libs.Json.toJson;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+
 
 
 
@@ -254,11 +256,12 @@ public class Application extends Controller {
 	
 		
 	
-			String insertIntoDatabase = "INSERT INTO teamcomments (team, comment) VALUES(?,?)";
+			String insertIntoDatabase = "INSERT INTO teamcomments (user, team, comment) VALUES(?, ?,?)";
 		    
 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
-			preparedStatement.setString(1, teamName);
-			preparedStatement.setString(2, comment);
+			preparedStatement.setString(1, currentUser);
+			preparedStatement.setString(2, teamName);
+			preparedStatement.setString(3, comment);
 			preparedStatement.executeUpdate();
  			return redirect(routes.Application.profilePage(currentUser));
 			
@@ -290,10 +293,19 @@ public class Application extends Controller {
 			
 			ArrayList<String> list = new ArrayList<String>();
 			ArrayList<String> listdate = new ArrayList<String>();
+			ArrayList<String> listUser = new ArrayList<String>();
+			
+			
+			
 			while(rs2.next()){
 			String comment = rs2.getString("comment");
-			Date date = rs2.getDate("time");
-			String datum = ""+date;
+			Timestamp date = rs2.getTimestamp("time");
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+			dateFormat.format(date);
+			String S = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(date);
+			String user = rs2.getString("user");
+			String datum = ""+S;
+			listUser.add(user);
 			listdate.add(datum);
 			list.add(comment);
 			}
@@ -303,30 +315,35 @@ public class Application extends Controller {
 			
 			String returnString = "";
 			String returnStringDate ="";
+			String returnStringUser="";
+			
+				int p = 0;
 			if (i==1)
-				i = list.size()-1;
+				p = list.size()-1;
 			if (i==2)
-				i = list.size()-2;
+				p = list.size()-2;
 			if (i==3)
-				i = list.size()-3;
+				p = list.size()-3;
 			if (i==4)
-				i = list.size()-4;
+				p = list.size()-4;
 			if (i==5)
-				i = list.size()-5;
+				p = list.size()-5;
 			if (i==6)
-				i = list.size()-6;
+				p = list.size()-6;
 			if (i==7)
-				i = list.size()-7;
+				p = list.size()-7;
 			if (i==8)
-				i = list.size()-8;
+				p= list.size()-8;
 			if (i==9)
-				i = list.size()-9;
+				p = list.size()-9;
 			if (i==10)
-				i = list.size()-10;
-				returnString = list.get(i);
-				returnStringDate = listdate.get(i);
+				p = list.size()-10;
+			
+			returnString = list.get(p);
+			returnStringDate = listdate.get(p);
+			returnStringUser = listUser.get(p);
 				
-			return currentUser +" skrev "+returnStringDate+":"+returnString;
+			return returnStringUser +" skrev "+returnStringDate+": " +returnString;
 			
     	} catch (SQLException se){
  			return se.toString();
