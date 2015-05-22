@@ -326,6 +326,7 @@ public static String topTeamName(int i) {
 			while(rs.next()){
 			String name = rs.getString("name");
 			int points = rs.getInt("points");
+			
 			Team team = new Team();
 			team.name = name;
 			team.points = points;
