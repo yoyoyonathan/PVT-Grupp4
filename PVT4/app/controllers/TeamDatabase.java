@@ -230,7 +230,7 @@ public class TeamDatabase extends Controller {
     			ord1.add("Livets ");
 
     			ArrayList<String> ord2 = new ArrayList<String>();
-    			ord2.add("Von Doom");
+    			ord2.add("Von Anka");
     			ord2.add("Satan");
     			ord2.add("Småjävlar");
     			ord2.add("Klubbor");
