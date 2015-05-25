@@ -234,7 +234,7 @@ public class PictureDatabase extends Controller{
 
 	}
 	
-	public static Result getPictures(int i) {
+	public static Result getPicture(int i) {
 		
 		String currentUser = session("connected");
 		Connection conn = null;

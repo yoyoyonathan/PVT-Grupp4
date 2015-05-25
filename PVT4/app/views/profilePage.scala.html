@@ -60,11 +60,11 @@
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
             
-            <img src='@routes.PictureDatabase.getPictures(0)'/>
-            <img src='@routes.PictureDatabase.getPictures(1)'/>
-            <img src='@routes.PictureDatabase.getPictures(2)'/>
-            <img src='@routes.PictureDatabase.getPictures(3)'/>
-            <img src='@routes.PictureDatabase.getPictures(4)'/>
+            <img src='@routes.PictureDatabase.getPicture(0)'/>
+            <img src='@routes.PictureDatabase.getPicture(1)'/>
+            <img src='@routes.PictureDatabase.getPicture(2)'/>
+            <img src='@routes.PictureDatabase.getPicture(3)'/>
+            <img src='@routes.PictureDatabase.getPicture(4)'/>
 			<h1 align="center">New Photo</h1>
                     
                <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
