@@ -40,6 +40,8 @@
 
 <!-- Start of third page, team -->
 
+	@Templates.Picture()
+
 <div data-role="page" id="team">
   <section id="header">
     <div class="container" align="center">
@@ -61,14 +63,12 @@
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
            
-		
+	
+<div data-role="navbar" id ="team">
 
-           <br><br><br><br><br><br><br><br><br>
-
-<div data-role="navbar">
-	<ul>
-		<li><a href="#profilePage">Kommentarer</a></li>
-		<li><a href="#Picture">Galleri</a></li>
+	<ul id = "portfolio-filer" class="nav nav-tabs">
+		<li class ="active"><a href="#team">Kommentarer</a></li>
+		<li><a href="#picture">Galleri</a></li>
 	</ul>
 </div><!-- /navbar -->
 

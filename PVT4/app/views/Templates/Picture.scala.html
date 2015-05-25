@@ -1,7 +1,110 @@
-<h1 align="center">New Photo</h1>
+<div data-role="page" id="picture">
+  <section id="header">
+    <div class="container" align="center">
+      <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+      </ul>
+    </div>
+  </section>
+
+ <section id="bodypage">
+    <div class="container" style="width:290px;"> 
+	<div class="Toplist">
+  <div  role="main" class="ui-content">
+    
+	<table id="tabbe">
+	
+	<tr>
+		<td style="font-size: 18px;"> Lag </td>
+		<td style="font-size: 18px;"> Poäng</td>
+	</tr>
+	<tr>
+		<td><b>1:</b> @controllers.TeamDatabase.topTeamName(1) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(1) </td>
+	</tr>
+	<tr>
+		<td><b>2:</b> @controllers.TeamDatabase.topTeamName(2) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(2) </td>
+	</tr>
+	<tr>
+		<td><b>3:</b> @controllers.TeamDatabase.topTeamName(3) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(3) </td>
+	</tr>
+	<tr>
+		<td><b>4:</b> @controllers.TeamDatabase.topTeamName(4) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(4) </td>
+	</tr>
+	<tr>
+		<td><b>5:</b> @controllers.TeamDatabase.topTeamName(5) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(5) </td>
+	</tr>
+	<tr>
+		<td><b>6:</b> @controllers.TeamDatabase.topTeamName(6) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(6) </td>
+	</tr>
+	<tr>
+		<td><b>7:</b> @controllers.TeamDatabase.topTeamName(7) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(7) </td>
+	</tr>
+	<tr>
+		<td><b>8:</b> @controllers.TeamDatabase.topTeamName(8) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(8) </td>
+	</tr>
+	<tr>
+		<td><b>9:</b> @controllers.TeamDatabase.topTeamName(9) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(9) </td>
+	</tr>
+	<tr>
+		<td><b>10:</b> @controllers.TeamDatabase.topTeamName(10) </td>
+		<td> @controllers.TeamDatabase.topTeamPoints(10) </td>
+	</tr>
+  	
+	
+	</table>    
+	<br><br><br><br><br><br>
+	</div>
+	</div>
+	</section>
+    <!-- <section id="footer">
+     <div class="container">
+            
+              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
+
+     </div>
+    </section> -->
+
+  	</div><!-- /content -->
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1 align="center">New Photo</h1>
                     
                <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
                <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
    							
                <button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>
-    		   </form>
+    		   </form> -->
+						
