@@ -130,15 +130,15 @@ body {
 }
 
 .top {
-  background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
+  /*background: url("../images/bluebackground.jpg"); no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
- 
  /*background-size: 100% 100%;
  /*padding-top: 7em;
  padding-bottom: 6em;*/
+ 
  height: 100vh;  
  width: 100%;
  border-style: solid;
@@ -159,8 +159,6 @@ h1, p, h2, h3, h4, h5 {/*Ta bort skuggan och färglägg till svart på alla h oc
 }
 
 div.container {
-  /*background-image: url("../images/Wallpaper4.jpg");
-  background-size: 100% 100%; */
   display:table;
 }
 
@@ -171,12 +169,8 @@ width: 100%;
 }
 
 div.middle {
-/*background-image: url("../images/summerburstBackground.jpg");
-background-color: #887766;
-background-size:cover;*/
  background-image: url("../images/yellow4.jpg");
-  background-size: 100% 100%;
-
+ background-size: 100% 100%;
 display: table-cell;
 vertical-align: middle;
 height: 100vh;
@@ -186,9 +180,6 @@ height: 100vh;
 }
 
 .bottom {
-  /*background-image: url("../images/summerburstBackground.jpg");
-  background-size:cover;*/
-
    background-image: url("../images/bluebackground.jpg");
   background-size: 100% 100%;
   display: table-cell;
@@ -334,8 +325,7 @@ border-width:0px 0px 0px 0px;
 #footer{
     position:fixed;
     height:25px;
-    /*background: url("../images/yellow4.jpg"); */
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     opacity: 0.7;
     bottom:0px;
     left:0px;
@@ -349,23 +339,15 @@ border-width:0px 0px 0px 0px;
 #header{
   position:center;
   top:0px;
-  background-color: white;
-  background: url("../images/bluebackground.jpg");
-  border-bottom-style: solid;
-  border-bottom-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 #bodypage{
-   background: url("../images/bluebackground.jpg"); no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
 }
 
 #twitter{
   width: 300px;
- 
 }
 
 #rubrik{
@@ -405,20 +387,44 @@ border-width:0px 0px 0px 0px;
 }
 
 #redeem{
-  background: url("../images/bluebackground.jpg");
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/*
-body{
-    margin-bottom:25px;
-    margin-top:400px;
-  
-*/
+#hunt{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#team{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#leader{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 div.panel {
   border-style: solid;
   border-color: white;
   padding-left: 0px;
   padding-right: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #uptotop {
