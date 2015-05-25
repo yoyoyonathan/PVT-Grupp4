@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="@routes.Assets.at("javascripts/bootstrap/css/bootstrap.min.css")" />
   <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
 
+
 	</head>
 	<body>
 
@@ -32,10 +33,6 @@
 <!-- Start of second page, hunt codes -->
 
 	@Templates.Hunt()
-	
-<!-- Start of fourth page, topplistor -->
-	
-	@Templates.Leader()
 
 <!-- Start of third page, team -->
 
@@ -60,13 +57,50 @@
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
            
-		<h1 align="center">New Photo</h1>
-                    
-               <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
-               <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
-   							
-               <button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>
-    		   </form>
+		<input type="file" capture="camera" accept="image/*" id="takePictureField">
+        
+		<div id="swatches">
+			<div id="swatch0" class="swatch"></div>
+			<div id="swatch1" class="swatch"></div>
+			<div id="swatch2" class="swatch"></div>
+			<div id="swatch3" class="swatch"></div>
+			<div id="swatch4" class="swatch"></div>
+		</div>           
+           <script>
+	var desiredWidth;
+
+    $(document).ready(function() {
+        console.log('onReady');
+		$("#takePictureField").on("change",gotPic);
+		$("#yourimage").load(getSwatches);
+		desiredWidth = window.innerWidth;
+        
+        if(!("url" in window) && ("webkitURL" in window)) {
+            window.URL = window.webkitURL;   
+        }
+		
+	});
+
+	function getSwatches(){
+		var colorArr = createPalette($("#yourimage"), 5);
+		for (var i = 0; i < Math.min(5, colorArr.length); i++) {
+			$("#swatch"+i).css("background-color","rgb("+colorArr[i][0]+","+colorArr[i][1]+","+colorArr[i][2]+")");
+			console.log($("#swatch"+i).css("background-color"));
+		}
+	}	
+	
+    //Credit: https://www.youtube.com/watch?v=EPYnGFEcis4&feature=youtube_gdata_player
+	function gotPic(event) {
+        if(event.target.files.length == 1 && 
+           event.target.files[0].type.indexOf("image/") == 0) {
+            $("#yourimage").attr("src",URL.createObjectURL(event.target.files[0]));
+        }
+	}
+        
+    </script>    
+           
+              </div> 
+            </div> 
 
 	    <section id="footer">
 	     <div class="container">
@@ -78,6 +112,10 @@
 	  </div><!-- /content -->
 	</div>
 	</div>
+
+<!-- Start of fourth page, topplistor -->
+	
+	@Templates.Leader()
 
   	</body>
 	</html>
