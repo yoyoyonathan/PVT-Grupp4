@@ -22,23 +22,31 @@
 		<li class ="active"><a href="#picture">Galleri</a></li>
 	</ul>
 </div><!-- /navbar -->
-		 <h1 align="center">New Photo</h1>
+		 <h1 align="center"></h1>
                     
                <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
                <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
    							
                <button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>
     		   </form> 
+    		   
+    		   
+	<div class="sidebar-image-gallery">
+	<a href="@routes.Assets.at("/images/slide-01.jpg" )"><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
+	</div>
+	
+	
 	</div>
 	</div>
 	
 
   	</div><!-- /content -->
 	</div>
-
-
-
-
-
-
-						
