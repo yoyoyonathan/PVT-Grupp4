@@ -19,7 +19,7 @@ public class Application extends Controller {
     	if(currentUser == null) {
             return ok(index.render("Du måste logga in först."));
     	}
-		return ok(profilePage.render(TeamDatabase.getTeam(userName), UserDatabase.getUser(userName)));
+		return ok(profilePage.render(TeamDatabase.getTeam(userName), UserDatabase.getUser(userName), "Hejhej!"));
     }
     
     public static Result logout() {
