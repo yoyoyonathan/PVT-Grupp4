@@ -58,30 +58,24 @@
             <! <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/> -->
             
             
-            <p>Du heter @user.userName</p>
-<<<<<<< HEAD
+            <h4>Inloggad som: @user.userName</h4>
             
-            
-
             <a href="#popupBasic" data-rel="popup" data-position-to="window">Teaminfo </a>
 
             <div data-role="popup" id="popupBasic" class="ui-content">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
             <p>
-              Din rank i teamet @team.name är plats @controllers.TeamDatabase.teamRank()<br>
-              Ditt team har: @team.points poäng<p>
-          </div>
-
-=======
-            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
-            <p>@team.points</p>
-            <p> Members: @controllers.TeamDatabase.getMember(0)
-            @controllers.TeamDatabase.getMember(1)
-            @controllers.TeamDatabase.getMember(2)
-            @controllers.TeamDatabase.getMember(3)
+              <h4>Teaminformation</h4>
+              Ditt teamnamn är "@team.name"<br><br>
+              På plats @controllers.TeamDatabase.teamRank() i topplistan<br><br>
+              Ditt team har: @team.points poäng<br><br>
+              Medlemmar i team @team.name är:<br><br>
+              @controllers.TeamDatabase.getMember(0)<br><br>
+            @controllers.TeamDatabase.getMember(1)<br><br>
+            @controllers.TeamDatabase.getMember(2)<br><br>
+            @controllers.TeamDatabase.getMember(3)<br>
             </p>
->>>>>>> Backend-4
-            
+          </div>
 
             <img src='@routes.PictureDatabase.getPicture(0)'/>
             <img src='@routes.PictureDatabase.getPicture(1)'/>
