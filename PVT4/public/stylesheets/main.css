@@ -437,3 +437,10 @@ div.panel {
 background-color: rgba(255,255,102,0.8);
 
 }
+
+.sidebar-image-gallery {
+  width: 80px;
+  height: 80px;
+  border-spacing: 5px;
+
+}
