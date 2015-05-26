@@ -59,7 +59,8 @@
             
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
-            <p> Rank: @controllers.TeamDatabase.teamRank()
+            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
+            <p>@team.points</p>
             
             <img src='@routes.PictureDatabase.getPicture(0)'/>
             <img src='@routes.PictureDatabase.getPicture(1)'/>
