@@ -169,18 +169,20 @@ public class PictureDatabase extends Controller{
 		return destinationImage;
 	}
 
-	public static Result savePicture() {
+	public static Result savePicture() {			//Felhantering!
 		Connection conn = null;
 		PreparedStatement preparedStatement = null;
 		String currentuser = session("connected");
 		BufferedImage img = null;
 		BufferedImage finalImg = null;
 		InputStream inputStream = null;
+		String[] acceptedTypes = new String[] {"jpeg", "jpg", "jfif", "jpeg 2000", "tiff",
+				"riff", "png", "gif", "bmp", "png", "jpeg xr", "img", "bpg", "webp" };
 		
 		try {
 			conn = DB.getConnection();
 
-			String sql = "INSERT INTO userpic (user, picture) VALUES(?,?)";
+			String sql = "INSERT INTO userpic (user, picture, type) VALUES(?,?,?)";
 			preparedStatement = conn.prepareStatement(sql);
 
 			MultipartFormData body = request().body().asMultipartFormData();
@@ -192,7 +194,10 @@ public class PictureDatabase extends Controller{
 				img = ImageIO.read(file);
 				String type = picture.getContentType().substring(
 						picture.getContentType().lastIndexOf("/") + 1);
-					
+				
+				if(!Arrays.asList(acceptedTypes).contains(type)){
+					return badRequest("That file format is not supported");
+				}
 
 //				if (readImageInformation(file) != null) {
 //					ImageInformation imageF = readImageInformation(file);
@@ -211,12 +216,12 @@ public class PictureDatabase extends Controller{
 
 				preparedStatement.setString(1, currentuser);
 				preparedStatement.setBlob(2, inputStream);
+				preparedStatement.setString(3, type);
 				preparedStatement.executeUpdate();
 
 				return redirect(routes.Application.profilePage(currentuser));
 		
 			} else {
-
 				return ok("IMAGE WAS EMPTY");
 			}
 
@@ -275,7 +280,9 @@ public class PictureDatabase extends Controller{
 			}
 			
 			Blob image = null;
+			String type = null;
 			ArrayList<Blob> pictures = new ArrayList<Blob>();
+			ArrayList<String> types = new ArrayList<String>();
 			
 			for (int j = 0; j < ids.size(); j++){
 			
@@ -284,14 +291,17 @@ public class PictureDatabase extends Controller{
 				
 				rs3.next();
 				image = rs3.getBlob("picture");
+				type = rs3.getString("type");
 				pictures.add(image);
+				types.add(type);
 				rs3.close();
 			}
 			
 			int blobLength = (int) pictures.get(i).length();
 			byte[] bytes = pictures.get(i).getBytes(1, blobLength);
+			type = types.get(i);
 			
-			return ok(bytes).as("image/jpg");
+			return ok(bytes).as("image/" + type);
 			
 		} catch (SQLException se) {
 			return badRequest(se.toString());
