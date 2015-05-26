@@ -57,11 +57,9 @@
     <section id="bodypage">
     <div class ="container" style="width:290px;">
       <div style="margin-top: 10px;" role="main" class="ui-content">
-        <!--<div class="col-xs-12 col-md-12" >
-               <!-- <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/> -->
       
             <h1>@team.name</h1>
-            <p>Du heter @user.userName</p>
+            
            
 		
 
@@ -77,20 +75,24 @@
 
 <textarea name="comment" form="commentform"></textarea>
  	<form class="form-signup" action="@routes.CommentDatabase.addComment()" method ="post" id="commentform">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Kommentera</button>
+    
+    
+    	<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Kommentera!</font></button>
     </form>
- 
+ <div id ="tesst">
  	<textarea id ="ruta1"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(1)</textarea>
- 	<textarea id ="ruta2"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(2)</textarea>
- 	<textarea id ="ruta3"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(3)</textarea>
- 	<textarea id ="ruta4"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(4)</textarea>
- 	<textarea id ="ruta5"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(5)</textarea>
- 	<textarea id ="ruta6"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(6)</textarea>
- 	<textarea id ="ruta7"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(7)</textarea>
- 	<textarea id ="ruta8"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(8)</textarea>
- 	<textarea id ="ruta9"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(9)</textarea>
- 	<textarea id ="ruta10"rows="" cols="" disabled>@controllers.CommentDatabase.getComments(10)</textarea>
- 
+ 	<textarea id ="ruta2"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(2)</textarea>
+ 	<textarea id ="ruta3"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(3)</textarea>
+ 	<textarea id ="ruta4"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(4)</textarea>
+ 	<textarea id ="ruta5"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(5)</textarea>
+ 	<textarea id ="ruta6"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(6)</textarea>
+ 	<textarea id ="ruta7"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(7)</textarea>
+ 	<textarea id ="ruta8"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(8)</textarea>
+ 	<textarea id ="ruta9"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(9)</textarea>
+ 	<textarea id ="ruta10"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(10)</textarea>
+ </div>
+
+
  <script>
  $(document).ready(function(){
  	
@@ -129,18 +131,10 @@
  </script>
  
  
-
-
-
-	 <!--   <section id="footer">
-	     <div class="container">
-	            
-	          <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-	     </div>
-	    </section> -->
 	
 	  <!--</div> /content -->
 	</div>
+	</section>
 	</div>
 
   	</body>
