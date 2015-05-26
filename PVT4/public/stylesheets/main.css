@@ -332,20 +332,20 @@ border-width:0px 0px 0px 0px;
 }
 
 #footer{
-    position:fixed;
+    position: center;
     height:25px;
-    /*background: url("../images/yellow4.jpg"); */
-    background-color: white;
-    opacity: 0.7;
+    background: url("../images/yellow4.jpg");
+    background-color: rgba(255,255,255,0.4);
+    font-weight: bold;
     bottom:0px;
     left:0px;
     right:0px;
     margin-bottom:0px;
-    font-weight: bold;
-    padding-top: 5px;
-    margin-top: 5px;
+    padding-top: 0px;
+    margin-top: 0px;
 
 }
+
 #header{
   position:center;
   top:0px;
@@ -353,6 +353,12 @@ border-width:0px 0px 0px 0px;
   background: url("../images/bluebackground.jpg");
   border-bottom-style: solid;
   border-bottom-color: white;
+}
+
+#dialog{
+  background: url("../images/yellow4.jpg");
+   height: 800px;
+   width: 400px;
 }
 
 #bodypage{
