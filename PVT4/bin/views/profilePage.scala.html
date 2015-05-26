@@ -1,4 +1,4 @@
-@(team: Team)(user: User)
+@(team: Team)(user: User)(message: String)
 
 	<!DOCTYPE html>
 	
@@ -59,6 +59,7 @@
             
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
+            <p> Rank: @controllers.TeamDatabase.teamRank()
             
             <img src='@routes.PictureDatabase.getPicture(0)'/>
             <img src='@routes.PictureDatabase.getPicture(1)'/>

@@ -2,7 +2,9 @@ package controllers;
 
 import java.util.*;
 import java.sql.*;
+
 import models.*;
+import play.api.mvc.Session;
 import play.data.*;
 import play.db.DB;
 import play.mvc.*;
@@ -307,7 +309,70 @@ public class TeamDatabase extends Controller {
 		   	}//end try
 	    }
     
-public static String topTeamName(int i) {
+    public static int teamRank(){
+    	
+    	Connection conn = null;
+		Statement stmt = null;
+		String currentUser = session("connected");
+		Team t = getTeam(currentUser);
+		String team = t.name;
+		
+    	try{
+    		
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			String sql = "SELECT * FROM team ORDER BY points DESC";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			ArrayList<String> teams = new ArrayList<String>();
+			int position = 0;
+			
+			while(rs.next()){
+				String name = rs.getString("name");
+				teams.add(name);
+			}
+			rs.close();
+			
+			for(int i = 0; i < teams.size(); i++){
+				
+				if(teams.get(i).equals(team)){
+					position = i+1;
+					
+				}
+					
+				
+			}
+			
+			return position;
+			
+    	} catch (SQLException se) {
+ 			// Handle errors for JDBC
+// 			return internalServerError(se.toString());
+// 			return badRequest(index.render("Email/användarnamn är redan taget."));
+    		return 0;
+ 		} catch (Exception e) {
+ 			// Handle errors for Class.forName
+// 			return internalServerError(e.toString());
+ 			return 0;
+ 		} finally {
+ 			// finally block used to close resources
+// 			try {
+// 				if (stmt != null)
+// 					conn.close();
+// 			} catch (SQLException se) {
+ 			// do nothing
+ 			try {
+ 				if (conn != null)
+ 					conn.close();
+ 			} catch (SQLException se) {
+// 				return internalServerError(se.toString());
+ 				return 0;
+ 			}// end finally try
+ 		}// end try
+    }
+    
+    public static String topTeamName(int i) {
     	
     	Connection conn = null;
 		Statement stmt = null;
