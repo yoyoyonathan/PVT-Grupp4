@@ -26,3 +26,6 @@ POST	/savePic					controllers.PictureDatabase.savePicture()
 
 GET		/getPic						controllers.PictureDatabase.getPicture(i: Integer)
 
+POST 	/addComment					controllers.CommentDatabase.addComment()
+
+

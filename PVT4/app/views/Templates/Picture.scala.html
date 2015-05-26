@@ -1,0 +1,54 @@
+
+
+<div data-role="page" id="picture">
+  <section id="header">
+    <div class="container" align="center">
+      <ul id="portfolio-filter" class="nav nav-tabs">
+            <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+            <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+      </ul>
+    </div>
+  </section>
+
+ <section id="bodypage">
+    <div class="container" style="width:290px;"> 
+	<div class="Toplist">
+  <div  role="main" class="ui-content">
+    
+	<div data-role="navbar" id ="team">
+
+	<ul id = "portfolio-filer" class="nav nav-tabs">
+		<li class =""><a href="#team">Kommentarer</a></li>
+		<li class ="active"><a href="#picture">Galleri</a></li>
+	</ul>
+</div><!-- /navbar -->
+		 <h1 align="center"></h1>
+                    
+               <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
+               <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
+   							
+               <button class = "my-btn"  type="submit" value="Save Picture" >Ladda upp bild </button>
+    		   </form> 
+    		   
+    		   
+	<div class="sidebar-image-gallery">
+	<a href="@routes.Assets.at("/images/slide-01.jpg" )"><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
+	<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
+	</div>
+	
+	
+	</div>
+	</div>
+	
+
+  	</div><!-- /content -->
+	</div>
