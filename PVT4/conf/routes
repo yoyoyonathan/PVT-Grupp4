@@ -26,3 +26,5 @@ POST	/savePic					controllers.PictureDatabase.savePicture()
 
 GET		/getPic						controllers.PictureDatabase.getPictures()
 
+
+
