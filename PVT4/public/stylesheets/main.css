@@ -20,9 +20,7 @@ body {
   text-align: center;
 }*/
 
-img {
-  vertical-align: middle;
-}
+
 
 #tavlingsinfo{
   text-align: center;
@@ -164,6 +162,7 @@ h1, p, h2, h3, h4, h5 {/*Ta bort skuggan och färglägg till svart på alla h oc
 
 div.container {
   display:table;
+  
 }
 
 div.jointeam {
@@ -341,13 +340,12 @@ border-width:0px 0px 0px 0px;
 
 }
 #header{
-  position:center;
+  position:middle;
   top:0px;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
 #bodypage{
-
 }
 
 #twitter{
