@@ -1,5 +1,4 @@
-@(team: Team)(user: User)
-
+@(team: Team)(user: User)(message: String)
 
 	<!DOCTYPE html>
 	
@@ -27,7 +26,7 @@
 
 <!-- Start of first page, redeem codes -->
 
-	 @Templates.Hunt()
+	@Templates.Hunt()
 
 <!-- Start of second page, hunt codes -->
 
@@ -56,13 +55,26 @@
     <div class ="container" style="width:290px;">
       <div style="margin-top: 10px;" role="main" class="ui-content">
         <!--<div class="col-xs-12 col-md-12" >
-               <! <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/> -->
-      
+            <! <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/> -->
+            
             <h1>@team.name</h1>
             <p>Du heter @user.userName</p>
+            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
+            <p>@team.points</p>
+            <p> Members: @controllers.TeamDatabase.getMember(0)
+            @controllers.TeamDatabase.getMember(1)
+            @controllers.TeamDatabase.getMember(2)
+            @controllers.TeamDatabase.getMember(3)
+            </p>
             
-            <img src='@routes.PictureDatabase.getPictures()'/>
-		<h2 align="center">Ny bild</h2>
+
+            <img src='@routes.PictureDatabase.getPicture(0)'/>
+            <img src='@routes.PictureDatabase.getPicture(1)'/>
+            <img src='@routes.PictureDatabase.getPicture(2)'/>
+            <img src='@routes.PictureDatabase.getPicture(3)'/>
+            <img src='@routes.PictureDatabase.getPicture(4)'/>
+			<h2 align="center">Ny bild</h2>
+
                     
                <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
                <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">

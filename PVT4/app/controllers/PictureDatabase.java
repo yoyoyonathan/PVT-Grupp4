@@ -27,6 +27,7 @@ import play.libs.Json;
 
 //Picture imports
 
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -233,7 +234,7 @@ public class PictureDatabase extends Controller{
 
 	}
 	
-	public static Result getPictures() {
+	public static Result getPicture(int i) {
 		
 		String currentUser = session("connected");
 		Connection conn = null;
@@ -244,47 +245,62 @@ public class PictureDatabase extends Controller{
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
 			
-	 		String sql = "SELECT * FROM `userpic` WHERE `user` = " + "'" + currentUser + "'";
-
-			ResultSet rs = stmt.executeQuery(sql);
+			String sql1 = "SELECT * FROM `teammember` WHERE `user` = " + "'" + currentUser + "'";
+			ResultSet rs1 = stmt.executeQuery(sql1);
+			rs1.next();
+			String team = rs1.getString("team");
+			rs1.close();
 			
-			ArrayList<Blob> list = new ArrayList<Blob>();
+			String sql2 = "SELECT DISTINCT s.user FROM teammember s inner join userpic d on d.user = s.user WHERE `team` = " + "'" + team + "'";
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			ArrayList<String> members = new ArrayList<String>();
+			while (rs2.next()) {
+				String user = rs2.getString("user");
+				members.add(user);
+			}
+			rs2.close();
 			
-//			byte[] image = null;
-			Blob image = null;
+			ArrayList<Integer> ids = new ArrayList<Integer>();
 			
-
-
-//			if(rs.isBeforeFirst()){
-				rs.next();
+			for (int j = 0; j < members.size(); j++) {
 				
-//				image = rs.getBytes("picture");
-				image = rs.getBlob("picture");
-				String s = rs.getString("user");
-//				Blob b = rs.getBlob("picture");
-//				list.add(b);
+				String sql = "SELECT * FROM userpic WHERE user = " + "'" + members.get(j) + "'";
+				ResultSet rs = stmt.executeQuery(sql);
 				
-//				} 
+				while (rs.next()){
+					int id = rs.getInt("ID");
+					ids.add(id);
+				}
 				rs.close();
-				
-				int blobLength = (int) image.length();
-				byte[] bytes = image.getBytes(1, blobLength);
-				
-				
-//	            Image img = Toolkit.getDefaultToolkit().createImage(image);
+			}
 			
-//			return img;
+			Blob image = null;
+			ArrayList<Blob> pictures = new ArrayList<Blob>();
+			
+			for (int j = 0; j < ids.size(); j++){
+			
+		 		String sql3 = "SELECT * FROM `userpic` WHERE `ID` = " + "'" + ids.get(j) + "'";
+				ResultSet rs3 = stmt.executeQuery(sql3);
+				
+				rs3.next();
+				image = rs3.getBlob("picture");
+				pictures.add(image);
+				rs3.close();
+			}
+			
+			int blobLength = (int) pictures.get(i).length();
+			byte[] bytes = pictures.get(i).getBytes(1, blobLength);
+			
 			return ok(bytes).as("image/jpg");
 			
-			
-		} catch (Exception e) {
-			return null;
+		} catch (SQLException se) {
+			return badRequest(se.toString());
 		} finally {
 			try {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException se) {
-				return null;
+				return badRequest(se.toString());
 			} // end finally try
 		} // end try
 	}

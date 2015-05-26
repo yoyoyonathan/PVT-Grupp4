@@ -10,12 +10,15 @@
     </div>
   </section>  
   
-  <script>$.mobile.pageLoadErrorMessage = "Ogiltig kod!";</script>
+  <script>$.mobile.pageLoadErrorMessage = "Ogiltig kod!";
+  
+  </script>
+  
   
   <section id="bodypage">
     <div class = "container" style="width:290px;">
       <div style="margin-top: 10px;" role="main" class="ui-content">     
-          <form class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
+          <form id="kodtest" class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
             <input type="text"  placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
             <button id="button-primary" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Skicka!</font></button>
           </form>
