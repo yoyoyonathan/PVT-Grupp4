@@ -196,7 +196,7 @@ public class PictureDatabase extends Controller{
 						picture.getContentType().lastIndexOf("/") + 1);
 				
 				if(!Arrays.asList(acceptedTypes).contains(type)){
-					return badRequest("That file format is not supported");
+					return redirect(routes.Application.profilePage(currentuser));		//"File format is not supported"
 				}
 
 //				if (readImageInformation(file) != null) {
@@ -222,7 +222,7 @@ public class PictureDatabase extends Controller{
 				return redirect(routes.Application.profilePage(currentuser));
 		
 			} else {
-				return ok("IMAGE WAS EMPTY");
+				return redirect(routes.Application.profilePage(currentuser));	//Tom bild, bör bli ett fel
 			}
 
 		} catch (Exception e) {
