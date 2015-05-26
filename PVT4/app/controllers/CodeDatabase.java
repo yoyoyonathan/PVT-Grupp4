@@ -1,6 +1,7 @@
 package controllers;
 
 import java.sql.*;
+
 import models.*;
 import play.data.*;
 import play.db.DB;
@@ -25,10 +26,19 @@ public class CodeDatabase extends Controller {
 		if (!codeRegisteredToTeam(teamFromDB, codeID)) {
 
 			codeFromDB = getCode(codeID);
-
+			try{
 			codeFromDB.amount -= 1;
 			teamFromDB.points += codeFromDB.value;
-
+			} catch(NullPointerException e){
+				try {
+					conn.close();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				e.printStackTrace();
+				return badRequest("fel vid codeFromDB-1");
+			}
 			String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
 
 			try {
@@ -53,8 +63,9 @@ public class CodeDatabase extends Controller {
 			}
 			registerCodeToTeam(teamFromDB, codeID);
 			return redirect(routes.Application.profilePage(currentUser));
+			//return redirect("/profile/" + session(currentUser) + "#redeem");
 		}
-		return redirect(routes.Application.profilePage(currentUser));
+		return badRequest();
 	}
 
 	public static Code getCode(String codeID) {
