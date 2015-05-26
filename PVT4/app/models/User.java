@@ -27,6 +27,6 @@ public class User extends Model{
 	
 	public static Finder<String,User> find = new Finder<String,User>(
 	        String.class, User.class
-	); 
-	//Tydligen genererar Play getters och setters automatiskt
+	);
+	
 }
