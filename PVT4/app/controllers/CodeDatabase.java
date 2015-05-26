@@ -37,7 +37,7 @@ public class CodeDatabase extends Controller {
 					e1.printStackTrace();
 				}
 				e.printStackTrace();
-				return badRequest();
+				return badRequest("fel vid codeFromDB-1");
 			}
 			String insertIntoDatabase = "UPDATE team SET points=? WHERE name=?";
 
