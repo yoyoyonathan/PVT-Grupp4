@@ -57,10 +57,20 @@
         <!--<div class="col-xs-12 col-md-12" >
             <! <img src="@routes.Assets.at("/images/profbild.jpg")"  height="250" width="400"/> -->
             
-            <h1>@team.name</h1>
+            
             <p>Du heter @user.userName</p>
-            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
-            <p>@team.points</p>
+            
+            
+
+            <a href="#popupBasic" data-rel="popup" data-position-to="window">Teaminfo </a>
+
+            <div data-role="popup" id="popupBasic" class="ui-content">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <p>
+              Din rank i teamet @team.name är plats @controllers.TeamDatabase.teamRank()<br>
+              Ditt team har: @team.points poäng<p>
+          </div>
+
             
             <img src='@routes.PictureDatabase.getPicture(0)'/>
             <img src='@routes.PictureDatabase.getPicture(1)'/>
