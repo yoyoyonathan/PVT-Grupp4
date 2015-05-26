@@ -61,6 +61,11 @@
             <p>Du heter @user.userName</p>
             <p> Rank: @controllers.TeamDatabase.teamRank()</p>
             <p>@team.points</p>
+            <p> Members: @controllers.TeamDatabase.getMember(0)
+            @controllers.TeamDatabase.getMember(1)
+            @controllers.TeamDatabase.getMember(2)
+            @controllers.TeamDatabase.getMember(3)
+            </p>
             
             <img src='@routes.PictureDatabase.getPicture(0)'/>
             <img src='@routes.PictureDatabase.getPicture(1)'/>
