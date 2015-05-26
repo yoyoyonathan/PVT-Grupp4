@@ -43,10 +43,10 @@
   <section id="header">
     <div class="container" style="width:380px; text-align:center;">
     <ul id="portfolio-filter" class="nav nav-tabs">
-      <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class=""><a href="#hunt"><font>Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class=""><a href="#redeem"><font>Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class="active"><a href="#team"><font>Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+      <li class=""><a href="#leader"><font>Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
     </ul>
   </div>
   </section>
@@ -59,6 +59,7 @@
             
             
             <p>Du heter @user.userName</p>
+<<<<<<< HEAD
             
             
 
@@ -71,18 +72,29 @@
               Ditt team har: @team.points poäng<p>
           </div>
 
+=======
+            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
+            <p>@team.points</p>
+            <p> Members: @controllers.TeamDatabase.getMember(0)
+            @controllers.TeamDatabase.getMember(1)
+            @controllers.TeamDatabase.getMember(2)
+            @controllers.TeamDatabase.getMember(3)
+            </p>
+>>>>>>> Backend-4
             
+
             <img src='@routes.PictureDatabase.getPicture(0)'/>
             <img src='@routes.PictureDatabase.getPicture(1)'/>
             <img src='@routes.PictureDatabase.getPicture(2)'/>
             <img src='@routes.PictureDatabase.getPicture(3)'/>
             <img src='@routes.PictureDatabase.getPicture(4)'/>
-			<h1 align="center">New Photo</h1>
+			<h2 align="center">Ny bild</h2>
+
                     
                <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
                <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
    							
-               <button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>
+               <button class = "my-btn"  type="submit" value="Save Picture" style="background-color:rgba(255, 255, 255, 0.8);"><font>Ladda upp bild</font></button>
     		   </form>
 
 

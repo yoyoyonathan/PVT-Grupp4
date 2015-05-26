@@ -1,7 +1,7 @@
 html {
   height: 100%;
   width: 100%;
-  position: relative;
+  position: center;
 }
 
 body {
@@ -19,6 +19,10 @@ body {
 /*h1, h3, p,{
   text-align: center;
 }*/
+
+img {
+  vertical-align: middle;
+}
 
 #tavlingsinfo{
   text-align: center;
