@@ -62,31 +62,72 @@
             <p> Rank: @controllers.TeamDatabase.teamRank()</p>
             <p>@team.points</p>
             
-            <img src='@routes.PictureDatabase.getPicture(0)'/>
-            <img src='@routes.PictureDatabase.getPicture(1)'/>
-            <img src='@routes.PictureDatabase.getPicture(2)'/>
-            <img src='@routes.PictureDatabase.getPicture(3)'/>
-            <img src='@routes.PictureDatabase.getPicture(4)'/>
-			<h1 align="center">New Photo</h1>
-                    
-               <form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
-               <input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
-   							
-               <button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>
-    		   </form>
+            <div data-role="navbar" id ="team">
+
+	<ul id = "portfolio-filer" class="nav nav-tabs">
+		<li class ="active"><a href="#team">Kommentarer</a></li>
+		<li><a href="#picture">Galleri</a></li>
+	</ul>
+</div><!-- /navbar -->
 
 
-           <br><br><br><br><br><br><br><br><br>
+<textarea name="comment" form="commentform"></textarea>
+ 	<form class="form-signup" action="@routes.CommentDatabase.addComment()" method ="post" id="commentform">
+    
+    
+    	<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Kommentera!</font></button>
+    </form>
+ <div id ="tesst">
+ 	<textarea id ="ruta1"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(1)</textarea>
+ 	<textarea id ="ruta2"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(2)</textarea>
+ 	<textarea id ="ruta3"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(3)</textarea>
+ 	<textarea id ="ruta4"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(4)</textarea>
+ 	<textarea id ="ruta5"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(5)</textarea>
+ 	<textarea id ="ruta6"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(6)</textarea>
+ 	<textarea id ="ruta7"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(7)</textarea>
+ 	<textarea id ="ruta8"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(8)</textarea>
+ 	<textarea id ="ruta9"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(9)</textarea>
+ 	<textarea id ="ruta10"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(10)</textarea>
+ </div>
 
 
-	 <!--   <section id="footer">
-	     <div class="container">
-	            
-	          <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-	     </div>
-	    </section> -->
-	
-	  <!--</div> /content -->
+ <script>
+ $(document).ready(function(){
+ 	
+ 	if($('#ruta1').html()==""){
+		$(ruta1).hide(); 	
+ 	}
+ 	if($('#ruta2').html()==""){
+		$(ruta2).hide(); 	
+ 	}
+ 	if($('#ruta3').html()==""){
+		$(ruta3).hide(); 	
+ 	}
+ 	if($('#ruta4').html()==""){
+		$(ruta4).hide(); 	
+ 	}
+ 	if($('#ruta5').html()==""){
+		$(ruta5).hide(); 	
+ 	}
+ 	if($('#ruta6').html()==""){
+		$(ruta6).hide(); 	
+ 	}
+ 	if($('#ruta7').html()==""){
+		$(ruta7).hide(); 	
+ 	}
+ 	if($('#ruta8').html()==""){
+		$(ruta8).hide(); 	
+ 	}
+ 	if($('#ruta9').html()==""){
+		$(ruta9).hide(); 	
+ 	}
+ 	if($('#ruta10').html()==""){
+		$(ruta10).hide(); 	
+ 	}
+ 	
+ 	});
+ </script>
+            
 	</div>
 	</div>
 
