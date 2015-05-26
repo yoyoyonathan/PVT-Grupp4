@@ -20,6 +20,10 @@ body {
   text-align: center;
 }*/
 
+img {
+  vertical-align: middle;
+}
+
 #tavlingsinfo{
   text-align: center;
   font-family: arial;
