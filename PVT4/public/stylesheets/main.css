@@ -413,6 +413,29 @@ border-width:0px 0px 0px 0px;
   background-size: cover;
 }
 
+#Picture{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#picture{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#kommentar{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #leader{
  background: url("../images/bluebackground.jpg");
   -webkit-background-size: cover;
