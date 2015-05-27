@@ -210,8 +210,21 @@ div.panel, .transparent{
   background:rgba(255,255,255,0.4);
 }
 
-#tavlingsinformation{
-  text-align: center;
+#tavlingsinfo{
+  margin-left: 10px;
+
+}
+
+#textArea1 {
+  margin-left: 10px;
+}
+
+#textArea {
+margin-left: 10px;
+}
+
+#toggleButton {
+margin-left: 10px;
 
 }
 
@@ -480,8 +493,14 @@ div.panel {
   background-image: url("../images/bluebackground.jpg");
 } */
 
-/*.rubbe {
-font-size: 30px;
+#knapp1, #toplog {
+background-image: url("../images/yellow6.jpg");
+  border-color: rgb(255,255,10);
+  background-size: cover;
+}
 
-
-} */
+#knapp2, #topsign {
+   background-image: url("../images/bluebackground2.jpg");
+  background-size: cover;
+  border-color: #3399FF;
+} 
