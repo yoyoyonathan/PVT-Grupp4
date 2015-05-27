@@ -330,8 +330,12 @@ border-width:0px 0px 0px 0px;
 #footer{
     position:fixed;
     height:25px;
+<<<<<<< HEAD
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0.7;
+=======
+    background: url("../images/yellow5.jpg");
+>>>>>>> origin/backend4-nykopia
     bottom:0px;
     left:0px;
     right:0px;
@@ -414,7 +418,7 @@ border-width:0px 0px 0px 0px;
   background-size: cover;
 }
 
-#leader{
+#Picture{
  background: url("../images/bluebackground.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -422,6 +426,28 @@ border-width:0px 0px 0px 0px;
   background-size: cover;
 }
 
+#picture{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#kommentar{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#leader{
+ background: url("../images/bluebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 div.panel {
   border-style: solid;
