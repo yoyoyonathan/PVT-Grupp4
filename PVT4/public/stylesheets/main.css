@@ -16,7 +16,6 @@ body {
   background-size: cover;
 }
 
-
 /*h1, h3, p,{
   text-align: center;
 }*/
@@ -144,8 +143,8 @@ body {
  
  height: 100vh;  
  width: 100%;
- border-style: solid;
-  border-color: white;
+ /*border-style: solid;
+  border-color: white;*/
   display: table-cell;
   vertical-align: middle;
 }
@@ -167,43 +166,38 @@ div.container {
 }
 
 div.jointeam {
-background-image: url("../images/bluebackground.jpg");
+background-image: url("../images/yellow4.jpg");
 background-color: red;
 width: 100%;
 }
 
 div.middle {
- background-image: url("../images/yellow4.jpg");
- background-size: 100% 100%;
+
 display: table-cell;
 vertical-align: middle;
 height: 100vh;
- border-style: solid;
-  border-color: white;
+
   width: 100%;
 }
 
 .bottom {
-   background-image: url("../images/bluebackground.jpg");
-  background-size: 100% 100%;
+   
   display: table-cell;
   vertical-align: middle;
   height: 100vh;
-   border-style: solid;
-  border-color: white;
+
   width: 100%;
 }
 
 .bottom2 {
-  background-image: url("../images/yellow4.jpg");
+ 
   background-size:100% 100%;
   display: table-cell;
   vertical-align: middle;
   height: 100vh;
   width: 100%;
   padding-bottom: 20px;
-  border-style: solid;
-  border-color: white;
+ 
 }
 
 div.panel, .transparent{
@@ -343,7 +337,8 @@ border-width:0px 0px 0px 0px;
 #footer{
     position:fixed;
     height:25px;
-    background: url("../images/yellow5.jpg");
+    background: url("../images/yellowfoot.jpg");
+    background-size: 100%;
     bottom:0px;
     left:0px;
     right:0px;
@@ -392,6 +387,37 @@ border-width:0px 0px 0px 0px;
 
 }
 
+#contop {
+  background-image: url("../images/bluebackground.jpg");
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#conmid {
+  background-image: url("../images/yellow4.jpg");
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#conbottom {
+  background-image: url("../images/bluebackground.jpg");
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#conbottom2 {
+  background-image: url("../images/yellow4.jpg");
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 #codeID{
   width:290px;
