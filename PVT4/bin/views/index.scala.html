@@ -53,8 +53,10 @@ $(document).ready(function (){
         $("#toggleButton").hide();
     });
   
+
+   });
   });
-});
+
 
 
 </script>
@@ -79,8 +81,7 @@ $(document).ready(function (){
             <button id="toplog" class="btn btn-lg btn-primary btn-lg" href=#logIn>Logga in</button>
             <br>
             <br>
-            <button id="topsign" class="btn btn-lg btn-default">Skapa konto
-            </button>
+            <button id="topsign" class="btn btn-lg btn-primary">Skapa konto</button>
             <br>
             <br>
             <h4><span style="color:red; text-align:center">@message</span></h4>
@@ -105,7 +106,7 @@ $(document).ready(function (){
             <label for="inputPassword" class="sr-only">Lösenord</label>
             <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Lösenord" required>
             <div class="link"></div>
-            <button id="loginbut" class="btn btn-lg btn-primary btn-block"   type="submit">Logga in</button>
+            <button id="knapp1" class="btn btn-lg btn-primary btn-block"   type="submit">Logga in</button>
             <br>
           </form>
         </div>
@@ -130,7 +131,7 @@ $(document).ready(function (){
             <label for="inputBirthyear" class="sr-only">Födelsedatum</label>
             <input type="date" id="inputBirthyear" class="form-control" max="1997-06-13" placeholder="åååå-mm-dd" name="birthDate" required>
             <div class="link"></div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa konto</button>
+            <button id="knapp2" class="btn btn-lg btn-primary btn-block" type="submit">Skapa konto</button>
           </form>
         </div>
       </div>
@@ -144,10 +145,10 @@ $(document).ready(function (){
     <div class="col-xs-12 col-sm-12 col-md-12" >
       <div class="panel panel-default">
         <h3 class="text-center" id="rubrik2"> Tävlingsinformation</h3>
-        <p class="text-center" id="tavlingsinfo">
-        <p>
+        <p id="tavlingsinfo">
+       <p id="textArea1">
         Summerburst Scorehunt pågår från 24 april till 13 juni och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
-        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto. </p>
     <p id="textArea">
         Det finns 200 koder att samla som ger olika många poäng beroende på svårighetsgrad. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
         <br>
@@ -178,6 +179,7 @@ $(document).ready(function (){
         <br>
         <br>
         Det går ej att byta in priser mot kontanter.
+        
     </p>
   <a id="toggleButton">Läs mer...</a>
     </p>         

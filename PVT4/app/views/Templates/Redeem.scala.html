@@ -1,4 +1,4 @@
-<div data-role="page" id="redeem">
+﻿<div data-role="page" id="redeem">
   <section id="header">
     <div class="container" style="width:290px;">
       <ul id="portfolio-filter" class="nav nav-tabs">  
@@ -19,8 +19,8 @@
     <div class = "container" style="width:290px;">
       <div style="margin-top: 10px;" role="main" class="ui-content">     
           <form id="kodtest" class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
-            <input type="text"  placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
-            <button id="button-primary" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Skicka!</font></button>
+            <input type="text" autocomplete="off"  placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
+            <button id="button-primary" value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Skicka!</font></button>
           </form>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
@@ -29,9 +29,9 @@
      <section id="footer">
        <div align="center" class="container">
               
-            <a href="#help" data-rel="popup" data-position-to="#demo">Information och villkor </a>
+            <a href="#helpredeem" data-rel="popup" data-position-to="#demo"><font size="1.5" face="Lucida Sans Unicode">Information och villkor</font> </a>
 
-            <div data-role="popup" id="help" class="ui-content">
+            <div data-role="popup" id="helpredeem" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
               <p>
               <h4>Information och villkor</h4>
@@ -76,24 +76,3 @@
      
   </section>  
 </div> 
-
-
-
-    <!--<section id="footer">
-     <div class="container">
-            
-              <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-
-     </div>
-    </section>-->
-    <!--<script>    $.mobile.pageLoadErrorMessage = "Ogiltig kod!";
-	</script>-->
-
-  
- 
- <!-- <section id="footer">
-    <div class="container">
-      <a href="#redeem"><font color="black" size="1">Information och villkor</font></a>
-    </div>
-  </section>-->
-</div>

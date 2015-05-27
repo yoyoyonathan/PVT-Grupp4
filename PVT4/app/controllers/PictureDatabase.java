@@ -5,9 +5,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
-
 import javax.imageio.ImageIO;
-
 import models.*;
 import play.*;
 import play.api.libs.json.*;
@@ -19,15 +17,10 @@ import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
 import views.html.*;
 import static play.libs.Json.toJson;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import play.libs.Json;
-
 //Picture imports
-
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -38,7 +31,6 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import views.html.*;
 import play.data.Form;
 import play.db.*;
@@ -47,7 +39,6 @@ import views.*;
 import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
 import play.mvc.Http.Response;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -55,11 +46,9 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-
 import javax.imageio.ImageIO;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.datatype.DatatypeConstants;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 //import com.sun.medialib.mlib.Image;
@@ -167,6 +156,17 @@ public class PictureDatabase extends Controller{
 
 		return destinationImage;
 	}
+	
+	public static BufferedImage resize(BufferedImage img, int newW, int newH) { 
+	    Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+	    BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+	    Graphics2D g2d = dimg.createGraphics();
+	    g2d.drawImage(tmp, 0, 0, null);
+	    g2d.dispose();
+
+	    return dimg;
+	}  
 
 	public static Result savePicture() {			//Felhantering!
 		Connection conn = null;
@@ -197,6 +197,8 @@ public class PictureDatabase extends Controller{
 				if(!Arrays.asList(acceptedTypes).contains(type)){
 					return redirect(routes.Application.profilePage(currentuser));		//"File format is not supported"
 				}
+				
+				finalImg = resize(img, 400, 400);
 
 //				if (readImageInformation(file) != null) {
 //					ImageInformation imageF = readImageInformation(file);
@@ -211,7 +213,11 @@ public class PictureDatabase extends Controller{
 
 //				} else {
 				
-				inputStream = new FileInputStream(file);
+				File outputfile = new File("image." + type);
+				ImageIO.write(finalImg, type, outputfile);
+				
+//				inputStream = new FileInputStream(file);
+				inputStream = new FileInputStream(outputfile);
 
 				preparedStatement.setString(1, currentuser);
 				preparedStatement.setBlob(2, inputStream);

@@ -91,6 +91,14 @@ public static Result login() {
 				String email = rs.getString("email");
 				String password = rs.getString("password");
 				String userName = rs.getString("userName");
+				
+				Team team = TeamDatabase.getTeam(userName);
+				
+					if (team == null){
+						rs.close();
+						return redirect(routes.Application.joinTeam());
+					}
+						
 					
 					if (userEmail.equals(email) && userPassword.equals(password)){
 					    rs.close();
