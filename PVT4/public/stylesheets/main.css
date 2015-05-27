@@ -329,8 +329,7 @@ border-width:0px 0px 0px 0px;
 #footer{
     position:fixed;
     height:25px;
-    background-color: rgba(255, 255, 255, 0.5);
-    opacity: 0.7;
+    background: url("../images/yellow4.jpg");
     bottom:0px;
     left:0px;
     right:0px;
