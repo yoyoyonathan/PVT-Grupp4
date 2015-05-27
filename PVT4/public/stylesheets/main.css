@@ -204,8 +204,22 @@ div.panel, .transparent{
   background:rgba(255,255,255,0.4);
 }
 
-#tavlingsinformation{
-  text-align: center;
+#tavlingsinfo{
+  margin-left: 10px;
+
+}
+
+#textArea1 {
+  margin-left: 10px;
+}
+
+#textArea {
+margin-left: 10px;
+}
+
+#toggleButton {
+margin-left: 10px;
+
 }
 
 .ToplistSummerburst {
@@ -483,3 +497,36 @@ div.panel {
   vertical-align: middle; */
   left: 50px;
 }
+
+#joinknapp {
+  /*background-color:rgb(255,255,102);
+  border-color: yellow;
+  opacity: 0.9; */
+  background-image: url("../images/bluebackground.jpg"); 
+
+}
+
+#conbottom3 {
+  background-image: url("../images/yellow6.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
+ 
+/*#bottom3 {
+  background-image: url("../images/bluebackground.jpg");
+} */
+
+#knapp1, #toplog {
+background-image: url("../images/yellow6.jpg");
+  border-color: rgb(255,255,10);
+  background-size: cover;
+}
+
+#knapp2, #topsign {
+   background-image: url("../images/bluebackground2.jpg");
+  background-size: cover;
+  border-color: #3399FF;
+} 
