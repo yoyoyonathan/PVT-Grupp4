@@ -212,7 +212,6 @@ div.panel, .transparent{
 
 #tavlingsinformation{
   text-align: center;
-
 }
 
 .ToplistSummerburst {
@@ -330,7 +329,8 @@ border-width:0px 0px 0px 0px;
 #footer{
     position:fixed;
     height:25px;
-    background: url("../images/yellow5.jpg");
+    background: url("../images/yellowfoot.jpg");
+    background-size: 100%;
     bottom:0px;
     left:0px;
     right:0px;
@@ -458,30 +458,3 @@ div.panel {
   vertical-align: middle; */
   left: 50px;
 }
-
-#joinknapp {
-  /*background-color:rgb(255,255,102);
-  border-color: yellow;
-  opacity: 0.9; */
-  background-image: url("../images/bluebackground.jpg"); 
-
-}
-
-#conbottom3 {
-  background-image: url("../images/yellow6.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} 
-
- 
-/*#bottom3 {
-  background-image: url("../images/bluebackground.jpg");
-} */
-
-/*.rubbe {
-font-size: 30px;
-
-
-} */
