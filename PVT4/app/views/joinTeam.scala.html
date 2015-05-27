@@ -39,30 +39,30 @@
   </head>
   <body>
 
-	<div id="conbottom" class="container" style="width: 100%;">
-  <div id="bottom" class="bottom">
+	<div id="conbottom3" class="container" style="width: 100%;">
+  <div id="bottom3" class="bottom3">
     <div class="col-xs-12 col-sm-12 col-md-12" >
     <div class="panel panel-default">
       <div class="panel-body">
         <form class="form-signup" action="@routes.TeamDatabase.addTeam()" method ="post">
         <h2 class="text-center form-signup-heading">Skapa lag!</h2>
-        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required>
+        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
         <div class="link">
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Skapa!</button>
+        <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:rgb(255,255,152,0.9)">Skapa!</button>
         </form>
         <form class="form-signup" action="@routes.TeamDatabase.addTeamMember()" method ="post">
         <h2 class="text-center form-signup-heading">Gå med i lag!</h2>
-        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required>
+        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
         <div class="link">
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Joina!</button>
+        <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit">Joina!</button>
         </form>
         <form class="form-signup" action="@routes.TeamDatabase.randomizeTeam()" method ="post">
         <h2 class="text-center form-signup-heading">Slumpa lag!</h2>
         <div class="link">
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Slumpa!</button>
+        <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit">Slumpa!</button>
         </form>
         <h4><span style="color:red">@message</span></h4>
       </div>
