@@ -5,9 +5,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
-
 import javax.imageio.ImageIO;
-
 import models.*;
 import play.*;
 import play.api.libs.json.*;
@@ -19,15 +17,10 @@ import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
 import views.html.*;
 import static play.libs.Json.toJson;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import play.libs.Json;
-
 //Picture imports
-
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -38,7 +31,6 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import views.html.*;
 import play.data.Form;
 import play.db.*;
@@ -47,7 +39,6 @@ import views.*;
 import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
 import play.mvc.Http.Response;
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -55,11 +46,9 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-
 import javax.imageio.ImageIO;
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.datatype.DatatypeConstants;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 //import com.sun.medialib.mlib.Image;
@@ -176,7 +165,7 @@ public class PictureDatabase extends Controller{
 		BufferedImage finalImg = null;
 		InputStream inputStream = null;
 		String[] acceptedTypes = new String[] {"jpeg", "jpg", "jfif", "jpeg 2000", "tiff",
-				"riff", "png", "gif", "bmp", "png", "jpeg xr", "img", "bpg", "webp" };
+				"riff", "png", "gif", "bmp", "png", "jpeg xr", "img", "bpg", "webp", "webm" };
 		
 		try {
 			conn = DB.getConnection();
