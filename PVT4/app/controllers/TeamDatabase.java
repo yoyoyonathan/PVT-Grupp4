@@ -549,4 +549,42 @@ public class TeamDatabase extends Controller {
 			 }//end finally try
 	   	}//end try
     }
+    
+	public static String getTeamName(){
+	    	
+	    	Connection conn = null;
+			Statement stmt = null;
+			String currentUser = session("connected");
+	    	
+			try{
+	    		
+				conn = DB.getConnection();
+				stmt = conn.createStatement();
+				
+				String sql = "SELECT * FROM teammember WHERE user = " + "'" + currentUser + "'";
+				
+				ResultSet rs = stmt.executeQuery(sql);
+				rs.next();
+				String team = rs.getString("team");
+				rs.close();
+				
+		    	return team;
+	    	
+			}catch(SQLException se){
+				//Handle errors for JDBC
+		        return se.toString();
+			}finally{
+				 //finally block used to close resources
+				 try{
+				    if(stmt!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }// do nothing
+				 try{
+				    if(conn!=null)
+				       conn.close();
+				 }catch(SQLException se){
+				 }//end finally try
+		   	}//end try
+	    }
 }

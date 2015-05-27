@@ -1,6 +1,7 @@
 package controllers;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import models.*;
 import play.data.*;
@@ -134,5 +135,49 @@ public class CodeDatabase extends Controller {
 			e.printStackTrace();
 		}
 	}
+	
+	public static String listCodes(){
+		Statement stmt = null;
+		Connection conn = DB.getConnection();
+		
+		try {
+			
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+			String sql = "SELECT * FROM registeredcode WHERE team = " + "'" + TeamDatabase.getTeamName() + "'";
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			ArrayList<String> codes = new ArrayList<String>();
+			while(rs.next()){
+				String code = rs.getString("code");
+				codes.add(code);
+			}
+			rs.close();
+			
+			String listString = "";
+
+			for (String s : codes){
+			    listString += s + "\t";
+			}
+			
+			return listString;
+	}catch(SQLException se){
+		//Handle errors for JDBC
+        return null;
+	}finally{
+		 //finally block used to close resources
+		 try{
+		    if(stmt!=null)
+		       conn.close();
+		 }catch(SQLException se){
+		 }// do nothing
+		 try{
+		    if(conn!=null)
+		       conn.close();
+		 }catch(SQLException se){
+		 }//end finally try
+   	}//end try
+}
 
 }
