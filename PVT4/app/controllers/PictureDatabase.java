@@ -156,6 +156,17 @@ public class PictureDatabase extends Controller{
 
 		return destinationImage;
 	}
+	
+	public static BufferedImage resize(BufferedImage img, int newW, int newH) { 
+	    Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+	    BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+	    Graphics2D g2d = dimg.createGraphics();
+	    g2d.drawImage(tmp, 0, 0, null);
+	    g2d.dispose();
+
+	    return dimg;
+	}  
 
 	public static Result savePicture() {			//Felhantering!
 		Connection conn = null;
@@ -165,7 +176,7 @@ public class PictureDatabase extends Controller{
 		BufferedImage finalImg = null;
 		InputStream inputStream = null;
 		String[] acceptedTypes = new String[] {"jpeg", "jpg", "jfif", "jpeg 2000", "tiff",
-				"riff", "png", "gif", "bmp", "png", "jpeg xr", "img", "bpg", "webp", "webm" };
+				"riff", "png", "gif", "bmp", "png", "jpeg xr", "img", "bpg", "webp" };
 		
 		try {
 			conn = DB.getConnection();
@@ -186,6 +197,8 @@ public class PictureDatabase extends Controller{
 				if(!Arrays.asList(acceptedTypes).contains(type)){
 					return redirect(routes.Application.profilePage(currentuser));		//"File format is not supported"
 				}
+				
+				finalImg = resize(img, 400, 400);
 
 //				if (readImageInformation(file) != null) {
 //					ImageInformation imageF = readImageInformation(file);
@@ -200,7 +213,11 @@ public class PictureDatabase extends Controller{
 
 //				} else {
 				
-				inputStream = new FileInputStream(file);
+				File outputfile = new File("image." + type);
+				ImageIO.write(finalImg, type, outputfile);
+				
+//				inputStream = new FileInputStream(file);
+				inputStream = new FileInputStream(outputfile);
 
 				preparedStatement.setString(1, currentuser);
 				preparedStatement.setBlob(2, inputStream);
