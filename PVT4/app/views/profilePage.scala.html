@@ -10,7 +10,6 @@
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
   
-  <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/summers.png")">
 
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -44,37 +43,38 @@
 	
 	
 <div data-role="page" id="team">
-  <section id="header">
-    <div class="container" style="width:290px">
-    <ul id="portfolio-filter" class="nav nav-tabs">
-      <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-    </ul>
-  </div>
-  </section>
+  	<section id="header">
+    	<div class="container" style="width:290px">
+    		<ul id="portfolio-filter" class="nav nav-tabs">
+      		<li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+      		<li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+      		<li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+      		<li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+    		</ul>
+  		</div>
+	</section>
 
-  <section id="bodypage">
-    <div class ="container" style="width:290px;">
-      <div style="margin-top: 10px;" role="main" class="ui-content">
+	<section id="bodypage">
+    	<div class ="container" style="width:290px;">
+      		<div style="margin-top: 10px;" role="main" class="ui-content">
         
             
-            <h1>@team.name</h1>
-            <p>Du heter @user.userName</p>
-            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
-            <p>@team.points</p>
+            	<h1>@team.name</h1>
+            	<p>Du heter @user.userName</p>
+            	<p> Rank: @controllers.TeamDatabase.teamRank()</p>
+            	<p>@team.points</p>
             
-<div data-role="navbar" id ="team">
-	<ul id = "portfolio-filer" class="nav nav-tabs">
-		<li><a href="#kommentar">Kommentarer</a></li>
-		<li><a href="#picture">Galleri</a></li>
-	</ul>
-</div><!-- /navbar -->
-
-	</div>
-	</div>
-
-  	</body>
-	</html>
+				<div data-role="navbar" id ="hallo">
+					<ul id = "portfolio-filer" class="nav nav-tabs">
+					<li><a href="#kommentar">Kommentarer</a></li>
+					<li><a href="#picture">Galleri</a></li>
+					</ul>
+				</div><!-- /navbar -->
+				<br>
+			</div>
+		</div>
+	</section>
+</div>
+</body>
+</html>
 

@@ -457,3 +457,16 @@ div.panel {
   vertical-align: middle; */
   left: 50px;
 }
+
+#img {
+    height: auto;
+    max-width: 640px;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+#img.expanded {
+    max-width: 2000px;
+}

@@ -132,7 +132,7 @@ public static Result addComment(){
 			returnStringDate = listdate.get(p);
 			returnStringUser = listUser.get(p);
 				
-			return returnStringUser +" skrev "+returnStringDate+": " +returnString;
+			return returnStringUser +" skrev "+returnStringDate+": \n" +returnString;
 			
     	} catch (SQLException se){
  			return se.toString();

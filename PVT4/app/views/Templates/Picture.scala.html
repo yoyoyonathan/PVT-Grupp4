@@ -15,42 +15,28 @@
   		<div  role="main" class="ui-content">
 			<div data-role="navbar" id ="team">
 				<ul id = "portfolio-filer" class="nav nav-tabs">
+				<li class =""><a href="#team">Ditt Lag</a></li>
 				<li class =""><a href="#kommentar">Kommentarer</a></li>
-				<li class ="active"><a href="#picture">Galleri</a></li>
 				</ul>
 			</div><!-- /navbar -->
 		 <br><br>
-			<h1 align="center"></h1>
-			<form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
-            	<input id="picfield" name="picture" type="file" accept="image/*;capture=camera">
-   				<button class = "my-btn"  type="submit" value="Save Picture" >Ladda upp bild </button>
-    		</form> 
+			
     		   
     		   
-			<div class="sidebar-image-gallery">
-				<a href="@routes.Assets.at("/images/slide-01.jpg" )"><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg" )" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-02.jpg")" style="width: 91px;"/>
-				<a href=""><img src="@routes.Assets.at("/images/slide-01.jpg")" style="width: 91px;"/>
-	
-				<img src='@routes.PictureDatabase.getPicture(0)'/>
-          		<img src='@routes.PictureDatabase.getPicture(0)'/>
-            	<img src='@routes.PictureDatabase.getPicture(1)'/>
-            	<img src='@routes.PictureDatabase.getPicture(2)'/>
-            	<img src='@routes.PictureDatabase.getPicture(3)'/>
-            	<img src='@routes.PictureDatabase.getPicture(4)'/>
-				<h1 align="center">New Photo</h1>
+				<div class="sidebar-image-gallery">
+					
+					<img src='@routes.PictureDatabase.getPicture(4)' border = "5" class="img-rounded alt="Cinque Terre" width="80" height="80"/></a>
+          			<img src='@routes.PictureDatabase.getPicture(0)' class="img-rounded alt="Cinque Terre" width="80" height="80"/>
+            		<img src='@routes.PictureDatabase.getPicture(1)' class="img-rounded alt="Cinque Terre" width="80" height="80"/>
+				
                     
-            	<form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
-               		<input id="picfield" name="picture" type="file" accept="image/*;capture=camera">		
-              		<button class = "my-btn"  type="submit" value="Save Picture" >Save Picture </button>
-    		   </form>
-			</div>
+            		<form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
+               			<input id="picfield" name="picture" type="file" accept="image/*;capture=camera">		
+              			<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Ladda upp bild!</font></button>
+    		   		</form>
+				</div>
+			
+		</div>
 		</div>
 	</section>
  </div><!-- /content -->
