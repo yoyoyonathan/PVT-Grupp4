@@ -64,7 +64,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 //import com.sun.medialib.mlib.Image;
 //import com.sun.xml.internal.ws.api.addressing.WSEndpointReference.Metadata;
-
 //import com.drew.imaging.ImageMetadataReader;
 //import com.drew.imaging.ImageProcessingException;
 //import com.drew.metadata.*;
