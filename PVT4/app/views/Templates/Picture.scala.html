@@ -25,9 +25,9 @@
     		   
 				<div class="sidebar-image-gallery">
 					
-					<img src='@routes.PictureDatabase.getPicture(4)' border = "5" class="img-rounded alt="Cinque Terre" width="80" height="80"/></a>
-          			<img src='@routes.PictureDatabase.getPicture(0)' class="img-rounded alt="Cinque Terre" width="80" height="80"/>
-            		<img src='@routes.PictureDatabase.getPicture(1)' class="img-rounded alt="Cinque Terre" width="80" height="80"/>
+					<img src='@routes.PictureDatabase.getPicture(4)' style = "border : 3px double black;" class="img-rounded alt="Cinque Terre" width="80px" height="80px"/></a>
+          			<img src='@routes.PictureDatabase.getPicture(0)' style = "border : 3px double black;" class="img-rounded alt="Cinque Terre" width="80px" height="80px"/>
+            		<img src='@routes.PictureDatabase.getPicture(1)' style = "border : 3px double black;" class="img-rounded alt="Cinque Terre" width="80px" height="80px"/>
 				
                     
             		<form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
