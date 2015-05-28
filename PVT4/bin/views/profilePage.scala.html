@@ -59,24 +59,26 @@
       		<div style="margin-top: 10px;" role="main">
         
             <h2>@team.name</h2>
+
             <p>Du heter @user.userName</p>
             <p> Rank: @controllers.TeamDatabase.teamRank()</p>
             <p>@team.points</p>
             
-            <a href="#popupBasic" data-rel="popup" data-position-to="window">Teaminfo </a>
+            <a href="#popupBasic" data-rel="popup" data-position-to="window" style="color:grey;">Teaminformation</a>
 
             <div data-role="popup" id="popupBasic" class="ui-content">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
             <p>
               <h4>Teaminformation</h4>
-              Ditt teamnamn är "@team.name"<br><br>
-              På plats @controllers.TeamDatabase.teamRank() i topplistan<br><br>
-              Ditt team har: @team.points poäng<br><br>
-              Medlemmar i team @team.name är:<br><br>
-              @controllers.TeamDatabase.getMember(0)<br><br>
-            @controllers.TeamDatabase.getMember(1)<br><br>
-            @controllers.TeamDatabase.getMember(2)<br><br>
+              <b>Teamnamn:</b><br> @team.name<br><br>
+              <b>Ranking:</b><br> @controllers.TeamDatabase.teamRank()<br><br>
+              <b>Poäng:</b><br> @team.points <br><br>
+              <b>Medlemmar:</b><br>
+              @controllers.TeamDatabase.getMember(0)<br>
+            @controllers.TeamDatabase.getMember(1)<br>
+            @controllers.TeamDatabase.getMember(2)<br>
             @controllers.TeamDatabase.getMember(3)<br>
+            <b>Registerade koder:</b><br> @controllers.CodeDatabase.listCodes()
             </p>
           </div>
             
