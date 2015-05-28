@@ -214,8 +214,8 @@ public class PictureDatabase extends Controller{
 
 //				} else {
 				
-				File outputfile = new File("image." + type);
-				ImageIO.write(finalImg, type, outputfile);
+//				File outputfile = new File("image." + type);
+//				ImageIO.write(finalImg, type, outputfile);
 				
 				inputStream = new FileInputStream(file);
 //				inputStream = new FileInputStream(outputfile);
