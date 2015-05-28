@@ -60,9 +60,13 @@ $(document).ready(function (){
         $("#textArea").show();
         $("#toggleButton").hide();
     });
-  
-
+	$("#toggleButton2").click(function(){
+		$("#textArea").hide();
+		$("#toggleButton").show();
+	});
    });
+   
+   
   });
 
 
@@ -134,7 +138,7 @@ $(document).ready(function (){
           <form class="form-signup" action="@routes.UserDatabase.addUser()" method ="post">
             <h2 class="text-center form-signup-heading">Bli medlem!</h2>
             <label for="inputUsername" class="sr-only">Användarnamn</label>
-            <input type="text" id="inputUsername" class="form-control" minlength="3" name="userName" placeholder="Username" autocomplete="off" required>
+            <input type="text" id="inputUsername" class="form-control" minlength="3" maxlength="10" name="userName" placeholder="Username" autocomplete="off" required>
             <label for="inputEmail" class="sr-only">E-mail</label>
             <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" autocomplete="off" required>
             <label for="inputPassword" class="sr-only">Lösenord</label>
@@ -190,7 +194,7 @@ $(document).ready(function (){
         <br>
         <br>
         Det går ej att byta in priser mot kontanter.
-        
+        <a id="toggleButton2">Läs mindre...</a>
     </p>
   <a id="toggleButton">Läs mer...</a>
     </p>         
