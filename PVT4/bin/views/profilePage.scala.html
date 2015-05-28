@@ -54,19 +54,18 @@
   		</div>
 	</section>
 
-	<section id="bodypage">
-    	<div class ="container" style="width:290px;">
-      		<div style="margin-top: 10px;" role="main">
+<section id="bodypage">
+        <div class ="container" style="width:290px;">
+          <div style="margin-top: 10px;" role="main">
         
-            <h2>@team.name</h2>
-
-            <p>Du heter @user.userName</p>
-            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
-            <p>@team.points</p>
+            <h2>@controllers.TeamDatabase.getTeamName()</h2>
+            <p>Inloggad som NAMN</p>
+            <p>Ditt lag ligger på plats PLATS</p>
             
-            <a href="#popupBasic" data-rel="popup" data-position-to="window" style="color:grey;">Teaminformation</a>
+            <a href="#popupBasic1" data-rel="popup" data-position-to="window">Teaminfo </a>
 
-            <div data-role="popup" id="popupBasic" class="ui-content">
+
+            <div data-role="popup" id="popupBasic1" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
             <p>
               <h4>Teaminformation</h4>
