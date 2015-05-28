@@ -201,7 +201,7 @@ public class CodeDatabase extends Controller {
 			e.printStackTrace();
 		}
 		if(codeFromDB != null){
-			return codeMSG = "Ditt lags senaste registrerade kod är" + codeFromDB;
+			return codeMSG = "Ditt lags senaste registrerade kod är: " + codeFromDB;
 		}else{
 		return "";	
 		}
