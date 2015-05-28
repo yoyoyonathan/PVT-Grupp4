@@ -64,6 +64,23 @@
             <p> Rank: @controllers.TeamDatabase.teamRank()</p>
             <p>@team.points</p>
             
+            <a href="#popupBasic" data-rel="popup" data-position-to="window">Teaminfo </a>
+
+            <div data-role="popup" id="popupBasic" class="ui-content">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <p>
+              <h4>Teaminformation</h4>
+              Ditt teamnamn är "@team.name"<br><br>
+              På plats @controllers.TeamDatabase.teamRank() i topplistan<br><br>
+              Ditt team har: @team.points poäng<br><br>
+              Medlemmar i team @team.name är:<br><br>
+              @controllers.TeamDatabase.getMember(0)<br><br>
+            @controllers.TeamDatabase.getMember(1)<br><br>
+            @controllers.TeamDatabase.getMember(2)<br><br>
+            @controllers.TeamDatabase.getMember(3)<br>
+            </p>
+          </div>
+            
 <div data-role="navbar" id ="team">
 	<ul id = "portfolio-filer" class="nav nav-tabs">
 		<li><a href="#kommentar">Kommentarer</a></li>
