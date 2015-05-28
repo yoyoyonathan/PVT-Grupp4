@@ -27,6 +27,14 @@ $(document).ready(function (){
                     }, "fast");
                 //});
             });
+            
+            $("#topinfo").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#conbottom2").offset().top
+                    }, "fast");
+                //});
+            });
 
             $("#uptotop").click(function (){
                 //$(this).animate(function(){
@@ -82,6 +90,9 @@ $(document).ready(function (){
             <br>
             <br>
             <button id="topsign" class="btn btn-lg btn-primary">Skapa konto</button>
+            <br>
+            <br>
+            <button id="topinfo" class="btn btn-lg btn-primary">Tävlingsinfo</button>
             <br>
             <br>
             <h4><span style="color:red; text-align:center">@message</span></h4>
