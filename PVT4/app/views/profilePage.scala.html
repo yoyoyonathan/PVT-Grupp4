@@ -58,28 +58,7 @@
         <div class ="container" style="width:290px;">
           <div style="margin-top: 10px;" role="main">
         
-            <h2>@controllers.TeamDatabase.getTeamName()</h2>
-            <p>Inloggad som NAMN</p>
-            <p>Ditt lag ligger på plats PLATS</p>
-            
-            <a href="#popupBasic1" data-rel="popup" data-position-to="window">Teaminfo </a>
-
-
-            <div data-role="popup" id="popupBasic1" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
-            <p>
-              <h4>Teaminformation</h4>
-              <b>Teamnamn:</b><br> @controllers.TeamDatabase.getTeamName()<br><br>
-              <b>Ranking:</b><br> RANK<br><br>
-              <b>Poäng:</b><br> POÄNG <br><br>
-              <b>Medlemmar:</b><br>
-              @controllers.TeamDatabase.getMember(0)<br>
-            @controllers.TeamDatabase.getMember(1)<br>
-            @controllers.TeamDatabase.getMember(2)<br>
-            @controllers.TeamDatabase.getMember(3)<br>
-            <b>Registerade koder:</b><br> @controllers.CodeDatabase.listCodes()
-            </p>
-          </div>
+        	@Templates.Teaminfo()
             
 <div data-role="navbar" id ="team">
 	<ul id = "portfolio-filer" class="nav nav-tabs">

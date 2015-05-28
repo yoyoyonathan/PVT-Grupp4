@@ -3,7 +3,7 @@
     	<div class="container" style="width:290px">
       		<ul id="portfolio-filter" class="nav nav-tabs">
         	<li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-        	<li class=""><a href="#redeem"><font size="1" color="black">L��s in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+        	<li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
         	<li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
         	<li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
       		</ul>
@@ -14,28 +14,7 @@
 	    	<div class ="container" style="width:290px;">
       		<div style="margin-top: 10px;" role="main">
         
-            <h2>@controllers.TeamDatabase.getTeamName()</h2>
-            <p>Inloggad som NAMN</p>
-            <p>Ditt lag ligger p�� plats PLATS</p>
-            
-            <a href="#popupBasic2" data-rel="popup" data-position-to="window">Teaminfo </a>
-
-            <div data-role="popup" id="popupBasic2" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
-            <p>
-              <h4>Teaminformation</h4>
-              <b>Teamnamn:</b><br> @controllers.TeamDatabase.getTeamName()<br><br>
-              <b>Ranking:</b><br> RANK<br><br>
-              <b>Po��ng:</b><br> PO��NG <br><br>
-              <b>Medlemmar:</b><br>
-              @controllers.TeamDatabase.getMember(0)<br>
-            @controllers.TeamDatabase.getMember(1)<br>
-            @controllers.TeamDatabase.getMember(2)<br>
-            @controllers.TeamDatabase.getMember(3)<br>
-            <b>Registerade koder:</b><br> @controllers.CodeDatabase.listCodes()
-            </p>
-          </div>
-            
+			@Templates.Teaminfo()            
             
 	</div>
 	</div>
