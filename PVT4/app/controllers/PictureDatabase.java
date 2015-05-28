@@ -214,8 +214,8 @@ public class PictureDatabase extends Controller{
 
 //				} else {
 				
-				File outputfile = new File("image." + type);
-				ImageIO.write(finalImg, type, outputfile);
+//				File outputfile = new File("image." + type);
+//				ImageIO.write(finalImg, type, outputfile);
 				
 				inputStream = new FileInputStream(file);
 //				inputStream = new FileInputStream(outputfile);
@@ -303,9 +303,11 @@ public class PictureDatabase extends Controller{
 				rs3.close();
 			}
 			
-			int blobLength = (int) pictures.get(i).length();
-			byte[] bytes = pictures.get(i).getBytes(1, blobLength);
-			type = types.get(i);
+			int behind = pictures.size() - i;
+					
+			int blobLength = (int) pictures.get(behind).length();
+			byte[] bytes = pictures.get(behind).getBytes(1, blobLength);
+			type = types.get(behind);
 			
 			return ok(bytes).as("image/" + type);
 			

@@ -36,6 +36,10 @@
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+<script>
+
+</script>
+
   </head>
   <body>
 
@@ -46,15 +50,7 @@
       <div class="panel-body">
       
       
-      <a href="#popupBasic" data-rel="popup" data-position-to="window">Hjälp! </a>
-
-            <div data-role="popup" id="popupBasic" class="ui-content">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-            <p>
-              <h4>Gå med i ett lag</h4>
-              Här är du tvungen att gå med i ett lag, för att du måste.
-            </p>
-          	</div>
+      
       
       
       
@@ -63,20 +59,20 @@
         <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
         <div class="link">
         </div>
-        <button data-role="none" id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:rgb(255,255,152,0.9)">Skapa!</button>
+        <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:rgb(255,255,152,0.9)">Skapa!</button>
         </form>
         <form class="form-signup" action="@routes.TeamDatabase.addTeamMember()" method ="post">
         <h2 class="text-center form-signup-heading">Gå med i lag!</h2>
         <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
         <div class="link">
         </div>
-        <button data-role="none" id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit">Joina!</button>
+        <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit">Joina!</button>
         </form>
         <form class="form-signup" action="@routes.TeamDatabase.randomizeTeam()" method ="post">
         <h2 class="text-center form-signup-heading">Slumpa lag!</h2>
         <div class="link">
         </div>
-        <button data-role="none" id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit">Slumpa!</button>
+        <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit">Slumpa!</button>
         </form>
         <h4><span style="color:red">@message</span></h4>
       </div>
@@ -88,9 +84,7 @@
 
 	
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

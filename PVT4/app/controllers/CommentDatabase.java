@@ -4,6 +4,8 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.StringUtils;
+
 import models.*;
 import play.data.*;
 import play.db.DB;
@@ -25,6 +27,10 @@ public static Result addComment(){
 		try {
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
+			
+			if(comment == ""){
+				return redirect(routes.Application.profilePage(currentUser));
+			}
 		
 			String sql = "SELECT * FROM `teammember` WHERE `user` = " + "'" + currentUser + "'";
 			
