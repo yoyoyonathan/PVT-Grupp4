@@ -95,8 +95,7 @@ public class PictureDatabase extends Controller{
 					return redirect(routes.Application.profilePage(currentuser));		//"File format is not supported"
 				}
 				
-				
-				finalImg = resize(img, 400, 400);
+//				finalImg = resize(img, 400, 400);
 
 //				File outputfile = new File("image." + type);
 //				ImageIO.write(finalImg, type, outputfile);
@@ -117,7 +116,7 @@ public class PictureDatabase extends Controller{
 
 		} catch (Exception e) {
 			// Handle errors for Class.forName
-			return ok("null " + e.toString());
+			return ok(e.toString());
 		} finally {
 			// finally block used to close resources
 			try {
