@@ -56,7 +56,7 @@
       
         <form class="form-signup" action="@routes.TeamDatabase.addTeam()" method ="post">
         <h2 class="text-center form-signup-heading">Skapa lag!</h2>
-        <input type="text" id="inputUsername" class="form-control" minlength="3" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
+        <input type="text" id="inputUsername" class="form-control" minlength="3" maxlength="18" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
         <div class="link">
         </div>
         <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:rgb(255,255,152,0.9)">Skapa!</button>
