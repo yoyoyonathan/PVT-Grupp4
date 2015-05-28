@@ -66,12 +66,16 @@
 
 
             <div data-role="popup" id="popupBasic1" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
+<<<<<<< HEAD
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+=======
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+>>>>>>> e3105f395ac24543e9bc51f47d39a1522f897c25
             <p>
               <h4>Teaminformation</h4>
-              <b>Teamnamn:</b><br> @team.name<br><br>
-              <b>Ranking:</b><br> @controllers.TeamDatabase.teamRank()<br><br>
-              <b>Poäng:</b><br> @team.points <br><br>
+              <b>Teamnamn:</b><br> @controllers.TeamDatabase.getTeamName()<br><br>
+              <b>Ranking:</b><br> RANK<br><br>
+              <b>Poäng:</b><br> POÄNG <br><br>
               <b>Medlemmar:</b><br>
               @controllers.TeamDatabase.getMember(0)<br>
             @controllers.TeamDatabase.getMember(1)<br>
@@ -97,7 +101,7 @@
             <a href="#helpteam" data-rel="popup" data-position-to="#demo"><font size="1.5" face="Lucida Sans Unicode">Information och villkor</font> </a>
 
             <div data-role="popup" id="helpteam" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
               <p>
               <h4>Information och villkor</h4>
         <p>
