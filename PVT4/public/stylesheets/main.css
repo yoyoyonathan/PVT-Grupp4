@@ -528,3 +528,14 @@ background-image: url("../images/yellow6.jpg");
   background-size: cover;
   border-color: #3399FF;
 } 
+
+#ruta1, #ruta2, #ruta3, #ruta4,#ruta5,#ruta6,#ruta7,#ruta8,#ruta9,#ruta10 {
+opacity: 0.95;
+
+}
+
+#popupBasic {
+  background-image: url("../images/yellow6.jpg");
+  background-size: cover;
+
+}
