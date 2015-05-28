@@ -160,6 +160,9 @@ public class CodeDatabase extends Controller {
 			    listString += s + "\t";
 			}
 			
+			if(listString == "")
+				return "Inga koder registrerade";
+			
 			return listString;
 	}catch(SQLException se){
 		//Handle errors for JDBC
