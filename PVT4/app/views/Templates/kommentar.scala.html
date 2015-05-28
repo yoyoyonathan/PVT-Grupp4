@@ -3,7 +3,7 @@
     	<div class="container" style="width:290px">
       		<ul id="portfolio-filter" class="nav nav-tabs">
         	<li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-        	<li class=""><a href="#redeem"><font size="1" color="black">L��s in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+        	<li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
         	<li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
         	<li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
       		</ul>
@@ -16,7 +16,7 @@
         
             <h2>@controllers.TeamDatabase.getTeamName()</h2>
             <p>Inloggad som NAMN</p>
-            <p>Ditt lag ligger p�� plats PLATS</p>
+            <p>Ditt lag ligger på plats PLATS</p>
             
             <a href="#popupBasic2" data-rel="popup" data-position-to="window">Teaminfo </a>
 
@@ -26,7 +26,7 @@
               <h4>Teaminformation</h4>
               <b>Teamnamn:</b><br> @controllers.TeamDatabase.getTeamName()<br><br>
               <b>Ranking:</b><br> RANK<br><br>
-              <b>Po��ng:</b><br> PO��NG <br><br>
+              <b>Poäng:</b><br> POÄNG <br><br>
               <b>Medlemmar:</b><br>
               @controllers.TeamDatabase.getMember(0)<br>
             @controllers.TeamDatabase.getMember(1)<br>
@@ -103,16 +103,17 @@
  				</script>
  			</div>
 		</div>
+	</div>
 
 	<section id="footer">
        <div align="center" class="container">
               
-            <a href="#helpKom" data-rel="popup" data-position-to="#demo"><font size="1.5" face="Lucida Sans Unicode">Information och villkor</font> </a>
+            <a href="#helpcomm" data-rel="popup" data-position-to="#demo"><font size="1.5" face="Lucida Sans Unicode">Information och villkor</font> </a>
 
-            <div data-role="popup" id="helpKom" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
+            <div data-role="popup" id="helpcomm" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
               <p>
-             <h4>Information och villkor</h4>
+              <h4>Information och villkor</h4>
         <p>
         Summerburst Scorehunt pågår från 24 april till 13 juni och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
         Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.
@@ -151,9 +152,5 @@
           </div>
        </div>
       </section>
-		
-	</div>
-
-
 	</section>
 </div><!-- /content -->
