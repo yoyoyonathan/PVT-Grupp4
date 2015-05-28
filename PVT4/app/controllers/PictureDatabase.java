@@ -198,6 +198,7 @@ public class PictureDatabase extends Controller{
 					return redirect(routes.Application.profilePage(currentuser));		//"File format is not supported"
 				}
 				
+				
 				finalImg = resize(img, 400, 400);
 
 //				if (readImageInformation(file) != null) {
@@ -216,8 +217,8 @@ public class PictureDatabase extends Controller{
 				File outputfile = new File("image." + type);
 				ImageIO.write(finalImg, type, outputfile);
 				
-//				inputStream = new FileInputStream(file);
-				inputStream = new FileInputStream(outputfile);
+				inputStream = new FileInputStream(file);
+//				inputStream = new FileInputStream(outputfile);
 
 				preparedStatement.setString(1, currentuser);
 				preparedStatement.setBlob(2, inputStream);
