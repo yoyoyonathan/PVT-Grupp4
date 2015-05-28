@@ -181,6 +181,14 @@ public class CodeDatabase extends Controller {
 		}// end try
 	}
 	public static String latestRegistredCode(){
+		
+		try {
+			Thread.sleep(250);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		Statement stmt = null;
 		Connection conn = DB.getConnection();
 		String codeFromDB = null;

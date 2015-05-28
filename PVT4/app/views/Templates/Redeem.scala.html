@@ -19,10 +19,12 @@
     <div class = "container" style="width:290px;">
       <div style="margin-top: 10px;" role="main" class="ui-content">     
           <form id="kodtest" class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
-            <input type="text" autocomplete="off"  placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
+            <input type="text" autocomplete = "off" placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
             <button id="button-primary" value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Skicka!</font></button>
           </form>
-         <p> @controllers.CodeDatabase.latestRegistredCode() </p>
+			<div id ="kod_div">
+ 					<textarea id ="kod_id"rows="3" cols="" disabled>@controllers.CodeDatabase.latestRegistredCode()</textarea>
+          	</div>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
