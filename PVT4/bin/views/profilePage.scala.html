@@ -54,25 +54,24 @@
   		</div>
 	</section>
 
-	<section id="bodypage">
-    	<div class ="container" style="width:290px;">
-      		<div style="margin-top: 10px;" role="main">
+<section id="bodypage">
+        <div class ="container" style="width:290px;">
+          <div style="margin-top: 10px;" role="main">
         
-            <h2>@team.name</h2>
-
-            <p>Du heter @user.userName</p>
-            <p> Rank: @controllers.TeamDatabase.teamRank()</p>
-            <p>@team.points</p>
+            <h2>@controllers.TeamDatabase.getTeamName()</h2>
+            <p>Inloggad som NAMN</p>
+            <p>Ditt lag ligger på plats PLATS</p>
             
-            <a href="#popupBasic" data-rel="popup" data-position-to="window" style="color:grey;">Teaminformation</a>
+            <a href="#popupBasic1" data-rel="popup" data-position-to="window">Teaminfo </a>
 
-            <div data-role="popup" id="popupBasic" class="ui-content">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+
+            <div data-role="popup" id="popupBasic1" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
             <p>
               <h4>Teaminformation</h4>
-              <b>Teamnamn:</b><br> @team.name<br><br>
-              <b>Ranking:</b><br> @controllers.TeamDatabase.teamRank()<br><br>
-              <b>Poäng:</b><br> @team.points <br><br>
+              <b>Teamnamn:</b><br> @controllers.TeamDatabase.getTeamName()<br><br>
+              <b>Ranking:</b><br> RANK<br><br>
+              <b>Poäng:</b><br> POÄNG <br><br>
               <b>Medlemmar:</b><br>
               @controllers.TeamDatabase.getMember(0)<br>
             @controllers.TeamDatabase.getMember(1)<br>
@@ -98,7 +97,7 @@
             <a href="#helpteam" data-rel="popup" data-position-to="#demo"><font size="1.5" face="Lucida Sans Unicode">Information och villkor</font> </a>
 
             <div data-role="popup" id="helpteam" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
               <p>
               <h4>Information och villkor</h4>
         <p>
