@@ -184,8 +184,13 @@ public class CodeDatabase extends Controller {
 			for (String s : codes) {
 				listString += s + "\t";
 			}
-			
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			if(listString == "")
+				
 				return "Inga koder registrerade";
 			
 			return listString;
@@ -242,6 +247,11 @@ public class CodeDatabase extends Controller {
 			e.printStackTrace();
 		}
 		if(codeFromDB != null){
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 			return codeMSG = "Ditt lags senaste registrerade kod är: \n" + codeFromDB;
 		}else{
 		return "";	
