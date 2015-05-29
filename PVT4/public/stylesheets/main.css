@@ -16,12 +16,6 @@ body {
   background-size: cover;
 }
 
-/*h1, h3, p,{
-  text-align: center;
-}*/
-
-
-
 #tavlingsinfo{
   text-align: center;
   font-family: arial;
@@ -155,9 +149,15 @@ font {/*Ta bort skuggan och färgsätt till svart på all font*/
   size: 1;
 }
 
-h1, p, h2, h3, h4, h5 {/*Ta bort skuggan och färglägg till svart på alla h och p*/
+h1, p, h2, h3, h4 {/*Ta bort skuggan och färglägg till svart på alla h och p*/
   text-shadow: none;
   color: black;
+}
+
+h5 {
+  text-shadow: none;
+  color: white;
+
 }
 
 div.container {
@@ -536,11 +536,15 @@ background-image: url("../images/yellow6.jpg");
 
 #ruta1, #ruta2, #ruta3, #ruta4,#ruta5,#ruta6,#ruta7,#ruta8,#ruta9,#ruta10 {
 opacity: 0.95;
-
 }
 
-#popupBasic {
+#popupBasic1 {
   background-image: url("../images/yellow6.jpg");
   background-size: cover;
+}
+
+#teamrubbe {
+  text-align: center;
+
 
 }

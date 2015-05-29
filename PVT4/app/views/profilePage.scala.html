@@ -57,12 +57,13 @@
 <section id="bodypage">
         <div class ="container" style="width:290px;">
           <div style="margin-top: 10px;" role="main">
-        
+            <div align="center" class="container">
             <h2>@controllers.TeamDatabase.getTeamName()</h2>
-            <p>Inloggad som NAMN</p>
-            <p>Ditt lag ligger på plats PLATS</p>
+            <p>Användare: NAMN</p>
+            <p>PLATS</p>
+          
             
-            <a href="#popupBasic1" data-rel="popup" data-position-to="window">Teaminfo </a>
+            <a href="#popupBasic1" data-rel="popup" data-position-to="window"><h5>Teaminformation</h4></a>
 
 
             <div data-role="popup" id="popupBasic1" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
@@ -80,6 +81,7 @@
             <b>Registerade koder:</b><br> @controllers.CodeDatabase.listCodes()
             </p>
           </div>
+        </div>
             
 <div data-role="navbar" id ="team">
 	<ul id = "portfolio-filer" class="nav nav-tabs">
