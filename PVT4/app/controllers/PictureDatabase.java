@@ -128,6 +128,72 @@ public class PictureDatabase extends Controller{
 
 	}
 	
+	public static String getPictureUser(int i) {
+		String currentUser = session("connected");
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			
+			conn = DB.getConnection();
+			stmt = conn.createStatement();
+			
+			String team = TeamDatabase.getTeamName();
+			
+			String sql2 = "SELECT DISTINCT s.user FROM teammember s INNER JOIN userpic d ON d.user = s.user WHERE `team` = " + "'" + team + "'";
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			ArrayList<String> members = new ArrayList<String>();
+			while (rs2.next()) {
+				String user = rs2.getString("user");
+				members.add(user);
+			}
+			rs2.close();
+			
+			ArrayList<Integer> ids = new ArrayList<Integer>();
+			
+			for (int j = 0; j < members.size(); j++) {
+				
+				String sql = "SELECT * FROM userpic WHERE user = " + "'" + members.get(j) + "'";
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				while (rs.next()){
+					int id = rs.getInt("ID");
+					ids.add(id);
+				}
+				rs.close();
+			}
+			
+			String userName = null;
+			ArrayList<String> userNames = new ArrayList<String>();
+			
+			for (int j = 0; j < ids.size(); j++){
+			
+		 		String sql3 = "SELECT * FROM `userpic` WHERE `ID` = " + "'" + ids.get(j) + "'";
+				ResultSet rs3 = stmt.executeQuery(sql3);
+				
+				rs3.next();
+				userName = rs3.getString("user");
+				userNames.add(userName);
+				rs3.close();
+			}
+			
+			int behind = userNames.size() - i;
+			
+			return userNames.get(behind) + " delar en bild";
+			
+		} catch (SQLException se) {
+			return se.toString();
+		} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				return se.toString();
+			} // end finally try
+		} // end try
+	}
+	
+	
 	public static Result getPicture(int i) {
 		
 		String currentUser = session("connected");

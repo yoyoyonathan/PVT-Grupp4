@@ -43,11 +43,14 @@
     		   		</form>
     		   		<br>
 				</div>
-				<div class="sidebar-image-gallery">	
+				<div class="sidebar-image-gallery">
+					<p> @controllers.PictureDatabase.getPictureUser(1) </p>	
 					<img src='@routes.PictureDatabase.getPicture(1)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded" alt="Cinque Terre"/>
           			<br><br>
+          			<p> @controllers.PictureDatabase.getPictureUser(2) </p>	
           			<img src='@routes.PictureDatabase.getPicture(2)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded" alt="Cinque Terre"/>
             		<br><br>
+            		<p> @controllers.PictureDatabase.getPictureUser(3) </p>	
             		<img src='@routes.PictureDatabase.getPicture(3)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded" alt="Cinque Terre" width="80px" height="80px"/>
             	</div>
 			</div>
