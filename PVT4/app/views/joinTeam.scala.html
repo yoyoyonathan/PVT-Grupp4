@@ -38,6 +38,20 @@
 
 <script>
 
+$(document).ready(function(){
+    $("#textArea").hide(); 
+        $("#toggleButton").click(function(){
+        $("#textArea").show();
+        $("#toggleButton").hide();
+    });
+	$("#toggleButton2").click(function(){
+		$("#textArea").hide();
+		$("#toggleButton").show();
+	});
+   });
+   
+   
+
 </script>
 
   </head>
@@ -50,7 +64,12 @@
       <div class="panel-body">
       
       
-      
+    <p id="textArea">
+        Hjälptexten klistras in här med formattering
+        <a id="toggleButton2">Stäng</a>
+    </p>
+  	<a id="toggleButton">Hjälp</a>
+    </p>    
       
       
       
