@@ -197,15 +197,16 @@ public class PictureDatabase extends Controller{
 				rs3.close();
 			}
 			
-			
-			
 			int behind = userNames.size() - i;
-			String returnStringDate ="" +listdate.get(behind);
+			String returnStringDate = "" +listdate.get(behind);
 			
 			return userNames.get(behind)+ " delar en bild " + returnStringDate + ":";
 			
 		} catch (SQLException se) {
 			return se.toString();
+			
+		} catch (ArrayIndexOutOfBoundsException ae) {
+			return "";
 		} finally {
 			try {
 				if (conn != null)
