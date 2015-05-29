@@ -211,17 +211,17 @@ public class TeamDatabase extends Controller {
     public static String randomizeTeamName(){
     	//Skapa nytt team som slumpar fram ett namn och gör hen till medlem
     			ArrayList<String> ord1 = new ArrayList<String>();
-    			ord1.add("DJs of ");
-    			ord1.add("Lucifers ");
-    			ord1.add("Flaskhals ");
+    			ord1.add("DJ ");
+    			ord1.add("Lucia ");
+    			ord1.add("Flaska ");
     			ord1.add("House ");
     			ord1.add("Party ");
     			ord1.add("Swag ");
     			ord1.add("YOLO ");
     			ord1.add("Summer ");
-    			ord1.add("Bursting ");
+    			ord1.add("Burst ");
     			ord1.add("Daddy's ");
-    			ord1.add("Jultomtens ");
+    			ord1.add("Julens ");
     			ord1.add("Aviciis ");
     			ord1.add("Axwells ");
     			ord1.add("Guettas ");
@@ -231,9 +231,9 @@ public class TeamDatabase extends Controller {
     			ord1.add("Livets ");
 
     			ArrayList<String> ord2 = new ArrayList<String>();
-    			ord2.add("Von Anka");
+    			ord2.add("Moln");
     			ord2.add("Satan");
-    			ord2.add("Småjävlar");
+    			ord2.add("Jävlar");
     			ord2.add("Klubbor");
     			ord2.add("Party");
     			ord2.add("Laddare");
