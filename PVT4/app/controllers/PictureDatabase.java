@@ -119,7 +119,7 @@ public class PictureDatabase extends Controller{
 				preparedStatement.setString(3, type);
 				preparedStatement.executeUpdate();
 
-				return redirect(routes.Application.profilePage(currentuser));
+				return redirect("/profile/" + currentuser + "#picture");
 		
 			} else {
 				return redirect("/profile/" + currentuser + "#picture");		//Får fanemej duga
@@ -200,7 +200,7 @@ public class PictureDatabase extends Controller{
 			int behind = userNames.size() - i;
 			String returnStringDate = "" +listdate.get(behind);
 			
-			return userNames.get(behind)+ " delar en bild " + returnStringDate + ":";
+			return userNames.get(behind)+ " delade en bild " + returnStringDate + ":";
 			
 		} catch (SQLException se) {
 			return se.toString();
