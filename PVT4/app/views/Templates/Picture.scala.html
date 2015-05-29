@@ -47,16 +47,28 @@
 				</div>
 				<div class="sidebar-image-gallery">
 					<p> @controllers.PictureDatabase.getPictureUser(1) </p>	
-					<img src='@routes.PictureDatabase.getPicture(1)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded" alt="Cinque Terre"/>
+					<img src='@routes.PictureDatabase.getPicture(1)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture" alt="Cinque Terre"/>
           			<br><br>
           			<p> @controllers.PictureDatabase.getPictureUser(2) </p>	
-          			<img src='@routes.PictureDatabase.getPicture(2)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded" alt="Cinque Terre"/>
+          			<img src='@routes.PictureDatabase.getPicture(2)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture" alt="Cinque Terre"/>
             		<br><br>
             		<p> @controllers.PictureDatabase.getPictureUser(3) </p>	
-            		<img src='@routes.PictureDatabase.getPicture(3)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded" alt="Cinque Terre" width="80px" height="80px"/>
+            		<img src='@routes.PictureDatabase.getPicture(3)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture" alt="Cinque Terre"/>
+            		<p> @controllers.PictureDatabase.getPictureUser(4) </p>	
+            		<img src='@routes.PictureDatabase.getPicture(4)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture" alt="Cinque Terre"/>
+            		<br><br><br>
             	</div>
 			</div>
 		</div>
+		
+		<script>
+			$(document).ready(function()
+			{
+			    $(".backup_picture").error(function(){
+			        $(this).attr('src', '@routes.Assets.at("/images/summerburstscorehunt.png")');
+			    });
+			});
+		</script>
 
 		<section id="footer">
        		<div align="center" class="container">  
