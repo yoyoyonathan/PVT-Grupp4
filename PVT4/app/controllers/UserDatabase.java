@@ -132,6 +132,13 @@ public static Result login() {
 			 }//end finally try
 	   	}//end try
     }
+
+	public static String getUserName(){
+		
+		String currentUser = session("connected");
+    	return currentUser;
+		
+	}
 	
 	public static User getUser(String userName) {			
     	
