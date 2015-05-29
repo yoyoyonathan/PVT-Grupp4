@@ -469,21 +469,14 @@ public class TeamDatabase extends Controller {
 			
 			
     	} catch (SQLException se) {
- 			// Handle errors for JDBC
 // 			return internalServerError(se.toString());
 // 			return badRequest(index.render("Email/användarnamn är redan taget."));
     		return null;
  		} catch (Exception e) {
- 			// Handle errors for Class.forName
 // 			return internalServerError(e.toString());
  			return null;
  		} finally {
  			// finally block used to close resources
-// 			try {
-// 				if (stmt != null)
-// 					conn.close();
-// 			} catch (SQLException se) {
- 			// do nothing
  			try {
  				if (conn != null)
  					conn.close();

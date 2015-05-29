@@ -61,9 +61,19 @@ public static Result addComment(){
  			return redirect(routes.Application.profilePage(currentUser));
 			
 		} catch (SQLException se){
- 			return internalServerError(se.toString());
+ 			return badRequest(se.toString());
 		} 
-    	
+    	catch (Exception e) {
+// 			return internalServerError(e.toString());
+ 			return null;
+    	} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				return badRequest(se.toString());
+			} 
+		} 
     }
     
     public static String getComments(int i){
@@ -143,32 +153,17 @@ public static Result addComment(){
     	} catch (SQLException se){
  			return se.toString();
 		} 
-//    	catch (SQLException se) {
-// 			// Handle errors for JDBC
-//// 			return internalServerError(se.toString());
-//// 			return badRequest(index.render("Email/användarnamn är redan taget."));
-//    		return null;
-// 		}
     	catch (Exception e) {
- 			// Handle errors for Class.forName
 // 			return internalServerError(e.toString());
  			return null;
- 		} finally {
- 			// finally block used to close resources
-// 			try {
-// 				if (stmt != null)
-// 					conn.close();
-// 			} catch (SQLException se) {
- 			// do nothing
- 			try {
- 				if (conn != null)
- 					conn.close();
- 			} catch (SQLException se) {
-// 				return internalServerError(se.toString());
- 				return null;
- 			}// end finally try
- 		}// end try
-    
+    	} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				return se.toString();
+			} 
+		} 
     }
 	
 }

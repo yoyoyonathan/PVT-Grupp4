@@ -129,13 +129,13 @@ public class PictureDatabase extends Controller{
 			// Handle errors for Class.forName
 			return ok(e.toString());
 		} finally {
-			// finally block used to close resources
 			try {
-				if (preparedStatement != null)
+				if (conn != null)
 					conn.close();
 			} catch (SQLException se) {
-			}// do nothin
-		}
+				return badRequest(se.toString());
+			} 
+		} 
 
 	}
 	
@@ -213,8 +213,8 @@ public class PictureDatabase extends Controller{
 					conn.close();
 			} catch (SQLException se) {
 				return se.toString();
-			} // end finally try
-		} // end try
+			} 
+		} 
 	}
 	
 	
@@ -293,8 +293,7 @@ public class PictureDatabase extends Controller{
 					conn.close();
 			} catch (SQLException se) {
 				return badRequest(se.toString());
-			} // end finally try
-		} // end try
+			} 
+		} 
 	}
-
 }
