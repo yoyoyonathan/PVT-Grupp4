@@ -48,7 +48,7 @@ public static Result addComment(){
 				length++;
 		   	}
 		    rs2.close();
-	
+		    conn.close();
 		
 	
 			String insertIntoDatabase = "INSERT INTO teamcomments (user, team, comment) VALUES(?, ?,?)";
