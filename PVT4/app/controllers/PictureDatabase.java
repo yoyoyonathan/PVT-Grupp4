@@ -122,7 +122,7 @@ public class PictureDatabase extends Controller{
 				return redirect(routes.Application.profilePage(currentuser));
 		
 			} else {
-				return redirect(routes.Application.profilePage(currentuser));	//Tom bild, bör bli ett fel
+				return redirect("/profile/" + currentuser + "#picture");		//Får fanemej duga
 			}
 
 		} catch (Exception e) {
