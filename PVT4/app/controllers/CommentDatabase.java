@@ -39,17 +39,6 @@ public static Result addComment(){
 			String teamName = rs.getString("team");
 			rs.close();
 			
-			String sql2 = "SELECT * FROM `teamcomments`";
-			
-			ResultSet rs2 = stmt.executeQuery(sql2);
-			
-			int length = 1;
-			while(rs2.next()){
-				length++;
-		   	}
-		    rs2.close();
-		    conn.close();
-		
 	
 			String insertIntoDatabase = "INSERT INTO teamcomments (user, team, comment) VALUES(?, ?,?)";
 		    
@@ -61,17 +50,13 @@ public static Result addComment(){
  			return redirect(routes.Application.profilePage(currentUser));
 			
 		} catch (SQLException se){
- 			return badRequest(se.toString());
-		} 
-    	catch (Exception e) {
-// 			return internalServerError(e.toString());
- 			return null;
+			return ok(se.toString());
     	} finally {
 			try {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException se) {
-				return badRequest(se.toString());
+				return ok(se.toString());
 			} 
 		} 
     }
