@@ -26,10 +26,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import play.libs.Json;
 
-
-
-
-
 //Picture imports
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -40,6 +36,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import views.html.*;
@@ -174,6 +171,7 @@ public class PictureDatabase extends Controller{
 					int id = rs.getInt("ID");
 					ids.add(id);
 				}
+				Collections.sort(ids);
 				rs.close();
 			}
 			
@@ -187,7 +185,7 @@ public class PictureDatabase extends Controller{
 				ResultSet rs3 = stmt.executeQuery(sql3);
 				
 				rs3.next();
-				Timestamp date = rs2.getTimestamp("time");
+				Timestamp date = rs3.getTimestamp("time");
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				dateFormat.format(date);
 				String S = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(date);
@@ -204,7 +202,7 @@ public class PictureDatabase extends Controller{
 			int behind = userNames.size() - i;
 			String returnStringDate ="" +listdate.get(behind);
 			
-			return userNames.get(behind)+" "+returnStringDate + " delar en bild";
+			return userNames.get(behind)+ " delar en bild " + returnStringDate + ":";
 			
 		} catch (SQLException se) {
 			return se.toString();
@@ -256,6 +254,7 @@ public class PictureDatabase extends Controller{
 					int id = rs.getInt("ID");
 					ids.add(id);
 				}
+				Collections.sort(ids);
 				rs.close();
 			}
 			
@@ -266,7 +265,7 @@ public class PictureDatabase extends Controller{
 			
 			for (int j = 0; j < ids.size(); j++){
 			
-		 		String sql3 = "SELECT * FROM `userpic` WHERE `ID` = " + "'" + ids.get(j) + "'";
+		 		String sql3 = "SELECT * FROM `userpic`  WHERE `ID` = " + "'" + ids.get(j) + "'";
 				ResultSet rs3 = stmt.executeQuery(sql3);
 				
 				rs3.next();
