@@ -522,7 +522,10 @@ div.panel {
   border-color: yellow;
   opacity: 0.9; */
   background-image: url("../images/bluebackground2.jpg"); 
+}
 
+.team {
+background-color:green;
 }
 
 #conbottom3 {
