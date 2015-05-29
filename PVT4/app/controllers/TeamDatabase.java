@@ -245,6 +245,7 @@ public class TeamDatabase extends Controller {
     			ord2.add("Shouts");
     			ord2.add("Rockers");
     			ord2.add("Knäckers");
+    			ord2.add("Ord");
 
     			
     			Random r1 = new Random();
