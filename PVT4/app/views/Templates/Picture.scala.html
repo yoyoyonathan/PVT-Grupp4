@@ -16,12 +16,14 @@
       		<div style="margin-top: 10px;" role="main">
         
             	@Templates.Teamhead()
-            
-           		 <a href="#popupBasic3" data-rel="popup" data-position-to="window">Teaminfo </a>
 
-            	<div data-role="popup" id="popupBasic3" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
-              		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-            		@Templates.Teaminfo()
+            <a href="#popupBasic3" data-rel="popup" data-position-to="window"><h5>Teaminformation<img src="@routes.Assets.at("/images/info1.png")" class="thumbnail" height="15" width="20"/></h5></a>
+
+
+            <div data-role="popup" id="popupBasic3" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+       
+        @Templates.Teaminfo()
           		</div>
 			</div>
 		</div>
