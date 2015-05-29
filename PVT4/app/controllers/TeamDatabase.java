@@ -586,4 +586,12 @@ public class TeamDatabase extends Controller {
 			 }//end finally try
 	   	}//end try
     }
+    
+    public static int getPoints(){		//Ej testad, kan köra ihopsig
+    	
+		String currentUser = session("connected");
+		Team t = getTeam(currentUser);
+		return t.points;
+    }
+		
 }
