@@ -205,8 +205,8 @@ public class PictureDatabase extends Controller{
 		} catch (SQLException se) {
 			return se.toString();
 			
-		} catch (ArrayIndexOutOfBoundsException ae) {
-			return "";
+//		} catch (ArrayIndexOutOfBoundsException ae) {
+//			return "";
 		} finally {
 			try {
 				if (conn != null)
