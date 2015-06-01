@@ -173,10 +173,25 @@ public class TeamDatabase extends Controller {
 		 			return redirect(routes.Application.profilePage(userName));
 			    }
 		    }
-		    
+		
+		String sqlRandom = "SELECT * FROM team";
+		ResultSet rsRandom = stmt.executeQuery(sqlRandom);
+		
+		ArrayList<String> rngTeam = new ArrayList<String>();
+		
+		while(rsRandom.next()){
+			rngTeam.add(rsRandom.getString("name"));
+		}
+		rsRandom.close();
 		
 		String teamName = randomizeTeamName();
-		//Skapa nytt team med namnet och lägg till skit
+		
+		for(int i = 0; i < rngTeam.size(); i++){
+			if(teamName.equals(rngTeam.get(i))){
+				teamName = randomizeTeamName();
+				i = 0;
+			}
+		}
 		
 		String insertIntoDatabase = "INSERT INTO team (name) VALUES(?)";
 			preparedStatement = conn.prepareStatement(insertIntoDatabase);
@@ -193,8 +208,8 @@ public class TeamDatabase extends Controller {
 		    
     	} catch (SQLException se) {
 			// Handle errors for JDBC
-//			return internalServerError(se.toString());
-			return badRequest(joinTeam.render("Du är redan med i ett team."));
+			return internalServerError(se.toString());
+//			return badRequest(joinTeam.render("Du är redan med i ett team."));
     	} catch (Exception e) {
  			// Handle errors for Class.forName
  			return internalServerError(e.toString());
@@ -209,7 +224,7 @@ public class TeamDatabase extends Controller {
     }
     
     public static String randomizeTeamName(){
-    	//Skapa nytt team som slumpar fram ett namn och gör hen till medlem
+    	
     			ArrayList<String> ord1 = new ArrayList<String>();
     			ord1.add("DJ ");
     			ord1.add("Lucia ");

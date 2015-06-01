@@ -95,6 +95,7 @@ public static Result login() {
 				
 					if (team == null){
 						rs.close();
+						session("connected", userName);
 						return redirect(routes.Application.joinTeam());
 					}
 						
