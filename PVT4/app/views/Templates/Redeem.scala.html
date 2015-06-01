@@ -22,6 +22,9 @@
             <input type="text" autocomplete = "off" placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
             <button id="button-primary" value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 160, 0.95);"><font>Skicka!</font></button>
           </form>
+			<div id ="kod_div">
+ 					<textarea style="resize:none" id ="kod_id"rows="3" cols="" disabled>@controllers.CodeDatabase.latestRegistredCode()</textarea>
+          	</div>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
