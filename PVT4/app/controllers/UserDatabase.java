@@ -85,8 +85,7 @@ public static Result login() {
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			
-			if(rs.isBeforeFirst()){
-				rs.next();
+			while(rs.next()){
 				
 				String email = rs.getString("email");
 				String password = rs.getString("password");
