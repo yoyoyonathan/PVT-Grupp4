@@ -14,15 +14,13 @@
 	    	<div class ="container" style="width:290px;">
       		<div style="margin-top: 10px;" role="main">
         
-@Templates.Teamhead()
-
-            <a href="#popupBasic2" data-rel="popup" data-position-to="window"><h5>Teaminformation<img src="@routes.Assets.at("/images/info1.png")" class="thumbnail" height="15" width="20"/></h5></a>
-
+            @Templates.Teamhead()
+            
+            <a href="#popupBasic2" data-rel="popup" data-position-to="window">Teaminfo </a>
 
             <div data-role="popup" id="popupBasic2" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
-              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
-       
-        @Templates.Teaminfo()
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+            @Templates.Teaminfo()
           </div>
             
             
@@ -40,7 +38,7 @@
 				<br><br>
 				<textarea name="comment" autocomplete ="off" form="commentform"></textarea>
  				<form class="form-signup" action="@routes.CommentDatabase.addComment()" method ="post" id="commentform">
-    				<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 160, 0.95);"><font>Kommentera!</font></button>
+    				<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Kommentera!</font></button>
     			</form>
 				<div id ="tesst">
  					<textarea id ="ruta1"rows="3" cols="" disabled>@controllers.CommentDatabase.getComments(1)</textarea>

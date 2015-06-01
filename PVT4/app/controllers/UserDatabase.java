@@ -85,7 +85,8 @@ public static Result login() {
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			
-			while(rs.next()){
+			if(rs.isBeforeFirst()){
+				rs.next();
 				
 				String email = rs.getString("email");
 				String password = rs.getString("password");
@@ -95,7 +96,6 @@ public static Result login() {
 				
 					if (team == null){
 						rs.close();
-						session("connected", userName);
 						return redirect(routes.Application.joinTeam());
 					}
 						

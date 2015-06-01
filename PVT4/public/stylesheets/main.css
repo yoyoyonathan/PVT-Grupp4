@@ -155,28 +155,9 @@ font {/*Ta bort skuggan och färgsätt till svart på all font*/
   size: 1;
 }
 
-h1, p, h2, h3, h4 {/*Ta bort skuggan och färglägg till svart på alla h och p*/
+h1, p, h2, h3, h4, h5 {/*Ta bort skuggan och färglägg till svart på alla h och p*/
   text-shadow: none;
   color: black;
-}
-
-h5 {
-  text-align: center;
-  text-shadow: none;
-  color: white;
-}
-
-h6 {
-text-align: center;
-text-shadow: none;
-background-image: url("../images/yellow6.jpg");
-background-size: cover;
-font-size: 27px;
-height: 40px;
-width: 260px;
-padding-top: 20px;
-color: white;
-border-radius: 20px;
 }
 
 div.container {
@@ -533,7 +514,7 @@ div.panel {
   background-size: cover;
   height: 100vh;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 20px;
 } 
 
 #knapp1, #toplog, #topinfo {
@@ -563,4 +544,3 @@ opacity: 0.95;
   background-size: cover;
 
 }
-
