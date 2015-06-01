@@ -12,8 +12,6 @@ scalaVersion := "2.11.1"
 
 libraryDependencies += "mysql"	%	"mysql-connector-java" % "5.1.27"	
 
-libraryDependencies += "com.drewnoakes" % "metadata-extractor" % "2.8.1"
-
 libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,

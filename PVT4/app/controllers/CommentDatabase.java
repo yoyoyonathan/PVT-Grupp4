@@ -4,6 +4,8 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import org.apache.commons.lang3.StringUtils;
+
 import models.*;
 import play.data.*;
 import play.db.DB;
@@ -25,6 +27,10 @@ public static Result addComment(){
 		try {
 			conn = DB.getConnection();
 			stmt = conn.createStatement();
+			
+			if(comment == ""){
+				return redirect(routes.Application.profilePage(currentUser));
+			}
 		
 			String sql = "SELECT * FROM `teammember` WHERE `user` = " + "'" + currentUser + "'";
 			
@@ -33,17 +39,6 @@ public static Result addComment(){
 			String teamName = rs.getString("team");
 			rs.close();
 			
-			String sql2 = "SELECT * FROM `teamcomments`";
-			
-			ResultSet rs2 = stmt.executeQuery(sql2);
-			
-			int length = 1;
-			while(rs2.next()){
-				length++;
-		   	}
-		    rs2.close();
-	
-		
 	
 			String insertIntoDatabase = "INSERT INTO teamcomments (user, team, comment) VALUES(?, ?,?)";
 		    
@@ -55,9 +50,15 @@ public static Result addComment(){
  			return redirect(routes.Application.profilePage(currentUser));
 			
 		} catch (SQLException se){
- 			return internalServerError(se.toString());
+			return ok(se.toString());
+    	} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				return ok(se.toString());
+			} 
 		} 
-    	
     }
     
     public static String getComments(int i){
@@ -137,32 +138,17 @@ public static Result addComment(){
     	} catch (SQLException se){
  			return se.toString();
 		} 
-//    	catch (SQLException se) {
-// 			// Handle errors for JDBC
-//// 			return internalServerError(se.toString());
-//// 			return badRequest(index.render("Email/användarnamn är redan taget."));
-//    		return null;
-// 		}
     	catch (Exception e) {
- 			// Handle errors for Class.forName
 // 			return internalServerError(e.toString());
  			return null;
- 		} finally {
- 			// finally block used to close resources
-// 			try {
-// 				if (stmt != null)
-// 					conn.close();
-// 			} catch (SQLException se) {
- 			// do nothing
- 			try {
- 				if (conn != null)
- 					conn.close();
- 			} catch (SQLException se) {
-// 				return internalServerError(se.toString());
- 				return null;
- 			}// end finally try
- 		}// end try
-    
+    	} finally {
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				return se.toString();
+			} 
+		} 
     }
 	
 }

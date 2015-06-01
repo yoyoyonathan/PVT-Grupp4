@@ -1,43 +1,84 @@
 <div data-role="page" id="picture">
-  <section id="header">
-    <div class="container" style="width:290px">
-      <ul id="portfolio-filter" class="nav nav-tabs">
-      <li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
-	  <li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
-      <li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
-	  <li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
-      </ul>
-    </div>
-  </section>
+	<section id="header">
+    	<div class="container" style="width:290px">
+      		<ul id="portfolio-filter" class="nav nav-tabs">
+      		<li class=""><a href="#hunt"><font size="1" color="black">Jaga kod</font><br><img src="@routes.Assets.at("/images/hunt.png")" class="thumbnail" height="30" width="30"/></a></li>
+	  		<li class=""><a href="#redeem"><font size="1" color="black">Lös in kod</font><br><img src="@routes.Assets.at("/images/redeem.png")" class="thumbnail" height="30" width="30"/></a></li>
+      		<li class="active"><a href="#team"><font size="1" color="black">Ditt lag</font><br><img src="@routes.Assets.at("/images/team.png")" class="thumbnail" height="30" width="30"/></a></li>
+	  		<li class=""><a href="#leader"><font size="1" color="black">Topplista</font><br><img src="@routes.Assets.at("/images/podium.png")" class="thumbnail" height="30" width="30"/></a></li>
+      		</ul>
+    	</div>
+  	</section>
 
-<section id="bodypage">
-	<div class="container" style="width:290px;"> 
-  		<div  role="main" class="ui-content">
-			<div data-role="navbar" id ="team">
-				<ul id = "portfolio-filer" class="nav nav-tabs">
-				<li class =""><a href="#team">Ditt Lag</a></li>
-				<li class =""><a href="#kommentar">Kommentarer</a></li>
-				</ul>
-			</div><!-- /navbar -->
-		 <br><br>
-			
-    		   
-    		   
-				<div class="sidebar-image-gallery">
-					
-					<img src='@routes.PictureDatabase.getPicture(4)' style = "border : 3px double black;" class="img-rounded alt="Cinque Terre" width="80px" height="80px"/></a>
-          			<img src='@routes.PictureDatabase.getPicture(0)' style = "border : 3px double black;" class="img-rounded alt="Cinque Terre" width="80px" height="80px"/>
-            		<img src='@routes.PictureDatabase.getPicture(1)' style = "border : 3px double black;" class="img-rounded alt="Cinque Terre" width="80px" height="80px"/>
+
+	<section id="bodypage">
+		<div class ="container" style="width:290px;">
+      		<div style="margin-top: 10px;" role="main">
+        
+            	@Templates.Teamhead()
+
+            <a href="#popupBasic3" data-rel="popup" data-position-to="window"><h5>Teaminformation<img src="@routes.Assets.at("/images/info1.png")" class="thumbnail" height="15" width="20"/></h5></a>
+
+
+            <div data-role="popup" id="popupBasic3" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+       
+        @Templates.Teaminfo()
+          		</div>
+			</div>
+		</div>
+		<div class="container" style="width:290px;"> 
+  			<div  role="main" class="ui-content">
+				<div data-role="navbar" id ="team">
+					<ul id = "portfolio-filer" class="nav nav-tabs">
+					<li class =""><a href="#kommentar">Kommentarer</a></li>
+					<li class ="active"><a href="#picture">Bildgalleri</a></li>
+					</ul>
+				</div><!-- /navbar -->
+		 		
+		 		<br><br>
 				
-                    
+				<div class ="uploadPic">	
             		<form id ="newpicture" action="@routes.PictureDatabase.savePicture()" method ="post" data-ajax="false" enctype="multipart/form-data">
                			<input id="picfield" name="picture" type="file" accept="image/*;capture=camera">		
-              			<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Ladda upp bild!</font></button>
+              			<button value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 160, 0.95);"><font>Ladda upp bild!</font></button>
     		   		</form>
+    		   		<br>
 				</div>
-			
+				<div class="sidebar-image-gallery">
+					<p> @controllers.PictureDatabase.getPictureUser(1) </p>	
+					<img src='@routes.PictureDatabase.getPicture(1)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture"/>
+          			<br><br>
+          			<p> @controllers.PictureDatabase.getPictureUser(2) </p>	
+          			<img src='@routes.PictureDatabase.getPicture(2)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture"/>
+            		<br><br>
+            		<p> @controllers.PictureDatabase.getPictureUser(3) </p>	
+            		<img src='@routes.PictureDatabase.getPicture(3)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture"/>
+            		<p> @controllers.PictureDatabase.getPictureUser(4) </p>	
+            		<img src='@routes.PictureDatabase.getPicture(4)' style = "border : 3px double black;" width="280px" height="200px" class="img-rounded backup_picture"/>
+            		<br><br><br>
+            	</div>
+			</div>
 		</div>
-		</div>
+		
+		<script>
+			$(document).ready(function()
+			{
+			    $(".backup_picture").error(function(){
+			        $(this).attr('src', '@routes.Assets.at("/images/summerburstscorehunt.png")');
+			    });
+			});
+		</script>
+
+		<section id="footer">
+       		<div align="center" class="container">  
+            	<a href="#helppic" data-rel="popup" data-position-to="#demo"><font size="1.5" face="Lucida Sans Unicode">Information och villkor</font> </a>
+            	<div data-role="popup" id="helppic" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
+              		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+              		@Templates.HelpTeam()
+          		</div>
+       		</div>
+      	</section>
 	</section>
  </div><!-- /content -->
 

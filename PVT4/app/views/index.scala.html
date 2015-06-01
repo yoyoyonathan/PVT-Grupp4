@@ -27,6 +27,14 @@ $(document).ready(function (){
                     }, "fast");
                 //});
             });
+            
+            $("#topinfo").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#conbottom2").offset().top
+                    }, "fast");
+                //});
+            });
 
             $("#uptotop").click(function (){
                 //$(this).animate(function(){
@@ -52,9 +60,13 @@ $(document).ready(function (){
         $("#textArea").show();
         $("#toggleButton").hide();
     });
-  
-
+	$("#toggleButton2").click(function(){
+		$("#textArea").hide();
+		$("#toggleButton").show();
+	});
    });
+   
+   
   });
 
 
@@ -82,6 +94,9 @@ $(document).ready(function (){
             <br>
             <br>
             <button id="topsign" class="btn btn-lg btn-primary">Skapa konto</button>
+            <br>
+            <br>
+            <button id="topinfo" class="btn btn-lg btn-primary">Tävlingsinfo</button>
             <br>
             <br>
             <h4><span style="color:red; text-align:center">@message</span></h4>
@@ -122,10 +137,10 @@ $(document).ready(function (){
         <div class="panel-body">
           <form class="form-signup" action="@routes.UserDatabase.addUser()" method ="post">
             <h2 class="text-center form-signup-heading">Bli medlem!</h2>
-            <label for="inputEmail" class="sr-only">E-mail</label>
-            <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" required>
             <label for="inputUsername" class="sr-only">Användarnamn</label>
-            <input type="text" id="inputUsername" class="form-control" minlength="3" name="userName" placeholder="Username" required>
+            <input type="text" id="inputUsername" class="form-control" minlength="3" maxlength="10" name="userName" placeholder="Username" autocomplete="off" required>
+            <label for="inputEmail" class="sr-only">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" maxlength="30" name="email" placeholder="E-mail" autocomplete="off" required>
             <label for="inputPassword" class="sr-only">Lösenord</label>
             <input type="password" id="inputPassword" class="form-control" minlength="6" maxlength="20" name="password" placeholder="Password" required>
             <label for="inputBirthyear" class="sr-only">Födelsedatum</label>
@@ -153,25 +168,20 @@ $(document).ready(function (){
         Det finns 200 koder att samla som ger olika många poäng beroende på svårighetsgrad. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
         <br>
         <br>  
-        Tävlingen består av veckotävlingar och en stor tävling som pågår fram till festivalen börjar. Veckotävlingarna avslutas varje vecka där de fem bästa lagen får pris. Vinnare av första pris under den sista veckan när festivalen inträffar vinner biljetter till nästa års festival.
-        <br>
-        <br>
-        1a pris – Biljetter till festivalen
-        2a pris – Årsmedlemskap på Spotify Premium
-        3-5e pris – Hörlurar från Koss
+		Tävlingen består av en stor tävling som pågår fram till festivalen börjar samt minitävlingar där det gäller att vara supersnabb att hitta utvalda koder och vara bland de 10 första för att vinna ett pris.
         <br>
         <br>
         Den stora tävlingen avslutas dagen innan festivalen börjar där de fem bästa lagen får pris.
         <br>
         <br>
-        1a pris – Meet and greet med artisterna
+        1a pris – Meet and greet med artisterna<br>  
         2-5e pris – VIP-biljetter
         <br>
         <br>
         Vinnarna kontaktas via e-post, därför är det extra viktigt att fylla i rätt epostadress vid skapande av tävlingskonto så att vi kan komma i kontakt med er.
         <br>
         <br>
-        Genom att delta i tävlingen accepterar du följande tävlingsvillkor och att din epost-adress sparas i Summerburst Scorehunts databas.
+        Genom att delta i tävlingen accepterar du följande tävlingsvillkor och att din e-postadress sparas i Summerburst Scorehunts databas.
         Tävlingen är gratis att delta i och för att tävla behöver du vara 18 år. Anställda på TechNovaZion Sweden AB får ej delta.
         <br>
         <br>
@@ -179,7 +189,7 @@ $(document).ready(function (){
         <br>
         <br>
         Det går ej att byta in priser mot kontanter.
-        
+        <a id="toggleButton2">Läs mindre...</a>
     </p>
   <a id="toggleButton">Läs mer...</a>
     </p>         
