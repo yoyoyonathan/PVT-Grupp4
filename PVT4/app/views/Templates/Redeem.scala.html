@@ -1,4 +1,4 @@
-<div data-role="page" id="redeem">
+﻿<div data-role="page" id="redeem">
   <section id="header">
     <div class="container" style="width:290px;">
       <ul id="portfolio-filter" class="nav nav-tabs">  
@@ -19,12 +19,9 @@
     <div class = "container" style="width:290px;">
       <div style="margin-top: 10px;" role="main" class="ui-content">     
           <form id="kodtest" class="form-kod" action="@routes.CodeDatabase.registerCode()" method="post">
-            <input type="text" autocomplete = "off" placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
-            <button id="button-primary" value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 160, 0.95);"><font>Skicka!</font></button>
+            <input type="text" autocomplete="off"  placeholder="Skriv kod" name="codeID" id="codeID" style="color:black; text-align:center"></input>
+            <button id="button-primary" value ="Reload Page" onClick ="history.go(0)" class="button-submit pure-button" style="background-color:rgba(255, 255, 255, 0.8);"><font>Skicka!</font></button>
           </form>
-			<div id ="kod_div">
- 					<textarea style="resize:none" id ="kod_id"rows="3" cols="" disabled>@controllers.CodeDatabase.latestRegistredCode()</textarea>
-          	</div>
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
@@ -36,7 +33,43 @@
 
             <div data-role="popup" id="helpredeem" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				@Templates.HelpTeam()
+              <p>
+              <h4>Information och villkor</h4>
+        <p>
+        Summerburst Scorehunt pågår från 24 april till 13 juni och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.
+        <br>
+        Det finns 200 koder att samla som ger olika många poäng beroende på svårighetsgrad. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
+        <br>
+        <br>  
+        Tävlingen består av veckotävlingar och en stor tävling som pågår fram till festivalen börjar. Veckotävlingarna avslutas varje vecka där de fem bästa lagen får pris. Vinnare av första pris under den sista veckan när festivalen inträffar vinner biljetter till nästa års festival.
+        <br>
+        <br>
+        1a pris – Biljetter till festivalen
+        2a pris – Årsmedlemskap på Spotify Premium
+        3-5e pris – Hörlurar från Koss
+        <br>
+        <br>
+        Den stora tävlingen avslutas dagen innan festivalen börjar där de fem bästa lagen får pris.
+        <br>
+        <br>
+        1a pris – Meet and greet med artisterna
+        2-5e pris – VIP-biljetter
+        <br>
+        <br>
+        Vinnarna kontaktas via e-post, därför är det extra viktigt att fylla i rätt epostadress vid skapande av tävlingskonto så att vi kan komma i kontakt med er.
+        <br>
+        <br>
+        Genom att delta i tävlingen accepterar du följande tävlingsvillkor och att din epost-adress sparas i Summerburst Scorehunts databas.
+        Tävlingen är gratis att delta i och för att tävla behöver du vara 18 år. Anställda på TechNovaZion Sweden AB får ej delta.
+        <br>
+        <br>
+        Vinnarna blir kontaktade via e-post. Du behöver därför fylla i rätt epostadress för att vi ska kunna komma i kontakt med dig. Din epostadress kommer inte visas för andra användare i tävlingen utan används endast för detta ändamål. Svarar du inte på e-post från oss inom 7 dagar kan vi ej garantera att du får ditt pris.
+        <br>
+        <br>
+        Det går ej att byta in priser mot kontanter.
+    </p>
+            </p>
           </div>
        </div>
       </section> 
