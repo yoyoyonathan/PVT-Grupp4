@@ -59,12 +59,7 @@ public class CodeDatabase extends Controller {
 
 				conn.close();
 			} catch (SQLException e) {
-				try {
-					conn.close();
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}// TODO Auto-generated catch block
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			registerCodeToTeam(teamFromDB, codeID);
@@ -94,12 +89,6 @@ public class CodeDatabase extends Controller {
 			conn.close();
 			return codeFromDB;
 		} catch (SQLException e) {
-			try {
-				conn.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
@@ -126,12 +115,6 @@ public class CodeDatabase extends Controller {
 				return true;
 			}
 		} catch (SQLException e) {
-			try {
-				conn.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 			return false;
 		}
 
@@ -148,12 +131,6 @@ public class CodeDatabase extends Controller {
 			stmt.executeUpdate();
 			conn.close();
 		} catch (SQLException e) {
-			try {
-				conn.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -184,24 +161,16 @@ public class CodeDatabase extends Controller {
 			for (String s : codes) {
 				listString += s + "\t";
 			}
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			
 			if(listString == "")
-				
 				return "Inga koder registrerade";
 			
 			return listString;
 	}catch(SQLException se){
-		try {
-			conn.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		//Handle errors for JDBC
         return null;
 	}finally{
+		 //finally block used to close resources
 		 try{
 		    if(stmt!=null)
 		       conn.close();
@@ -220,6 +189,7 @@ public class CodeDatabase extends Controller {
 		try {
 			Thread.sleep(250);
 		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -239,20 +209,11 @@ public class CodeDatabase extends Controller {
 			rs.close();
 			conn.close();
 		} catch (SQLException e) {
-			try {
-				conn.close();
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(codeFromDB != null){
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return codeMSG = "Ditt lags senaste registrerade kod är: \n" + codeFromDB;
+			return codeMSG = "Ditt lags senaste registrerade kod är: " + codeFromDB;
 		}else{
 		return "";	
 		}

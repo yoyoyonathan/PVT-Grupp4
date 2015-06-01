@@ -38,20 +38,6 @@
 
 <script>
 
-$(document).ready(function(){
-    $("#textArea").hide(); 
-        $("#toggleButton").click(function(){
-        $("#textArea").show();
-        $("#toggleButton").hide();
-    });
-	$("#toggleButton2").click(function(){
-		$("#textArea").hide();
-		$("#toggleButton").show();
-	});
-   });
-   
-   
-
 </script>
 
   </head>
@@ -63,9 +49,14 @@ $(document).ready(function(){
     <div class="panel panel-default">
       <div class="panel-body">
       
+      
+      
+      
+      
+      
         <form class="form-signup" action="@routes.TeamDatabase.addTeam()" method ="post">
         <h2 class="text-center form-signup-heading">Skapa lag!</h2>
-        <input type="text" id="inputUsername" class="form-control" minlength="3" maxlength="15" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
+        <input type="text" id="inputUsername" class="form-control" minlength="3" maxlength="18" name="name" placeholder="Lagnamn" required style="margin-bottom: 4px;">
         <div class="link">
         </div>
         <button id="joinknapp" class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:rgb(255,255,152,0.9)">Skapa!</button>
@@ -85,24 +76,6 @@ $(document).ready(function(){
         </form>
         <h4><span style="color:red">@message</span></h4>
       </div>
-          <div align="center"><p id="textArea">
-        <b>Skapa lag</b><br>
-Om du vill skapa ett nytt lag så anger du namnet på det här.
-Du kommer att skapa laget och placeras som första medlem i det.<br>
-
-<b>Gå med i lag</b><br>
-Om du vill gå med i ett redan skapat lag så anger du namnet på det här.
-Du kommer att placeras i laget förutsatt att laget har plats (max 4 personer/lag).<br>
-
-<b>Slumpa lag</b><br>
-Om du vill gå med i ett lag med slumpmässiga medlemmar trycker du här.
-Du kommer att placeras i ett slumpat lag med spännande nya människor!<br>
-<font size="2" color="black" face="Lucida Sans Unicode"><a id="toggleButton2">Stäng</a></font>
-    
-    </p>
-    <font size="2" color="black" face="Lucida Sans Unicode"><a id="toggleButton">Vad är det här?</a></font>
-    </p>   
-    </div> 
      </div>
     </div>
   </div>

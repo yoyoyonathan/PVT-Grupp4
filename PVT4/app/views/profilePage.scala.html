@@ -58,24 +58,34 @@
         <div class ="container" style="width:290px;">
           <div style="margin-top: 10px;" role="main">
         
-@Templates.Teamhead()
-
-            <a href="#popupBasic1" data-rel="popup" data-position-to="window"><h5>Teaminformation<img src="@routes.Assets.at("/images/info1.png")" class="thumbnail" height="15" width="20"/></h5></a>
+            <h2>@controllers.TeamDatabase.getTeamName()</h2>
+            <p>Inloggad som NAMN</p>
+            <p>Ditt lag ligger på plats PLATS</p>
+            
+            <a href="#popupBasic1" data-rel="popup" data-position-to="window">Teaminfo </a>
 
 
             <div data-role="popup" id="popupBasic1" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
-       
-        @Templates.Teaminfo()
-			             
-          	</div>
-<br>
+            <p>
+              <h4>Teaminformation</h4>
+              <b>Teamnamn:</b><br> @controllers.TeamDatabase.getTeamName()<br><br>
+              <b>Ranking:</b><br> RANK<br><br>
+              <b>Poäng:</b><br> POÄNG <br><br>
+              <b>Medlemmar:</b><br>
+              @controllers.TeamDatabase.getMember(0)<br>
+            @controllers.TeamDatabase.getMember(1)<br>
+            @controllers.TeamDatabase.getMember(2)<br>
+            @controllers.TeamDatabase.getMember(3)<br>
+            <b>Registerade koder:</b><br> @controllers.CodeDatabase.listCodes()
+            </p>
+          </div>
             
 <div data-role="navbar" id ="team">
-  <ul id = "portfolio-filer" class="nav nav-tabs">
-    <li><a href="#kommentar">Kommentarer</a></li>
-    <li><a href="#picture">Bildgalleri</a></li>
-  </ul>
+	<ul id = "portfolio-filer" class="nav nav-tabs">
+		<li><a href="#kommentar">Kommentarer</a></li>
+		<li><a href="#picture">Galleri</a></li>
+	</ul>
 </div><!-- /navbar -->
 
 	</div>
@@ -88,9 +98,43 @@
 
             <div data-role="popup" id="helpteam" class="ui-content" style=" background-size: 100% 100%; background-image: url(@routes.Assets.at("/images/yellow6.jpg"))">
               <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
-              
-              @Templates.HelpTeam()
-              
+              <p>
+              <h4>Information och villkor</h4>
+        <p>
+        Summerburst Scorehunt pågår från 24 april till 13 juni och är en lagtävling om 4 personer där det gäller att tillsammans med sitt lag samla koder för att ha chans att vinna fina priser.
+        Koderna kommer bland annat vara utplacerade på olika platser i Stockholm och ledtrådar på var de finns kommer göras tillgängliga via Summerburst Scorehunts twitterkonto.
+        <br>
+        Det finns 200 koder att samla som ger olika många poäng beroende på svårighetsgrad. En kod kan lösas in en gång per lag. Varje kod kan lösas in 500 gånger innan den blir ogiltig att lösa in. Alla lag kan alltså inte samla alla koder utan det är först till kvarn som gäller!
+        <br>
+        <br>  
+        Tävlingen består av veckotävlingar och en stor tävling som pågår fram till festivalen börjar. Veckotävlingarna avslutas varje vecka där de fem bästa lagen får pris. Vinnare av första pris under den sista veckan när festivalen inträffar vinner biljetter till nästa års festival.
+        <br>
+        <br>
+        1a pris – Biljetter till festivalen
+        2a pris – Årsmedlemskap på Spotify Premium
+        3-5e pris – Hörlurar från Koss
+        <br>
+        <br>
+        Den stora tävlingen avslutas dagen innan festivalen börjar där de fem bästa lagen får pris.
+        <br>
+        <br>
+        1a pris – Meet and greet med artisterna
+        2-5e pris – VIP-biljetter
+        <br>
+        <br>
+        Vinnarna kontaktas via e-post, därför är det extra viktigt att fylla i rätt epostadress vid skapande av tävlingskonto så att vi kan komma i kontakt med er.
+        <br>
+        <br>
+        Genom att delta i tävlingen accepterar du följande tävlingsvillkor och att din epost-adress sparas i Summerburst Scorehunts databas.
+        Tävlingen är gratis att delta i och för att tävla behöver du vara 18 år. Anställda på TechNovaZion Sweden AB får ej delta.
+        <br>
+        <br>
+        Vinnarna blir kontaktade via e-post. Du behöver därför fylla i rätt epostadress för att vi ska kunna komma i kontakt med dig. Din epostadress kommer inte visas för andra användare i tävlingen utan används endast för detta ändamål. Svarar du inte på e-post från oss inom 7 dagar kan vi ej garantera att du får ditt pris.
+        <br>
+        <br>
+        Det går ej att byta in priser mot kontanter.
+    </p>
+            </p>
           </div>
        </div>
       </section> 
