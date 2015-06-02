@@ -94,7 +94,8 @@ public static Result login() {
 				String password = rs.getString("password");
 				String userName = rs.getString("userName");
 				
-				Team team = TeamDatabase.getTeam(userName);
+				Team team = null;
+				team = TeamDatabase.getTeam(userName);
 				
 					if (team == null){
 						rs.close();
