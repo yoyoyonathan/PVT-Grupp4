@@ -58,6 +58,8 @@ public class CodeDatabase extends Controller {
 				preparedStatementCode.executeUpdate();
 
 				conn.close();
+				preparedStatement.close();
+				preparedStatementCode.close();
 			} catch (SQLException e) {
 				try {
 					conn.close();
@@ -147,9 +149,10 @@ public class CodeDatabase extends Controller {
 			stmt.setString(2, codeID);
 			stmt.executeUpdate();
 			conn.close();
+			preparedStatement.close();
 		} catch (SQLException e) {
 			try {
-				conn.close();
+					conn.close();
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

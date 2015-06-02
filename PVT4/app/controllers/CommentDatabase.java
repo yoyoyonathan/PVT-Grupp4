@@ -55,6 +55,8 @@ public static Result addComment(){
 			try {
 				if (conn != null)
 					conn.close();
+				if (preparedStatement != null) 
+ 					preparedStatement.close();
 			} catch (SQLException se) {
 				return ok(se.toString());
 			} 

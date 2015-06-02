@@ -61,6 +61,9 @@ public class UserDatabase extends Controller {
  			try {
  				if (conn != null)
  					conn.close();
+ 				if (preparedStatement != null) 
+ 					preparedStatement.close();
+ 				}
  			} catch (SQLException se) {
  				return internalServerError(se.toString());
  			}// end finally try

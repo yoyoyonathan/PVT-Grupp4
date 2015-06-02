@@ -132,6 +132,8 @@ public class PictureDatabase extends Controller{
 			try {
 				if (conn != null)
 					conn.close();
+				if (preparedStatement != null) 
+ 					preparedStatement.close();
 			} catch (SQLException se) {
 				return badRequest(se.toString());
 			} 
