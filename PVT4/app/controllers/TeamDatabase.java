@@ -18,7 +18,7 @@ public class TeamDatabase extends Controller {
  		}
     	
     	Team team = Form.form(Team.class).bindFromRequest().get();
-		PreparedStatement preparedStatement;
+		PreparedStatement preparedStatement =null;
  		Connection conn = null;
  		String teamName = team.name;
  		String userName = session("connected");
@@ -66,7 +66,7 @@ public class TeamDatabase extends Controller {
  		    return badRequest(index.render("Fel i formulär"));
  		}
     	
-    	PreparedStatement preparedStatement;
+    	PreparedStatement preparedStatement=null;
  		Connection conn = null;
 		Statement stmt = null;
 		
@@ -124,7 +124,7 @@ public class TeamDatabase extends Controller {
     
     public static Result randomizeTeam(){			//Typ klar, blir knas om två nya har samma namn
     	
-    	PreparedStatement preparedStatement;
+    	PreparedStatement preparedStatement =null;
  		Connection conn = null;
 		Statement stmt = null;
     	

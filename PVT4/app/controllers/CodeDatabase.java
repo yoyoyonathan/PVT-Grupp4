@@ -8,6 +8,7 @@ import play.data.*;
 import play.db.DB;
 import play.mvc.*;
 
+
 public class CodeDatabase extends Controller {
 
 	public static Result registerCode() {
@@ -149,7 +150,7 @@ public class CodeDatabase extends Controller {
 			stmt.setString(2, codeID);
 			stmt.executeUpdate();
 			conn.close();
-			preparedStatement.close();
+			stmt.close();
 		} catch (SQLException e) {
 			try {
 					conn.close();

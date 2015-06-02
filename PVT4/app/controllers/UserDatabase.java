@@ -17,7 +17,7 @@ public class UserDatabase extends Controller {
  	    
  		User user = Form.form(User.class).bindFromRequest().get();
  		Connection conn = null;
-		PreparedStatement preparedStatement;
+		PreparedStatement preparedStatement =null;
  		String userEmail = user.email;
  		String userUserName = user.userName;
  		String userPassword = user.password;
@@ -64,7 +64,7 @@ public class UserDatabase extends Controller {
  				if (preparedStatement != null) 
  					preparedStatement.close();
  				}
- 			} catch (SQLException se) {
+ 			 catch (SQLException se) {
  				return internalServerError(se.toString());
  			}// end finally try
  		}// end try
