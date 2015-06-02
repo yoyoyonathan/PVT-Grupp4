@@ -1,4 +1,4 @@
-package controllers;
+﻿package controllers;
 
 import java.util.*;
 import java.sql.*;
@@ -52,6 +52,8 @@ public class TeamDatabase extends Controller {
  			try {
  				if (conn != null)
  					conn.close();
+				if (preparedStatement != null)
+					preparedStatement.close();
  			} catch (SQLException se) {
  				return internalServerError(se.toString());
  			}
@@ -111,6 +113,8 @@ public class TeamDatabase extends Controller {
  			try {
  				if (conn != null)
  					conn.close();
+				if (preparedStatement != null)
+					preparedStatement.close();
  			} catch (SQLException se) {
  				return internalServerError(se.toString());
  			}
@@ -217,6 +221,8 @@ public class TeamDatabase extends Controller {
  			try {
  				if (conn != null)
  					conn.close();
+				if (preparedStatement != null)
+					preparedStatement.close();
  			} catch (SQLException se) {
  				return internalServerError(se.toString());
  			}
